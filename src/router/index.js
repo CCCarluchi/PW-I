@@ -4,13 +4,13 @@ import Contact from '../views/Contact.vue'
 const routes = [
     {
         path: '/',
-        name: 'Basket',
-        component: Basket
+        name: 'SignIn',
+        component: SignIn
     },
     {
-        path: '/contact',
-        name: 'contact',
-        component: Contact,
+        path: '/SignUp',
+        name: 'SignUp',
+        component: SignUp,
     }
 ]
 
