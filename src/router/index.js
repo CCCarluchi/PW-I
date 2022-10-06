@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Basket from '../views/Basket.vue'
-import Contact from '../views/Contact.vue'
+import SignIn from '../views/SignIn.vue'
+import SignUp from '../views/SignUp.vue'
 const routes = [
     {
         path: '/',
