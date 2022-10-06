@@ -5,7 +5,8 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  
+  <router-link to="/">SignIn</router-link>
+  <router-link to="/SignUp">SignUp</router-link>
 </template>
 
 <style scoped>
