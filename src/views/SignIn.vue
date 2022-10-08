@@ -1,1 +1,5 @@
-<h1>Sign In</h1>
+<template>
+  <main>
+    <h1>Sign In</h1>
+  </main>
+</template>
