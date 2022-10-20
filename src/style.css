@@ -96,6 +96,34 @@ input:invalid{
   border-color: #9E00D6;
 }
 
+textarea {
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.68);
+  padding-left: 10px;
+  width: 312px;
+  height: 179px;
+  text-align:left;
+  resize: none;
+}
+textarea::placeholder{
+  font-family:'Roboto', sans-serif;
+  font-size: 20px;
+  color:rgba(0, 0, 0, 0.68);
+  text-align:left;
+}
+textarea:focus{
+  font-family:'Roboto', sans-serif;
+  font-size: 20px;
+  color:black;
+  text-align:left;
+}
+textarea:required{
+  border-color: #9E00D6;
+}
+textarea:invalid{
+  border-color: #9E00D6;
+}
+
 body {
   margin: 24px;
   display: flow;
