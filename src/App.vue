@@ -9,6 +9,7 @@
     <router-link to="/SignUp">SignUp</router-link>
     <router-link to="/FriendsList">FriendsList</router-link>
     <router-link to="/Data">Data</router-link>
+    <router-link to="/FriendProfile">FriendProfile</router-link>
   </nav>
   <router-view></router-view>
 </template>
