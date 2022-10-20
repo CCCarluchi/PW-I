@@ -1,6 +1,7 @@
 <template>
     <main>
-      <h1>Friends list</h1>
-      <button>Click me!</button>
+      <header>
+        <h3>Friends list</h3>
+      </header>
     </main>
   </template>
