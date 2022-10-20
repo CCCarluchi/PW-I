@@ -7,6 +7,7 @@
   <nav>
     <router-link to="/">SignIn</router-link> 
     <router-link to="/SignUp">SignUp</router-link>
+    <router-link to="/FriendsList">FriendsList</router-link>
   </nav>
   <router-view></router-view>
 </template>
