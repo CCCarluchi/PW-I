@@ -2,7 +2,7 @@
   <main>
     <article>
       <h1>Sign Up</h1>
-      <p1>Try</p1>
+      <p> <i class="arrow left"></i></p>
     </article>
   </main>
 </template>
