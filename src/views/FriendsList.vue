@@ -4,6 +4,10 @@
       <div class="topText">
         <h1>Friends list</h1>
       </div>
+      <br/><br/>
+        <div>
+            <input class="searchBar" placeholder="Search friend..."><button>Search</button><br/><br/><br/>
+        </div>
       
       <section class="grid-container">
         <div>

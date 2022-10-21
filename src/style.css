@@ -123,6 +123,11 @@ input:invalid{
   border-color: #9E00D6;
 }
 
+.searchBar{
+  float: left;
+  width: 1100px;
+}
+
 textarea {
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.68);
