@@ -2,48 +2,66 @@
     <main>
 
       <div class="topText">
-        <h1>Friends list</h1>
+        <h1>Pending Requests</h1>
       </div>
       
       <section class="grid-container">
         <div>
           <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/>
-          Friend 1
+          Person 1
+          <button>Deny</button>   
+          <button>Accept</button>
           <button>View profile</button>  
+          
         </div>
         <div>
           <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
-          Friend 2
+          Person 2
+          <button>Deny</button>   
+          <button>Accept</button>
           <button>View profile</button>  
         </div>
         <div>
           <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/>
-          Friend 3
+          Person 3
+          <button>Deny</button>   
+          <button>Accept</button>
           <button>View profile</button>  
         </div>
         <div>
           <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/>
-          Friend 4
+          Person 4
+          <button>Deny</button>   
+          <button>Accept</button>
           <button>View profile</button>  
         </div>
         <div>
           <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
-          Friend 5
+          Person 5
+          <button>Deny</button>   
+          <button>Accept</button>
           <button>View profile</button>  
         </div>
         <div>
           <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
-          Friend 6
+          Person 6
+          <button>Deny</button>   
+          <button>Accept</button>
+          <button>View profile</button>  
+
+        </div>
+        <div>
+          <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
+          Person 7
+          <button>Deny</button>   
+          <button>Accept</button>
           <button>View profile</button>  
         </div>
         <div>
           <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
-          Friend 7
-          <button>View profile</button>  
-        </div>
-        <div>
-          <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
-          Friend 8
+          Person 8
+          <button>Deny</button>   
+          <button>Accept</button>
           <button>View profile</button>  
         </div>
       </section>

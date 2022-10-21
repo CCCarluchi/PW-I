@@ -5,6 +5,7 @@ import FriendsList from '../views/FriendsList.vue'
 import Data from '../views/Data.vue'
 import FriendProfile from '../views/FriendProfile.vue'
 import Home from '../views/Home.vue'
+import PendingRequests from '../views/PendingRequests.vue'
 
 const routes = [
     {
@@ -36,6 +37,11 @@ const routes = [
         path: '/Home',
         name: 'Home',
         component: Home,
+    },
+    {
+        path: '/PendingRequests',
+        name: 'PendingRequests',
+        component: PendingRequests,
     }
 ]
 

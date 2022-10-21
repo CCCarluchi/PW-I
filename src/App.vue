@@ -11,6 +11,7 @@
     <router-link to="/Data">Data</router-link>
     <router-link to="/FriendProfile">FriendProfile</router-link>
     <router-link to="/Home">Home</router-link>
+    <router-link to="/PendingRequests">PendingRequests</router-link>
   </nav>
   <router-view></router-view>
 </template>
