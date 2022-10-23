@@ -266,6 +266,21 @@ body {
   min-height: 44px;
 }
 
+@media (max-width:650px) {
+  .grid-container > div > button {
+    float: right;
+    background-color: white;
+    border: 1px solid black;
+    height: 50px;
+    width: 80px;
+    margin-right: 2px;
+    margin-left: 2px;
+    font-size: 15px;
+    font-family: 'Fredoka', sans-serif;
+    color: black;
+  }
+} 
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
