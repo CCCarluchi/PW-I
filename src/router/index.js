@@ -6,6 +6,7 @@ import Data from '../views/Data.vue'
 import FriendProfile from '../views/FriendProfile.vue'
 import Home from '../views/Home.vue'
 import PendingRequests from '../views/PendingRequests.vue'
+import ModifyData from '../views/ModifyData.vue'
 
 const routes = [
     {
@@ -29,6 +30,11 @@ const routes = [
         component: Data,
     },
     {
+        path: '/ModifyData',
+        name: 'ModifyData',
+        component: ModifyData,
+    },
+    {
         path: '/FriendProfile',
         name: 'FriendProfile',
         component: FriendProfile,
@@ -42,7 +48,9 @@ const routes = [
         path: '/PendingRequests',
         name: 'PendingRequests',
         component: PendingRequests,
-    }
+    },
+    
+    
 ]
 
 const router = createRouter({
