@@ -7,6 +7,8 @@ import FriendProfile from '../views/FriendProfile.vue'
 import Home from '../views/Home.vue'
 import PendingRequests from '../views/PendingRequests.vue'
 import ModifyData from '../views/ModifyData.vue'
+import DeleteAccount from '../views/DeleteAccount.vue'
+import Statistics from '../views/Statistics.vue'
 
 const routes = [
     {
@@ -49,6 +51,17 @@ const routes = [
         name: 'PendingRequests',
         component: PendingRequests,
     },
+    {
+        path: '/DeleteAccount',
+        name: 'DeleteAccount',
+        component: DeleteAccount,
+    },
+    {
+        path: '/Statistics',
+        name: 'Statistics',
+        component: Statistics,
+    }
+    
     
     
 ]
