@@ -371,4 +371,12 @@ button3:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+  span1 {
+    font-family:'Roboto', sans-serif;
+    font-size: 20px;
+    color:#000000;
+  }
+  
+
+  
 }
