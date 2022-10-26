@@ -22,6 +22,12 @@ h2 {
   font-size: 28px;
 }
 
+h3 {
+  text-align: left;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 32px;
+}
+
 p1 {
   font-family:'Roboto', sans-serif;
   font-size: 20px;
@@ -69,6 +75,27 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+button2 {
+  border-radius: 4px;
+  border: 1px solid transparent;
+  padding: 2px;
+  width: 300px;
+  height: 30px;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  color: #3A014E;
+  background-color: #C4C4C4;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button2:hover {
+  border-color: #3A014E;
+}
+button2:focus,
+button2:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
 input {
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.68);
@@ -96,6 +123,34 @@ input:invalid{
   border-color: #9E00D6;
 }
 
+textarea {
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.68);
+  padding-left: 10px;
+  width: 312px;
+  height: 179px;
+  text-align:left;
+  resize: none;
+}
+textarea::placeholder{
+  font-family:'Roboto', sans-serif;
+  font-size: 20px;
+  color:rgba(0, 0, 0, 0.68);
+  text-align:left;
+}
+textarea:focus{
+  font-family:'Roboto', sans-serif;
+  font-size: 20px;
+  color:black;
+  text-align:left;
+}
+textarea:required{
+  border-color: #9E00D6;
+}
+textarea:invalid{
+  border-color: #9E00D6;
+}
+
 body {
   margin: 24px;
   display: flow;
@@ -114,11 +169,195 @@ body {
   background-color: rgba(217, 217, 217, 0.3);
 }
 
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.left {
+  transform: rotate(135deg);
+}
+
 #app {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+.imgRedonda {
+  width:200px;
+  height:200px;
+  border-radius:150px;
+}
+
+.imgList {
+  width:50px;
+  height:50px;
+  border-radius:150px;
+  margin-right: 15px;
+}
+
+.grid-container {
+  display: grid;
+  padding: 20px 0;
+  row-gap: 20px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 204, 153, 0.8);
+  border: 1px solid black;
+  text-align: left;
+  padding: 20px;
+  font-size: 24px;
+  font-family: 'Fredoka', sans-serif;
+  line-height: 0px;
+}
+
+.grid-container > div > button {
+  float: right;
+  background-color: white;
+  border: 1px solid black;
+  height: 50px;
+  width: 150px;
+  padding: 20px;
+  font-size: 20px;
+  line-height: 0px;
+  font-family: 'Fredoka', sans-serif;
+  color: black;
+}
+
+.topText {
+  overflow: hidden;
+  background-color: rgb(0, 153, 255);
+  width: 100%;
+}
+
+.topText h1 {
+  float: left;
+  color: white;
+  text-align: left;
+  padding-left: 20px;
+  text-decoration: none;
+  font-size: 50px;
+}
+
+.searchContainer {
+  width: 100%;
+}
+
+.searchContainer > input[type=text] {
+  float: left;
+  padding: 6px;
+  font-size: 17px;
+  width: 90%;
+  background-color: white;
+}
+
+.searchContainer > button {
+  width: 5%;
+  float: right;
+  background: rgb(0, 153, 255);
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+  min-height: 44px;
+}
+
+@media (max-width:650px) {
+  .grid-container > div > button {
+    float: right;
+    background-color: white;
+    border: 1px solid black;
+    height: 50px;
+    width: 80px;
+    margin-right: 2px;
+    margin-left: 2px;
+    font-size: 15px;
+    font-family: 'Fredoka', sans-serif;
+    color: black;
+  }
+} 
+
+.profileGrid {
+  display: grid;
+  grid-template-columns: 5% auto 5%;  
+  grid-template-rows: 360px auto;
+  gap: 10px;
+}
+
+.profileMain {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  background-color: rgb(0, 153, 255);
+}
+
+.profileMain > h1 {
+  color: white;
+  text-decoration: none;
+  font-size: 50px;
+}
+
+button3 {
+  padding-top: 23px;
+  display: block;
+  border: 1px solid transparent;
+  height: 50px;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  background-color: rgba(255, 204, 153, 0.8);
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button3:hover {
+  border-color: black;
+}
+button3:focus,
+button3:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.profileItem1 {
+  grid-column: 2/3;
+  grid-row: 2;
+  vertical-align: baseline;
+  background-color: rgba(255, 204, 153, 0.8);
+  height: 75px;
+  border: black 1px solid;
+}
+
+.profileItem2 {
+  grid-column: 2/3;
+  grid-row: 3;
+  background-color: rgba(255, 204, 153, 0.8);
+  height: 75px;
+  border: black 1px solid;
+}
+
+.profileItem3 {
+  grid-column: 2/3;
+  grid-row: 4;
+  background-color: rgba(255, 204, 153, 0.8);
+  height: 75px;
+  border: black 1px solid;
+}
+
+.profileItem4 {
+  grid-column: 2/3;
+  grid-row: 5;
+  background-color: rgba(255, 204, 153, 0.8);
+  height: 75px;
+  border: black 1px solid;
+}
+
+.profileItem1 {
+
+}
+
+.profileItem1 {
+
 }
 
 @media (prefers-color-scheme: light) {
@@ -132,4 +371,12 @@ body {
   button {
     background-color: #f9f9f9;
   }
+  span1 {
+    font-family:'Roboto', sans-serif;
+    font-size: 20px;
+    color:#000000;
+  }
+  
+
+  
 }

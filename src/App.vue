@@ -8,6 +8,14 @@
     <router-link to="/">SignIn</router-link> 
     <router-link to="/SignUp">SignUp</router-link>
     <router-link to="/FriendsList">FriendsList</router-link>
+    <router-link to="/Data">Data</router-link>
+    <router-link to="/FriendProfile">FriendProfile</router-link>
+    <router-link to="/NotFriendProfile">NotFriendProfile</router-link>
+    <router-link to="/Home">Home</router-link>
+    <router-link to="/PendingRequests">PendingRequests</router-link>
+    <router-link to="/ModifyData">ModifyData</router-link>
+    <router-link to="/DeleteAccount">DeleteAccount</router-link>
+    <router-link to="/Statistics">Statistics</router-link>
   </nav>
   <router-view></router-view>
 </template>
