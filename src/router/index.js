@@ -17,7 +17,8 @@ const routes = [
         path: '/FriendsList',
         name: 'FriendsList',
         component: FriendsList,
-    }
+    },
+    
 ]
 
 const router = createRouter({
