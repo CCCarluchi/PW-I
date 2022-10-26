@@ -10,6 +10,9 @@ import NotFriendProfile from '../views/NotFriend.vue'
 import ModifyData from '../views/ModifyData.vue'
 import DeleteAccount from '../views/DeleteAccount.vue'
 import Statistics from '../views/Statistics.vue'
+import SignOut from '../views/SignOut.vue'
+import Events from '../views/Events.vue'
+import CreateEvent from '../views/CreateEvent.vue'
 
 const routes = [
     {
@@ -66,6 +69,21 @@ const routes = [
         path: '/Statistics',
         name: 'Statistics',
         component: Statistics,
+    },
+    {
+        path: '/SignOut',
+        name: 'SignOut',
+        component: SignOut,
+    },
+    {
+        path: '/Events',
+        name: 'Events',
+        component: Events,
+    },
+    {
+        path: '/CreateEvent',
+        name: 'CreateEvent',
+        component: CreateEvent,
     }
     
     
