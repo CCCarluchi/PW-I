@@ -1,11 +1,15 @@
 <template>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <main>
-
+      
+      <head>
       <div class="topText">
         <h1>Friends list</h1>
       </div>
       <br/><br/>
+    </head>
+
+    
         <div class="searchContainer">
             <input type="text" placeholder="Search friend...">
             <button type="submit"><i class="fa fa-search"></i></button><br/><br/>
@@ -53,6 +57,7 @@
           <button>Profile</button>  
         </div>
       </div>
+     
    
 
     </main>

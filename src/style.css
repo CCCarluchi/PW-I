@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
+.colorb{
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(to right, #0099ff,#ffcc99cc);
+  
+}
 a {
   font-family:'Roboto', sans-serif;
   font-size: 15px;
@@ -166,8 +171,10 @@ textarea:invalid{
   border-color: #9E00D6;
 }
 
+html{background-image: linear-gradient(to right, #0099ff,#ffcc99cc);}
+
 body {
-  margin: 24px;
+  margin: 0;
   display: flow;
   place-items: center;
   min-width: 360px;
@@ -177,7 +184,7 @@ body {
 
 @media screen and (max-width: 650px) {
   body {
-    margin: 0px;
+    margin: 0;
     display: flow;
     place-items: center;
     min-width: 360px;
@@ -211,9 +218,9 @@ body {
 }
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  max-width: 100%;
+  margin: 0px;
+  
   text-align: center;
 }
 
@@ -244,7 +251,7 @@ body {
 }
 
 .grid-container > div {
-  background-color: rgba(255, 204, 153, 0.8);
+  background-color:rgba(255, 204, 153, 0.8);
   border: 1px solid black;
   text-align: left;
   padding: 20px;
@@ -507,7 +514,7 @@ button3:focus-visible {
 
 */
 .conteiner{
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-image: linear-gradient(to right, #0099ff,#ffcc99cc);
   display: flex;
