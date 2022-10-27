@@ -2,7 +2,7 @@
   <main>
     <br/>
     <div class="arrowContainer" align="left"> 
-    <i class="arrow left"></i>
+    <router-link to="/" id="i"><i class="arrow left"></i></router-link>
     </div>
     <div class="appTitle">
     <h2>Sign up</h2>
@@ -40,7 +40,7 @@
     </div>
     <br/><br/>
     <div class="inputContainer">
-    <button>Register</button>
+    <router-link to="/Home" id="button"><button>Register</button></router-link>
     </div>
   </main>
 </template>

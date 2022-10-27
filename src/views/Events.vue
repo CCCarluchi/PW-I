@@ -2,7 +2,7 @@
   <main>
     <br/>
     <div class="arrowContainer" align="left"> 
-    <i class="arrow left"></i>
+    <router-link to="/Home" id="i"><i class="arrow left"></i></router-link>
     </div>
     <div class="appTitle">
     <h2>Events</h2>
@@ -11,7 +11,7 @@
     <section>
     <div class="listContainer" align="left">
     <img src="https://media.istockphoto.com/photos/purple-defocused-blurred-motion-abstract-background-picture-id1273929462?b=1&k=20&m=1273929462&s=612x612&w=0&h=SiJ-IIlRT_GMs_UGFMaMcHhIosKvvvMnb0PNE3wGk6k=" class="imgList"/>
-    <a2>Create</a2>
+    <router-link to="/CreateEvent" id="a2"><a2>Create</a2></router-link>
     </div>
     <br/>
     <div class="listContainer" align="left">
@@ -31,7 +31,7 @@
     <br/>
     <div class="listContainer" align="left">
     <img src="https://media.istockphoto.com/photos/purple-defocused-blurred-motion-abstract-background-picture-id1273929462?b=1&k=20&m=1273929462&s=612x612&w=0&h=SiJ-IIlRT_GMs_UGFMaMcHhIosKvvvMnb0PNE3wGk6k=" class="imgList"/>
-    <a2>Participate</a2>
+    <router-link to="/ParticipateEvent" id="a2"><a2>Participate</a2></router-link>
     </div>
     <br/>
     <div class="listContainer" align="left">

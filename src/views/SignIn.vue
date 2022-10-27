@@ -18,7 +18,6 @@
     </div>
     <br/><br/>
     <div class="inputContainer">
-   
     <router-link to="/SignUp" id="a2"><a2>Sign up</a2></router-link>
     </div>
   </main>
