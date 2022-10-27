@@ -10,7 +10,7 @@
     </div>
     <br/><br/>
     <div class="inputContainer">
-    <input type="text" placeholder="Password"><br/>
+    <input type="password" placeholder="Password"><br/>
     </div>
     <br/><br/>
     <div class="inputContainer">

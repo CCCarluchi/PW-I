@@ -28,11 +28,11 @@
     </div>
     <br/><br/>
     <div class="inputContainer">
-    <input type="text" placeholder="*Password"><br/>
+    <input type="password" placeholder="*Password"><br/>
     </div>
     <br/><br/>
     <div class="inputContainer">
-    <input type="text" placeholder="*Confirm Password"><br/>
+    <input type="password" placeholder="*Confirm Password"><br/>
     </div>
     <br/><br/>
     <div class="inputContainer">
