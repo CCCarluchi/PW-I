@@ -20,7 +20,7 @@
     </div>
     <br/><br/>
     <div class="inputContainer">
-    <input type="date" placeholder="*Date of birth"><br/>
+    <input placeholder="*Date of birth" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"><br/>
     </div>
     <br/><br/>
     <div class="inputContainer">
