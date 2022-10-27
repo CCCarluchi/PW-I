@@ -10,6 +10,7 @@ import NotFriendProfile from '../views/NotFriend.vue'
 import ModifyData from '../views/ModifyData.vue'
 import DeleteAccount from '../views/DeleteAccount.vue'
 import Statistics from '../views/Statistics.vue'
+import Chat from '../views/Chat.vue'
 
 const routes = [
     {
@@ -66,6 +67,11 @@ const routes = [
         path: '/Statistics',
         name: 'Statistics',
         component: Statistics,
+    },
+    {
+        path: '/Chat',
+        name: 'Chat',
+        component: Chat,
     }
     
     

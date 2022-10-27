@@ -16,6 +16,7 @@
     <router-link to="/ModifyData">ModifyData</router-link>
     <router-link to="/DeleteAccount">DeleteAccount</router-link>
     <router-link to="/Statistics">Statistics</router-link>
+    <router-link to="/Chat">Chat</router-link>
   </nav>
   <router-view></router-view>
 </template>

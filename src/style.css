@@ -27,7 +27,11 @@ h3 {
   font-family: 'Fredoka', sans-serif;
   font-size: 32px;
 }
-
+h3 {
+  text-align: center;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 16px;
+}
 p1 {
   font-family:'Roboto', sans-serif;
   font-size: 20px;
@@ -291,7 +295,7 @@ body {
 .profileMain {
   grid-column: 2/3;
   grid-row: 1/2;
-  background-color: rgb(0, 153, 255);
+  background-color: #0099ff;
 }
 
 .profileMain > h1 {
@@ -339,7 +343,7 @@ button3:focus-visible {
 .profileItem3 {
   grid-column: 2/3;
   grid-row: 4;
-  background-color: rgba(255, 204, 153, 0.8);
+  background-color: #ffcc99cc;
   height: 75px;
   border: black 1px solid;
 }
@@ -358,6 +362,58 @@ button3:focus-visible {
 
 .profileItem1 {
 
+}
+.conteiner{
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(to right, #0099ff,#ffcc99cc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.chatbox{
+  background: #4d89d2;
+  width: 60%;
+  min-width: 250px;
+  display: 	flex;
+
+}
+.col-1{
+  flex: 1;
+
+}
+.col-2{
+ flex-basis: 250px;
+}
+.msg-row{
+  display:flex;
+  align-items: center;
+  margin: 40px;
+  flex-basis:70% ;
+}
+
+.msg-text{
+  background: rgba(255, 204, 153, 0.8);
+  padding: 20px 40px;
+  border-radius: 8px;
+  flex-basis: 70%;
+  font-weight: 300;
+}
+
+.msg-text h2{
+  font-weight: 400;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.msg-img{
+  width: 50px;
+  border-radius: 50%;
+  margin: 0 20xp;
+}
+.msg-row2{
+
+  justify-content: flex-end;
 }
 
 @media (prefers-color-scheme: light) {
