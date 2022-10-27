@@ -2,7 +2,7 @@
   <main>
     <br/>
     <div class="arrowContainer" align="left"> 
-    <i class="arrow left"></i>
+    <router-link to="/Data" id="i"><i class="arrow left"></i></router-link>
     </div>
     <br/>
     <div class="card">
