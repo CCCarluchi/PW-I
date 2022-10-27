@@ -13,7 +13,7 @@
     <input type="text" placeholder="Password"><br/>
     </div>
     <br/><br/>
-    <div class="inputContainer">
+    <div>
     <button>Sign in</button>
     </div>
     <br/><br/>
