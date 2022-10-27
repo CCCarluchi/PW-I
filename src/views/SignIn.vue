@@ -13,12 +13,12 @@
     <input type="text" placeholder="Password"><br/>
     </div>
     <br/><br/>
-    <div>
-    <button>Sign in</button>
+    <div class="inputContainer">
+    <router-link to="/Home" id="button"><button>Sign in</button></router-link>
     </div>
     <br/><br/>
     <div class="inputContainer">
-    <a2>Sign up</a2>
+    <router-link to="/SignUp" id="a2"><a2>Sign up</a2></router-link>
     </div>
   </main>
 </template>
