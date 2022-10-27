@@ -1,0 +1,43 @@
+<template>
+  <main>
+    <br/>
+    <div class="arrowContainer" align="left"> 
+    <i class="arrow left"></i>
+    </div>
+    <div class="appTitle">
+    <h2>Events</h2>
+    </div>
+    <br/>
+    <section>
+    <div class="listContainer" align="left">
+    <img src="https://media.istockphoto.com/photos/purple-defocused-blurred-motion-abstract-background-picture-id1273929462?b=1&k=20&m=1273929462&s=612x612&w=0&h=SiJ-IIlRT_GMs_UGFMaMcHhIosKvvvMnb0PNE3wGk6k=" class="imgList"/>
+    <a2>Create</a2>
+    </div>
+    <br/>
+    <div class="listContainer" align="left">
+    <img src="https://media.istockphoto.com/photos/purple-defocused-blurred-motion-abstract-background-picture-id1273929462?b=1&k=20&m=1273929462&s=612x612&w=0&h=SiJ-IIlRT_GMs_UGFMaMcHhIosKvvvMnb0PNE3wGk6k=" class="imgList"/>
+    <a2>List</a2>
+    </div>
+    <br/>
+    <div class="listContainer" align="left">
+    <img src="https://media.istockphoto.com/photos/purple-defocused-blurred-motion-abstract-background-picture-id1273929462?b=1&k=20&m=1273929462&s=612x612&w=0&h=SiJ-IIlRT_GMs_UGFMaMcHhIosKvvvMnb0PNE3wGk6k=" class="imgList"/>
+    <a2>Search</a2>
+    </div>
+    <br/>
+    <div class="listContainer" align="left">
+    <img src="https://media.istockphoto.com/photos/purple-defocused-blurred-motion-abstract-background-picture-id1273929462?b=1&k=20&m=1273929462&s=612x612&w=0&h=SiJ-IIlRT_GMs_UGFMaMcHhIosKvvvMnb0PNE3wGk6k=" class="imgList"/>
+    <a2>Share</a2>
+    </div>
+    <br/>
+    <div class="listContainer" align="left">
+    <img src="https://media.istockphoto.com/photos/purple-defocused-blurred-motion-abstract-background-picture-id1273929462?b=1&k=20&m=1273929462&s=612x612&w=0&h=SiJ-IIlRT_GMs_UGFMaMcHhIosKvvvMnb0PNE3wGk6k=" class="imgList"/>
+    <a2>Participate</a2>
+    </div>
+    <br/>
+    <div class="listContainer" align="left">
+    <img src="https://media.istockphoto.com/photos/purple-defocused-blurred-motion-abstract-background-picture-id1273929462?b=1&k=20&m=1273929462&s=612x612&w=0&h=SiJ-IIlRT_GMs_UGFMaMcHhIosKvvvMnb0PNE3wGk6k=" class="imgList"/>
+    <a2>Timeline</a2>
+    </div>
+    </section>
+  </main>
+</template>

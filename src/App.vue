@@ -17,6 +17,9 @@
     <router-link to="/DeleteAccount">DeleteAccount</router-link>
     <router-link to="/Statistics">Statistics</router-link>
     <router-link to="/Chat">Chat</router-link>
+    <router-link to="/SignOut">SignOut</router-link>
+    <router-link to="/Events">Events</router-link>
+    <router-link to="/CreateEvent">CreateEvent</router-link>
   </nav>
   <router-view></router-view>
 </template>
