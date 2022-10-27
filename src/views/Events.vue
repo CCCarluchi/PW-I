@@ -39,5 +39,6 @@
     <a2>Timeline</a2>
     </div>
     </section>
+    <br/><br/>
   </main>
 </template>

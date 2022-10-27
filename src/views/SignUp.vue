@@ -42,5 +42,6 @@
     <div class="inputContainer">
     <router-link to="/Home" id="button"><button>Register</button></router-link>
     </div>
+    <br/><br/>
   </main>
 </template>
