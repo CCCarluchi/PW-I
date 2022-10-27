@@ -1,6 +1,7 @@
 <template>
   <main>
-    <div> 
+    <br/>
+    <div class="arrowContainer" align="left"> 
     <i class="arrow left"></i>
     </div>
     <div class="appTitle">
