@@ -515,6 +515,7 @@ button3:focus-visible {
   justify-content: center;
   color: #fff;
 }
+
 .chatbox{
   background: #4d89d2;
   width: 60%;
@@ -529,8 +530,9 @@ button3:focus-visible {
 .col-2{
  flex-basis: 250px;
 }
+
 .msg-row{
-  display:flex;
+  display: flex;
   align-items: center;
   margin: 40px;
   flex-basis:70% ;

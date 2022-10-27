@@ -1,9 +1,20 @@
 <template>
     <main>
-        <img src='https://i.ytimg.com/vi/ywthKNqI7uI/mqdefault.jpg' class='imgRedonda' /><br/><br/>
-      <h1>Name</h1>
-      <button2 type="button">+ Add friend</button2><br/><br/>
-      <button2 type="button">Public stats</button2><br/><br/>
-      <button2 type="button">Favourite events</button2><br/><br/>
+      <div class="profileGrid">
+        <div class="lateral"></div>
+        <div class="profileMain">
+          <br/><br/><img src='https://i.ytimg.com/vi/ywthKNqI7uI/mqdefault.jpg' class='imgRedonda'/>
+          <h1>Name</h1>
+        </div>
+        <div class="profileItem1">
+          <button3 type="button">+ Add friend</button3>
+        </div>
+        <div class="profileItem2">
+          <button3 type="button">Public stats</button3>
+        </div>
+        <div class="profileItem3">
+          <button3 type="button">Favourite events</button3>
+        </div>
+      </div>
     </main>
   </template>
