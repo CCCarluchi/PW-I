@@ -70,7 +70,28 @@ const routes = [
         path: '/Statistics',
         name: 'Statistics',
         component: Statistics,
+    },
+    {
+        path: '/SignOut',
+        name: 'SignOut',
+        component: SignOut,
+    },
+    {
+        path: '/Events',
+        name: 'Events',
+        component: Events,
+    },
+    {
+        path: '/CreateEvent',
+        name: 'CreateEvent',
+        component: CreateEvent,
+    },
+    {
+        path: '/Chat',
+        name: 'Chat',
+        component: Chat,
     }
+
     
     
     
