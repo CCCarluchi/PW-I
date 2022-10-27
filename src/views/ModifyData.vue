@@ -1,9 +1,21 @@
 <template>
     <main>
-        <br/><br/>
-        <input type="text" value="Name" name="Name"><br/><br/>
-        <input type="text" value="Surname" name="Surname"><br/><br/>
-        <input type="text" value="Username" name="Username"><br/><br/>
+        <div class="inputContainer">
+    <input type="text" placeholder="*Name"><br/>
+    </div>
+    <br/><br/>
+    <div class="inputContainer">
+    <input type="text" placeholder="*Surname"><br/>
+    </div>
+    <br/><br/>
+    <div class="inputContainer">
+    <input type="text" placeholder="*Username"><br/>
+    </div>
+    <br/><br/>
+    <div class="inputContainer">
+    <input type="date" placeholder="*Date of birth"><br/>
+    </div>
+    <br/><br/>
         <img src='https://pbs.twimg.com/media/EztG5y0WQAAPS69?format=jpg&name=medium' class='imgRedonda' /><br/><br/>
         <button2 type="button">Change picture</button2><br/><br/>
         <br/><br/>
