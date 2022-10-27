@@ -341,11 +341,34 @@ body {
   background-color: white;
 }
 
+.inputContainer > textarea {
+  float: center;
+  padding: 6px;
+  width: 50%;
+  font-size: 1.5em;
+  color: rgba(0, 0, 0, 0.68);
+  background-color: white;
+}
+
 .inputContainer > button {
   width: 10%;
   float: center;
   cursor: pointer;
   min-height: 44px;
+}
+
+.listContainer{
+  width: 100%;
+  margin-left: 300px;
+}
+.listContainer > img{
+  padding: 2px;
+}
+
+.listContainer > a2{
+  width: 30%;
+  padding: 2px;
+  font-size: 1.5em;
 }
 
 .arrowContainer {
