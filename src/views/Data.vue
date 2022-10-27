@@ -4,8 +4,7 @@
       <h1>Name</h1>
       <button2 type="button">Public stats</button2><br/><br/>
       <button2 type="button">Favourite events</button2><br/><br/>
-      <button2 type="button">Change profile</button2><br/><br/>
-      <button2 type="button">Sign out</button2><br/><br/>
-      <button2 type="button">Public stats</button2><br/><br/>
+      <router-link to="/ModifyData" id="button"><button2>Change profile</button2></router-link><br/><br/>
+      <router-link to="/SignOut" id="button"><button2>Sign Out</button2></router-link><br/><br/>
     </main>
   </template>

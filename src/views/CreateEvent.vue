@@ -12,11 +12,11 @@
     </div>
     <br/><br/>
     <div class="inputContainer">
-    <input type="date" placeholder="*Start date"><br/>
+    <input placeholder="*Start date" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"><br/>
     </div>
-    <br/><br/>
+    <br/><br/> 
     <div class="inputContainer">
-    <input type="date" placeholder="*End date"><br/>
+    <input placeholder="*End date" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"><br/>
     </div>
     <br/><br/>
     <div class="inputContainer">

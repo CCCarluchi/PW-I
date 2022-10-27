@@ -14,6 +14,7 @@ import SignOut from '../views/SignOut.vue'
 import Events from '../views/Events.vue'
 import CreateEvent from '../views/CreateEvent.vue'
 import Chat from '../views/Chat.vue'
+import ParticipateEvent from '../views/ParticipateEvent.vue'
 
 const routes = [
     {
@@ -90,6 +91,11 @@ const routes = [
         path: '/Chat',
         name: 'Chat',
         component: Chat,
+    },
+    {
+        path: '/ParticipateEvent',
+        name: 'ParticipateEvent',
+        component: ParticipateEvent,
     }
 
     
