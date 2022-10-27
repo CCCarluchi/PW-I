@@ -1,5 +1,6 @@
 <template>
     <main>
+      
       <div class="profileGrid">
         <div class="lateral"></div>
         <div class="profileMain">

@@ -1,6 +1,6 @@
 <template>
   <main>
-    <div class="appTitle">
+    <div class="appTitle" >
     <h1>OpenEvents</h1>
     </div>
     <img src="https://cdn.logo.com/hotlink-ok/logo-social-sq.png" alt="logo" class="imgLogo">
