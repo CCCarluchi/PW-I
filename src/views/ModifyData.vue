@@ -19,7 +19,7 @@
         <img src='https://pbs.twimg.com/media/EztG5y0WQAAPS69?format=jpg&name=medium' class='imgRedonda' /><br/><br/>
         <button2 type="button">Change picture</button2><br/><br/>
         <br/><br/>
-        <button2 type="button">Apply Changes</button2><br/><br/>
+        <router-link to="/Data" id="button"><button2>Apply Changes</button2></router-link><br/><br/>
         
     </main>
   </template>
