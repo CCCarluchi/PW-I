@@ -336,6 +336,20 @@ article{
   text-decoration: none;
 }
 
+.appText {
+  overflow: hidden;
+  margin-left: 55px;
+  text-align: left;
+  text-decoration: none;
+}
+
+.appText2 {
+  overflow: hidden;
+  margin-left: 90px;
+  text-align: left;
+  text-decoration: none;
+}
+
 .searchContainer {
   width: 100%;
 }
@@ -357,7 +371,6 @@ article{
   cursor: pointer;
   min-height: 44px;
 }
-
 
 .inputContainer {
   margin: 0 auto;
@@ -609,6 +622,12 @@ button3:focus-visible {
     font-family: 'Fredoka', sans-serif;
     font-size: 48px;
   }
+
+  p1 {
+    font-family:'Roboto', sans-serif;
+    font-size: 32px;
+    color:#000000;
+  }
   
   p2 {
     font-family:'Roboto', sans-serif;
@@ -766,4 +785,19 @@ button3:focus-visible {
     border-radius:150px;
     margin-right: 15px;
   }
+
+  .appText {
+    overflow: hidden;
+    margin-left: 465px;
+    text-align: left;
+    text-decoration: none;
+  }
+
+  .appText2 {
+    overflow: hidden;
+    margin-left: 500px;
+    text-align: left;
+    text-decoration: none;
+  }
+  
 }

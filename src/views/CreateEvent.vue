@@ -37,7 +37,7 @@
       <br/><br/>
 
       <div class="inputContainer">
-        <button>Create</button>
+        <router-link to="/Event" id="button"><button>Create</button></router-link>
       </div>
       <br/><br/>
     </article>
