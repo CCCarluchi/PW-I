@@ -9,7 +9,6 @@
         <h2>Events</h2>
       </div>
     </header>
-    <br/>
 
     <nav>
       <div class="listContainer" align="left">

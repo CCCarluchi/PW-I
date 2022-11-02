@@ -50,7 +50,7 @@
         <input type="text" placeholder="+ Add your profile picture"><br/>
       </div>
       <br/><br/>
-      
+
       <div class="inputContainer">
         <router-link to="/Home" id="button"><button>Register</button></router-link>
       </div>
