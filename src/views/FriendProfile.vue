@@ -8,10 +8,7 @@
           <h1>Name</h1>
         </div>
         <div class="profileItem1">
-          <button3 type="button">Public stats</button3>
-        </div>
-        <div class="profileItem2">
-          <button3 type="button">Favourite events</button3>
+          <router-link to="/SignUp" id="a2"><a2>Public stats</a2></router-link>
         </div>
       </div>
     </main>
