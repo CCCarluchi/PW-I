@@ -28,6 +28,7 @@
     <header class="appTitle">
         <h2>Home</h2>
     </header>
+    <br/>
 
     <nav>
         <div class="buttonHome">
