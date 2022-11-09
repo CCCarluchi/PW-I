@@ -1,6 +1,11 @@
 <template>
     <main>
-
+      <header>
+      <br/>
+      <div class="arrowContainer" align="left"> 
+        <router-link to="/Data" id="i"><i class="arrow left"></i></router-link>
+      </div>
+    </header>
       <h1>Statistics</h1>
       <p1 align:left type = "p" >Your events puntuation:</p1><br/><br/>
       <span1 style="border-image: initial; border: 1px solid blue;" type = "span">50</span1><br/><br/>

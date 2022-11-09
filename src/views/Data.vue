@@ -1,5 +1,11 @@
 <template>
     <main>
+      <header>
+      <br/>
+      <div class="arrowContainer" align="left"> 
+        <router-link to="/Home" id="i"><i class="arrow left"></i></router-link>
+      </div>
+    </header>
         <img src='https://i.blogs.es/80e441/big-chungus-multiversus/1366_2000.webp' class='imgRedonda' /><br/><br/>
       <h1>Name</h1>
       <router-link to="/Statistics" id="button"><button2>Public Stats</button2></router-link><br/><br/>

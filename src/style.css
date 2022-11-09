@@ -124,7 +124,7 @@ button2 {
   border-radius: 4px;
   border: 1px solid transparent;
   padding: 2px;
-  width: 300px;
+  width: 230px;
   height: 30px;
   font-size: 20px;
   font-family: 'Roboto', sans-serif;
@@ -871,7 +871,7 @@ button3:focus-visible {
     padding: 2px;
     width: 417px;
     height: 54px;
-    font-size: 20px;
+    font-size: 40px;
     font-family: 'Roboto', sans-serif;
     color: #3A014E;
     background-color: #C4C4C4;
@@ -884,6 +884,12 @@ button3:focus-visible {
   button2:focus,
   button2:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
+  }
+
+  span1 {
+    font-family:'Roboto', sans-serif;
+    font-size: 40px;
+    color:#000000;
   }
   
 }
