@@ -864,5 +864,26 @@ button3:focus-visible {
   button4:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
   }
+
+  button2 {
+    border-radius: 4px;
+    border: 1px solid transparent;
+    padding: 2px;
+    width: 417px;
+    height: 54px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #3A014E;
+    background-color: #C4C4C4;
+    cursor: pointer;
+    transition: border-color 0.25s;
+  }
+  button2:hover {
+    border-color: #3A014E;
+  }
+  button2:focus,
+  button2:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
   
 }
