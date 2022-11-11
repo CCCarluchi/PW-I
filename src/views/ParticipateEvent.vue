@@ -1,5 +1,9 @@
 <template>
     <main>
+      <br/>
+      <div class="arrowContainer" align="left"> 
+        <router-link to="/Event" id="i"><i class="arrow left"></i></router-link>
+      </div>
 
       <h1>Participate event</h1>
       
