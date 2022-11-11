@@ -5,7 +5,7 @@
     </header>
 
     <figure>
-      <img src="https://cdn.logo.com/hotlink-ok/logo-social-sq.png" alt="logo" class="imgLogo">
+      <img src="src/assets/withHat.png" alt="logo" class="imgLogo">
     </figure>
     <br/><br/>
 
