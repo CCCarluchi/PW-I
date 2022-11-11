@@ -433,6 +433,14 @@ article{
 .arrowContainer {
   padding-left: 55px;
 }
+
+.column {
+  float: left;
+  width: 100%;
+  padding: 0;
+  margin: auto;
+}
+
 /*
 @media (max-width: 650px) {
   .arrowContainer {
@@ -841,6 +849,13 @@ button3:focus-visible {
   }
   .buttonH:hover {
     border-color: #3A014E;
+  }
+
+  .column {
+    float: left;
+    width: 50%;
+    padding: 0;
+    margin: auto;
   }
   
 }
