@@ -99,32 +99,23 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-button4 {
+.buttonH {
   border-radius: 4px;
-  border: 1px solid transparent;
-  padding: 30px;
+  border: 1px 1px solid transparent;
+  background-color: #C4C4C4;
   width: 137px;
   height: 137px;
-  font-size: 20px;
-  font-family: 'Roboto', sans-serif;
-  color: #3A014E;
-  background-color: #C4C4C4;
   cursor: pointer;
-  transition: border-color 0.25s;
 }
-button4:hover {
+.buttonH:hover {
   border-color: #3A014E;
-}
-button4:focus,
-button4:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
 button2 {
   border-radius: 4px;
   border: 1px solid transparent;
   padding: 2px;
-  width: 230px;
+  width: 300px;
   height: 30px;
   font-size: 20px;
   font-family: 'Roboto', sans-serif;
@@ -423,11 +414,8 @@ article{
   margin-left: 40px;
   float: none;
   display: grid;
-  grid-template-columns: 150px 150px;
-  grid-template-rows: 150px 150px;
-  grid-gap: 0px;
-  width: 137px;
-  height: 137px;
+  grid-template-columns: 137px 137px;
+  grid-template-rows: 137px 137px;
 }
 
 .listContainer{
@@ -626,7 +614,7 @@ button3:focus-visible {
 
   justify-content: flex-end;
 }
-
+/*
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -646,7 +634,7 @@ button3:focus-visible {
   
 
   
-}
+}*/
 
 /*Definitive media query*/
 @media only screen and (min-width: 640px) {
@@ -836,60 +824,21 @@ button3:focus-visible {
     margin-left: 440px;
     float: none;
     display: grid;
-    grid-template-columns: 250px 250px;
-    grid-template-rows: 250px 250px;
-    grid-gap: 20px;
+    grid-template-columns: 230px 230px;
+    grid-template-rows: 230px 230px;
+
+  }
+
+  .buttonH {
+    border-radius: 4px;
+    border: 1px 1px solid transparent;
+    background-color: #C4C4C4;
     width: 230px;
     height: 230px;
-    font-size: 32px;
-  }
-
-  button4 {
-    border-radius: 4px;
-    border: 1px solid transparent;
-    padding: 50px;
-    width: 230px;
-    height: 230px;
-    font-size: 32px;
-    font-family: 'Roboto', sans-serif;
-    color: #3A014E;
-    background-color: #C4C4C4;
     cursor: pointer;
-    transition: border-color 0.25s;
   }
-  button4:hover {
+  .buttonH:hover {
     border-color: #3A014E;
-  }
-  button4:focus,
-  button4:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-  }
-
-  button2 {
-    border-radius: 4px;
-    border: 1px solid transparent;
-    padding: 2px;
-    width: 417px;
-    height: 54px;
-    font-size: 40px;
-    font-family: 'Roboto', sans-serif;
-    color: #3A014E;
-    background-color: #C4C4C4;
-    cursor: pointer;
-    transition: border-color 0.25s;
-  }
-  button2:hover {
-    border-color: #3A014E;
-  }
-  button2:focus,
-  button2:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-  }
-
-  span1 {
-    font-family:'Roboto', sans-serif;
-    font-size: 40px;
-    color:#000000;
   }
   
 }
