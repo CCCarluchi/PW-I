@@ -416,6 +416,7 @@ article{
   display: grid;
   grid-template-columns: 137px 137px;
   grid-template-rows: 137px 137px;
+  grid-gap: 10px;
 }
 
 .listContainer{
@@ -826,6 +827,7 @@ button3:focus-visible {
     display: grid;
     grid-template-columns: 230px 230px;
     grid-template-rows: 230px 230px;
+    grid-gap: 20px;
 
   }
 
