@@ -47,7 +47,7 @@
       <br/><br/>
 
       <div class="inputContainer">
-        <input type="text" placeholder="+ Add your profile picture"><br/>
+        <input type="file" accept="image/*" class="custom" placeholder="+ Add your profile picture"><br/>
       </div>
       <br/><br/>
 

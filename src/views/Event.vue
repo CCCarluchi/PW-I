@@ -55,7 +55,7 @@
 
     <nav class="column">
         <div class="inputContainer">
-        <router-link to="/Share" id="button"><button>Share</button></router-link>
+        <router-link to="/ShareEvent" id="button"><button>Share</button></router-link>
         </div>
         <br/>
 
