@@ -329,23 +329,23 @@ article{
   background-color: white;
   border: 1px solid black;
   height: 50px;
-  width: 150px;
-  padding: 20px;
-  font-size: 20px;
-  line-height: 0px;
+  width: 80px;
+  margin-right: 2px;
+  margin-left: 2px;
+  font-size: 15px;
   font-family: 'Fredoka', sans-serif;
   color: black;
 }
 
-.grid-container > div > a > button {
+.grid-container > div > a >button {
   float: right;
   background-color: white;
   border: 1px solid black;
   height: 50px;
-  width: 150px;
-  padding: 20px;
-  font-size: 20px;
-  line-height: 0px;
+  width: 80px;
+  margin-right: 2px;
+  margin-left: 2px;
+  font-size: 15px;
   font-family: 'Fredoka', sans-serif;
   color: black;
 }
@@ -532,21 +532,6 @@ article{
     border: 0px solid transparent;
   }
 }*/
-
-@media (max-width:650px) {
-  .grid-container > div > button {
-    float: right;
-    background-color: white;
-    border: 1px solid black;
-    height: 50px;
-    width: 80px;
-    margin-right: 2px;
-    margin-left: 2px;
-    font-size: 15px;
-    font-family: 'Fredoka', sans-serif;
-    color: black;
-  }
-} 
 
 .profileGrid {
   display: grid;
@@ -1073,6 +1058,32 @@ span1 {
     font-family:'Roboto', sans-serif;
     font-size: 40px;
     color:#000000;
+  }
+
+  .grid-container > div > button {
+    float: right;
+    background-color: white;
+    border: 1px solid black;
+    height: 50px;
+    width: 150px;
+    padding: 20px;
+    font-size: 20px;
+    line-height: 0px;
+    font-family: 'Fredoka', sans-serif;
+    color: black;
+  }
+
+  .grid-container > div > a > button {
+    float: right;
+    background-color: white;
+    border: 1px solid black;
+    height: 50px;
+    width: 150px;
+    padding: 20px;
+    font-size: 20px;
+    line-height: 0px;
+    font-family: 'Fredoka', sans-serif;
+    color: black;
   }
   
 }

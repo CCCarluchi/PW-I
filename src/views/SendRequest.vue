@@ -18,7 +18,7 @@
             </div>
             <br/><br/>
             <div class="inputContainer">
-              <router-link to="/NotFriendProfile" id="button"><button>Send request</button></router-link>
+              <router-link to="/NotFriendProfile" id="button"><button>Send</button></router-link>
             </div>
         </div>
       </article>
