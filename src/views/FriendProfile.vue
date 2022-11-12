@@ -11,8 +11,7 @@
           <router-link to="/Statistics" id="button"><button3>Public stats</button3></router-link>
         </div>
         <div class="profileItem2">
-          <button3 type="button">Favourite events</button3>
-          <router-link to="/SignUp" id="a2"><a2>Public stats</a2></router-link>
+          <router-link to="/Statistics" id="button"><button3>Favourite events</button3></router-link>
         </div>
       </div>
     </main>
