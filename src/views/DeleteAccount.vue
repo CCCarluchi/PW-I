@@ -17,7 +17,9 @@
        <p2>Do you wish to delete account?</p2>
        </div>
        <br/><br/>
-       <button>Delete it</button>  
+       <div class="inputContainer">
+            <router-link to="/" id="button"><button>Delete it</button></router-link>
+       </div>  
     </div>
   </article>
 
