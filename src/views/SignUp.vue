@@ -2,7 +2,7 @@
   <main>
     <header>
       <br/>
-      <div class="arrowContainer" align="left"> 
+      <div class="arrowContainer" align ="left"> 
         <router-link to="/" id="i"><i class="arrow left"></i></router-link>
       </div>
       <div class="appTitle">
