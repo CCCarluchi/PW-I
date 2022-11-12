@@ -292,6 +292,14 @@ article{
   vertical-align: middle;
 }
 
+.imgList2 {
+  width:15px;
+  height:15px;
+  border-radius:50px;
+  margin-right: 15px;
+  vertical-align: middle;
+}
+
 .imgLogo {
   max-width:200px;
   max-height:200px;
@@ -433,14 +441,7 @@ article{
   color: rgba(0, 0, 0, 0.68);
   background-color: white;
 }
-/*
-.inputContainer > input[type=file] {
-  padding: 6px;
-  color: rgba(0, 0, 0, 0.68);
-  background-color: transparent;
-  border: transparent;
-}
-*/
+
 .inputContainer > textarea {
   padding: 6px;
   color: rgba(0, 0, 0, 0.68);
@@ -476,7 +477,6 @@ article{
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-
 .buttonHome {
   margin-left: 40px;
   float: none;
@@ -495,6 +495,17 @@ article{
 
 .listContainer > a2{
   padding: 2px;
+}
+
+.listContainer2{
+  margin-left: 45px;
+}
+.listContainer2 > img{
+  padding: 2px;
+}
+
+.listContainer2 > a2{
+  padding: 0px;
 }
 
 .arrowContainer {
@@ -760,27 +771,6 @@ button3:focus-visible {
   margin-right: 10px;
 
 }
-/*
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-  span1 {
-    font-family:'Roboto', sans-serif;
-    font-size: 20px;
-    color:#000000;
-  }
-  
-
-  
-}*/
 
 span1 {
   font-family:'Roboto', sans-serif;
@@ -858,16 +848,7 @@ span1 {
     width: 580px;
     height: 42px;
     font-size: 32px;
-  }/*
-  .inputContainer > input[type=file] {
-    padding: 6px;
-    color: rgba(0, 0, 0, 0.68);
-    background-color: transparent;
-    border: transparent;
-    width: 580px;
-    height: 42px;
-    font-size: 32px;
-  }*/
+  }
   .inputContainer > textarea {
     padding: 6px;
     color: rgba(0, 0, 0, 0.68);
@@ -983,12 +964,31 @@ span1 {
     padding: 2px;
     font-size: 32px;
   }
+
+  .listContainer2{
+    margin-left: 460px;
+  }
+  .listContainer2 > img{
+    padding: 2px;
+  }
+  
+  .listContainer2 > a2{
+    padding: 2px;
+  }
   
   .imgList {
     width:70px;
     height:70px;
     border-radius:150px;
     margin-right: 15px;
+  }
+
+  .imgList2 {
+    width:40px;
+    height:40px;
+    border-radius:90px;
+    margin-right: 15px;
+    vertical-align: middle;
   }
 
   .appText {
