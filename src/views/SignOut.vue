@@ -17,7 +17,9 @@
           <p2>Do you wish to sign out?</p2>
         </div>
         <br/><br/>
-          <button>Sign out</button>
+          <div class="inputContainer">
+            <router-link to="/" id="button"><button>Sign out</button></router-link>
+          </div>
       </div>
     </article>
 
