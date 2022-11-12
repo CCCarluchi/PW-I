@@ -23,6 +23,11 @@ footer {
   margin-bottom: 2.5%;
 }
 
+header > a {
+  float: left;
+  margin-left: 5.2%;
+}
+
 a2 {
   font-family:'Roboto', sans-serif;
   font-size: 20px;
@@ -314,6 +319,11 @@ article{
   display: inline;
 }
 
+.grid-container > div > input[type=checkbox] {
+  float: right;
+  margin-top: 1.2%;
+}
+
 .grid-container > div > button {
   float: right;
   background-color: white;
@@ -394,7 +404,7 @@ article{
   float: left;
   padding: 6px;
   font-size: 17px;
-  width: 94%;
+  width: 90%;
   background-color: white;
 }
 

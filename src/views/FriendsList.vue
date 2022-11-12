@@ -3,6 +3,10 @@
     <main>
       
       <header>
+        <br/>
+        <router-link to="/Home" id="i"><i class="arrow left"></i></router-link>
+        <br/><br/>
+
         <div class="topText">
           <h1>Friends list</h1>
         </div>

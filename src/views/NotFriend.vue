@@ -1,6 +1,11 @@
 <template>
     <main>
+
       <header>
+        <br/>
+        <router-link to="/PendingRequests" id="i"><i class="arrow left"></i></router-link>
+        <br/><br/>
+
         <div class="profileGrid">
           <div class="profileMain">
             <br/><br/><img src='https://i.ytimg.com/vi/ywthKNqI7uI/mqdefault.jpg' class='imgRedonda'/>

@@ -2,12 +2,16 @@
     <main>
       
       <header>
-      <div class="profileGrid">
-        <div class="profileMain">
-          <br/><br/><img src='https://i.ytimg.com/vi/ywthKNqI7uI/mqdefault.jpg' class='imgRedonda'/>
-          <h1>Name</h1>
+        <br/>
+        <router-link to="/FriendsList" id="i"><i class="arrow left"></i></router-link>
+        <br/><br/>
+
+        <div class="profileGrid">
+          <div class="profileMain">
+            <br/><br/><img src='https://i.ytimg.com/vi/ywthKNqI7uI/mqdefault.jpg' class='imgRedonda'/>
+            <h1>Name</h1>
+          </div>
         </div>
-      </div>
       </header>
 
       <article>
