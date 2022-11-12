@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-.colorb{
+
+/*.colorb{
   width: 100vw;
   height: 100vh;
   background-image: linear-gradient(to right, #0099ff,#ffcc99cc);
   
-}
+}*/
+
 a {
   font-family:'Roboto', sans-serif;
   font-size: 15px;
@@ -43,11 +45,13 @@ h3 {
   font-family: 'Fredoka', sans-serif;
   font-size: 32px;
 }
-h3 {
+
+h4 {
   text-align: center;
   font-family: 'Fredoka', sans-serif;
   font-size: 16px;
 }
+
 p1 {
   font-family:'Roboto', sans-serif;
   font-size: 20px;
@@ -95,6 +99,27 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+button4 {
+  border-radius: 4px;
+  border: 1px solid transparent;
+  padding: 2px;
+  width: 137px;
+  height: 137px;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  color: #3A014E;
+  background-color: #C4C4C4;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button4:hover {
+  border-color: #3A014E;
+}
+button4:focus,
+button4:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
 button2 {
   border-radius: 4px;
   border: 1px solid transparent;
@@ -120,7 +145,7 @@ input {
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.68);
   padding-left: 10px;
-  width: 312px;
+  width: 237px;
   height: 29px;
   text-align:left;
 }
@@ -147,7 +172,7 @@ textarea {
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.68);
   padding-left: 10px;
-  width: 312px;
+  width: 237px;
   height: 179px;
   text-align:left;
   resize: none;
@@ -182,7 +207,15 @@ body {
   overflow: scroll;
 }
 
-@media screen and (max-width: 650px) {
+figure {
+  margin: 0;
+}
+
+article{
+  margin: 0;
+}
+
+/*@media screen and (max-width: 650px) {
   body {
     margin: 0;
     display: flow;
@@ -213,7 +246,7 @@ body {
     outline: 4px auto -webkit-focus-ring-color;
   }
 
-}
+}*/
 
 .card {
   margin: 0 auto;
@@ -259,8 +292,8 @@ body {
 }
 
 .imgLogo {
-  max-width:332px;
-  max-height:332px;
+  max-width:200px;
+  max-height:200px;
   border-radius:100px;
   margin-right: 15px;
 }
@@ -323,23 +356,31 @@ body {
 }
 .appTitle {
   overflow: hidden;
-  width: 100%;
 }
 
 .appTitle h1 {
-  float: center;
   text-align: center;
   text-decoration: none;
-  font-size: 3em;
 }
 
 .appTitle h2 {
-  float: center;
+  margin-left: 55px;
   text-align: left;
-  padding-left: 310px;
-  padding-right: 310px;
   text-decoration: none;
-  font-size: 2em;
+}
+
+.appText {
+  overflow: hidden;
+  margin-left: 55px;
+  text-align: left;
+  text-decoration: none;
+}
+
+.appText2 {
+  overflow: hidden;
+  margin-left: 90px;
+  text-align: left;
+  text-decoration: none;
 }
 
 .searchContainer {
@@ -364,66 +405,63 @@ body {
   min-height: 44px;
 }
 
-
 .inputContainer {
-  width: 100%;
+  margin: 0 auto;
+  float: none; 
 }
 
 .inputContainer > input {
-  float: center;
   padding: 6px;
-  width: 50%;
   background-color: white;
 }
 
 .inputContainer > input[type=date] {
-  float: center;
   padding: 6px;
-  width: 50%;
-  font-size: 1.5em;
   color: rgba(0, 0, 0, 0.68);
   background-color: white;
 }
 
 .inputContainer > textarea {
-  float: center;
   padding: 6px;
-  width: 50%;
-  font-size: 1.5em;
   color: rgba(0, 0, 0, 0.68);
   background-color: white;
 }
 
 .inputContainer > button {
-  width: 10%;
-  float: center;
   cursor: pointer;
-  min-height: 44px;
+}
+
+.buttonHome {
+  margin-left: 15px;
+  float: none;
+  display: grid;
+  grid-template-columns: 150px 150px;
+  grid-template-rows: 150px 150px;
+  grid-gap: 5px;
+  width: 137px;
+  height: 137px;
 }
 
 .listContainer{
-  width: 100%;
-  margin-left: 300px;
+  margin-left: 55px;
 }
 .listContainer > img{
   padding: 2px;
 }
 
 .listContainer > a2{
-  width: 30%;
   padding: 2px;
-  font-size: 1.5em;
 }
 
 .arrowContainer {
-  padding-left: 250px;
+  padding-left: 55px;
 }
-
+/*
 @media (max-width: 650px) {
   .arrowContainer {
     padding-left: 250px;
   }
-}
+}*/
 
 /*.pageContainer {
   width: 1430px;
@@ -571,17 +609,17 @@ button3:focus-visible {
 }
 .col-1{
   flex: 1;
-
 }
+
 .col-2{
- flex-basis: 250px;
+  flex-basis: 250px;
 }
 
 .msg-row{
   display: flex;
   align-items: center;
   margin: 40px;
-  flex-basis:70% ;
+  flex-basis: 70% ;
 }
 
 .msg-text{
@@ -625,5 +663,224 @@ button3:focus-visible {
   }
   
 
+  
+}
+
+/*Definitive media query*/
+@media only screen and (min-width: 640px) {
+  h2 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 48px;
+  }
+
+  p1 {
+    font-family:'Roboto', sans-serif;
+    font-size: 32px;
+    color:#000000;
+  }
+  
+  p2 {
+    font-family:'Roboto', sans-serif;
+    font-size: 32px;
+    color:rgba(0, 0, 0, 0.68);
+  }
+
+  .imgLogo {
+    max-width:332px;
+    max-height:332px;
+    border-radius:100px;
+    margin-right: 15px;
+  }
+
+  .appTitle {
+    overflow: hidden;
+  }
+  
+  .appTitle h1 {
+    text-align: center;
+    text-decoration: none;
+    font-size: 64px;
+  }
+  
+  .appTitle h2 {
+    text-align: left;
+    margin-left: 465px;
+    text-decoration: none;
+    font-size: 48px;
+  }
+
+  .inputContainer {
+    margin: 0 auto;
+    float: none; 
+  }
+  
+  .inputContainer > input {
+    padding: 6px;
+    background-color: white;
+    width: 580px;
+    height: 42px;
+    font-size: 32px;
+  }
+  
+  .inputContainer > input::placeholder {
+    font-family:'Roboto', sans-serif;
+    font-size: 32px;
+    color:rgba(0, 0, 0, 0.68);
+    text-align:left;
+  }
+
+  .inputContainer > input[type=date] {
+    padding: 6px;
+    color: rgba(0, 0, 0, 0.68);
+    background-color: white;
+    width: 580px;
+    height: 42px;
+    font-size: 32px;
+  }
+  
+  .inputContainer > textarea {
+    padding: 6px;
+    color: rgba(0, 0, 0, 0.68);
+    background-color: white;
+    width: 580px;
+    height: 246px;
+    font-size: 32px;
+  }
+  
+  .inputContainer > textarea::placeholder {
+    font-family:'Roboto', sans-serif;
+    font-size: 32px;
+    color:rgba(0, 0, 0, 0.68);
+    text-align:left;
+  }
+
+  .inputContainer > button {
+    cursor: pointer;
+  }
+
+  button {
+    border-radius: 4px;
+    border: 1px solid transparent;
+    padding: 2px;
+    width: 259px;
+    height: 43px;
+    font-size: 32px;
+    font-family: 'Roboto', sans-serif;
+    color: #3A014E;
+    background-color: #C4C4C4;
+    cursor: pointer;
+    transition: border-color 0.25s;
+  }
+  button:hover {
+    border-color: #3A014E;
+  }
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+
+  a2 {
+    font-family:'Roboto', sans-serif;
+    font-size: 32px;
+    color: #9E00D6;
+    cursor: pointer;
+  }
+  a2:hover {
+    color: #3A014E;
+    text-decoration: underline;
+  }
+
+  .arrow {
+    border: solid black;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 4px;
+    cursor: pointer;
+  }
+  
+  .left {
+    transform: rotate(135deg);
+  }
+  
+  .arrowContainer {
+    padding-left: 250px;
+  }
+
+  .card {
+    margin: 0 auto;
+    float: none; 
+    border-radius: 12px;
+    border: 1px solid black;
+    padding: 58px 46px;
+    width: 669px;
+    height: 472px;
+    background-color: #d9d9d94d;
+  }
+  
+  .listContainer{
+    margin-left: 460px;
+  }
+  .listContainer > img{
+    padding: 2px;
+  }
+  
+  .listContainer > a2{
+    padding: 2px;
+    font-size: 32px;
+  }
+  
+  .imgList {
+    width:70px;
+    height:70px;
+    border-radius:150px;
+    margin-right: 15px;
+  }
+
+  .appText {
+    overflow: hidden;
+    margin-left: 465px;
+    text-align: left;
+    text-decoration: none;
+  }
+
+  .appText2 {
+    overflow: hidden;
+    margin-left: 500px;
+    text-align: left;
+    text-decoration: none;
+  }
+
+  .buttonHome {
+    margin-left: 400px;
+    float: none;
+    display: grid;
+    grid-template-columns: 250px 250px;
+    grid-template-rows: 250px 250px;
+    grid-gap: 20px;
+    width: 230px;
+    height: 230px;
+    font-size: 32px;
+  }
+
+  button4 {
+    border-radius: 4px;
+    border: 1px solid transparent;
+    padding: 2px;
+    width: 230px;
+    height: 230px;
+    font-size: 32px;
+    font-family: 'Roboto', sans-serif;
+    color: #3A014E;
+    background-color: #C4C4C4;
+    cursor: pointer;
+    transition: border-color 0.25s;
+  }
+  button4:hover {
+    border-color: #3A014E;
+  }
+  button4:focus,
+  button4:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
   
 }

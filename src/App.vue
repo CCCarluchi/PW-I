@@ -21,6 +21,8 @@
     <router-link to="/Events">Events</router-link>
     <router-link to="/CreateEvent">CreateEvent</router-link>
     <router-link to="/ParticipateEvent">ParticipateEvent</router-link>
+    <router-link to="/Event">Event</router-link>
+    <router-link to="/ShareEvent">ShareEvent</router-link>
   </nav>
   <router-view></router-view>
 </template>
