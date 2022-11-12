@@ -2,6 +2,7 @@
     <main>
       <header>
       <br/>
+      <br/>
       <div class="arrowContainer" align="left"> 
         <router-link to="/Home" id="i"><i class="arrow left"></i></router-link>
       </div>
