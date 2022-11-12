@@ -18,7 +18,7 @@
             Person 1
             <button>Deny</button>   
             <button>Accept</button>
-            <button>Profile</button>  
+            <router-link to="/FriendProfile" id="button"><button>Profile</button></router-link> 
             
             </div>
             <div>
@@ -26,35 +26,35 @@
             Person 2
             <button>Deny</button>   
             <button>Accept</button>
-            <button>Profile</button>  
+            <router-link to="/FriendProfile" id="button"><button>Profile</button></router-link> 
             </div>
             <div>
             <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/>
             Person 3
             <button>Deny</button>   
             <button>Accept</button>
-            <button>Profile</button>  
+            <router-link to="/FriendProfile" id="button"><button>Profile</button></router-link>  
             </div>
             <div>
             <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/>
             Person 4
             <button>Deny</button>   
             <button>Accept</button>
-            <button>Profile</button>  
+            <router-link to="/FriendProfile" id="button"><button>Profile</button></router-link> 
             </div>
             <div>
             <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
             Person 5
             <button>Deny</button>   
             <button>Accept</button>
-            <button>Profile</button>  
+            <router-link to="/FriendProfile" id="button"><button>Profile</button></router-link>  
             </div>
             <div>
             <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
             Person 6
             <button>Deny</button>   
             <button>Accept</button>
-            <button>Profile</button>  
+            <router-link to="/FriendProfile" id="button"><button>Profile</button></router-link>  
 
             </div>
             <div>
@@ -62,14 +62,14 @@
             Person 7
             <button>Deny</button>   
             <button>Accept</button>
-            <button>Profile</button>  
+            <router-link to="/FriendProfile" id="button"><button>Profile</button></router-link>  
             </div>
             <div>
             <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
             Person 8
             <button>Deny</button>   
             <button>Accept</button>
-            <button>Profile</button>  
+            <router-link to="/FriendProfile" id="button"><button>Profile</button></router-link> 
             </div>
         </section>
    

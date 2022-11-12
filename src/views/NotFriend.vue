@@ -10,7 +10,7 @@
           <button3 type="button">+ Add friend</button3>
         </div>
         <div class="profileItem2">
-          <button3 type="button">Public stats</button3>
+          <router-link to="/Statistics" id="button"><button3>Public stats</button3></router-link>
         </div>
         <div class="profileItem3">
           <button3 type="button">Favourite events</button3>
