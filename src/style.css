@@ -400,7 +400,14 @@ article{
   color: rgba(0, 0, 0, 0.68);
   background-color: white;
 }
-
+/*
+.inputContainer > input[type=file] {
+  padding: 6px;
+  color: rgba(0, 0, 0, 0.68);
+  background-color: transparent;
+  border: transparent;
+}
+*/
 .inputContainer > textarea {
   padding: 6px;
   color: rgba(0, 0, 0, 0.68);
@@ -410,6 +417,32 @@ article{
 .inputContainer > button {
   cursor: pointer;
 }
+
+.custom::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom::before {
+  content: '+ Add your profile picture';
+  border-radius: 4px;
+  border: 1px solid transparent;
+  width: 237px;
+  height: 29px;
+  font-size: 20px;
+  font-family:'Roboto', sans-serif;
+  color:rgba(0, 0, 0, 0.68);
+  text-align:left;
+  background-color: white;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+.custom:hover::before {
+  border-color: transparent;
+}
+.custom:focus::before,
+.custom:focus-visible::before {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
 
 .buttonHome {
   margin-left: 40px;
@@ -716,8 +749,16 @@ button3:focus-visible {
     width: 580px;
     height: 42px;
     font-size: 32px;
-  }
-  
+  }/*
+  .inputContainer > input[type=file] {
+    padding: 6px;
+    color: rgba(0, 0, 0, 0.68);
+    background-color: transparent;
+    border: transparent;
+    width: 580px;
+    height: 42px;
+    font-size: 32px;
+  }*/
   .inputContainer > textarea {
     padding: 6px;
     color: rgba(0, 0, 0, 0.68);
@@ -736,6 +777,31 @@ button3:focus-visible {
 
   .inputContainer > button {
     cursor: pointer;
+  }
+
+  .custom::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+  .custom::before {
+    content: '+ Add your profile picture';
+    border-radius: 4px;
+    border: 1px solid transparent;
+    width: 580px;
+    height: 42px;
+    font-size: 32px;
+    font-family: 'Roboto', sans-serif;
+    color:rgba(0, 0, 0, 0.68);
+    text-align:left;
+    background-color: white;
+    cursor: pointer;
+    transition: border-color 0.25s;
+  }
+  .custom:hover::before {
+    border-color:transparent;
+  }
+  .custom:focus::before,
+  .custom:focus-visible::before {
+    outline: 4px auto -webkit-focus-ring-color;
   }
 
   button {
