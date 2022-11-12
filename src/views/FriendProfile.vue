@@ -15,7 +15,7 @@
       </header>
 
       <article>
-        <div class="profileGrid">
+        <div class="elementsGrid">
           <div class="profileItem0">
             <router-link to="/Statistics" id="button"><button3>Public stats</button3></router-link>
           </div>

@@ -4,7 +4,7 @@
 
         <header>
             <br/>
-            <router-link to="/PendingRequests" id="i"><i class="arrow left"></i></router-link>
+            <router-link to="/Data" id="i"><i class="arrow left"></i></router-link>
             <br/><br/>
 
             <div class="topText">

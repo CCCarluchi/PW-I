@@ -17,7 +17,7 @@
       <article>
         <div class="elementsGrid">
           <div class="profileItem0">
-            <button3 type="button">+ Add friend</button3>
+            <router-link to="/SendRequest" id="button"><button3>+ Add friend</button3></router-link>
           </div>
           <div class="profileItem1">
             <router-link to="/Statistics" id="button"><button3>Public stats</button3></router-link>

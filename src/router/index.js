@@ -17,6 +17,7 @@ import Chat from '../views/Chat.vue'
 import ParticipateEvent from '../views/ParticipateEvent.vue'
 import Event from '../views/Event.vue'
 import ShareEvent from '../views/ShareEvent.vue'
+import SendRequest from '../views/SendRequest.vue'
 
 const routes = [
     {
@@ -108,6 +109,11 @@ const routes = [
         path: '/ShareEvent',
         name: 'ShareEvent',
         component: ShareEvent,
+    },
+    {
+        path: '/SendRequest',
+        name: 'SendRequest',
+        component: SendRequest,
     }
     
 ]
