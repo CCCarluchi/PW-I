@@ -2,77 +2,78 @@
     <main>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <div class="topText">
-            <h1>Pending Requests</h1>
-        </div>
-        <br/><br/>
-        <div class="searchContainer">
-            <input type="text" placeholder="Search friend...">
-            <button type="submit"><i class="fa fa-search"></i></button><br/><br/>
-        </div>
-        <br/>
+        <header>
+            <div class="topText">
+                <h1>Pending Requests</h1>
+            </div>
+            <br/><br/>
+            <div class="searchContainer">
+                <input type="text" placeholder="Search friend...">
+                <button type="submit"><i class="fa fa-search"></i></button><br/><br/>
+            </div>
+            <br/>
+        </header>
       
-        <section class="grid-container">
-            <div>
-            <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/>
-            Person 1
-            <button>Deny</button>   
-            <button>Accept</button>
-            <router-link to="/FriendProfile" id="button"><button>Profile</button></router-link> 
-            
+        <article>
+            <div class="grid-container">
+                <div>
+                    <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/>
+                    <p>Person 1</p>
+                    <button>Deny</button>   
+                    <button>Accept</button>
+                    <router-link to="/FriendProfile" id="button"><button>Profile</button></router-link> 
+                </div>
+                <div>
+                    <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
+                    <p>Person 2</p>
+                    <button>Deny</button>   
+                    <button>Accept</button>
+                    <router-link to="/FriendProfile" id="button"><button>Profile</button></router-link> 
+                </div>
+                <div>
+                    <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/>
+                    <p>Person 3</p>
+                    <button>Deny</button>   
+                    <button>Accept</button>
+                    <router-link to="/FriendProfile" id="button"><button>Profile</button></router-link>  
+                </div>
+                <div>
+                    <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/>
+                    <p>Person 4</p>
+                    <button>Deny</button>   
+                    <button>Accept</button>
+                    <router-link to="/FriendProfile" id="button"><button>Profile</button></router-link> 
+                </div>
+                <div>
+                    <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
+                    <p>Person 5</p>
+                    <button>Deny</button>   
+                    <button>Accept</button>
+                    <router-link to="/FriendProfile" id="button"><button>Profile</button></router-link>  
+                </div>
+                <div>
+                    <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
+                    <p>Person 6</p>
+                    <button>Deny</button>   
+                    <button>Accept</button>
+                    <router-link to="/FriendProfile" id="button"><button>Profile</button></router-link>  
+                </div>
+                <div>
+                    <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
+                    <p>Person 7</p>
+                    <button>Deny</button>   
+                    <button>Accept</button>
+                    <router-link to="/FriendProfile" id="button"><button>Profile</button></router-link>  
+                </div>
+                <div>
+                    <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
+                    <p>Person 8</p>
+                    <button>Deny</button>   
+                    <button>Accept</button>
+                    <router-link to="/FriendProfile" id="button"><button>Profile</button></router-link> 
+                </div>
             </div>
-            <div>
-            <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
-            Person 2
-            <button>Deny</button>   
-            <button>Accept</button>
-            <router-link to="/FriendProfile" id="button"><button>Profile</button></router-link> 
-            </div>
-            <div>
-            <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/>
-            Person 3
-            <button>Deny</button>   
-            <button>Accept</button>
-            <router-link to="/FriendProfile" id="button"><button>Profile</button></router-link>  
-            </div>
-            <div>
-            <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/>
-            Person 4
-            <button>Deny</button>   
-            <button>Accept</button>
-            <router-link to="/FriendProfile" id="button"><button>Profile</button></router-link> 
-            </div>
-            <div>
-            <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
-            Person 5
-            <button>Deny</button>   
-            <button>Accept</button>
-            <router-link to="/FriendProfile" id="button"><button>Profile</button></router-link>  
-            </div>
-            <div>
-            <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
-            Person 6
-            <button>Deny</button>   
-            <button>Accept</button>
-            <router-link to="/FriendProfile" id="button"><button>Profile</button></router-link>  
-
-            </div>
-            <div>
-            <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
-            Person 7
-            <button>Deny</button>   
-            <button>Accept</button>
-            <router-link to="/FriendProfile" id="button"><button>Profile</button></router-link>  
-            </div>
-            <div>
-            <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
-            Person 8
-            <button>Deny</button>   
-            <button>Accept</button>
-            <router-link to="/FriendProfile" id="button"><button>Profile</button></router-link> 
-            </div>
-        </section>
-   
+        </article>
 
     </main>
   </template>
