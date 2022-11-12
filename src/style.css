@@ -476,6 +476,17 @@ article{
   padding: 2px;
 }
 
+.listContainer2{
+  margin-left: 45px;
+}
+.listContainer2 > img{
+  padding: 2px;
+}
+
+.listContainer2 > a2{
+  padding: 0px;
+}
+
 .arrowContainer {
   padding-left: 55px;
 }
@@ -929,6 +940,17 @@ span1 {
   .listContainer > a2{
     padding: 2px;
     font-size: 32px;
+  }
+
+  .listContainer2{
+    margin-left: 460px;
+  }
+  .listContainer2 > img{
+    padding: 2px;
+  }
+  
+  .listContainer2 > a2{
+    padding: 2px;
   }
   
   .imgList {
