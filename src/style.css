@@ -697,6 +697,12 @@ button3:focus-visible {
   
 }*/
 
+span1 {
+  font-family:'Roboto', sans-serif;
+  font-size: 20px;
+  color:#000000;
+}
+
 /*Definitive media query*/
 @media only screen and (min-width: 640px) {
   h2 {
@@ -961,6 +967,12 @@ button3:focus-visible {
   button2:focus,
   button2:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
+  }
+
+  span1 {
+    font-family:'Roboto', sans-serif;
+    font-size: 40px;
+    color:#000000;
   }
   
 }
