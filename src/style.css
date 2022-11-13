@@ -559,7 +559,7 @@ article{
 }
 
 .listContainer3{
-  margin-left: 20%;
+  margin-left: 45px;
 }
 
 .column {
@@ -662,24 +662,7 @@ button3:focus-visible {
   height: 75px;
   border: black 1px solid;
 }
-/*
-.profileItem1 {
-  grid-column: 2/3;
-  grid-row: 6;
-  background-color: rgba(255, 204, 153, 0.8);
-  height: 75px;
-  border: black 1px solid;
-}
 
-.profileItem1 {
-  grid-column: 2/3;
-  grid-row: 7;
-  background-color: rgba(255, 204, 153, 0.8);
-  height: 75px;
-  border: black 1px solid;
-}
-
-*/
 /* Chat */
 
 .conteiner{
@@ -804,27 +787,6 @@ button3:focus-visible {
   color: black;
 
 }
-/*
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-  span1 {
-    font-family:'Roboto', sans-serif;
-    font-size: 20px;
-    color:#000000;
-  }
-  
-
-  
-}*/
 
 span1 {
   font-family:'Roboto', sans-serif;
@@ -1039,6 +1001,10 @@ span1 {
   
   .listContainer2 > a2{
     padding: 2px;
+  }
+
+  .listContainer3{
+    margin-left: 460px;
   }
   
   .imgList {
