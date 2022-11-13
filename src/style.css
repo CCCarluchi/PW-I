@@ -336,14 +336,14 @@ article{
 
 .stats-container > p1 {
   text-align: left;
-  font-size: 30px;
+  font-size: 24px;
   color: #000000;
   font-family: 'Fredoka', sans-serif;
 }
 
 .stats-container > p2 {
   text-align: left;
-  font-size: 30px;
+  font-size: 24px;
   color: white;
   font-family: 'Fredoka', sans-serif;
 }
@@ -1165,6 +1165,20 @@ span1 {
   .searchContainer2 > h2{
     color: white;
     font-size: 32px;
+  }
+
+  .stats-container > p1 {
+    text-align: left;
+    font-size: 30px;
+    color: #000000;
+    font-family: 'Fredoka', sans-serif;
+  }
+  
+  .stats-container > p2 {
+    text-align: left;
+    font-size: 30px;
+    color: white;
+    font-family: 'Fredoka', sans-serif;
   }
   
 }
