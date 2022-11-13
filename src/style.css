@@ -410,8 +410,8 @@ article{
 }
 
 .searchContainer {
-  margin-right: 5%;
-  margin-left: 5%;
+  margin-right: 3%;
+  margin-left: 3%;
   padding: 8px;
   
 }
@@ -420,12 +420,12 @@ article{
   float: left;
   padding: 6px;
   font-size: 17px;
-  width: 90%;
+  width: 255px;
   background-color: white;
 }
 
 .searchContainer > button {
-  width: 5%;
+  width: 35px;
   float: right;
   background: rgb(0, 153, 255);
   color: white;
@@ -1147,6 +1147,31 @@ span1 {
     color: black;
   }
 
+  .searchContainer {
+    margin-right: 4.5%;
+    margin-left: 4.5%;
+    padding: 8px;
+    
+  }
+  
+  .searchContainer > input[type=text] {
+    float: left;
+    padding: 6px;
+    font-size: 17px;
+    width: 90%;
+    background-color: white;
+  }
+  
+  .searchContainer > button {
+    width: 5%;
+    float: right;
+    background: rgb(0, 153, 255);
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    min-height: 44px;
+  }
+
   .searchContainer2 {
     margin-left: 450px;
     float: none;
@@ -1182,7 +1207,7 @@ span1 {
     margin: 0;
     padding: 0;
     box-sizing:border-box;
-    width: 1400px;
+    width: 80%;
     height: 900px;
     display: flex;
     align-items: center;
