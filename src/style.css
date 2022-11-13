@@ -541,7 +541,7 @@ article{
 
 .listContainer2{
   float: left;
-  margin-left: 45px;
+  margin-left: 5%;
   background-color: rgba(255, 204, 153);
   border: black solid 1px;
   padding: 20px;
@@ -556,6 +556,10 @@ article{
 
 .arrowContainer {
   padding-left: 55px;
+}
+
+.listContainer3{
+  margin-left: 20%;
 }
 
 .column {
@@ -683,7 +687,7 @@ button3:focus-visible {
   padding: 0;
   box-sizing:border-box;
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -692,7 +696,8 @@ button3:focus-visible {
 
 .chatbox{
   background: #306ec5;
-  width: 90%;
+  width: 60%;
+  min-width: 250px;
   display: 	flex;
 
 }
@@ -711,39 +716,41 @@ button3:focus-visible {
 }
 
 .col-2{
- flex-basis: 70px;
+ flex-basis: 250px;
  background:rgb(239, 164, 89);
+
+  flex-basis: 250px;
 }
 
 .msg-row{
   display: flex;
   align-items: center;
-  margin: 10px;
+  margin: 40px;
+
   flex-basis: 70% ;
-  
 }
 
 .msg-text{
   background: #ffcc99cc;
-  padding: 20px 20px;
+  padding: 20px 40px;
   border-radius: 8px;
+  flex-basis: 60%;
   font-weight: 300;
 }
 
 .msg-text h2{
   font-weight: 400;
-  font-size: 15px;
+  font-size: 22px;
   margin-bottom: 10px;
   text-align:left;
 }
 .msg-text p{
   color: #fff;
   text-align:left;
-  font-size: 15px;
 }
 .msg-img{
-  width: 10px;
-  border-radius: 10%;
+  width: 50px;
+  border-radius: 50%;
   margin: 0 20xp;
 }
 .msg-row2{
@@ -753,7 +760,7 @@ button3:focus-visible {
 .col-1 input{
   border: 0;
   outline: none;
-  padding: 10px 20px;
+  padding: 20px 40px;
   background: #fff;
   width: 100%;
   font-size: 16px;
@@ -762,41 +769,31 @@ button3:focus-visible {
 
 ::placeholder{
   color: #fff;
-  font-size: 20px
+  
 }
 
 .col-2 h3{
   text-align:center;
   margin-top: 40px;
   font-weight: 400;
-  font-size: 20px;
 }
 .col-2 ul{
-  text-align:center;
+  text-align:left;
   list-style: none ;
-  padding: 20px;
-  font-size: 15px;
+  padding: 30px;
 }
 .col-2 ul li{
-    padding: 3px;
+    padding: 5px 0;
     font-family: 'Fredoka', sans-serif
-  
 }
 .col-2 ul li::before{
   content: '';
-  width: 5px;
-  height: 5px;
-  border-radius: 30%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
   background: red;
   display: inline-block;
-  margin-right: 5px;
-}
-
-.searchTitle{
-  font-family: 'Fredoka', sans-serif;
-  font-size: 28px;
-  width: auto;
-  color: #fff;
+  margin-right: 10px;
 
 }
 /*
@@ -828,7 +825,7 @@ span1 {
 }
 
 /*Definitive media query*/
-@media only screen and (min-width: 640px) { 
+@media only screen and (min-width: 640px) {
   h2 {
     font-family: 'Fredoka', sans-serif;
     font-size: 48px;
@@ -1115,10 +1112,10 @@ span1 {
   button2 {
     border-radius: 4px;
     border: 1px solid rgb(62, 41, 41);
-    padding: 6px;
+    padding: 2px;
     width: 417px;
     height: 54px;
-    font-size: 32px;
+    font-size: 20px;
     font-family: 'Roboto', sans-serif;
     color: #4e0101;
     background-color: rgba(255, 204, 153, 0.8);
@@ -1196,123 +1193,4 @@ span1 {
     font-family: 'Fredoka', sans-serif;
   }
   
-
- /*Chat*/
- .conteiner{
-  margin: 0;
-  padding: 0;
-  box-sizing:border-box;
-  width: 1600px;
-  height: 900px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-}
-
-.chatbox{
-  background: #306ec5;
-  width: 60%;
-  min-width: 250px;
-  display: 	flex;
-
-}
-.chatbox h2{
-  font-family: 'Fredoka', sans-serif;
-  font-size: 28px;
-
-}
-.chatbox p{
-  font-family:'Roboto', sans-serif;
-  font-size: 20px ;
-  color:#000000
-}
-.col-1{
-  flex: 1;
-}
-
-.col-2{
- flex-basis: 250px;
- background:rgb(239, 164, 89);
-
-  flex-basis: 250px;
-}
-
-.msg-row{
-  display: flex;
-  align-items: center;
-  margin: 40px;
-  justify-content: flex-start;
-  flex-basis: 70% ;
-}
-
-.msg-text{
-  background: #ffcc99cc;
-  padding: 20px 40px;
-  border-radius: 8px;
-  flex-basis: 60%;
-  font-weight: 300;
-}
-
-.msg-text h2{
-  font-weight: 400;
-  font-size: 22px;
-  margin-bottom: 10px;
-  text-align:left;
-}
-.msg-text p{
-  color: #fff;
-  text-align:left;
-}
-.msg-img{
-  width: 50px;
-  border-radius: 50%;
-  margin: 0 20xp;
-}
-.msg-row2{
-
-  justify-content: flex-end;
-}
-.col-1 input{
-  border: 0;
-  outline: none;
-  padding: 20px 40px;
-  background: #fff;
-  width: 100%;
-  font-size: 30px;
-  font-weight: 300;
-}
-
-::placeholder{
-  color: #fff;
-}
-
-.col-2 h3{
-  text-align:center;
-  margin-top: 40px;
-  font-weight: 400;
-  
-}
-.col-2 ul{
-  text-align:left;
-  list-style: none ;
-  padding: 30px;
-  font-size: 20px;
- 
-}
-.col-2 ul li{
-    padding: 5px 0;
-    font-family: 'Fredoka', sans-serif
-}
-.col-2 ul li::before{
-  content: '';
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: red;
-  display: inline-block;
-  margin-right: 10px;
-}
-  
- 
 }
