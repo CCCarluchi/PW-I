@@ -295,6 +295,7 @@ article{
 .grid-container > div > input[type=checkbox] {
   float: right;
   margin-top: 1.2%;
+  width: 50px;
 }
 
 .grid-container > div > button {
@@ -308,6 +309,7 @@ article{
   font-size: 15px;
   font-family: 'Fredoka', sans-serif;
   color: black;
+  margin-top: 0.6%;
 }
 
 .grid-container > div > a > button {
@@ -321,6 +323,7 @@ article{
   font-size: 15px;
   font-family: 'Fredoka', sans-serif;
   color: black;
+  margin-top: 0.6%;
 }
 
 .stats-container {
