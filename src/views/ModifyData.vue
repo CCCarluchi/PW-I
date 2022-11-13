@@ -6,6 +6,9 @@
       <div class="arrowContainer" align="left"> 
         <router-link to="/Data" id="i"><i class="arrow left"></i></router-link>
       </div>
+      <div class="appTitle">
+        <h2>Change profile</h2>
+      </div>
      </header> 
      
      <article>
@@ -26,9 +29,9 @@
         </div>
      <br/><br/>
         <img src='https://pbs.twimg.com/media/EztG5y0WQAAPS69?format=jpg&name=medium' class='imgRedonda' /><br/><br/>
-        <button2 type="button">Change picture</button2><br/><br/>
+        <button2>Change picture</button2><br/><br/>
         <br/><br/>
-        <router-link to="/Data" id="button"><button2>Apply Changes</button2></router-link><br/><br/>
+        <router-link to="/Data" id="button2"><button2>Apply Changes</button2></router-link><br/><br/>
       </article>  
 
       <footer>
