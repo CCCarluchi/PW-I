@@ -21,6 +21,11 @@ header > a {
   margin-left: 5.2%;
 }
 
+header > h1 {
+  float: left;
+  margin-left: 12.8%;
+}
+
 a2 {
   font-family:'Roboto', sans-serif;
   font-size: 20px;
@@ -305,7 +310,7 @@ article{
   color: black;
 }
 
-.grid-container > div > a >button {
+.grid-container > div > a > button {
   float: right;
   background-color: white;
   border: 1px solid black;
@@ -464,12 +469,32 @@ article{
 }
 
 .buttonHome {
-  margin-left: 40px;
-  float: none;
   display: grid;
-  grid-template-columns: 137px 137px;
-  grid-template-rows: 137px 137px;
-  grid-gap: 10px;
+  grid-template-columns: 10% auto 7.5% auto 10%;
+  grid-template-rows: auto;
+  grid-gap: 15px;
+}
+
+.buttonHome > div > a > button {
+  background-color: rgba(255, 204, 153, 0.8);
+  border: 2px solid black;
+  height: 100%;
+  width: 100%;
+  font-size: 25px;
+  font-family: 'Fredoka', sans-serif;
+  color: black;
+}
+
+.homeItemLeft {
+  grid-column: 2/3;
+  grid-row: auto;
+  height: 150px;
+}
+
+.homeItemRight {
+  grid-column: 4/5;
+  grid-row: auto;
+  height: 150px;
 }
 
 .listContainer{
@@ -995,13 +1020,32 @@ span1 {
   }
 
   .buttonHome {
-    margin-left: 440px;
-    float: none;
     display: grid;
-    grid-template-columns: 230px 230px;
-    grid-template-rows: 230px 230px;
-    grid-gap: 20px;
+    grid-template-columns: 10% auto 10% auto 10%;
+    grid-template-rows: auto;
+    grid-gap: 50px;
+  }
 
+  .buttonHome > div > a > button {
+    background-color: rgba(255, 204, 153, 0.8);
+    border: 2px solid black;
+    height: 100%;
+    width: 100%;
+    font-size: 35px;
+    font-family: 'Fredoka', sans-serif;
+    color: black;
+  }
+  
+  .homeItemLeft {
+    grid-column: 2/3;
+    grid-row: auto;
+    height: 300px;
+  }
+  
+  .homeItemRight {
+    grid-column: 4/5;
+    grid-row: auto;
+    height: 300px;
   }
 
   .buttonH {
