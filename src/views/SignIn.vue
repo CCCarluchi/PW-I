@@ -2,7 +2,7 @@
   <main>
     <header>
       <div class="appTitle">
-        <h1>OpenEvents</h1>
+        <h1>Slow-Go</h1>
       </div>
     </header>
 
