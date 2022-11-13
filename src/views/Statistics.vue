@@ -1,20 +1,23 @@
 <template>
     <main>
       <header>
-      <br/>
-      <div class="arrowContainer" align="left"> 
-        <router-link to="/Data" id="i"><i class="arrow left"></i></router-link>
-      </div>
+        <br/>
+        <router-link to="/Home" id="i"><i class="arrow left"></i></router-link>
+        <br/><br/>
+        <div class="topText">
+          <h1>Statistics</h1>
+        </div>
     </header>
 
     <article>
-      <h1>Statistics</h1>
-      <p1 align:left type = "p" >Your events puntuation:</p1><br/><br/>
-      <span1 style="border-image: initial; border: 1px solid blue;" type = "span">50</span1><br/><br/>
-      <p1 align:left type = "p" >Your number of comments:</p1><br/><br/>
-      <span1 style="border-image: initial; border: 1px solid blue;" type = "span">200</span1><br/><br/>
-      <p1 align:left type = "p" >Percentage of users with lower comments:</p1><br/><br/>
-      <span1 style="border-image: initial; border: 1px solid blue;" type = "span">40%</span1><br/><br/>
+      <div class="stats-container">
+          <p1>Your events puntuation:</p1>
+          <p2><span>50</span></p2><br/>
+          <p1>Your number of comments:</p1>
+          <p2><span>200</span></p2><br/>
+          <p1>Percentage of users with lower comments:</p1>
+          <p2><span>40%</span></p2><br/>
+      </div>
     </article>
 
     <footer>
