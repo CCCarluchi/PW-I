@@ -18,7 +18,7 @@ footer {
 
 header > a {
   float: left;
-  margin-left: 5.2%;
+  margin-left: 6%;
 }
 
 header > h1 {
@@ -540,7 +540,11 @@ article{
 }
 
 .listContainer2{
+  float: left;
   margin-left: 45px;
+  background-color: rgba(255, 204, 153);
+  border: black solid 1px;
+  padding: 20px;
 }
 .listContainer2 > img{
   padding: 2px;
@@ -1011,7 +1015,11 @@ span1 {
   }
 
   .listContainer2{
-    margin-left: 460px;
+    float: left;
+    text-align: left;
+    margin-left: 5%;
+    margin-bottom: 0px;
+    padding: 10px;
   }
   .listContainer2 > img{
     padding: 2px;
