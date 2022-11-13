@@ -12,26 +12,23 @@
     </header>
    
     <nav>
-        <div class="searchCont">
-            <h3>Name</h3>
-            <input type="text" placeholder="Event name..."><br/>
-            
+        <div class="searchContainer2">
+          <h2>Search</h2>
+          <div class="inputContainer">
+            <input type="text" placeholder="Search event by name">
+          </div>
+          <div class="inputContainer">
+            <input placeholder="Search event by start date" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"><br/>
+          </div>
+          <div class="inputContainer">
+            <input type="text" placeholder="Search event by location">
+          </div>
+          <div class="inputContainer">
+            <button type="submit"><i class="fa fa-search"></i></button><br/><br/>
+          </div>
         </div>
-       
-        <div class="searchCont">
-            <h3>Location</h3>
-            <input type="text" placeholder="Event Location..."><br/>
-            
-        </div>
-
-        <div class="searchCont">
-            <h3>Start date</h3>
-            
-            <input type="text" placeholder="Event name..."><br/>
-            
-        </div>
-
-    </nav>
+        <br/><br/><br/>
+      </nav>
     </main>
 
 </template>

@@ -15,7 +15,7 @@
                     <div class = "col-1">
                         <div class = "msg-row">
                             <div class = "msg-text">
-                                <h2>Usuario 1</h2>
+                               
                                 <p> i am waiting</p>
                             </div>
                             <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/>
@@ -24,14 +24,30 @@
                             <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/>
                           
                             <div class = "msg-text">
-                                <h2>Usuario 2</h2>
+                               
                                 <p> i am waiting</p>
                             </div>
                             
                         </div>
                         <div class = "msg-row">
                             <div class = "msg-text">
-                                <h2>Usuario 1</h2>
+                                
+                                <p> i am waiting</p>
+                            </div>
+                            <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/>
+                        </div>
+                        <div class = "msg-row msg-row2">
+                            <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/>
+                          
+                            <div class = "msg-text">
+                               
+                                <p> i am waiting</p>
+                            </div>
+                            
+                        </div>
+                        <div class = "msg-row">
+                            <div class = "msg-text">
+                                
                                 <p> i am waiting</p>
                             </div>
                             <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/>
@@ -41,9 +57,9 @@
                     <div class = "col-2">
                         <h3>Friend List</h3>
                         <ul>
-                            <li class="online">Pantoja Garcia</li>
+                            <li class="online">Pant Garcia</li>
                             <li class="online">Jose Antonio</li>
-                            <li class="busy">Dolores Marimbo</li>
+                            <li class="busy">Dolor Marimbo</li>
                             <li class="offline">Pol Carton</li>
                         </ul>
 
