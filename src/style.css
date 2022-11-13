@@ -349,6 +349,13 @@ article{
   text-decoration: none;
 }
 
+.appTitle > p1 {
+  margin-left: -200px;
+  text-align: left;
+  font-weight: bold;
+  text-decoration: none;
+}
+
 .appText {
   overflow: hidden;
   margin-left: 55px;
@@ -389,11 +396,23 @@ article{
 }
 
 .searchContainer2 {
-  margin-left: 35px;
+  margin-left: 40px;
   float: none;
+  display: grid;
+  grid-template-rows: 50px 50px 50px 50px 50px;
+  grid-template-columns: auto;
+  grid-gap: 0px;
+  width: 300px;
+  background-color: #0099ff;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+.searchContainer2 > h2{
+  color: white;
+  font-size: 20px;
 }
 
-.searchContainer2 > input[type=text] {
+/*.searchContainer2 > input[type=text] {
   padding-left: 10px;
   padding: 2px;
   width: 237px;
@@ -408,7 +427,7 @@ article{
   background: rgb(0, 153, 255);
   color: white;
   cursor: pointer;
-}
+}*/
 
 .inputContainer {
   margin: 0 auto;
@@ -801,6 +820,13 @@ span1 {
     font-size: 48px;
   }
 
+  .appTitle > p1 {
+    margin-left: -465px;
+    text-align: left;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
   .inputContainer {
     margin: 0 auto;
     float: none; 
@@ -1067,25 +1093,20 @@ span1 {
   }
 
   .searchContainer2 {
-    margin-left: 45px;
+    margin-left: 450px;
     float: none;
+    display: grid;
+    grid-template-rows: 80px 80px 80px 80px 80px;
+    grid-template-columns: auto;
+    grid-gap: 0px;
+    width: 650px;
+    background-color: #0099ff;
+    border: 1px solid black;
+    border-radius: 4px;
   }
-  
-  .searchContainer2 > input[type=text] {
-    padding: 6px;
-    width: 550px;
-    height: 42px;
-    font-size: 32px;
-    background-color: white;
-  }
-  
-  .searchContainer2 > button {
-    width: 50px;
-    height: 55px;
-    margin-left: 15px;
-    background: rgb(0, 153, 255);
+  .searchContainer2 > h2{
     color: white;
-    cursor: pointer;
+    font-size: 32px;
   }
   
 }
