@@ -366,6 +366,8 @@ article{
 .searchContainer {
   margin-right: 5%;
   margin-left: 5%;
+  padding: 8px;
+  
 }
 
 .searchContainer > input[type=text] {
@@ -728,6 +730,27 @@ button3:focus-visible {
   margin-right: 10px;
 
 }
+/*
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+  span1 {
+    font-family:'Roboto', sans-serif;
+    font-size: 20px;
+    color:#000000;
+  }
+  
+
+  
+}*/
 
 span1 {
   font-family:'Roboto', sans-serif;

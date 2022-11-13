@@ -14,7 +14,7 @@
       
         <div class="searchContainer">
             <input type="text" placeholder="Search friend...">
-            <button type="submit"><i class="fa fa-search"></i></button><br/><br/>
+            <button type="submit"><i class="fa fa-search"></i ></button><br/><br/>
         </div>
         <br/>
       </header>
