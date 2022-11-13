@@ -94,7 +94,7 @@ button {
   font-size: 20px;
   font-family: 'Roboto', sans-serif;
   color: #4e0101;
-  background-color: rgba(255, 204, 153, 0.8);
+  background-color: rgba(255, 204, 153);
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -109,7 +109,7 @@ button:focus-visible {
 .buttonH {
   border-radius: 4px;
   border: 1px solid rgb(62, 41, 41);
-  background-color: rgba(255, 204, 153, 0.8);
+  background-color: rgba(255, 204, 153);
   width: 137px;
   height: 137px;
   cursor: pointer;
@@ -127,7 +127,7 @@ button2 {
   font-size: 20px;
   font-family: 'Roboto', sans-serif;
   color: #4e0101;
-  background-color: rgba(255, 204, 153, 0.8);
+  background-color: rgba(255, 204, 153);
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -279,7 +279,7 @@ article{
 }
 
 .grid-container > div {
-  background-color:rgba(255, 204, 153, 0.8);
+  background-color:rgba(255, 204, 153);
   border: 1px solid black;
   text-align: left;
   padding: 20px;
@@ -330,7 +330,7 @@ article{
   margin-top: 25px;
   padding: 2%;
   row-gap: 20px;
-  background-color: rgba(255, 204, 153, 0.8);
+  background-color: rgba(255, 204, 153);
   border: 1px solid black;
 }
 
@@ -507,7 +507,7 @@ article{
 }
 
 .buttonHome > div > a > button {
-  background-color: rgba(255, 204, 153, 0.8);
+  background-color: rgba(255, 204, 153);
   border: 2px solid black;
   height: 100%;
   width: 100%;
@@ -544,7 +544,8 @@ article{
   margin-left: 5%;
   background-color: rgba(255, 204, 153);
   border: black solid 1px;
-  padding: 20px;
+  padding: 10px;
+  border-radius: 15px;
 }
 .listContainer2 > img{
   padding: 2px;
@@ -609,7 +610,7 @@ button3 {
   height: 50px;
   font-size: 20px;
   font-family: 'Roboto', sans-serif;
-  background-color: rgba(255, 204, 153, 0.8);
+  background-color: rgba(255, 204, 153);
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -625,7 +626,7 @@ button3:focus-visible {
   grid-column: 2/3;
   grid-row: auto;
   vertical-align: baseline;
-  background-color: rgba(255, 204, 153, 0.8);
+  background-color: rgba(255, 204, 153);
   height: 75px;
   border: black 1px solid;
 }
@@ -634,7 +635,7 @@ button3:focus-visible {
   grid-column: 2/3;
   grid-row: 2;
   vertical-align: baseline;
-  background-color: rgba(255, 204, 153, 0.8);
+  background-color: rgba(255, 204, 153);
   height: 75px;
   border: black 1px solid;
 }
@@ -642,7 +643,7 @@ button3:focus-visible {
 .profileItem2 {
   grid-column: 2/3;
   grid-row: 3;
-  background-color: rgba(255, 204, 153, 0.8);
+  background-color: rgba(255, 204, 153);
   height: 75px;
   border: black 1px solid;
 }
@@ -658,7 +659,7 @@ button3:focus-visible {
 .profileItem4 {
   grid-column: 2/3;
   grid-row: 5;
-  background-color: rgba(255, 204, 153, 0.8);
+  background-color: rgba(255, 204, 153);
   height: 75px;
   border: black 1px solid;
 }
@@ -964,7 +965,7 @@ span1 {
     font-size: 32px;
     font-family: 'Roboto', sans-serif;
     color: #4e0101;
-    background-color: rgba(255, 204, 153, 0.8);
+    background-color: rgba(255, 204, 153);
     cursor: pointer;
     transition: border-color 0.25s;
   }
@@ -1031,7 +1032,7 @@ span1 {
     text-align: left;
     margin-left: 5%;
     margin-bottom: 0px;
-    padding: 10px;
+    padding: 5px;
   }
   .listContainer2 > img{
     padding: 2px;
@@ -1078,7 +1079,7 @@ span1 {
   }
 
   .buttonHome > div > a > button {
-    background-color: rgba(255, 204, 153, 0.8);
+    background-color: rgba(255, 204, 153);
     border: 2px solid black;
     height: 100%;
     width: 100%;
@@ -1102,7 +1103,7 @@ span1 {
   .buttonH {
     border-radius: 4px;
     border: 1px solid rgb(62, 41, 41);
-    background-color: rgba(255, 204, 153, 0.8);
+    background-color: rgba(255, 204, 153);
     width: 230px;
     height: 230px;
     cursor: pointer;
@@ -1126,7 +1127,7 @@ span1 {
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
     color: #4e0101;
-    background-color: rgba(255, 204, 153, 0.8);
+    background-color: rgba(255, 204, 153);
     cursor: pointer;
     transition: border-color 0.25s;
   }
