@@ -671,7 +671,7 @@ button3:focus-visible {
   padding: 0;
   box-sizing:border-box;
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -680,8 +680,7 @@ button3:focus-visible {
 
 .chatbox{
   background: #306ec5;
-  width: 60%;
-  min-width: 250px;
+  width: 90%;
   display: 	flex;
 
 }
@@ -700,41 +699,39 @@ button3:focus-visible {
 }
 
 .col-2{
- flex-basis: 250px;
+ flex-basis: 70px;
  background:rgb(239, 164, 89);
-
-  flex-basis: 250px;
 }
 
 .msg-row{
   display: flex;
   align-items: center;
-  margin: 40px;
-
+  margin: 10px;
   flex-basis: 70% ;
+  
 }
 
 .msg-text{
   background: #ffcc99cc;
-  padding: 20px 40px;
+  padding: 20px 20px;
   border-radius: 8px;
-  flex-basis: 60%;
   font-weight: 300;
 }
 
 .msg-text h2{
   font-weight: 400;
-  font-size: 22px;
+  font-size: 15px;
   margin-bottom: 10px;
   text-align:left;
 }
 .msg-text p{
   color: #fff;
   text-align:left;
+  font-size: 15px;
 }
 .msg-img{
-  width: 50px;
-  border-radius: 50%;
+  width: 10px;
+  border-radius: 10%;
   margin: 0 20xp;
 }
 .msg-row2{
@@ -744,7 +741,7 @@ button3:focus-visible {
 .col-1 input{
   border: 0;
   outline: none;
-  padding: 20px 40px;
+  padding: 10px 20px;
   background: #fff;
   width: 100%;
   font-size: 16px;
@@ -753,32 +750,42 @@ button3:focus-visible {
 
 ::placeholder{
   color: #fff;
-  
+  font-size: 20px
 }
 
 .col-2 h3{
   text-align:center;
   margin-top: 40px;
   font-weight: 400;
+  font-size: 20px;
 }
 .col-2 ul{
-  text-align:left;
+  text-align:center;
   list-style: none ;
-  padding: 30px;
+  padding: 20px;
+  font-size: 15px;
 }
 .col-2 ul li{
-    padding: 5px 0;
+    padding: 3px;
     font-family: 'Fredoka', sans-serif
+  
 }
 .col-2 ul li::before{
   content: '';
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 30%;
   background: red;
   display: inline-block;
-  margin-right: 10px;
   margin-right: 5px;
+}
+
+.searchTitle{
+  font-family: 'Fredoka', sans-serif;
+  font-size: 28px;
+  width: auto;
+  color: #fff;
+
 }
 
 .searchTitle{
@@ -1166,6 +1173,121 @@ span1 {
     font-size: 30px;
     color: white;
     font-family: 'Fredoka', sans-serif;
+  }
+
+  .conteiner{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    width: 1400px;
+    height: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
+  
+  .chatbox{
+    background: #306ec5;
+    width: 60%;
+    min-width: 250px;
+    display: 	flex;
+  
+  }
+  .chatbox h2{
+    font-family: 'Fredoka', sans-serif;
+    font-size: 28px;
+  
+  }
+  .chatbox p{
+    font-family:'Roboto', sans-serif;
+    font-size: 20px ;
+    color:#000000
+  }
+  .col-1{
+    flex: 1;
+  }
+  
+  .col-2{
+   flex-basis: 250px;
+   background:rgb(239, 164, 89);
+  
+    flex-basis: 250px;
+  }
+  
+  .msg-row{
+    display: flex;
+    align-items: center;
+    margin: 40px;
+  
+    flex-basis: 70% ;
+  }
+  
+  .msg-text{
+    background: #ffcc99cc;
+    padding: 20px 40px;
+    border-radius: 8px;
+    flex-basis: 60%;
+    font-weight: 300;
+  }
+  
+  .msg-text h2{
+    font-weight: 400;
+    font-size: 22px;
+    margin-bottom: 10px;
+    text-align:left;
+  }
+  .msg-text p{
+    color: #fff;
+    text-align:left;
+  }
+  .msg-img{
+    width: 50px;
+    border-radius: 50%;
+    margin: 0 20xp;
+  }
+  .msg-row2{
+  
+    justify-content: flex-end;
+  }
+  .col-1 input{
+    border: 0;
+    outline: none;
+    padding: 20px 40px;
+    background: #fff;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 300;
+  }
+  
+  ::placeholder{
+    color: #fff;
+    
+  }
+  
+  .col-2 h3{
+    text-align:center;
+    margin-top: 40px;
+    font-weight: 400;
+  }
+  .col-2 ul{
+    text-align:left;
+    list-style: none ;
+    padding: 30px;
+  }
+  .col-2 ul li{
+      padding: 5px 0;
+      font-family: 'Fredoka', sans-serif
+  }
+  .col-2 ul li::before{
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: red;
+    display: inline-block;
+    margin-right: 10px;
+    margin-right: 5px;
   }
   
 }
