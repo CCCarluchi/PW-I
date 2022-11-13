@@ -25,6 +25,8 @@
     <router-link to="/SearchEvent">SearchEvent</router-link>
     <router-link to="/Timeline">Timeline</router-link>
     <router-link to="/ShareEvent">ShareEvent</router-link>
+    <router-link to="/EventsList">EventsList</router-link>
+    <router-link to="/SendRequest">SendRequest</router-link>
   </nav>
   <router-view></router-view>
 </template>

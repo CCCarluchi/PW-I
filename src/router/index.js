@@ -19,7 +19,6 @@ import Event from '../views/Event.vue'
 import ShareEvent from '../views/ShareEvent.vue'
 import Timeline from '../views/Timeline.vue'
 import SearchEvent from '../views/SearchEvent.vue'
-
 import EventsList from '../views/EventsList.vue'
 import SendRequest from '../views/SendRequest.vue'
 
@@ -113,7 +112,28 @@ const routes = [
         path: '/ShareEvent',
         name: 'ShareEvent',
         component: ShareEvent,
+    },
+    {
+        path: '/Timeline',
+        name: 'Timeline',
+        component: Timeline,
+    },
+    {
+        path: '/SearchEvent',
+        name: 'SearchEvent',
+        component: SearchEvent,
+    },
+    {
+        path: '/EventsList',
+        name: 'EventsList',
+        component: EventsList,
+    },
+    {
+        path: '/SendRequest',
+        name: 'SendRequest',
+        component: SendRequest,
     }
+
 ]
 
 const router = createRouter({
