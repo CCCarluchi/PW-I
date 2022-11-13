@@ -1100,10 +1100,10 @@ span1 {
   button2 {
     border-radius: 4px;
     border: 1px solid rgb(62, 41, 41);
-    padding: 2px;
+    padding: 6px;
     width: 417px;
     height: 54px;
-    font-size: 20px;
+    font-size: 32px;
     font-family: 'Roboto', sans-serif;
     color: #4e0101;
     background-color: rgba(255, 204, 153, 0.8);

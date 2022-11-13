@@ -12,9 +12,9 @@
       <span1 style="border-image: initial; border: 1px solid blue;" type = "span">20</span1><br/><br/>
       <p1 align:left type = "p" >Comments on the event:</p1><br/><br/>
       <div class="inputContainer">
-    <textarea type="text" placeholder="*Comments"></textarea><br/>
+    <textarea type="text" placeholder="*Comments"></textarea><br/><br/>
     </div>
-    <router-link to="/Events" id="button"><button2>Done</button2></router-link><br/><br/>
+    <router-link to="/Events" id="button2"><button2>Done</button2></router-link><br/><br/>
       
     </main>
   </template>
