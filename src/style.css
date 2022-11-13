@@ -1,21 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-/*.colorb{
-  width: 100vw;
-  height: 100vh;
-  background-image: linear-gradient(to right, #0099ff,#ffcc99cc);
-  
-}*/
-
 a {
   font-family:'Roboto', sans-serif;
   font-size: 15px;
-  color: #9E00D6;
+  color: #8e0101;
   cursor: pointer;
 }
 a:hover {
-  color: #3A014E;
+  color: #4e0101;
   text-decoration: underline;
 }
 
@@ -31,11 +24,11 @@ header > a {
 a2 {
   font-family:'Roboto', sans-serif;
   font-size: 20px;
-  color: #9E00D6;
+  color: #8e0101;
   cursor: pointer;
 }
 a2:hover {
-  color: #3A014E;
+  color: #4e0101;
   text-decoration: underline;
 }
 
@@ -76,32 +69,32 @@ p2 {
 p3 {
   font-family:'Roboto', sans-serif;
   font-size: 20px;
-  color: #9E00D6;
+  color: #8e0101;
   text-decoration-line: underline;
 }
 
 p4 {
   font-family:'Roboto', sans-serif;
   font-size: 15px;
-  color: #9E00D6;
+  color: #8e0101;
   text-decoration-line: underline;
 }
 
 button {
   border-radius: 4px;
-  border: 1px solid transparent;
+  border: 1px solid rgb(62, 41, 41);
   padding: 2px;
   width: 106px;
   height: 30px;
   font-size: 20px;
   font-family: 'Roboto', sans-serif;
-  color: #3A014E;
-  background-color: #C4C4C4;
+  color: #4e0101;
+  background-color: rgba(255, 204, 153, 0.8);
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #3A014E;
+  border-color: #4e0101;
 }
 button:focus,
 button:focus-visible {
@@ -110,31 +103,31 @@ button:focus-visible {
 
 .buttonH {
   border-radius: 4px;
-  border: 1px 1px solid transparent;
-  background-color: #C4C4C4;
+  border: 1px solid rgb(62, 41, 41);
+  background-color: rgba(255, 204, 153, 0.8);
   width: 137px;
   height: 137px;
   cursor: pointer;
 }
 .buttonH:hover {
-  border-color: #3A014E;
+  border-color: #4e0101;
 }
 
 button2 {
   border-radius: 4px;
-  border: 1px solid transparent;
+  border: 1px solid rgb(62, 41, 41);
   padding: 2px;
   width: 230px;
   height: 30px;
   font-size: 20px;
   font-family: 'Roboto', sans-serif;
-  color: #3A014E;
-  background-color: #C4C4C4;
+  color: #4e0101;
+  background-color: rgba(255, 204, 153, 0.8);
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button2:hover {
-  border-color: #3A014E;
+  border-color: #4e0101;
 }
 button2:focus,
 button2:focus-visible {
@@ -162,10 +155,10 @@ input:focus{
   text-align:left;
 }
 input:required{
-  border-color: #9E00D6;
+  border-color: #8e0101;
 }
 input:invalid{
-  border-color: #9E00D6;
+  border-color: #8e0101;
 }
 
 textarea {
@@ -190,10 +183,10 @@ textarea:focus{
   text-align:left;
 }
 textarea:required{
-  border-color: #9E00D6;
+  border-color: #8e0101;
 }
 textarea:invalid{
-  border-color: #9E00D6;
+  border-color: #8e0101;
 }
 
 html{background-image: linear-gradient(to right, #0099ff,#ffcc99cc);}
@@ -215,39 +208,6 @@ article{
   margin: 0;
 }
 
-/*@media screen and (max-width: 650px) {
-  body {
-    margin: 0;
-    display: flow;
-    place-items: center;
-    min-width: 360px;
-    min-height: 640px;
-    overflow: scroll;
-  }
-  
-  button {
-    border-radius: 4px;
-    border: 1px solid transparent;
-    padding: 2px;
-    width: 106px;
-    height: 30px;
-    font-size: 20px;
-    font-family: 'Roboto', sans-serif;
-    color: #3A014E;
-    background-color: #C4C4C4;
-    cursor: pointer;
-    transition: border-color 0.25s;
-  }
-  button:hover {
-    border-color: #3A014E;
-  }
-  button:focus,
-  button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-  }
-
-}*/
-
 .card {
   margin: 0 auto;
   float: none; 
@@ -256,7 +216,7 @@ article{
   padding: 38px 26px;
   width: 226px;
   height: 195px;
-  background-color: rgba(217, 217, 217, 0.3);
+  background-color: rgb(0, 153, 255);
 }
 
 .arrow {
@@ -519,31 +479,6 @@ article{
   margin: auto;
 }
 
-/*
-@media (max-width: 650px) {
-  .arrowContainer {
-    padding-left: 250px;
-  }
-}*/
-
-/*.pageContainer {
-  width: 1430px;
-  height: 1014px;
-  background-color: transparent;
-  margin: 2px 2px;
-  border: 0px solid transparent;
-}
-
-@media screen and (max-width: 650px) {
-  .pageContainer {
-    width: 1430px;
-    height: 1014px;
-    background-color: transparent;
-    margin: 2px 2px;
-    border: 0px solid transparent;
-  }
-}*/
-
 .profileGrid {
   display: grid;
   grid-template-columns: 5% auto 5%;  
@@ -579,7 +514,7 @@ button3 {
   padding-top: 23px;
   display: block;
   border: 1px solid transparent;
-  color: black;
+  color: #4e0101;
   font-style: normal;
   height: 50px;
   font-size: 20px;
@@ -589,7 +524,7 @@ button3 {
   transition: border-color 0.25s;
 }
 button3:hover {
-  border-color: black;
+  border-color: transparent;
 }
 button3:focus,
 button3:focus-visible {
@@ -896,19 +831,19 @@ span1 {
 
   button {
     border-radius: 4px;
-    border: 1px solid transparent;
+    border: 1px solid rgb(62, 41, 41);
     padding: 2px;
     width: 259px;
     height: 43px;
     font-size: 32px;
     font-family: 'Roboto', sans-serif;
-    color: #3A014E;
-    background-color: #C4C4C4;
+    color: #4e0101;
+    background-color: rgba(255, 204, 153, 0.8);
     cursor: pointer;
     transition: border-color 0.25s;
   }
   button:hover {
-    border-color: #3A014E;
+    border-color: #4e0101;
   }
   button:focus,
   button:focus-visible {
@@ -918,11 +853,11 @@ span1 {
   a2 {
     font-family:'Roboto', sans-serif;
     font-size: 32px;
-    color: #9E00D6;
+    color: #8e0101;
     cursor: pointer;
   }
   a2:hover {
-    color: #3A014E;
+    color: #4e0101;
     text-decoration: underline;
   }
 
@@ -950,7 +885,7 @@ span1 {
     padding: 58px 46px;
     width: 669px;
     height: 472px;
-    background-color: #d9d9d94d;
+    background-color: rgb(0, 153, 255);
   }
   
   .listContainer{
@@ -1017,14 +952,14 @@ span1 {
 
   .buttonH {
     border-radius: 4px;
-    border: 1px 1px solid transparent;
-    background-color: #C4C4C4;
+    border: 1px solid rgb(62, 41, 41);
+    background-color: rgba(255, 204, 153, 0.8);
     width: 230px;
     height: 230px;
     cursor: pointer;
   }
   .buttonH:hover {
-    border-color: #3A014E;
+    border-color: #4e0101;
   }
 
   .column {
@@ -1035,19 +970,19 @@ span1 {
   }
   button2 {
     border-radius: 4px;
-    border: 1px solid transparent;
+    border: 1px solid rgb(62, 41, 41);
     padding: 2px;
     width: 417px;
     height: 54px;
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
-    color: #3A014E;
-    background-color: #C4C4C4;
+    color: #4e0101;
+    background-color: rgba(255, 204, 153, 0.8);
     cursor: pointer;
     transition: border-color 0.25s;
   }
   button2:hover {
-    border-color: #3A014E;
+    border-color: #4e0101;
   }
   button2:focus,
   button2:focus-visible {
