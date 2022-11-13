@@ -794,6 +794,14 @@ button3:focus-visible {
   background: red;
   display: inline-block;
   margin-right: 10px;
+  margin-right: 5px;
+}
+
+.searchTitle{
+  font-family: 'Fredoka', sans-serif;
+  font-size: 28px;
+  width: auto;
+  color: black;
 
 }
 /*

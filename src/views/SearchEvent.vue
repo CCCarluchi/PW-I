@@ -7,8 +7,8 @@
             <router-link to="/Events" id="i"><i class="arrow left"></i></router-link>
         </div>
         <div class="searchTitle">
-        <h2>Search Events</h2>
-      </div>
+          <h2>Search Events</h2>
+        </div>
     </header>
    
     <nav>
