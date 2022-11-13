@@ -412,23 +412,6 @@ article{
   font-size: 20px;
 }
 
-/*.searchContainer2 > input[type=text] {
-  padding-left: 10px;
-  padding: 2px;
-  width: 237px;
-  height: 29px;
-  background-color: white;
-}
-
-.searchContainer2 > button {
-  width: 30px;
-  height: 35px;
-  margin-left: 15px;
-  background: rgb(0, 153, 255);
-  color: white;
-  cursor: pointer;
-}*/
-
 .inputContainer {
   margin: 0 auto;
   float: none; 

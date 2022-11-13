@@ -12,37 +12,37 @@
 
     <nav>
       <div class="listContainer" align="left">
-        <img src="https://media.istockphoto.com/photos/purple-defocused-blurred-motion-abstract-background-picture-id1273929462?b=1&k=20&m=1273929462&s=612x612&w=0&h=SiJ-IIlRT_GMs_UGFMaMcHhIosKvvvMnb0PNE3wGk6k=" class="imgList"/>
+        <img src="src/assets/1.png" class="imgList"/>
         <router-link to="/CreateEvent" id="a2"><a2>Create</a2></router-link>
       </div>
       <br/>
 
       <div class="listContainer" align="left">
-        <img src="https://media.istockphoto.com/photos/purple-defocused-blurred-motion-abstract-background-picture-id1273929462?b=1&k=20&m=1273929462&s=612x612&w=0&h=SiJ-IIlRT_GMs_UGFMaMcHhIosKvvvMnb0PNE3wGk6k=" class="imgList"/>
+        <img src="src/assets/2.png" class="imgList"/>
         <router-link to="/EventsList" id="a2"><a2>List</a2></router-link>
       </div>
       <br/>
 
       <div class="listContainer" align="left">
-        <img src="https://media.istockphoto.com/photos/purple-defocused-blurred-motion-abstract-background-picture-id1273929462?b=1&k=20&m=1273929462&s=612x612&w=0&h=SiJ-IIlRT_GMs_UGFMaMcHhIosKvvvMnb0PNE3wGk6k=" class="imgList"/>
+        <img src="src/assets/3.png" class="imgList"/>
         <router-link to="/SearchEvent" id="a2"><router-link to="/SearchEvent" id="a2"><a2>Search Event</a2></router-link></router-link>
       </div>
       <br/>
 
       <div class="listContainer" align="left">
-        <img src="https://media.istockphoto.com/photos/purple-defocused-blurred-motion-abstract-background-picture-id1273929462?b=1&k=20&m=1273929462&s=612x612&w=0&h=SiJ-IIlRT_GMs_UGFMaMcHhIosKvvvMnb0PNE3wGk6k=" class="imgList"/>
+        <img src="src/assets/4.png" class="imgList"/>
         <router-link to="/ShareEvent" id="a2"><a2>Share</a2></router-link>
       </div>
       <br/>
 
       <div class="listContainer" align="left">
-        <img src="https://media.istockphoto.com/photos/purple-defocused-blurred-motion-abstract-background-picture-id1273929462?b=1&k=20&m=1273929462&s=612x612&w=0&h=SiJ-IIlRT_GMs_UGFMaMcHhIosKvvvMnb0PNE3wGk6k=" class="imgList"/>
+        <img src="src/assets/5.png" class="imgList"/>
         <router-link to="/ParticipateEvent" id="a2"><a2>Participate</a2></router-link>
       </div>
       <br/>
 
       <div class="listContainer" align="left">
-        <img src="https://media.istockphoto.com/photos/purple-defocused-blurred-motion-abstract-background-picture-id1273929462?b=1&k=20&m=1273929462&s=612x612&w=0&h=SiJ-IIlRT_GMs_UGFMaMcHhIosKvvvMnb0PNE3wGk6k=" class="imgList"/>
+        <img src="src/assets/6.png" class="imgList"/>
         <router-link to="/Timeline" id="a2"><a2>Timeline</a2></router-link>
       </div>
     </nav>
