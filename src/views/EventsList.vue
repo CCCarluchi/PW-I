@@ -1,4 +1,5 @@
 <template>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <main>
     <header>
       <br/>
@@ -8,6 +9,11 @@
       <div class="appTitle">
         <h2>List</h2>
       </div>
+      <div class="searchContainer2">
+        <input type="text" placeholder="Search event">
+        <button type="submit"><i class="fa fa-search"></i></button><br/><br/>
+      </div>
+      <br/>
     </header>
 
     <nav>

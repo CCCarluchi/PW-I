@@ -386,6 +386,28 @@ article{
   min-height: 44px;
 }
 
+.searchContainer2 {
+  margin-left: 35px;
+  float: none;
+}
+
+.searchContainer2 > input[type=text] {
+  padding-left: 10px;
+  padding: 2px;
+  width: 237px;
+  height: 29px;
+  background-color: white;
+}
+
+.searchContainer2 > button {
+  width: 30px;
+  height: 35px;
+  margin-left: 15px;
+  background: rgb(0, 153, 255);
+  color: white;
+  cursor: pointer;
+}
+
 .inputContainer {
   margin: 0 auto;
   float: none; 
@@ -1019,6 +1041,28 @@ span1 {
     line-height: 0px;
     font-family: 'Fredoka', sans-serif;
     color: black;
+  }
+
+  .searchContainer2 {
+    margin-left: 45px;
+    float: none;
+  }
+  
+  .searchContainer2 > input[type=text] {
+    padding: 6px;
+    width: 550px;
+    height: 42px;
+    font-size: 32px;
+    background-color: white;
+  }
+  
+  .searchContainer2 > button {
+    width: 50px;
+    height: 55px;
+    margin-left: 15px;
+    background: rgb(0, 153, 255);
+    color: white;
+    cursor: pointer;
   }
   
 }
