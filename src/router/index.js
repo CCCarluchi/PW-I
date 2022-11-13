@@ -17,6 +17,9 @@ import Chat from '../views/Chat.vue'
 import ParticipateEvent from '../views/ParticipateEvent.vue'
 import Event from '../views/Event.vue'
 import ShareEvent from '../views/ShareEvent.vue'
+import Timeline from '../views/Timeline.vue'
+import SearchEvent from '../views/SearchEvent.vue'
+
 
 const routes = [
     {
@@ -108,8 +111,17 @@ const routes = [
         path: '/ShareEvent',
         name: 'ShareEvent',
         component: ShareEvent,
+    },
+    {
+        path: '/SearchEvent',
+        name: 'SearchEvent',
+        component: SearchEvent,
+    },
+    {
+        path: '/Timeline',
+        name: 'Timeline',
+        component: Timeline,
     }
-    
 ]
 
 const router = createRouter({

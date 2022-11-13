@@ -5,7 +5,7 @@
 
 <template>
   <nav>
-    <router-link to="/">SignIn</router-link> 
+    <!--<router-link to="/">SignIn</router-link> 
     <router-link to="/SignUp">SignUp</router-link>
     <router-link to="/FriendsList">FriendsList</router-link>
     <router-link to="/Data">Data</router-link>
@@ -25,6 +25,7 @@
     <router-link to="/SearchEvent">SearchEvent</router-link>
     <router-link to="/Timeline">Timeline</router-link>
     <router-link to="/ShareEvent">ShareEvent</router-link>
+    -->
   </nav>
   <router-view></router-view>
 </template>

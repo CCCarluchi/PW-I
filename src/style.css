@@ -377,6 +377,8 @@ article{
 
 .searchContainer {
   width: 100%;
+  padding: 8px;
+  
 }
 
 .searchContainer > input[type=text] {
@@ -737,6 +739,53 @@ button3:focus-visible {
   margin-right: 10px;
 
 }
+/*Search Event*/
+.searchTitle {
+  overflow: hidden;
+}
+
+.searchTitle h2 {
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+.searchCont h3{
+
+  text-align: left;
+  text-decoration: none;
+  margin: auto;
+  float: none; 
+  padding: 6px;
+  font-size: 25px;
+  width: 60%;
+
+}
+
+
+.searchCont > input[type=text] {
+  margin: auto;
+  float: none; 
+  padding: 6px;
+  font-size: 17px;
+  width: 60%;
+  background-color: white;
+}
+
+.searchCont > button {
+  margin: auto;
+  width: 7%;
+  float: none; 
+  background: rgb(0, 153, 255);
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+  padding:6px;
+  min-height: 12px;
+}
+
+
+
+/*Timeline*/
 /*
 @media (prefers-color-scheme: light) {
   :root {
