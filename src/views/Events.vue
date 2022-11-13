@@ -25,7 +25,7 @@
 
       <div class="listContainer" align="left">
         <img src="https://media.istockphoto.com/photos/purple-defocused-blurred-motion-abstract-background-picture-id1273929462?b=1&k=20&m=1273929462&s=612x612&w=0&h=SiJ-IIlRT_GMs_UGFMaMcHhIosKvvvMnb0PNE3wGk6k=" class="imgList"/>
-        <router-link to="/SearchEvent" id="a2"><a2>Search</a2></router-link>
+        <router-link to="/SearchEvent" id="a2"><router-link to="/SearchEvent" id="a2"><a2>Search Event</a2></router-link></router-link>
       </div>
       <br/>
 
@@ -43,7 +43,7 @@
 
       <div class="listContainer" align="left">
         <img src="https://media.istockphoto.com/photos/purple-defocused-blurred-motion-abstract-background-picture-id1273929462?b=1&k=20&m=1273929462&s=612x612&w=0&h=SiJ-IIlRT_GMs_UGFMaMcHhIosKvvvMnb0PNE3wGk6k=" class="imgList"/>
-        <router-link to="/Timeline" id="a2"><a2>Timeline</a2></router-link>
+        <a2>Timeline</a2>
       </div>
     </nav>
     <br/><br/>
