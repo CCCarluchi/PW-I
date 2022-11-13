@@ -1,7 +1,9 @@
 <template>
   <main>
-    <header class="appTitle">
+    <header>
+      <div class="appTitle">
         <h1>OpenEvents</h1>
+      </div>
     </header>
 
     <figure>
