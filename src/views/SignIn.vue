@@ -1,17 +1,18 @@
 <template>
-  <main>
-    <header>
-      <div class="appTitle">
-        <h1>Slow-Go</h1>
-      </div>
-    </header>
+  
+  <header>
+    <div class="appTitle">
+      <h1>Slow-Go</h1>
+    </div>
+  </header>
 
+  <main>
     <figure>
       <img src="src/assets/withHat.png" alt="logo" class="imgLogo">
     </figure>
     <br/><br/>
 
-    <article>
+    <form>
       <div class="inputContainer">
         <input type="text" placeholder="Username"><br/>
       </div>
@@ -27,11 +28,12 @@
       <div class="inputContainer">
         <router-link to="/SignUp" id="a2"><a2>Sign up</a2></router-link>
       </div>
-    </article>
+    </form>
     <br/><br/>
 
-    <footer>
-    </footer>
-
   </main>
+
+  <footer>
+  </footer>
+
 </template>

@@ -1,16 +1,17 @@
 <template>
-  <main>
-    <header>
-      <br/>
-      <div class="arrowContainer" align="left"> 
-        <router-link to="/Events" id="i"><i class="arrow left"></i></router-link>
-      </div>
-      <div class="appTitle">
-        <h2>Create event</h2>
-      </div>
-    </header>
+  
+  <header>
+    <br/>
+    <div class="arrowContainer"> 
+      <router-link to="/Events" id="i"><i class="arrow left"></i></router-link>
+    </div>
+    <div class="appTitle">
+      <h2>Create event</h2>
+    </div>
+  </header>
 
-    <article>
+  <main>
+    <form>
       <div class="inputContainer">
         <input type="text" placeholder="*Name"><br/>
       </div>
@@ -40,9 +41,11 @@
         <router-link to="/Event" id="button"><button>Create</button></router-link>
       </div>
       <br/><br/>
-    </article>
+    </form>
 
-    <footer>
-    </footer>
   </main>
+
+  <footer>
+  </footer>
+  
 </template>
