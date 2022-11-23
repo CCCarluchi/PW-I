@@ -32,46 +32,46 @@
     </form>
 
     <div class="appTitle">
-      <p1>Results</p1>
+      <p class="p1">Results</p>
     </div>
     <br/>
 
     <ol>
-      <div class="listContainer3">
+      <li class="listContainer3">
         <img src="https://images.squarespace-cdn.com/content/v1/5a726fcd4c0dbfa531ec98cf/1523669284136-BTJA038C00QFP5M3AX0N/image-asset.jpeg" class="imgList2"/>
-        <router-link to="/Event" id="p"><p1>Event1</p1><p2>  XX/XX/XXXX  Location</p2></router-link>
-      </div>
+        <router-link to="/Event" id="p"><p class="p1List">Event1</p><p class="p2List">   XX/XX/XXXX   Location</p></router-link>
+      </li>
       <br/>
 
-      <div class="listContainer3">
+      <li class="listContainer3">
         <img src="https://images.squarespace-cdn.com/content/v1/5a726fcd4c0dbfa531ec98cf/1523669284136-BTJA038C00QFP5M3AX0N/image-asset.jpeg" class="imgList2"/>
-        <router-link to="/Event" id="p"><p1>Event2</p1><p2>  XX/XX/XXXX  Location</p2></router-link>
-      </div>
+        <router-link to="/Event" id="p"><p class="p1List">Event2</p><p class="p2List">   XX/XX/XXXX   Location</p></router-link>
+      </li>
       <br/>
 
-      <div class="listContainer3">
+      <li class="listContainer3">
         <img src="https://images.squarespace-cdn.com/content/v1/5a726fcd4c0dbfa531ec98cf/1523669284136-BTJA038C00QFP5M3AX0N/image-asset.jpeg" class="imgList2"/>
-        <router-link to="/Event" id="p"><p1>Event3</p1><p2>  XX/XX/XXXX  Location</p2></router-link>
-      </div>
+        <router-link to="/Event" id="p"><p class="p1List">Event3</p><p class="p2List">   XX/XX/XXXX   Location</p></router-link>
+      </li>
       <br/>
 
-      <div class="listContainer3">
+      <li class="listContainer3">
         <img src="https://images.squarespace-cdn.com/content/v1/5a726fcd4c0dbfa531ec98cf/1523669284136-BTJA038C00QFP5M3AX0N/image-asset.jpeg" class="imgList2"/>
-        <router-link to="/Event" id="p"><p1>Event4</p1><p2>  XX/XX/XXXX  Location</p2></router-link>
-      </div>
+        <router-link to="/Event" id="p"><p class="p1List">Event4</p><p class="p2List">   XX/XX/XXXX   Location</p></router-link>
+      </li>
       <br/>
 
-      <div class="listContainer3">
+      <li class="listContainer3">
         <img src="https://images.squarespace-cdn.com/content/v1/5a726fcd4c0dbfa531ec98cf/1523669284136-BTJA038C00QFP5M3AX0N/image-asset.jpeg" class="imgList2"/>
-        <router-link to="/Event" id="p"><p1>Event5</p1><p2>  XX/XX/XXXX  Location</p2></router-link>
-      </div>
+        <router-link to="/Event" id="p"><p class="p1List">Event5</p><p class="p2List">   XX/XX/XXXX   Location</p></router-link>
+      </li>
       <br/>
 
-      <div class="listContainer3">
+      <li class="listContainer3">
         <img src="https://images.squarespace-cdn.com/content/v1/5a726fcd4c0dbfa531ec98cf/1523669284136-BTJA038C00QFP5M3AX0N/image-asset.jpeg" class="imgList2"/>
-        <router-link to="/Event" id="p"><p1>Event6</p1><p2>  XX/XX/XXXX  Location</p2></router-link>
-      </div>
-      
+        <router-link to="/Event" id="p"><p class="p1List">Event6</p><p class="p2List">   XX/XX/XXXX   Location</p></router-link>
+      </li>
+
     </ol>
     <br/><br/>
   </main>

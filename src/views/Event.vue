@@ -13,43 +13,43 @@
     <main>
         <article class="column">
             <div class="appText">
-                <p1>Name</p1><br/>
+                <p class="p1">Name</p>
             </div>
 
             <div class="appText2">
-                <p2>EventName</p2><br/><br/>
+                <p class="p2">EventName</p>
             </div>
 
             <div class="appText">
-                <p1>Start date</p1><br/>
+                <p class="p1">Start date</p>
             </div>
 
             <div class="appText2">
-                <p2>XX/XX/XXXX</p2><br/><br/>
+                <p class="p2">XX/XX/XXXX</p>
             </div>
 
             <div class="appText">
-                <p1>End date</p1><br/>
+                <p class="p1">End date</p>
             </div>
 
             <div class="appText2">
-                <p2>XX/XX/XXXX</p2><br/><br/>
+                <p class="p2">XX/XX/XXXX</p>
             </div>
 
             <div class="appText">
-                <p1>Location</p1><br/>
+                <p class="p1">Location</p>
             </div>
 
             <div class="appText2">
-                <p2>EventLocation</p2><br/><br/>
+                <p class="p2">EventLocation</p>
             </div>
 
             <div class="appText">
-                <p1>Details</p1><br/>
+                <p class="p1">Details</p>
             </div>
 
             <div class="appText2">
-                <p2>EventDetails</p2><br/><br/>
+                <p class="p2">EventDetails</p>
             </div>
         </article>
         <br/><br/>

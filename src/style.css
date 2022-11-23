@@ -26,13 +26,13 @@ header > h1 {
   margin-left: 12.8%;
 }
 
-a2 {
+.a2 {
   font-family:'Roboto', sans-serif;
   font-size: 20px;
   color: #8e0101;
   cursor: pointer;
 }
-a2:hover {
+.a2:hover {
   color: #4e0101;
   text-decoration: underline;
 }
@@ -59,26 +59,44 @@ h4 {
   font-size: 16px;
 }
 
-p1 {
+.p1 {
   font-family:'Roboto', sans-serif;
   font-size: 20px;
   color:#000000;
 }
 
-p2 {
+.p2 {
   font-family:'Roboto', sans-serif;
   font-size: 20px;
   color:rgba(0, 0, 0, 0.68);
 }
 
-p3 {
+.p1List {
+  font-family:'Roboto', sans-serif;
+  font-size: 20px;
+  color:#000000;
+  margin: 0;
+  display:inline;
+  float:left;
+}
+
+.p2List {
+  font-family:'Roboto', sans-serif;
+  font-size: 20px;
+  color:rgba(0, 0, 0, 0.68);
+  margin: 0;
+  display:inline;
+  float:left;
+}
+
+.p3 {
   font-family:'Roboto', sans-serif;
   font-size: 20px;
   color: #8e0101;
   text-decoration-line: underline;
 }
 
-p4 {
+.p4 {
   font-family:'Roboto', sans-serif;
   font-size: 15px;
   color: #8e0101;
@@ -118,7 +136,7 @@ button:focus-visible {
   border-color: #4e0101;
 }
 
-button2 {
+.button2 {
   border-radius: 4px;
   border: 1px solid rgb(62, 41, 41);
   padding: 2px;
@@ -131,11 +149,11 @@ button2 {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button2:hover {
+.button2:hover {
   border-color: #4e0101;
 }
-button2:focus,
-button2:focus-visible {
+.button2:focus,
+.button2:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
@@ -337,14 +355,14 @@ article{
   border: 1px solid black;
 }
 
-.stats-container > p1 {
+.stats-container > .p1 {
   text-align: left;
   font-size: 24px;
   color: #000000;
   font-family: 'Fredoka', sans-serif;
 }
 
-.stats-container > p2 {
+.stats-container > .p2 {
   text-align: left;
   font-size: 24px;
   color: white;
@@ -383,13 +401,13 @@ article{
 }
 
 .appTitle h2 {
-  margin-left: 55px;
+  margin-left: 15%;
   text-align: left;
   text-decoration: none;
 }
 
-.appTitle > p1 {
-  margin-left: -200px;
+.appTitle > .p1 {
+  margin-left: 15%;
   text-align: left;
   font-weight: bold;
   text-decoration: none;
@@ -531,15 +549,33 @@ article{
   height: 150px;
 }
 
-.listContainer{
-  margin-left: 55px;
-}
-.listContainer > img{
-  padding: 2px;
+ol {
+  margin-left: 15%;
+  list-style-type: none;
+  padding: 0;
 }
 
-.listContainer > a2{
-  padding: 2px;
+ul {
+  margin-left: 15%;
+  list-style-type: none; 
+  padding: 0;
+}
+
+li {
+  margin: 2%;
+  padding: 0;
+  text-align: left;
+}
+
+.listContainer{
+  margin-left: 0px;
+}
+.listContainer > img{
+  padding: 0px;
+}
+
+.listContainer > .a2{
+  padding: 0px;
 }
 
 .listContainer2{
@@ -554,16 +590,18 @@ article{
   padding: 2px;
 }
 
-.listContainer2 > a2{
+.listContainer2 > .a2{
   padding: 0px;
 }
 
 .arrowContainer {
   padding-left: 55px;
+  margin-left: -80%;
 }
 
 .listContainer3{
-  margin-left: 45px;
+  margin-left: 0px;
+  display: flex;
 }
 
 .column {
@@ -604,7 +642,7 @@ a {
   text-decoration: none;
 }
 
-button3 {
+.button3 {
   padding-top: 23px;
   display: block;
   border: 1px solid transparent;
@@ -617,11 +655,11 @@ button3 {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button3:hover {
+.button3:hover {
   border-color: transparent;
 }
-button3:focus,
-button3:focus-visible {
+.button3:focus,
+.button3:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
@@ -799,7 +837,7 @@ button3:focus-visible {
 
 }
 
-span1 {
+.span1 {
   font-family:'Roboto', sans-serif;
   font-size: 20px;
   color:#000000;
@@ -812,17 +850,36 @@ span1 {
     font-size: 48px;
   }
 
-  p1 {
+  .p1 {
     font-family:'Roboto', sans-serif;
     font-size: 32px;
     color:#000000;
   }
   
-  p2 {
+  .p2 {
     font-family:'Roboto', sans-serif;
     font-size: 32px;
     color:rgba(0, 0, 0, 0.68);
   }
+
+  .p1List {
+    font-family:'Roboto', sans-serif;
+    font-size: 32px;
+    color:#000000;
+    margin: 0;
+    display:inline;
+    float:left;
+  }
+  
+  .p2List {
+    font-family:'Roboto', sans-serif;
+    font-size: 32px;
+    color:rgba(0, 0, 0, 0.68);
+    margin: 0;
+    display:inline;
+    float:left;
+  }
+  
 
   .imgLogo {
     max-width:332px;
@@ -843,13 +900,13 @@ span1 {
   
   .appTitle h2 {
     text-align: left;
-    margin-left: 465px;
+    margin-left: 30%;
     text-decoration: none;
     font-size: 48px;
   }
 
-  .appTitle > p1 {
-    margin-left: -465px;
+  .appTitle > .p1 {
+    margin-left: 30%;
     text-align: left;
     font-weight: bold;
     text-decoration: none;
@@ -949,13 +1006,13 @@ span1 {
     outline: 4px auto -webkit-focus-ring-color;
   }
 
-  a2 {
+  .a2 {
     font-family:'Roboto', sans-serif;
     font-size: 32px;
     color: #8e0101;
     cursor: pointer;
   }
-  a2:hover {
+  .a2:hover {
     color: #4e0101;
     text-decoration: underline;
   }
@@ -988,14 +1045,14 @@ span1 {
   }
   
   .listContainer{
-    margin-left: 460px;
+    margin-left: 0px;
   }
   .listContainer > img{
-    padding: 2px;
+    padding: 0px;
   }
   
-  .listContainer > a2{
-    padding: 2px;
+  .listContainer > .a2{
+    padding: 0px;
     font-size: 32px;
   }
 
@@ -1010,12 +1067,13 @@ span1 {
     padding: 2px;
   }
   
-  .listContainer2 > a2{
+  .listContainer2 > .a2{
     padding: 2px;
   }
 
   .listContainer3{
-    margin-left: 460px;
+    margin-left: 0px;
+    display: flex;
   }
   
   .imgList {
@@ -1094,7 +1152,7 @@ span1 {
     padding: 0;
     margin: auto;
   }
-  button2 {
+  .button2 {
     border-radius: 4px;
     border: 1px solid rgb(62, 41, 41);
     padding: 6px;
@@ -1107,15 +1165,15 @@ span1 {
     cursor: pointer;
     transition: border-color 0.25s;
   }
-  button2:hover {
+  .button2:hover {
     border-color: #4e0101;
   }
-  button2:focus,
-  button2:focus-visible {
+  .button2:focus,
+  .button2:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
   }
 
-  span1 {
+  .span1 {
     font-family:'Roboto', sans-serif;
     font-size: 40px;
     color:#000000;
@@ -1189,14 +1247,14 @@ span1 {
     font-size: 32px;
   }
 
-  .stats-container > p1 {
+  .stats-container > .p1 {
     text-align: left;
     font-size: 30px;
     color: #000000;
     font-family: 'Fredoka', sans-serif;
   }
   
-  .stats-container > p2 {
+  .stats-container > .p2 {
     text-align: left;
     font-size: 30px;
     color: white;
@@ -1316,6 +1374,24 @@ span1 {
     display: inline-block;
     margin-right: 10px;
     margin-right: 5px;
+  }
+
+  ol {
+    margin-left: 31%;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  ul {
+    margin-left: 31%;
+    list-style-type: none; 
+    padding: 0;
+  }
+  
+  li {
+    margin: 2%;
+    padding: 0;
+    text-align: left;
   }
   
 }

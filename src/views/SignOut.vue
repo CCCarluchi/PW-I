@@ -13,7 +13,7 @@
         <h2>Sign out</h2>
       </div>
       <div align = "left">
-        <p2>Do you wish to sign out?</p2>
+        <p class="p2">Do you wish to sign out?</p>
       </div>
       <br/><br/>
         <div class="inputContainer">
