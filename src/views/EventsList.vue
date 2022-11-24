@@ -80,3 +80,17 @@
   </footer>
   
 </template>
+
+<style>
+.listContainer3{
+  margin-left: 0px;
+  display: flex;
+}
+
+@media only screen and (min-width: 640px) {
+.listContainer3{
+    margin-left: 0px;
+    display: flex;
+  }
+}
+</style>

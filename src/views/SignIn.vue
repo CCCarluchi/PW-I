@@ -26,7 +26,7 @@
       </div>
       <br/><br/>
       <div class="inputContainer">
-        <router-link to="/SignUp" id="a"><a class="a2">Sign up</a></router-link>
+        <router-link to="/SignUp" id="a" class="a2">Sign up</router-link>
       </div>
     </form>
     <br/><br/>
@@ -37,3 +37,21 @@
   </footer>
 
 </template>
+
+<style>
+.imgLogo {
+  max-width:200px;
+  max-height:200px;
+  border-radius:10px;
+  margin-right: 15px;
+}
+
+@media only screen and (min-width: 640px) {
+.imgLogo {
+    max-width:332px;
+    max-height:332px;
+    border-radius:100px;
+    margin-right: 15px;
+  }
+  }
+</style>

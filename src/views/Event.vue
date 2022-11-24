@@ -71,3 +71,36 @@
     </footer>
 
 </template>
+
+<style>
+
+.appText {
+  overflow: hidden;
+  margin-left: 55px;
+  text-align: left;
+  text-decoration: none;
+}
+
+.appText2 {
+  overflow: hidden;
+  margin-left: 90px;
+  text-align: left;
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 640px) {
+.appText {
+    overflow: hidden;
+    margin-left: 465px;
+    text-align: left;
+    text-decoration: none;
+  }
+
+  .appText2 {
+    overflow: hidden;
+    margin-left: 500px;
+    text-align: left;
+    text-decoration: none;
+  }
+}
+</style>

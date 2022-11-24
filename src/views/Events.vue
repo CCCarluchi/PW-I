@@ -14,37 +14,37 @@
     <ul>
       <li class="listContainer">
         <img src="src/assets/1.png" class="imgList"/>
-        <router-link to="/CreateEvent" id="a"><a class="a2">Create</a></router-link>
+        <router-link to="/CreateEvent" id="a" class="a2">Create</router-link>
       </li>
       <br/>
 
       <li class="listContainer">
         <img src="src/assets/2.png" class="imgList"/>
-        <router-link to="/EventsList" id="a"><a class="a2">List</a></router-link>
+        <router-link to="/EventsList" id="a" class="a2">List</router-link>
       </li>
       <br/>
 
       <li class="listContainer">
         <img src="src/assets/3.png" class="imgList"/>
-        <router-link to="/SearchEvent" id="a"><a class="a2">Search Event</a></router-link>
+        <router-link to="/SearchEvent" id="a" class="a2">Search Event</router-link>
       </li>
       <br/>
 
       <li class="listContainer">
         <img src="src/assets/4.png" class="imgList"/>
-        <router-link to="/ShareEvent" id="a"><a class="a2">Share</a></router-link>
+        <router-link to="/ShareEvent" id="a" class="a2">Share</router-link>
       </li>
       <br/>
 
       <li class="listContainer">
         <img src="src/assets/5.png" class="imgList"/>
-        <router-link to="/ParticipateEvent" id="a"><a class="a2">Participate</a></router-link>
+        <router-link to="/ParticipateEvent" id="a" class="a2">Participate</router-link>
       </li>
       <br/>
 
       <li class="listContainer">
         <img src="src/assets/6.png" class="imgList"/>
-        <router-link to="/Timeline" id="a"><a class="a2">Timeline</a></router-link>
+        <router-link to="/Timeline" id="a" class="a2">Timeline</router-link>
       </li>
     </ul>
     <br/><br/>
@@ -54,3 +54,32 @@
   </footer>
   
 </template>
+
+<style>
+.listContainer{
+  margin-left: 0px;
+}
+.listContainer > img{
+  padding: 0px;
+}
+
+.listContainer > .a2{
+  padding: 0px;
+}
+
+
+
+@media only screen and (min-width: 640px) {
+  .listContainer{
+    margin-left: 0px;
+  }
+  .listContainer > img{
+    padding: 0px;
+  }
+  
+  .listContainer > .a2{
+    padding: 0px;
+    font-size: 32px;
+  }
+}
+</style>
