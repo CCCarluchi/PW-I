@@ -22,7 +22,7 @@
       </div>
       <br/><br/>
       <div class="inputContainer">
-        <router-link to="/Home" id="button"><button>Sign in</button></router-link>
+        <button v-on:click.prevent="login">Sign in  {{password}}</button>
       </div>
       <br/><br/>
       <div class="inputContainer">
@@ -55,3 +55,27 @@
   }
   }
 </style>
+
+<script>
+  export default {
+      data() {
+        return {
+          signIn: "",
+          user:"",
+          password:"",
+          error:""
+        }
+      },
+      methods: {
+        login() {
+          fetch('http://puigmal.salle.url.edu/api/v2')
+          .then(res => res.json())
+          .then(data => {
+            console.log(data)
+            this.password = data.events.url
+          });
+      }
+    }
+  }
+  
+</script>
