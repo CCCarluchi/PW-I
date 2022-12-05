@@ -1,16 +1,16 @@
 <template>
-  <main>
-    <header>
-      <br/>
-      <div class="arrowContainer" align ="left"> 
-        <router-link to="/" id="i"><i class="arrow left"></i></router-link>
-      </div>
-      <div class="appTitle">
-        <h2>Sign up</h2>
-      </div>
-    </header>
+  <header>
+    <br/>
+    <div class="arrowContainer"> 
+      <router-link to="/" id="i"><i class="arrow left"></i></router-link>
+    </div>
+    <div class="appTitle">
+      <h2>Sign up</h2>
+    </div>
+  </header>
     
-    <article>
+  <main>
+    <form>
       <div class="inputContainer">
         <input type="text" placeholder="*Name"><br/>
       </div>
@@ -54,11 +54,11 @@
       <div class="inputContainer">
         <router-link to="/Home" id="button"><button>Register</button></router-link>
       </div>
-    </article>
+    </form>
     <br/><br/>
-
-    <footer>
-    </footer>
-
   </main>
+
+  <footer>
+  </footer>
+
 </template>

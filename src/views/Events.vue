@@ -1,54 +1,85 @@
 <template>
+  
+  <header>
+    <br/>
+    <div class="arrowContainer"> 
+      <router-link to="/Home" id="i"><i class="arrow left"></i></router-link>
+    </div>
+    <div class="appTitle">
+      <h2>Events</h2>
+    </div>
+  </header>
+
   <main>
-    <header>
-      <br/>
-      <div class="arrowContainer" align="left"> 
-        <router-link to="/Home" id="i"><i class="arrow left"></i></router-link>
-      </div>
-      <div class="appTitle">
-        <h2>Events</h2>
-      </div>
-    </header>
-
-    <nav>
-      <div class="listContainer" align="left">
+    <ul>
+      <li class="listContainer">
         <img src="src/assets/1.png" class="imgList"/>
-        <router-link to="/CreateEvent" id="a2"><a2>Create</a2></router-link>
-      </div>
+        <router-link to="/CreateEvent" id="a" class="a2">Create</router-link>
+      </li>
       <br/>
 
-      <div class="listContainer" align="left">
+      <li class="listContainer">
         <img src="src/assets/2.png" class="imgList"/>
-        <router-link to="/EventsList" id="a2"><a2>List</a2></router-link>
-      </div>
+        <router-link to="/EventsList" id="a" class="a2">List</router-link>
+      </li>
       <br/>
 
-      <div class="listContainer" align="left">
+      <li class="listContainer">
         <img src="src/assets/3.png" class="imgList"/>
-        <router-link to="/SearchEvent" id="a2"><router-link to="/SearchEvent" id="a2"><a2>Search Event</a2></router-link></router-link>
-      </div>
+        <router-link to="/SearchEvent" id="a" class="a2">Search Event</router-link>
+      </li>
       <br/>
 
-      <div class="listContainer" align="left">
+      <li class="listContainer">
         <img src="src/assets/4.png" class="imgList"/>
-        <router-link to="/ShareEvent" id="a2"><a2>Share</a2></router-link>
-      </div>
+        <router-link to="/ShareEvent" id="a" class="a2">Share</router-link>
+      </li>
       <br/>
 
-      <div class="listContainer" align="left">
+      <li class="listContainer">
         <img src="src/assets/5.png" class="imgList"/>
-        <router-link to="/ParticipateEvent" id="a2"><a2>Participate</a2></router-link>
-      </div>
+        <router-link to="/ParticipateEvent" id="a" class="a2">Participate</router-link>
+      </li>
       <br/>
 
-      <div class="listContainer" align="left">
+      <li class="listContainer">
         <img src="src/assets/6.png" class="imgList"/>
-        <router-link to="/Timeline" id="a2"><a2>Timeline</a2></router-link>
-      </div>
-    </nav>
+        <router-link to="/Timeline" id="a" class="a2">Timeline</router-link>
+      </li>
+    </ul>
     <br/><br/>
-
-    <footer>
-    </footer>
   </main>
+
+  <footer>
+  </footer>
+  
 </template>
+
+<style>
+.listContainer{
+  margin-left: 0px;
+}
+.listContainer > img{
+  padding: 0px;
+}
+
+.listContainer > .a2{
+  padding: 0px;
+}
+
+
+
+@media only screen and (min-width: 640px) {
+  .listContainer{
+    margin-left: 0px;
+  }
+  .listContainer > img{
+    padding: 0px;
+  }
+  
+  .listContainer > .a2{
+    padding: 0px;
+    font-size: 32px;
+  }
+}
+</style>
