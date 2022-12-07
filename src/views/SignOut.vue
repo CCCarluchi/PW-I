@@ -9,10 +9,10 @@
 
   <main>
     <div class="card">
-      <div align = "left">
+      <div class="cardText">
         <h2>Sign out</h2>
       </div>
-      <div align = "left">
+      <div class="cardText">
         <p class="p2">Do you wish to sign out?</p>
       </div>
       <br/><br/>
@@ -26,3 +26,10 @@
   </footer>
 
 </template>
+
+<style>
+.cardText {
+  text-align: left;
+}
+
+</style>
