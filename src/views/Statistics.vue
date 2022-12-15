@@ -10,14 +10,19 @@
     </header>
 
     <article>
-      <div class="stats-container">
-          <p1>Your events puntuation:</p1>
-          <p2><span>50</span></p2><br/>
-          <p1>Your number of comments:</p1>
-          <p2><span>200</span></p2><br/>
-          <p1>Percentage of users with lower comments:</p1>
-          <p2><span>40%</span></p2><br/>
-      </div>
+      <table class = "stats-container">
+        <tr>
+          <th>Your events puntuation:</th>
+          <th>Your number of comments:</th>
+          <th>Percentage of users with lower comments:</th>
+        </tr>
+        <tr>
+          <td>50</td>
+          <td>200</td>
+          <td>40%</td>
+        </tr>
+
+      </table>
     </article>
 
     <footer>
@@ -25,3 +30,21 @@
     
     </main>
   </template>
+
+<style>
+.stats-container {
+ 
+  margin-left: auto;
+ margin-right: auto;
+ margin-top: 25px;
+ padding: 2% 2%;
+ background-color: rgba(255, 204, 153);
+ border: 1px solid black;
+ font-size: 20px;
+ font-family: 'Fredoka', sans-serif;
+}
+th {
+  padding: 40px;
+}
+
+</style>
