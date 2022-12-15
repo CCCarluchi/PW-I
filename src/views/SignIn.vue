@@ -3,6 +3,7 @@
       data() {
         return {
           signIn: "",
+          signUp: "",
           user:"",
           password:"",
           error:""
@@ -14,6 +15,7 @@
           .then(res => res.json())
           .then(data => {
             console.log(data)
+            this.user = data.events.url
             this.password = data.events.url
           });
       }
