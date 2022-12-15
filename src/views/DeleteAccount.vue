@@ -2,7 +2,7 @@
   <main>
     <header>
       <br/>
-      <div class="arrowContainer" align="left"> 
+      <div class="arrowContainer"> 
         <router-link to="/Data" id="i"><i class="arrow left"></i></router-link>
       </div>
     </header>
@@ -10,10 +10,10 @@
   <article>
     <br/>
     <div class="card">
-       <div align = "left">
+       <div>
        <h2>Delete account</h2>
        </div>
-       <div align = "left">
+       <div>
        <p2>Do you wish to delete account?</p2>
        </div>
        <br/><br/>

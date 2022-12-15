@@ -324,16 +324,7 @@ article{
   margin-top: 0.6%;
 }
 
-.stats-container {
-  display: grid;
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-top: 25px;
-  padding: 2%;
-  row-gap: 20px;
-  background-color: rgba(255, 204, 153);
-  border: 1px solid black;
-}
+
 
 .stats-container > .p1 {
   text-align: left;
