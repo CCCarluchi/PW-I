@@ -14,7 +14,7 @@
       <div class="inputContainer">
     <textarea type="text" placeholder="*Comments"></textarea><br/><br/>
     </div>
-    <router-link to="/Events" id="button2"><button2>Done</button2></router-link><br/><br/>
+    <router-link to="/Events" id="button2"><button class = "button2">Done</button></router-link><br/><br/>
       
     </main>
   </template>

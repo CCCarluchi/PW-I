@@ -29,9 +29,9 @@
         </div>
      <br/><br/>
         <img src='https://pbs.twimg.com/media/EztG5y0WQAAPS69?format=jpg&name=medium' class='imgRedonda' /><br/><br/>
-        <button2>Change picture</button2><br/><br/>
+        <button class = "button2">Change picture</button><br/><br/>
         <br/><br/>
-        <router-link to="/Data" id="button2"><button2>Apply Changes</button2></router-link><br/><br/>
+        <router-link to="/Data" id="button2"><button class = "button2">Apply Changes</button></router-link><br/><br/>
       </article>  
 
       <footer>
