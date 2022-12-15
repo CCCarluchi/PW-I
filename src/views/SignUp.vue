@@ -1,3 +1,36 @@
+<script>
+  export default {
+      data() {
+        return {
+          name: "",
+          surname: "",
+          username:"",
+          birth:"",
+          email:"",
+          password:"",
+          confirm:"",
+          image:"",
+          error:""
+        }
+      },
+      methods: {
+        login() {
+          fetch('http://puigmal.salle.url.edu/api/v2/users', {method: 'POST'})
+          .then(res => res.json())
+          .then(data => {
+            console.log(data)
+            this.name = data.events.url
+            this.surname = data.events.url
+            this.birth = data.events.url
+            this.email = data.events.url
+            this.password = data.events.url
+            this.image = data.events.url
+          });
+      }
+    }
+  }
+  
+</script>
 <template>
   <header>
     <br/>
@@ -52,6 +85,7 @@
       <br/><br/>
 
       <div class="inputContainer">
+        <button v-on:click.prevent="login">Register  {{password}}</button>
         <router-link to="/Home" id="button"><button>Register</button></router-link>
       </div>
     </form>
