@@ -1,3 +1,39 @@
+<script>
+/*
+One-way binding
+ */
+export default {
+  data() {
+    return {
+      isHidden: true,
+      buttonText: "Display?",
+      name: "",
+
+    }
+  },
+  methods: {
+    changeState() {
+      if (this.isHidden === false) {
+        this.isHidden = true;
+        this.buttonText = "Display?"
+      } else {
+        this.isHidden = false;
+        this.buttonText = "Hide?"
+      }
+    },
+
+    getUsers() {
+      fetch('http://puigmal.salle.url.edu/api/v2')
+         .then(res => res.json())
+         .then(data => {
+           console.log(data)
+         });
+    }    
+  }
+}
+</script>
+
+
 <template>
     <header class="appTitle">
         <h1>Home</h1>
@@ -7,7 +43,7 @@
     
     <div class="buttonHome">
         <div class="homeItemLeft">
-            <router-link to="/Data" id="button"><button class="buttonH">Profile</button></router-link>
+            <button class="buttonH" v-on:click="getUsers()">{{ buttonText }}</button>
         </div>
         <div class="homeItemRight">
             <router-link to="/FriendsList" id="button"><button class="buttonH">Friends</button></router-link>
