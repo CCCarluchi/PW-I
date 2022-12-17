@@ -9,25 +9,18 @@
           email:"",
           password:"",
           confirm:"",
-          image:"",
+          image:"hfhf.com",
           error:""
         }
       },
+
       methods: {
-        login() {
-          fetch('http://puigmal.salle.url.edu/api/v2/users', {method: 'POST'})
-          .then(res => res.json())
-          .then(data => {
-            console.log(data)
-            this.name = data.events.url
-            this.surname = data.events.url
-            this.birth = data.events.url
-            this.email = data.events.url
-            this.password = data.events.url
-            this.image = data.events.url
-          });
+        signUp(url = '', data = {}) {
+          response = fetch(url, {method: 'POST', body: JSON.stringify(data)});
+          return response.json();
+        },
+
       }
-    }
   }
   
 </script>
@@ -45,37 +38,37 @@
   <main>
     <form>
       <div class="inputContainer">
-        <input type="text" placeholder="*Name"><br/>
+        <input type="text" v-model="name" placeholder="*Name"><br/>
       </div>
       <br/><br/>
 
       <div class="inputContainer">
-        <input type="text" placeholder="*Surname"><br/>
+        <input type="text" v-model="surname" placeholder="*Surname"><br/>
       </div>
       <br/><br/>
 
       <div class="inputContainer">
-        <input type="text" placeholder="*Username"><br/>
+        <input id="vmodel-example" v-model="username" placeholder="*Username"><br/>
       </div>
       <br/><br/>
 
       <div class="inputContainer">
-        <input placeholder="*Date of birth" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"><br/>
+        <input placeholder="*Date of birth" v-model="birth" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"><br/>
       </div>
       <br/><br/>
 
       <div class="inputContainer">
-        <input type="text" placeholder="*Email"><br/>
+        <input type="text" v-model="email" placeholder="*Email"><br/>
       </div>
       <br/><br/>
 
       <div class="inputContainer">
-        <input type="password" placeholder="*Password"><br/>
+        <input type="password" v-model="password" placeholder="*Password"><br/>
       </div>
       <br/><br/>
 
       <div class="inputContainer">
-        <input type="password" placeholder="*Confirm Password"><br/>
+        <input type="password" v-model="confirm" placeholder="*Confirm Password"><br/>
       </div>
       <br/><br/>
 
@@ -85,7 +78,8 @@
       <br/><br/>
 
       <div class="inputContainer">
-        <button v-on:click.prevent="login">Register  {{password}}</button>
+        <button v-on:click="signUp('http://puigmal.salle.url.edu/api/v2/users', { name }).then((response) => {
+          console.log(response)});"> Register </button>
         <router-link to="/Home" id="button"><button>Register</button></router-link>
       </div>
     </form>
