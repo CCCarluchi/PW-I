@@ -141,3 +141,11 @@ const router = createRouter({
     routes
 })
 export default router
+
+const actualBtn = document.getElementById('actual-btn');
+
+const fileChosen = document.getElementById('file-chosen');
+
+actualBtn.addEventListener('change', function(){
+    return fileChosen.textContent = this.files[0].name
+  })
