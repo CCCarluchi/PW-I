@@ -2,7 +2,7 @@
     <main>
       <br/>
       <div class="arrowContainer" align="left"> 
-        <router-link to="/Event" id="i"><i class="arrow left"></i></router-link>
+        <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
       </div>
 
       <h1>Participate event</h1>
@@ -14,7 +14,7 @@
       <div class="inputContainer">
     <textarea type="text" placeholder="*Comments"></textarea><br/><br/>
     </div>
-    <router-link to="/Events" id="button2"><button class = "button2">Done</button></router-link><br/><br/>
+    <a href="/Events" id="button2"><button class = "button2">Done</button></a><br/><br/>
       
     </main>
   </template>

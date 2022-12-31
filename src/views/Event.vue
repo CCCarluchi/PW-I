@@ -3,7 +3,7 @@
     <header>
       <br/>
       <div class="arrowContainer"> 
-        <router-link to="/Events" id="i"><i class="arrow left"></i></router-link>
+        <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
       </div>
       <div class="appTitle">
         <h2>Event</h2>
@@ -56,12 +56,12 @@
 
         <div class="column">
             <div class="inputContainer">
-                <router-link to="/ShareEvent" id="button"><button>Share</button></router-link>
+                <a href="/ShareEvent" id="button"><button>Share</button></a>
             </div>
             <br/>
 
             <div class="inputContainer">
-                <router-link to="/ParticipateEvent" id="button"><button>Participate</button></router-link>
+                <a href="/ParticipateEvent" id="button"><button>Participate</button></a>
             </div>
         </div>
 

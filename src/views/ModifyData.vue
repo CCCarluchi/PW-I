@@ -4,7 +4,7 @@
         <header>
       <br/>
       <div class="arrowContainer" align="left"> 
-        <router-link to="/Data" id="i"><i class="arrow left"></i></router-link>
+        <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
       </div>
       <div class="appTitle">
         <h2>Change profile</h2>
@@ -31,7 +31,7 @@
         <img src='https://pbs.twimg.com/media/EztG5y0WQAAPS69?format=jpg&name=medium' class='imgRedonda' /><br/><br/>
         <button class = "button2">Change picture</button><br/><br/>
         <br/><br/>
-        <router-link to="/Data" id="button2"><button class = "button2">Apply Changes</button></router-link><br/><br/>
+        <a href="/Data" id="button2"><button class = "button2">Apply Changes</button></a><br/><br/>
       </article>  
 
       <footer>

@@ -3,7 +3,7 @@
     <header>
       <br/>
       <div class="arrowContainer"> 
-        <router-link to="/Data" id="i"><i class="arrow left"></i></router-link>
+        <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
       </div>
     </header>
     
@@ -18,7 +18,7 @@
        </div>
        <br/><br/>
        <div class="inputContainer">
-            <router-link to="/" id="button"><button>Delete it</button></router-link>
+            <a href="/" id="button"><button>Delete it</button></a>
        </div>  
     </div>
   </article>

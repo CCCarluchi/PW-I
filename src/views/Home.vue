@@ -46,13 +46,13 @@ export default {
             <button class="buttonH" v-on:click="getUsers()">{{ buttonText }}</button>
         </div>
         <div class="homeItemRight">
-            <router-link to="/FriendsList" id="button"><button class="buttonH">Friends</button></router-link>
+            <a href="/FriendsList" id="button"><button class="buttonH">Friends</button></a>
         </div>
         <div class="homeItemLeft">
-            <router-link to="/Events" id="button"><button class="buttonH">Events</button></router-link>
+            <a href="/Events" id="button"><button class="buttonH">Events</button></a>
         </div>
         <div class="homeItemRight">
-            <router-link to="/Chat" id="button"><button class="buttonH">Chat</button></router-link>
+            <a href="/Chat" id="button"><button class="buttonH">Chat</button></a>
         </div>
     </div>
     

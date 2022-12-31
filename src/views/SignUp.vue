@@ -45,7 +45,7 @@
   <header>
     <br/>
     <div class="arrowContainer"> 
-      <a href="/" id="i"><i class="arrow left"></i></a>
+      <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
     </div>
     <div class="appTitle">
       <h2>Sign up</h2>
@@ -96,7 +96,7 @@
 
       <div class="inputContainer">
         <button v-on:click.prevent="signUp('http://puigmal.salle.url.edu/api/v2/users', { name, last_name, email, password, image });"> Register </button>
-        <a href="/Home" id="button"><button>Register</button></a>
+        <router-link to="/Home"><button>Register</button></router-link>
       </div>
     </form>
     <br/><br/>

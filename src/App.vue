@@ -6,28 +6,28 @@
 
 <template>
   <nav>
-    <router-link to="/">SignIn</router-link> 
-    <router-link to="/SignUp">SignUp</router-link>
-    <router-link to="/FriendsList">FriendsList</router-link>
-    <router-link to="/Data">Data</router-link>
-    <router-link to="/FriendProfile">FriendProfile</router-link>
-    <router-link to="/NotFriendProfile">NotFriendProfile</router-link>
-    <router-link to="/Home">Home</router-link>
-    <router-link to="/PendingRequests">PendingRequests</router-link>
-    <router-link to="/ModifyData">ModifyData</router-link>
-    <router-link to="/DeleteAccount">DeleteAccount</router-link>
-    <router-link to="/Statistics">Statistics</router-link>
-    <router-link to="/Chat">Chat</router-link>
-    <router-link to="/SignOut">SignOut</router-link>
-    <router-link to="/Events">Events</router-link>
-    <router-link to="/CreateEvent">CreateEvent</router-link>
-    <router-link to="/ParticipateEvent">ParticipateEvent</router-link>
-    <router-link to="/Event">Event</router-link>
-    <router-link to="/SearchEvent">SearchEvent</router-link>
-    <router-link to="/Timeline">Timeline</router-link>
-    <router-link to="/ShareEvent">ShareEvent</router-link>
-    <router-link to="/EventsList">EventsList</router-link>
-    <router-link to="/SendRequest">SendRequest</router-link>
+    <a href="/">SignIn</a> 
+    <a href="/SignUp">SignUp</a>
+    <a href="/FriendsList">FriendsList</a>
+    <a href="/Data">Data</a>
+    <a href="/FriendProfile">FriendProfile</a>
+    <a href="/NotFriendProfile">NotFriendProfile</a>
+    <a href="/Home">Home</a>
+    <a href="/PendingRequests">PendingRequests</a>
+    <a href="/ModifyData">ModifyData</a>
+    <a href="/DeleteAccount">DeleteAccount</a>
+    <a href="/Statistics">Statistics</a>
+    <a href="/Chat">Chat</a>
+    <a href="/SignOut">SignOut</a>
+    <a href="/Events">Events</a>
+    <a href="/CreateEvent">CreateEvent</a>
+    <a href="/ParticipateEvent">ParticipateEvent</a>
+    <a href="/Event">Event</a>
+    <a href="/SearchEvent">SearchEvent</a>
+    <a href="/Timeline">Timeline</a>
+    <a href="/ShareEvent">ShareEvent</a>
+    <a href="/EventsList">EventsList</a>
+    <a href="/SendRequest">SendRequest</a>
   </nav>
   <router-view></router-view>
 </template>

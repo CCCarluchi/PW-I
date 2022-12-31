@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <br/>
     <div class="arrowContainer"> 
-      <router-link to="/Events" id="i"><i class="arrow left"></i></router-link>
+      <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
     </div>
     <div class="appTitle">
       <h2>List</h2>
@@ -39,37 +39,37 @@
     <ol>
       <li class="listContainer3">
         <img src="https://images.squarespace-cdn.com/content/v1/5a726fcd4c0dbfa531ec98cf/1523669284136-BTJA038C00QFP5M3AX0N/image-asset.jpeg" class="imgList2"/>
-        <router-link to="/Event" id="p"><p class="p1List">Event1</p><p class="p2List">   XX/XX/XXXX   Location</p></router-link>
+        <a href="/Event" id="p"><p class="p1List">Event1</p><p class="p2List">   XX/XX/XXXX   Location</p></a>
       </li>
       <br/>
 
       <li class="listContainer3">
         <img src="https://images.squarespace-cdn.com/content/v1/5a726fcd4c0dbfa531ec98cf/1523669284136-BTJA038C00QFP5M3AX0N/image-asset.jpeg" class="imgList2"/>
-        <router-link to="/Event" id="p"><p class="p1List">Event2</p><p class="p2List">   XX/XX/XXXX   Location</p></router-link>
+        <a href="/Event" id="p"><p class="p1List">Event2</p><p class="p2List">   XX/XX/XXXX   Location</p></a>
       </li>
       <br/>
 
       <li class="listContainer3">
         <img src="https://images.squarespace-cdn.com/content/v1/5a726fcd4c0dbfa531ec98cf/1523669284136-BTJA038C00QFP5M3AX0N/image-asset.jpeg" class="imgList2"/>
-        <router-link to="/Event" id="p"><p class="p1List">Event3</p><p class="p2List">   XX/XX/XXXX   Location</p></router-link>
+        <a href="/Event" id="p"><p class="p1List">Event3</p><p class="p2List">   XX/XX/XXXX   Location</p></a>
       </li>
       <br/>
 
       <li class="listContainer3">
         <img src="https://images.squarespace-cdn.com/content/v1/5a726fcd4c0dbfa531ec98cf/1523669284136-BTJA038C00QFP5M3AX0N/image-asset.jpeg" class="imgList2"/>
-        <router-link to="/Event" id="p"><p class="p1List">Event4</p><p class="p2List">   XX/XX/XXXX   Location</p></router-link>
+        <a href="/Event" id="p"><p class="p1List">Event4</p><p class="p2List">   XX/XX/XXXX   Location</p></a>
       </li>
       <br/>
 
       <li class="listContainer3">
         <img src="https://images.squarespace-cdn.com/content/v1/5a726fcd4c0dbfa531ec98cf/1523669284136-BTJA038C00QFP5M3AX0N/image-asset.jpeg" class="imgList2"/>
-        <router-link to="/Event" id="p"><p class="p1List">Event5</p><p class="p2List">   XX/XX/XXXX   Location</p></router-link>
+        <a href="/Event" id="p"><p class="p1List">Event5</p><p class="p2List">   XX/XX/XXXX   Location</p></a>
       </li>
       <br/>
 
       <li class="listContainer3">
         <img src="https://images.squarespace-cdn.com/content/v1/5a726fcd4c0dbfa531ec98cf/1523669284136-BTJA038C00QFP5M3AX0N/image-asset.jpeg" class="imgList2"/>
-        <router-link to="/Event" id="p"><p class="p1List">Event6</p><p class="p2List">   XX/XX/XXXX   Location</p></router-link>
+        <a href="/Event" id="p"><p class="p1List">Event6</p><p class="p2List">   XX/XX/XXXX   Location</p></a>
       </li>
 
     </ol>

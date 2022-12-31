@@ -1,7 +1,7 @@
 <template>
   <header>
     <br/>
-    <router-link to="/Home" id="i"><i class="arrow left"></i></router-link>
+    <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
     <br/><br/>
     <div class="profileGrid">
       <div class="profileMain">
@@ -14,19 +14,19 @@
   <main>
     <div class="elementsGrid">
       <div class="profileItem">
-        <router-link to="/Statistics" id="button"><button class="buttonProfile">Public Stats</button></router-link><br/><br/>
+        <a href="/Statistics" id="button"><button class="buttonProfile">Public Stats</button></a><br/><br/>
       </div>
       <div class="profileItem">
-        <router-link to="/PendingRequests" id="button"><button class="buttonProfile">Pending requests</button></router-link><br/><br/>
+        <a href="/PendingRequests" id="button"><button class="buttonProfile">Pending requests</button></a><br/><br/>
       </div>
       <div class="profileItem">
-        <router-link to="/ModifyData" id="button"><button class="buttonProfile">Change profile</button></router-link><br/><br/>
+        <a href="/ModifyData" id="button"><button class="buttonProfile">Change profile</button></a><br/><br/>
       </div>
       <div class="profileItem">
-        <router-link to="/SignOut" id="button"><button class="buttonProfile">Sign Out</button></router-link><br/><br/>
+        <a href="/SignOut" id="button"><button class="buttonProfile">Sign Out</button></a><br/><br/>
       </div>
       <div class="profileItem">
-        <router-link to="/DeleteAccount" id="button"><button class="buttonProfile">Delete Account</button></router-link><br/><br/>
+        <a href="/DeleteAccount" id="button"><button class="buttonProfile">Delete Account</button></a><br/><br/>
       </div>
     </div>
   </main>

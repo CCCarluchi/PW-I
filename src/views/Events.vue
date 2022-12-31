@@ -3,7 +3,7 @@
   <header>
     <br/>
     <div class="arrowContainer"> 
-      <router-link to="/Home" id="i"><i class="arrow left"></i></router-link>
+      <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
     </div>
     <div class="appTitle">
       <h2>Events</h2>
@@ -14,37 +14,37 @@
     <ul>
       <li class="listContainer">
         <img src="src/assets/1.png" class="imgList"/>
-        <router-link to="/CreateEvent" id="a" class="a2">Create</router-link>
+        <a href="/CreateEvent" id="a" class="a2">Create</a>
       </li>
       <br/>
 
       <li class="listContainer">
         <img src="src/assets/2.png" class="imgList"/>
-        <router-link to="/EventsList" id="a" class="a2">List</router-link>
+        <a href="/EventsList" id="a" class="a2">List</a>
       </li>
       <br/>
 
       <li class="listContainer">
         <img src="src/assets/3.png" class="imgList"/>
-        <router-link to="/SearchEvent" id="a" class="a2">Search Event</router-link>
+        <a href="/SearchEvent" id="a" class="a2">Search Event</a>
       </li>
       <br/>
 
       <li class="listContainer">
         <img src="src/assets/4.png" class="imgList"/>
-        <router-link to="/ShareEvent" id="a" class="a2">Share</router-link>
+        <a href="/ShareEvent" id="a" class="a2">Share</a>
       </li>
       <br/>
 
       <li class="listContainer">
         <img src="src/assets/5.png" class="imgList"/>
-        <router-link to="/ParticipateEvent" id="a" class="a2">Participate</router-link>
+        <a href="/ParticipateEvent" id="a" class="a2">Participate</a>
       </li>
       <br/>
 
       <li class="listContainer">
         <img src="src/assets/6.png" class="imgList"/>
-        <router-link to="/Timeline" id="a" class="a2">Timeline</router-link>
+        <a href="/Timeline" id="a" class="a2">Timeline</a>
       </li>
     </ul>
     <br/><br/>

@@ -2,7 +2,7 @@
 
   <header>
     <br/>
-    <router-link to="/PendingRequests" id="i"><i class="arrow left"></i></router-link>
+    <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
     <br/><br/>
     <div class="profileGrid">
       <div class="profileMain">
@@ -15,10 +15,10 @@
   <main>
     <div class="elementsGrid">
       <div class="profileItem">
-        <router-link to="/SendRequest" id="button"><button class="buttonProfile">+ Add friend</button></router-link>
+        <a href="/SendRequest" id="button"><button class="buttonProfile">+ Add friend</button></a>
       </div>
       <div class="profileItem">
-        <router-link to="/Statistics" id="button"><button class="buttonProfile">Public stats</button></router-link>
+        <a href="/Statistics" id="button"><button class="buttonProfile">Public stats</button></a>
       </div>
     </div>
   </main>

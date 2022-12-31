@@ -52,7 +52,7 @@
       </div>
       <br/><br/>
       <div class="inputContainer">
-        <router-link to="/SignUp" id="a" class="a2">Sign up</router-link>
+        <a href="/SignUp" id="a" class="a2">Sign up</a>
       </div>
     </form>
     <br/><br/>

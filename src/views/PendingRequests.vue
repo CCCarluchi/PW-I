@@ -3,7 +3,7 @@
     
      <header>
         <br/>
-        <router-link to="/Data" id="i"><i class="arrow left"></i></router-link>
+        <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
         <br/><br/>
         <div class="topText">
             <h1>Pending Requests</h1>
@@ -23,56 +23,56 @@
                 <p>Person 1</p>
                 <button>Deny</button>   
                 <button>Accept</button>
-                <router-link to="/NotFriendProfile" id="button"><button>Profile</button></router-link> 
+                <a href="/NotFriendProfile" id="button"><button>Profile</button></a> 
             </div>
             <div>
                 <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
                 <p>Person 2</p>
                 <button>Deny</button>   
                 <button>Accept</button>
-                <router-link to="/NotFriendProfile" id="button"><button>Profile</button></router-link> 
+                <a href="/NotFriendProfile" id="button"><button>Profile</button></a> 
             </div>
             <div>
                 <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/>
                 <p>Person 3</p>
                 <button>Deny</button>   
                 <button>Accept</button>
-                <router-link to="/NotFriendProfile" id="button"><button>Profile</button></router-link>  
+                <a href="/NotFriendProfile" id="button"><button>Profile</button></a>  
             </div>
             <div>
                 <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/>
                 <p>Person 4</p>
                 <button>Deny</button>   
                 <button>Accept</button>
-                <router-link to="/NotFriendProfile" id="button"><button>Profile</button></router-link> 
+                <a href="/NotFriendProfile" id="button"><button>Profile</button></a> 
             </div>
             <div>
                 <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
                 <p>Person 5</p>
                 <button>Deny</button>   
                 <button>Accept</button>
-                <router-link to="/NotFriendProfile" id="button"><button>Profile</button></router-link>  
+                <a href="/NotFriendProfile" id="button"><button>Profile</button></a>  
             </div>
             <div>
                 <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
                 <p>Person 6</p>
                 <button>Deny</button>   
                 <button>Accept</button>
-                <router-link to="/NotFriendProfile" id="button"><button>Profile</button></router-link>  
+                <a href="/NotFriendProfile" id="button"><button>Profile</button></a>  
             </div>
             <div>
                 <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
                 <p>Person 7</p>
                 <button>Deny</button>   
                 <button>Accept</button>
-                <router-link to="/NotFriendProfile" id="button"><button>Profile</button></router-link>  
+                <a href="/NotFriendProfile" id="button"><button>Profile</button></a>  
             </div>
             <div>
                 <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
                 <p>Person 8</p>
                 <button>Deny</button>   
                 <button>Accept</button>
-                <router-link to="/NotFriendProfile" id="button"><button>Profile</button></router-link> 
+                <a href="/NotFriendProfile" id="button"><button>Profile</button></a> 
             </div>
         </div>
     </main>
