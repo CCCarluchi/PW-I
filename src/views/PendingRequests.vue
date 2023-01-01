@@ -1,3 +1,38 @@
+<script>
+
+  export default {
+      data() {
+        return {
+          user: {id, name:"", last_name:"", email:"", image:"", status: int}
+          }
+        },
+
+      methods: {
+        getRequests() {
+          fetch("http://puigmal.salle.url.edu/api/v2/users/friends/requests", {headers: {'Authentication': 'token'}})
+          .then(res => res.json())
+          .then(data => {
+            for (let i = 0; i < data.lenght; i++) {
+                user[i].name = data[i].name
+                user[i].last_name = data[i].last_name
+                user[i].email = data[i].email
+                user[i].image = data[i].image
+                user[i].status = data[i].status
+            }
+            console.log(data)
+          });
+      },
+      acceptRequest() {
+        fetch("http://puigmal.salle.url.edu/api/v2/friends/" + user.id, {method: 'PUT', headers: {'Authentication': 'token'}})
+          .then(res => res.json())
+          .then(data => {
+            console.log(data)
+          }); 
+      }
+    }
+  }
+</script>
+
 <template>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     

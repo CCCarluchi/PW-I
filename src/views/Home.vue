@@ -1,38 +1,3 @@
-<script>
-/*
-One-way binding
- */
-export default {
-  data() {
-    return {
-      isHidden: true,
-      buttonText: "Display?",
-      name: "",
-
-    }
-  },
-  methods: {
-    changeState() {
-      if (this.isHidden === false) {
-        this.isHidden = true;
-        this.buttonText = "Display?"
-      } else {
-        this.isHidden = false;
-        this.buttonText = "Hide?"
-      }
-    },
-
-    getUsers() {
-      fetch('http://puigmal.salle.url.edu/api/v2')
-         .then(res => res.json())
-         .then(data => {
-           console.log(data)
-         });
-    }    
-  }
-}
-</script>
-
 
 <template>
     <header class="appTitle">
@@ -43,7 +8,7 @@ export default {
     
     <div class="buttonHome">
         <div class="homeItemLeft">
-            <button class="buttonH" v-on:click="getUsers()">{{ buttonText }}</button>
+          <a href="/Data" id="button"><button class="buttonH">Profile</button></a>
         </div>
         <div class="homeItemRight">
             <a href="/FriendsList" id="button"><button class="buttonH">Friends</button></a>

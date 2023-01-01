@@ -1,3 +1,29 @@
+<script>
+  export default {
+      data() {
+        return {
+          friend: {id, name:"", last_name:"", email:"", image:""}
+          }
+        },
+
+      methods: {
+        getFriends() {
+          fetch("http://puigmal.salle.url.edu/api/v2/users/friends", {headers: {'Authentication': 'token'}})
+          .then(res => res.json())
+          .then(data => {
+            for (let i = 0; i < data.lenght; i++) {
+              friend[i].name = data.name
+              friend[i].last_name = data.last_name
+              friend[i].email = data.email
+              friend[i].image = data.image
+            }
+            console.log(data)
+          });
+      }
+    }
+  }
+</script>
+
 <template>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     

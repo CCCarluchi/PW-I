@@ -2,21 +2,17 @@
   export default {
       data() {
         return {
-          signIn: "",
-          signUp: "",
-          user:"",
+          mail:"",
           password:"",
           error:""
         }
       },
       methods: {
-        login() {
-          fetch('http://puigmal.salle.url.edu/api/v2')
+        login(info = {}) {
+          fetch("http://puigmal.salle.url.edu/api/v2/users/login", {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(info)})
           .then(res => res.json())
           .then(data => {
             console.log(data)
-            this.user = data.events.url
-            this.password = data.events.url
           });
       }
     }
@@ -40,15 +36,15 @@
 
     <form>
       <div class="inputContainer">
-        <input type="text" placeholder="Username"><br/>
+        <input type="text" v-model="mail" placeholder="Mail"><br/>
       </div>
       <br/><br/>
       <div class="inputContainer">
-        <input type="password" placeholder="Password"><br/>
+        <input type="password" v-model="password" placeholder="Password"><br/>
       </div>
       <br/><br/>
       <div class="inputContainer">
-        <button v-on:click.prevent="login">Sign in  {{password}}</button>
+        <button v-on:click.prevent="login({ mail, password })">Sign in</button>
       </div>
       <br/><br/>
       <div class="inputContainer">

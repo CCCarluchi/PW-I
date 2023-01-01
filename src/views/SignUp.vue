@@ -10,26 +10,29 @@
           password:"",
           confirm:"",
           image:"hfhf.com",
-          //error:""
+          error:""
         }
-        let error = "";
+
       },
 
       
 
       methods: {
-        signUp(url = '', data = {}) {
-          fetch(url, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data)})
+        signUp(data = {}) {
+          fetch("http://puigmal.salle.url.edu/api/v2/users", {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data)})
           .then((response) => response.json()
             //if (!response.ok) {
               //throw new Error(response.statusText)
             //} 
           )
           .then((data) => {
-            //if (data.Error = "Error") {
+            if (data.error) {
+              alert("Error")
+            } else {
+              console.log(data)
+            }
             //  alert(data.stackTrace.details[0].message)
             //} else {
-              console.log('Success:', data)
             //}
           });
           //.catch((error) => {
@@ -95,7 +98,7 @@
       <br/><br/>
 
       <div class="inputContainer">
-        <button v-on:click.prevent="signUp('http://puigmal.salle.url.edu/api/v2/users', { name, last_name, email, password, image });"> Register </button>
+        <button v-on:click.prevent="signUp({ name, last_name, email, password, image });"> Register </button>
         <router-link to="/Home"><button>Register</button></router-link>
       </div>
     </form>

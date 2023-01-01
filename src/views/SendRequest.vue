@@ -1,3 +1,24 @@
+<script>
+import FriendsList from './FriendsList.vue';
+
+  export default {
+      data() {
+        return {
+        }
+      },
+      methods: {
+        sendRequest(data = {}) {
+          fetch("http://puigmal.salle.url.edu/api/v2/friends/" + FriendsList.friend.id, {method: 'POST', headers: {'Authentication': 'token'}, body: JSON.stringify(data)})
+          .then(res => res.json())
+          .then(data => {
+            console.log(data)
+          });
+      }
+    }
+  }
+  
+</script>
+
 <template>
     <main>
       <header>
