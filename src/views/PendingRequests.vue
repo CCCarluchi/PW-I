@@ -3,7 +3,7 @@
   export default {
       data() {
         return {
-          user: {id, name:"", last_name:"", email:"", image:"", status: int}
+          user: {id:"", name:"", last_name:"", email:"", image:"", status:""}
           }
         },
 
@@ -19,14 +19,14 @@
                 user[i].image = data[i].image
                 user[i].status = data[i].status
             }
-            console.log(data)
+            //console.log(data)
           });
       },
       acceptRequest() {
         fetch("http://puigmal.salle.url.edu/api/v2/friends/" + user.id, {method: 'PUT', headers: {'Authentication': 'token'}})
           .then(res => res.json())
           .then(data => {
-            console.log(data)
+            //console.log(data)
           }); 
       }
     }

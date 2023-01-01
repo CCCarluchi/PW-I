@@ -2,7 +2,7 @@
   export default {
       data() {
         return {
-          friend: {id, name:"", last_name:"", email:"", image:""}
+          friend: {id: "", name:"", last_name:"", email:"", image:""}
           }
         },
 
@@ -12,12 +12,13 @@
           .then(res => res.json())
           .then(data => {
             for (let i = 0; i < data.lenght; i++) {
-              friend[i].name = data.name
-              friend[i].last_name = data.last_name
-              friend[i].email = data.email
-              friend[i].image = data.image
+              this.friend[i].id = data.id
+              this.friend[i].name = data.name
+              this.friend[i].last_name = data.last_name
+              this.friend[i].email = data.email
+              this.friend[i].image = data.image
             }
-            console.log(data)
+            //console.log(data)
           });
       }
     }
