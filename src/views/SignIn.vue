@@ -3,32 +3,25 @@
   export default {
     data() {
       return {
-        user: {email:"", password:""}
+        email:"",
+        password:""
       }
     },
 
     methods: {
-      async login (info = {}) {
-        const result = await fetch('http://puigmal.salle.url.edu/api/v2/users/login', {
+      login (info = {}) {
+        fetch('http://puigmal.salle.url.edu/api/v2/users/login', {
           method: 'POST', 
-          body: info
-        })
-        .then(response => response.json)
-        .then (data => {         
-            window.localStorage.setItem("accessToken", data.accessToken);
+          headers: {'Content-Type': 'application/json'}, 
+          body: JSON.stringify(info)})
+        .then(response => response.json())
+        .then (data => { 
+            //window.localStorage.setItem("token", data.accessToken);
             console.log(data);
         })
         .catch(err => {
           console.log(err);
         });
-          
-        
-
-        /* 
-        .then(res => res.json())
-        .then(data => {
-          console.log(data)
-        }); */
       }
     }
   } 
@@ -59,7 +52,7 @@
       </div>
       <br/><br/>
       <div class="inputContainer">
-        <button v-on:click.prevent="login('http://puigmal.salle.url.edu/api/v2/users/login', { email, password })">Sign in</button>
+        <button v-on:click.prevent="login({ email, password })">Sign in</button>
       </div>
       <br/><br/>
       <div class="inputContainer">
