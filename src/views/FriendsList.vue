@@ -1,28 +1,38 @@
 <script>
-  export default {
-      data() {
-        return {
-          friends: {id: "", name:"", last_name:"", email:"", image:""}
-          }
-        },
 
-      methods: {
-        getFriends() {
-          fetch("http://puigmal.salle.url.edu/api/v2/users/friends", {headers: {'Authentication': 'token'}})
-          .then(res => res.json())
-          .then(data => {
-            for (let i = 0; i < data.lenght; i++) {
-              this.friends[i].id = data.id
-              this.friends[i].name = data.name
-              this.friends[i].last_name = data.last_name
-              this.friends[i].email = data.email
-              this.friends[i].image = data.image
-            }
-            //console.log(data)
-          });
+  export default {
+    data() {
+      return {
+        friends: {id: "", name:"", last_name:"", email:"", image:""}
+        }
+      },
+
+    methods: {
+      getFriends() {
+        const token = window.localStorage.getItem("token")
+        console.log(token)
+        fetch("http://puigmal.salle.url.edu/api/v2/users", {
+          headers: {'Authorization': token}
+        })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data)});
+          /*for (let i = 0; i < data.lenght; i++) {
+            this.friends[i].id = data.id
+            this.friends[i].name = data.name
+            this.friends[i].last_name = data.last_name
+            this.friends[i].email = data.email
+            this.friends[i].image = data.image
+          }        
+        }); */
       }
+    },
+
+    beforeMount(){
+      this.getFriends();
     }
   }
+
 </script>
 
 <template>

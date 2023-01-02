@@ -1,4 +1,7 @@
 <script>
+
+  import login from './../javascript/login.js'
+
   export default {
       data() {
         return {
@@ -10,7 +13,6 @@
           password:"",
           confirm:"",
           image:"hfhf.com",
-          error:""
         }
 
       },
@@ -18,25 +20,23 @@
       
 
       methods: {
-        signUp(data = {}) {
+        signUp(info = {}) {
+          console.log(info);
           fetch("http://puigmal.salle.url.edu/api/v2/users", {
             method: 'POST', 
             headers: {'Content-Type': 'application/json'}, 
-            body: JSON.stringify(data)})
-          .then((response) => response.json()
-            //if (!response.ok) {
-              //throw new Error(response.statusText)
-            //} 
-          )
+            body: JSON.stringify(info)})
+          .then((response) => response.json())
           .then((data) => {
-              console.log(data)
-            //  alert(data.stackTrace.details[0].message)
-            //} else {
-            //}
-          })
-          .catch((error) => {
-           console.error('Error:', error)
-          //  alert(error)
+            const email = info.email;
+            const password = info.password;
+            if (data.hasOwnProperty('Error')) {
+                alert('The information has an incorrect format, or that mail is already registered');
+            } else {
+              window.localStorage.removeItem("token");
+              login.login({email, password});
+              
+            }
           });
         }      
       }

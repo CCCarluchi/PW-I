@@ -1,4 +1,3 @@
-
 <template>
     <header class="appTitle">
         <h1>Home</h1>
