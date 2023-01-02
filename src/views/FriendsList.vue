@@ -2,7 +2,7 @@
   export default {
       data() {
         return {
-          friend: {id: "", name:"", last_name:"", email:"", image:""}
+          friends: {id: "", name:"", last_name:"", email:"", image:""}
           }
         },
 
@@ -12,11 +12,11 @@
           .then(res => res.json())
           .then(data => {
             for (let i = 0; i < data.lenght; i++) {
-              this.friend[i].id = data.id
-              this.friend[i].name = data.name
-              this.friend[i].last_name = data.last_name
-              this.friend[i].email = data.email
-              this.friend[i].image = data.image
+              this.friends[i].id = data.id
+              this.friends[i].name = data.name
+              this.friends[i].last_name = data.last_name
+              this.friends[i].email = data.email
+              this.friends[i].image = data.image
             }
             //console.log(data)
           });
@@ -45,6 +45,16 @@
   </header>
   
   <main>
+    <!--
+    <li class="grid-container" v-for="friend in friends" :key="friend.id">
+      <div>
+        <img src='friend.image' class='imgList'/>
+        <p>{{ friend.name }}</p>
+        <a href="/FriendProfile" id="button"><button>Profile</button></a>
+      </div>
+    </li>
+    -->
+
     <div class="grid-container">
       <div>
         <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/>

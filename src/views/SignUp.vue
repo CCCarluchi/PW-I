@@ -19,26 +19,25 @@
 
       methods: {
         signUp(data = {}) {
-          fetch("http://puigmal.salle.url.edu/api/v2/users", {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data)})
+          fetch("http://puigmal.salle.url.edu/api/v2/users", {
+            method: 'POST', 
+            headers: {'Content-Type': 'application/json'}, 
+            body: JSON.stringify(data)})
           .then((response) => response.json()
             //if (!response.ok) {
               //throw new Error(response.statusText)
             //} 
           )
           .then((data) => {
-            if (data.error) {
-              alert("Error")
-            } else {
               console.log(data)
-            }
             //  alert(data.stackTrace.details[0].message)
             //} else {
             //}
-          });
-          //.catch((error) => {
-          //  console.error('Error:', error)
+          })
+          .catch((error) => {
+           console.error('Error:', error)
           //  alert(error)
-          //});
+          });
         }      
       }
     }

@@ -1,27 +1,42 @@
-<script>
+<script >
+
   export default {
-      data() {
-        return {
-          mail:"",
-          password:"",
-          error:""
-        }
-      },
-      methods: {
-        login(info = {}) {
-          fetch("http://puigmal.salle.url.edu/api/v2/users/login", {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(info)})
-          .then(res => res.json())
-          .then(data => {
-            console.log(data)
-          });
+    data() {
+      return {
+        user: {email:"", password:""}
+      }
+    },
+
+    methods: {
+      async login (info = {}) {
+        const result = await fetch('http://puigmal.salle.url.edu/api/v2/users/login', {
+          method: 'POST', 
+          body: info
+        })
+        .then(response => response.json)
+        .then (data => {         
+            window.localStorage.setItem("accessToken", data.accessToken);
+            console.log(data);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+          
+        
+
+        /* 
+        .then(res => res.json())
+        .then(data => {
+          console.log(data)
+        }); */
       }
     }
-  }
-  
+  } 
 </script>
 
 <template>
-  
+
+
   <header>
     <div class="appTitle">
       <h1>Slow-Go</h1>
@@ -36,7 +51,7 @@
 
     <form>
       <div class="inputContainer">
-        <input type="text" v-model="mail" placeholder="Mail"><br/>
+        <input type="text" v-model="email" placeholder="Mail"><br/>
       </div>
       <br/><br/>
       <div class="inputContainer">
@@ -44,7 +59,7 @@
       </div>
       <br/><br/>
       <div class="inputContainer">
-        <button v-on:click.prevent="login({ mail, password })">Sign in</button>
+        <button v-on:click.prevent="login('http://puigmal.salle.url.edu/api/v2/users/login', { email, password })">Sign in</button>
       </div>
       <br/><br/>
       <div class="inputContainer">
