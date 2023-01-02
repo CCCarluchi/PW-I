@@ -1,31 +1,35 @@
-<script>
+<script >
+
   export default {
-      data() {
-        return {
-          signIn: "",
-          signUp: "",
-          user:"",
-          password:"",
-          error:""
-        }
-      },
-      methods: {
-        login() {
-          fetch('http://puigmal.salle.url.edu/api/v2')
-          .then(res => res.json())
-          .then(data => {
-            console.log(data)
-            this.user = data.events.url
-            this.password = data.events.url
-          });
+    data() {
+      return {
+        email:"",
+        password:""
+      }
+    },
+
+    methods: {
+      login (info = {}) {
+        fetch('http://puigmal.salle.url.edu/api/v2/users/login', {
+          method: 'POST', 
+          headers: {'Content-Type': 'application/json'}, 
+          body: JSON.stringify(info)})
+        .then(response => response.json())
+        .then (data => { 
+            //window.localStorage.setItem("token", data.accessToken);
+            console.log(data);
+        })
+        .catch(err => {
+          console.log(err);
+        });
       }
     }
-  }
-  
+  } 
 </script>
 
 <template>
-  
+
+
   <header>
     <div class="appTitle">
       <h1>Slow-Go</h1>
@@ -40,19 +44,19 @@
 
     <form>
       <div class="inputContainer">
-        <input type="text" placeholder="Username"><br/>
+        <input type="text" v-model="email" placeholder="Mail"><br/>
       </div>
       <br/><br/>
       <div class="inputContainer">
-        <input type="password" placeholder="Password"><br/>
+        <input type="password" v-model="password" placeholder="Password"><br/>
       </div>
       <br/><br/>
       <div class="inputContainer">
-        <button v-on:click.prevent="login">Sign in  {{password}}</button>
+        <button v-on:click.prevent="login({ email, password })">Sign in</button>
       </div>
       <br/><br/>
       <div class="inputContainer">
-        <router-link to="/SignUp" id="a" class="a2">Sign up</router-link>
+        <a href="/SignUp" id="a" class="a2">Sign up</a>
       </div>
     </form>
     <br/><br/>

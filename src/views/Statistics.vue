@@ -2,7 +2,7 @@
     <main>
       <header>
         <br/>
-        <router-link to="/Home" id="i"><i class="arrow left"></i></router-link>
+        <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
         <br/><br/>
         <div class="topText">
           <h1>Statistics</h1>
@@ -34,7 +34,7 @@
 <style>
 .stats-container {
  
-  margin-left: auto;
+ margin-left: auto;
  margin-right: auto;
  margin-top: 25px;
  padding: 2% 2%;

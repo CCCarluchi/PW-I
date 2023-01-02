@@ -1,38 +1,3 @@
-<script>
-/*
-One-way binding
- */
-export default {
-  data() {
-    return {
-      isHidden: true,
-      buttonText: "Display?",
-      name: "",
-
-    }
-  },
-  methods: {
-    changeState() {
-      if (this.isHidden === false) {
-        this.isHidden = true;
-        this.buttonText = "Display?"
-      } else {
-        this.isHidden = false;
-        this.buttonText = "Hide?"
-      }
-    },
-
-    getUsers() {
-      fetch('http://puigmal.salle.url.edu/api/v2')
-         .then(res => res.json())
-         .then(data => {
-           console.log(data)
-         });
-    }    
-  }
-}
-</script>
-
 
 <template>
     <header class="appTitle">
@@ -43,16 +8,16 @@ export default {
     
     <div class="buttonHome">
         <div class="homeItemLeft">
-            <button class="buttonH" v-on:click="getUsers()">{{ buttonText }}</button>
+          <a href="/Data" id="button"><button class="buttonH">Profile</button></a>
         </div>
         <div class="homeItemRight">
-            <router-link to="/FriendsList" id="button"><button class="buttonH">Friends</button></router-link>
+            <a href="/FriendsList" id="button"><button class="buttonH">Friends</button></a>
         </div>
         <div class="homeItemLeft">
-            <router-link to="/Events" id="button"><button class="buttonH">Events</button></router-link>
+            <a href="/Events" id="button"><button class="buttonH">Events</button></a>
         </div>
         <div class="homeItemRight">
-            <router-link to="/Chat" id="button"><button class="buttonH">Chat</button></router-link>
+            <a href="/Chat" id="button"><button class="buttonH">Chat</button></a>
         </div>
     </div>
     

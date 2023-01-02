@@ -1,9 +1,30 @@
+<script>
+import FriendsList from './FriendsList.vue';
+
+  export default {
+      data() {
+        return {
+        }
+      },
+      methods: {
+        sendRequest(data = {}) {
+          fetch("http://puigmal.salle.url.edu/api/v2/friends/" + FriendsList.friend.id, {method: 'POST', headers: {'Authentication': 'token'}, body: JSON.stringify(data)})
+          .then(res => res.json())
+          .then(data => {
+            console.log(data)
+          });
+      }
+    }
+  }
+  
+</script>
+
 <template>
     <main>
       <header>
         <br/>
         <div class="arrowContainer" align="left"> 
-          <router-link to="/NotFriendProfile" id="i"><i class="arrow left"></i></router-link>
+          <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
         </div>
       </header>
       <br/>
@@ -18,7 +39,7 @@
             </div>
             <br/><br/>
             <div class="inputContainer">
-              <router-link to="/NotFriendProfile" id="button"><button>Send</button></router-link>
+              <a href="/NotFriendProfile" id="button"><button>Send</button></a>
             </div>
         </div>
       </article>

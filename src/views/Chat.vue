@@ -3,7 +3,7 @@
 <header>
       <br/>
       <div class="arrowContainer" align="left"> 
-        <router-link to="/Home" id="i"><i class="arrow left"></i></router-link>
+        <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
       </div>
 </header>
     <main>

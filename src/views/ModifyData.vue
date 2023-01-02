@@ -11,7 +11,7 @@
         <header>
       <br/>
       <div class="arrowContainer" align="left"> 
-        <router-link to="/Data" id="i"><i class="arrow left"></i></router-link>
+        <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
       </div>
       <div class="appTitle">
         <h2>Change profile</h2>
@@ -41,7 +41,7 @@
         <span id="file-chosen">No file chosen</span>
         
         <br/><br/>
-        <router-link to="/Data" id="button2"><button class = "button2">Apply Changes</button></router-link><br/><br/>
+        <a href="/Data" id="button2"><button class = "button2">Apply Changes</button></a><br/><br/>
       </article>  
       
       <input style="display:none" type="file" id="my-file">

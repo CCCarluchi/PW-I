@@ -3,7 +3,7 @@
   <header>
     <br/>
     <div class="arrowContainer"> 
-      <router-link to="/Events" id="i"><i class="arrow left"></i></router-link>
+      <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
     </div>
     <div class="appTitle">
       <h2>Create event</h2>
@@ -38,7 +38,7 @@
       <br/><br/>
 
       <div class="inputContainer">
-        <router-link to="/Event" id="button"><button>Create</button></router-link>
+        <a href="/Event" id="button"><button>Create</button></a>
       </div>
       <br/><br/>
     </form>

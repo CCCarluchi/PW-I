@@ -3,7 +3,7 @@
       
 <header>
   <br/>
-  <router-link to="/Events" id="i"><i class="arrow left"></i></router-link>
+  <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
   <br/><br/>
   <div class="topText">
     <h1>Share event</h1>

@@ -3,7 +3,7 @@
       data() {
         return {
           name: "",
-          surname: "",
+          last_name: "",
           username:"",
           birth:"",
           email:"",
@@ -12,23 +12,42 @@
           image:"hfhf.com",
           error:""
         }
+
       },
 
-      methods: {
-        signUp(url = '', data = {}) {
-          response = fetch(url, {method: 'POST', body: JSON.stringify(data)});
-          return response.json();
-        },
+      
 
+      methods: {
+        signUp(data = {}) {
+          fetch("http://puigmal.salle.url.edu/api/v2/users", {
+            method: 'POST', 
+            headers: {'Content-Type': 'application/json'}, 
+            body: JSON.stringify(data)})
+          .then((response) => response.json()
+            //if (!response.ok) {
+              //throw new Error(response.statusText)
+            //} 
+          )
+          .then((data) => {
+              console.log(data)
+            //  alert(data.stackTrace.details[0].message)
+            //} else {
+            //}
+          })
+          .catch((error) => {
+           console.error('Error:', error)
+          //  alert(error)
+          });
+        }      
       }
-  }
+    }
   
 </script>
 <template>
   <header>
     <br/>
     <div class="arrowContainer"> 
-      <router-link to="/" id="i"><i class="arrow left"></i></router-link>
+      <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
     </div>
     <div class="appTitle">
       <h2>Sign up</h2>
@@ -43,7 +62,7 @@
       <br/><br/>
 
       <div class="inputContainer">
-        <input type="text" v-model="surname" placeholder="*Surname"><br/>
+        <input type="text" v-model="last_name" placeholder="*Last_name"><br/>
       </div>
       <br/><br/>
 
@@ -78,9 +97,8 @@
       <br/><br/>
 
       <div class="inputContainer">
-        <button v-on:click="signUp('http://puigmal.salle.url.edu/api/v2/users', { name }).then((response) => {
-          console.log(response)});"> Register </button>
-        <router-link to="/Home" id="button"><button>Register</button></router-link>
+        <button v-on:click.prevent="signUp({ name, last_name, email, password, image });"> Register </button>
+        <router-link to="/Home"><button>Register</button></router-link>
       </div>
     </form>
     <br/><br/>
