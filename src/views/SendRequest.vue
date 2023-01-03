@@ -1,18 +1,25 @@
 <script>
-import FriendsList from './FriendsList.vue';
 
   export default {
+
       data() {
         return {
+          alreadySent: false
         }
       },
+
       methods: {
-        sendRequest(data = {}) {
-          fetch("http://puigmal.salle.url.edu/api/v2/friends/" + FriendsList.friend.id, {method: 'POST', headers: {'Authentication': 'token'}, body: JSON.stringify(data)})
-          .then(res => res.json())
-          .then(data => {
-            console.log(data)
-          });
+        sendRequest() {
+          if (!this.alreadySent) {
+            fetch("http://puigmal.salle.url.edu/api/v2/friends/" + window.localStorage.getItem("selectedId"), {
+              method: 'POST',
+              headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
+            })
+            .then(res => res.json())
+            .then(data => {
+              console.log(data)
+            });
+          }
       }
     }
   }
@@ -39,7 +46,7 @@ import FriendsList from './FriendsList.vue';
             </div>
             <br/><br/>
             <div class="inputContainer">
-              <a href="/NotFriendProfile" id="button"><button>Send</button></a>
+              <a href="/NotFriendProfile" v-on:click="sendRequest()" id="button"><button>Send</button></a>
             </div>
         </div>
       </article>

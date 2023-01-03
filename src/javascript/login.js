@@ -12,7 +12,17 @@ export default {
                 alert('Mail or password wrong');
             } else {
                 window.localStorage.setItem("token", data.accessToken);
+
+                fetch('http://puigmal.salle.url.edu/api/v2/users/search?s=' + info.email, {
+                    headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
+                })
+                .then(res => res.json())
+                .then(data => {
+                    window.localStorage.setItem("myId", data[0].id)
+                })
+
                 window.location.href = "/Home";
+                
             }    
         })
     } 

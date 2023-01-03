@@ -1,4 +1,32 @@
+<script>
+  export default {
 
+    data() {
+      return {
+        name:"",
+        image:""
+      }
+    },
+
+    methods: {
+      getUser() {
+        fetch("http://puigmal.salle.url.edu/api/v2/users/" + window.localStorage.getItem("selectedId"), {
+          headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
+        })
+        .then(res => res.json())
+        .then(data => {
+          this.name = data[0].name;
+          this.image = data[0].image;
+        })
+      }
+    },
+
+    beforeMount() {
+      this.getUser()
+    }
+
+  }
+</script>
 
 <template>
 
@@ -6,10 +34,11 @@
     <br/>
     <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
     <br/><br/>
+
     <div class="profileGrid">
       <div class="profileMain">
-        <br/><br/><img src='https://i.ytimg.com/vi/ywthKNqI7uI/mqdefault.jpg' class='imgRedonda'/>
-        <h1>Name</h1>
+        <br/><br/><img v-bind:src="image" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgRedonda'/>
+        <h1>{{name}}</h1>
       </div>
     </div>
   </header>

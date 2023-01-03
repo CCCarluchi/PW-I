@@ -15,9 +15,8 @@
 
     methods: {
       getFriends() {
-        const token = window.localStorage.getItem("token")
         fetch("http://puigmal.salle.url.edu/api/v2/friends", {
-          headers: {'Authorization': 'Bearer ' + token}
+          headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
         })
         .then(res => res.json())
         .then(data => {
