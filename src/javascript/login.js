@@ -22,7 +22,7 @@ export default {
                     window.localStorage.setItem("myId", data[0].id)
                     console.log(window.localStorage)
                 })
-                .then( data => {
+                .then(data => {
                     window.location.assign('/Home')
                 })
                 

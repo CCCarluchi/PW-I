@@ -1,6 +1,4 @@
 <script>
-import { onBeforeMount } from 'vue';
-
 
   export default {
         data() {
@@ -11,28 +9,30 @@ import { onBeforeMount } from 'vue';
 
         methods: {
             getRequests() {
-                fetch("http://puigmal.salle.url.edu/api/v2/users/friends/requests", {
+                fetch("http://puigmal.salle.url.edu/api/v2/friends/requests", {
                     headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
                 })
                 .then(res => res.json())
                 .then(data => {
-                    if (!data.hasOwnProperty('error')) {
-                        for (let i = 0; i < data.length; i++) {
-                            this.users.push(data[i])
-                        } 
-                        console.log(data)
+                    console.log(data)
+                    for (let i = 0; i < data.length; i++) {
+                        this.users.push(data[i])
                     }
                 });
             },
 
             /* acceptRequest() {
                 fetch("http://puigmal.salle.url.edu/api/v2/friends/" + user.id, {
-                    method: 'PUT', headers: {'Authentication': 'token'}
+                    method: 'PUT', headers: {'Authorization': 'token'}
                 })
                 .then(res => res.json())
                 .then(data => {
-                //console.log(data)
+                    console.log(data)
                 }); 
+            },
+
+            locateClick(id) {
+                window.localStorage.setItem("selectedId", id);
             } */
         },
 
