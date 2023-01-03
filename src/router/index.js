@@ -21,6 +21,7 @@ import Timeline from '../views/Timeline.vue'
 import SearchEvent from '../views/SearchEvent.vue'
 import EventsList from '../views/EventsList.vue'
 import SendRequest from '../views/SendRequest.vue'
+import Users from '../views/users.vue'
 
 const routes = [
     {
@@ -132,6 +133,11 @@ const routes = [
         path: '/SendRequest',
         name: 'SendRequest',
         component: SendRequest,
+    },
+    {
+        path: '/Users',
+        name: 'Users',
+        component: Users,
     }
 
 ]

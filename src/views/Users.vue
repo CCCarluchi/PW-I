@@ -4,7 +4,7 @@
 
     data() {
       return {
-          friends: [],
+          users: [],
           id: "", 
           name:"",
           last_name:"", 
@@ -14,17 +14,17 @@
       },
 
     methods: {
-      getFriends() {
+      getUsers() {
         const token = window.localStorage.getItem("token")
-        fetch("http://puigmal.salle.url.edu/api/v2/friends", {
+        fetch("http://puigmal.salle.url.edu/api/v2/users", {
           headers: {'Authorization': 'Bearer ' + token}
         })
         .then(res => res.json())
         .then(data => {
           for (let i = 0; i < data.length; i++) {
-            this.friends.push(data[i])
+            this.users.push(data[i])
           } 
-          console.log(this.friends)   
+          console.log(this.users)   
           //return data 
         });
         /* .then(users => {
@@ -37,7 +37,7 @@
     },
 
     beforeMount(){
-      this.getFriends();
+      this.getUsers();
     }
   }
 
@@ -51,7 +51,7 @@
     <a onclick="window.history.back()"><i class="arrow left"></i></a>
     <br/><br/>
     <div class="topText">
-      <h1>Friends list</h1>
+      <h1>Users list</h1>
     </div>
     <br/><br/>
     
@@ -64,11 +64,11 @@
   
   <main>
     
-    <li class="grid-container" v-for="friend in friends" :key="friend.id">
+    <li class="grid-container" v-for="user in users" :key="user.id">
       <div>
-        <img v-bind:src=friend.image @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
-        <p>{{ friend.name }}</p>
-        <a href="/FriendProfile" id="button"><button>Profile</button></a>
+        <img v-bind:src=user.image @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
+        <p>{{ user.name }}</p>
+        <a href="/NotFriend" id="button"><button>Profile</button></a>
       </div>
     </li>
 
