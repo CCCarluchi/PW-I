@@ -30,10 +30,11 @@
                     console.log(data)
                 }); 
             },
+            */
 
             locateClick(id) {
                 window.localStorage.setItem("selectedId", id);
-            } */
+            } 
         },
 
         beforeMount() {
