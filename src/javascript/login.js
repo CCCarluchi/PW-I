@@ -17,14 +17,18 @@ export default {
                     headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
                 })
                 .then(res => res.json())
-                .then(data => {
+                .then(data => { 
+                    console.log(data)
                     window.localStorage.setItem("myId", data[0].id)
+                    console.log(window.localStorage)
                 })
-
-                window.location.href = "/Home";
+                .then( data => {
+                    window.location.assign('/Home')
+                })
                 
             }    
         })
+        
     } 
 }
   

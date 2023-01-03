@@ -14,6 +14,13 @@
       login(info = {}) {
         login.login(info);
       }
+    },
+
+    beforeMount() {
+      window.localStorage.clear();
+      /*
+        window.location.href = "/Home";
+      } */
     }
 
     }

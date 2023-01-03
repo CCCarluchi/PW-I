@@ -1,6 +1,7 @@
 <script>
 
-  import login from './../javascript/login.js'
+  import { onBeforeMount } from 'vue';
+import login from './../javascript/login.js'
 
   export default {
       data() {
@@ -12,13 +13,10 @@
           email:"",
           password:"",
           confirm:"",
-          image:"hfhf.com",
+          image:"",
         }
 
       },
-
-      
-
       methods: {
         signUp(info = {}) {
           console.log(info);
@@ -37,8 +35,23 @@
               login.login({email, password});
               
             }
-          });
-        }      
+          }); 
+        },
+        
+        onFileSelected(event) {
+          const formdata = new FormData()
+          formdata.append("image", event.target.files[0])
+            fetch("https://api.imgur.com/3/image/", {
+                method: 'POST',
+                headers: {'Authorization': "Client-ID 3eed77413905d63"},
+                body: formdata
+            }).then(data => data.json()).then(data => {
+                this.image = data.data.link
+            })
+        }
+      },
+      beforeMount() {
+        window.localStorage.clear();
       }
     }
   
@@ -92,7 +105,7 @@
       <br/><br/>
 
       <div class="inputContainer">
-        <input type="file" accept="image/*" class="custom" placeholder="+ Add your profile picture"><br/>
+        <input type="file" accept="image/*" class="custom" @change="onFileSelected" placeholder="+ Add your profile picture"><br/>
       </div>
       <br/><br/>
 

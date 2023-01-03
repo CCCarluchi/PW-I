@@ -1,36 +1,45 @@
 <script>
+import { onBeforeMount } from 'vue';
+
 
   export default {
-      data() {
-        return {
-          user: {id:"", name:"", last_name:"", email:"", image:"", status:""}
-          }
+        data() {
+            return {
+                users: []
+            }
         },
 
-      methods: {
-        getRequests() {
-          fetch("http://puigmal.salle.url.edu/api/v2/users/friends/requests", {headers: {'Authentication': 'token'}})
-          .then(res => res.json())
-          .then(data => {
-            for (let i = 0; i < data.lenght; i++) {
-                user[i].name = data[i].name
-                user[i].last_name = data[i].last_name
-                user[i].email = data[i].email
-                user[i].image = data[i].image
-                user[i].status = data[i].status
-            }
-            //console.log(data)
-          });
-      },
-      acceptRequest() {
-        fetch("http://puigmal.salle.url.edu/api/v2/friends/" + user.id, {method: 'PUT', headers: {'Authentication': 'token'}})
-          .then(res => res.json())
-          .then(data => {
-            //console.log(data)
-          }); 
-      }
+        methods: {
+            getRequests() {
+                fetch("http://puigmal.salle.url.edu/api/v2/users/friends/requests", {
+                    headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (!data.hasOwnProperty('error')) {
+                        for (let i = 0; i < data.length; i++) {
+                            this.users.push(data[i])
+                        } 
+                        console.log(data)
+                    }
+                });
+            },
+
+            /* acceptRequest() {
+                fetch("http://puigmal.salle.url.edu/api/v2/friends/" + user.id, {
+                    method: 'PUT', headers: {'Authentication': 'token'}
+                })
+                .then(res => res.json())
+                .then(data => {
+                //console.log(data)
+                }); 
+            } */
+        },
+
+        beforeMount() {
+            this.getRequests()
+        }
     }
-  }
 </script>
 
 <template>
@@ -52,7 +61,17 @@
     </header>
 
     <main>
-        <div class="grid-container">
+        <li class="grid-container" v-for="user in users" :key="user.id">
+            <div>
+                <!-- <img v-bind:src=user.image @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/> -->
+                <p>{{ user.name }}</p>
+                <button>Deny</button>   
+                <button>Accept</button>
+                <a href="/NotFriendProfile" v-on:click="locateClick(user.id)"><button>Profile</button></a>
+            </div>
+        </li>
+
+        <!-- <div class="grid-container">
             <div>
                 <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/>
                 <p>Person 1</p>
@@ -109,7 +128,7 @@
                 <button>Accept</button>
                 <a href="/NotFriendProfile" id="button"><button>Profile</button></a> 
             </div>
-        </div>
+        </div> -->
     </main>
 </template>
 

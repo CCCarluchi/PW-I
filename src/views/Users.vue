@@ -5,21 +5,20 @@
     data() {
       return {
           users: [],
+          name:""
         }
       },
 
     methods: {
       getUsers() {
-        const token = window.localStorage.getItem("token")
         fetch("http://puigmal.salle.url.edu/api/v2/users", {
-          headers: {'Authorization': 'Bearer ' + token}
+          headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
         })
         .then(res => res.json())
         .then(data => {
           for (let i = 0; i < data.length; i++) {
             this.users.push(data[i])
-          } 
-          console.log(this.users)   
+          }    
           //return data 
         });
         /* .then(users => {
@@ -30,9 +29,22 @@
         });  */
       },
       
+      searchUsers(name) {
+        fetch('http://puigmal.salle.url.edu/api/v2/users/search?s=' + name, {
+          headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
+        })
+        .then(res => res.json())
+        .then(data => {
+          this.users.splice(0)
+          for (let i = 0; i < data.length; i++) {
+            this.users.push(data[i])
+          } 
+          
+        })
+      },
+
       locateClick(id) {
         window.localStorage.setItem("selectedId", id);
-
       }
 
     },
@@ -57,8 +69,8 @@
     <br/><br/>
     
     <div class="searchContainer">
-      <input type="text" placeholder="Search friend...">
-      <button type="submit"><i class="fa fa-search"></i ></button><br/><br/>
+      <input type="text" v-model="name" placeholder="Search user...">
+      <button type="submit" v-on:click="searchUsers(name)"><i class="fa fa-search"></i ></button><br/><br/>
     </div>
     <br/>
   </header>
