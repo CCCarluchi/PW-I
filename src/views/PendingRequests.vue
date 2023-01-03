@@ -21,16 +21,35 @@
                 });
             },
 
-            /* acceptRequest() {
-                fetch("http://puigmal.salle.url.edu/api/v2/friends/" + user.id, {
-                    method: 'PUT', headers: {'Authorization': 'token'}
+            acceptRequest(id) {
+                this.locateClick(id)
+                fetch("http://puigmal.salle.url.edu/api/v2/friends/" + window.localStorage.getItem("selectedId"), {
+                    method: 'PUT', 
+                    headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
                 })
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
+                })
+                .then(data => {
+                    window.location.reload()
                 }); 
             },
-            */
+
+            deleteRequest(id) {
+                this.locateClick(id)
+                fetch("http://puigmal.salle.url.edu/api/v2/friends/" + window.localStorage.getItem("selectedId"), {
+                    method: 'DELETE', 
+                    headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                })
+                .then(data => {
+                    window.location.reload()
+                }); 
+            },
 
             locateClick(id) {
                 window.localStorage.setItem("selectedId", id);
@@ -54,10 +73,6 @@
             <h1>Pending Requests</h1>
         </div>
         <br/><br/>
-        <div class="searchContainer">
-            <input type="text" placeholder="Search friend...">
-            <button type="submit"><i class="fa fa-search"></i></button><br/><br/>
-        </div>
         <br/>
     </header>
 
@@ -66,8 +81,8 @@
             <div>
                 <!-- <img v-bind:src=user.image @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/> -->
                 <p>{{ user.name }}</p>
-                <button>Deny</button>   
-                <button>Accept</button>
+                <button v-on:click="deleteRequest(user.id)">Deny</button>   
+                <button v-on:click="acceptRequest(user.id)">Accept</button>
                 <a href="/NotFriendProfile" v-on:click="locateClick(user.id)"><button>Profile</button></a>
             </div>
         </li>

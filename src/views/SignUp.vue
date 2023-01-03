@@ -1,7 +1,6 @@
 <script>
 
-  import { onBeforeMount } from 'vue';
-import login from './../javascript/login.js'
+import logic from '../javascript/logic.js'
 
   export default {
       data() {
@@ -32,7 +31,7 @@ import login from './../javascript/login.js'
                 alert('The information has an incorrect format, or that mail is already registered');
             } else {
               window.localStorage.removeItem("token");
-              login.login({email, password});
+              logic.login({email, password});
               
             }
           }); 

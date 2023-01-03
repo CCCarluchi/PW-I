@@ -1,15 +1,12 @@
 <script>
+import logic from '../javascript/logic.js'
 
   export default {
 
     data() {
       return {
           friends: [],
-          id: "", 
-          name:"",
-          last_name:"", 
-          email:"", 
-          image:""
+          name:""
         }
       },
 
@@ -24,15 +21,13 @@
             this.friends.push(data[i])
           } 
           console.log(this.friends)   
-          //return data 
         });
-        /* .then(users => {
-          const friend = {id:"", name:"", last_name:"", email:"", image:"" }
-          for (let i = 0 ; i < users.length; i++) {
-            this.friends.push(users[i])
-          }
-        });  */
+      },
+
+      locateClick(id) {
+        window.localStorage.setItem("selectedId", id);
       }
+
     },
 
     beforeMount(){
@@ -43,7 +38,6 @@
 </script>
 
 <template>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
   <header>
     <br/>
@@ -54,10 +48,6 @@
     </div>
     <br/><br/>
     
-    <div class="searchContainer">
-      <input type="text" placeholder="Search friend...">
-      <button type="submit"><i class="fa fa-search"></i ></button><br/><br/>
-    </div>
     <br/>
   </header>
   
@@ -67,7 +57,7 @@
       <div>
         <img v-bind:src=friend.image @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
         <p>{{ friend.name }}</p>
-        <a href="/FriendProfile" id="button"><button>Profile</button></a>
+        <a href="/FriendProfile" v-on:click="locateClick(friend.id)"><button>Profile</button></a>
       </div>
     </li>
 

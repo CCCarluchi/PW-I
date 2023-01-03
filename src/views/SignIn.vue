@@ -1,5 +1,5 @@
 <script >
-  import login from './../javascript/login.js'
+  import logic from '../javascript/logic.js'
 
   export default {
 
@@ -12,7 +12,7 @@
 
     methods: {
       login(info = {}) {
-        login.login(info);
+        logic.login(info);
       }
     },
 

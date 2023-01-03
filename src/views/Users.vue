@@ -19,14 +19,7 @@
           for (let i = 0; i < data.length; i++) {
             this.users.push(data[i])
           }    
-          //return data 
         });
-        /* .then(users => {
-          const friend = {id:"", name:"", last_name:"", email:"", image:"" }
-          for (let i = 0 ; i < users.length; i++) {
-            this.friends.push(users[i])
-          }
-        });  */
       },
       
       searchUsers(name) {

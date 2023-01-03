@@ -29,6 +29,21 @@ export default {
             }    
         })
         
-    } 
+    },
+    
+    getData(url = "") {
+        const data = [];
+        fetch(url, {
+          headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
+        })
+        .then(res => res.json())
+        .then(info => {
+          for (let i = 0; i < info.length; i++) {
+            data.push(info[i])
+          } 
+        });
+        return data; 
+    }
+
 }
   
