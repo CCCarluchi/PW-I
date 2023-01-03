@@ -79,7 +79,7 @@
     <main>
         <li class="grid-container" v-for="user in users" :key="user.id">
             <div>
-                <!-- <img v-bind:src=user.image @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/> -->
+                <img v-bind:src=user.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/> 
                 <p>{{ user.name }}</p>
                 <button v-on:click="deleteRequest(user.id)">Deny</button>   
                 <button v-on:click="acceptRequest(user.id)">Accept</button>
@@ -87,64 +87,6 @@
             </div>
         </li>
 
-        <!-- <div class="grid-container">
-            <div>
-                <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/>
-                <p>Person 1</p>
-                <button>Deny</button>   
-                <button>Accept</button>
-                <a href="/NotFriendProfile" id="button"><button>Profile</button></a> 
-            </div>
-            <div>
-                <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
-                <p>Person 2</p>
-                <button>Deny</button>   
-                <button>Accept</button>
-                <a href="/NotFriendProfile" id="button"><button>Profile</button></a> 
-            </div>
-            <div>
-                <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/>
-                <p>Person 3</p>
-                <button>Deny</button>   
-                <button>Accept</button>
-                <a href="/NotFriendProfile" id="button"><button>Profile</button></a>  
-            </div>
-            <div>
-                <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/>
-                <p>Person 4</p>
-                <button>Deny</button>   
-                <button>Accept</button>
-                <a href="/NotFriendProfile" id="button"><button>Profile</button></a> 
-            </div>
-            <div>
-                <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
-                <p>Person 5</p>
-                <button>Deny</button>   
-                <button>Accept</button>
-                <a href="/NotFriendProfile" id="button"><button>Profile</button></a>  
-            </div>
-            <div>
-                <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
-                <p>Person 6</p>
-                <button>Deny</button>   
-                <button>Accept</button>
-                <a href="/NotFriendProfile" id="button"><button>Profile</button></a>  
-            </div>
-            <div>
-                <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
-                <p>Person 7</p>
-                <button>Deny</button>   
-                <button>Accept</button>
-                <a href="/NotFriendProfile" id="button"><button>Profile</button></a>  
-            </div>
-            <div>
-                <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
-                <p>Person 8</p>
-                <button>Deny</button>   
-                <button>Accept</button>
-                <a href="/NotFriendProfile" id="button"><button>Profile</button></a> 
-            </div>
-        </div> -->
     </main>
 </template>
 

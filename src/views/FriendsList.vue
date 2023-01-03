@@ -1,12 +1,13 @@
 <script>
-import logic from '../javascript/logic.js'
 
   export default {
 
     data() {
       return {
           friends: [],
-          name:""
+          name:"",
+          image:"",
+          imgError: false
         }
       },
 
@@ -26,8 +27,18 @@ import logic from '../javascript/logic.js'
 
       locateClick(id) {
         window.localStorage.setItem("selectedId", id);
+      },
+
+      onImgError() {
+        this.imgError = true;
       }
 
+    },
+
+    computed: {
+      filename() {
+        return (this.imgError) ? "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541" : 'a';
+      }
     },
 
     beforeMount(){
@@ -55,7 +66,7 @@ import logic from '../javascript/logic.js'
     
     <li class="grid-container" v-for="friend in friends" :key="friend.id">
       <div>
-        <img v-bind:src=friend.image @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
+        <img v-bind:src=filename referrerpolicy="no-referrer" @error="onImgError" class='imgList'/>
         <p>{{ friend.name }}</p>
         <a href="/FriendProfile" v-on:click="locateClick(friend.id)"><button>Profile</button></a>
       </div>

@@ -1,79 +1,64 @@
+<script>
+
+export default {
+
+  data() {
+    return {
+        events: [],
+      }
+    },
+
+  methods: {
+    getEvents() {
+      fetch("http://puigmal.salle.url.edu/api/v2/events", {
+        headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
+      })
+      .then(res => res.json())
+      .then(data => {
+        for (let i = 0; i < data.length; i++) {
+          this.events.push(data[i])
+        }    
+        console.log(data)
+      });
+    },
+
+    locateClick(id) {
+      window.localStorage.setItem("selectedId", id);
+    }
+
+  },
+
+  beforeMount(){
+    this.getEvents()
+  }
+}
+
+</script>
+
 <template>
+
   <header>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <br/>
-    <div class="arrowContainer"> 
-      <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
+    <a onclick="window.history.back()"><i class="arrow left"></i></a>
+    <br/><br/>
+    <div class="topText">
+      <h1>Events</h1>
     </div>
-    <div class="appTitle">
-      <h2>List</h2>
-    </div>
+    <br/><br/>
+    
+    <br/>
   </header>
 
   <main>
-    
-    <form>
-      <div class="searchContainer2">
-        <h2>Search</h2>
-        <div class="inputContainer">
-          <input type="text" placeholder="Search event by name">
-        </div>
-        <div class="inputContainer">
-          <input placeholder="Search event by start date" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"><br/>
-        </div>
-        <div class="inputContainer">
-          <input type="text" placeholder="Search event by location">
-        </div>
-        <div class="inputContainer">
-          <button type="submit"><i class="fa fa-search"></i></button><br/><br/>
-        </div>
+
+    <li class="grid-container" v-for="event in events" :key="event.id">
+      <div>
+        <img v-bind:src=event.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/> -->
+        <p>{{ event.name }}</p>
+        <a href="/Event" v-on:click="locateClick(event.id)"><button>Event</button></a>
       </div>
-      <br/><br/><br/>
-    </form>
+    </li>
 
-    <div class="appTitle">
-      <p class="p1">Results</p>
-    </div>
-    <br/>
-
-    <ol>
-      <li class="listContainer3">
-        <img src="https://images.squarespace-cdn.com/content/v1/5a726fcd4c0dbfa531ec98cf/1523669284136-BTJA038C00QFP5M3AX0N/image-asset.jpeg" class="imgList2"/>
-        <a href="/Event" id="p"><p class="p1List">Event1</p><p class="p2List">   XX/XX/XXXX   Location</p></a>
-      </li>
-      <br/>
-
-      <li class="listContainer3">
-        <img src="https://images.squarespace-cdn.com/content/v1/5a726fcd4c0dbfa531ec98cf/1523669284136-BTJA038C00QFP5M3AX0N/image-asset.jpeg" class="imgList2"/>
-        <a href="/Event" id="p"><p class="p1List">Event2</p><p class="p2List">   XX/XX/XXXX   Location</p></a>
-      </li>
-      <br/>
-
-      <li class="listContainer3">
-        <img src="https://images.squarespace-cdn.com/content/v1/5a726fcd4c0dbfa531ec98cf/1523669284136-BTJA038C00QFP5M3AX0N/image-asset.jpeg" class="imgList2"/>
-        <a href="/Event" id="p"><p class="p1List">Event3</p><p class="p2List">   XX/XX/XXXX   Location</p></a>
-      </li>
-      <br/>
-
-      <li class="listContainer3">
-        <img src="https://images.squarespace-cdn.com/content/v1/5a726fcd4c0dbfa531ec98cf/1523669284136-BTJA038C00QFP5M3AX0N/image-asset.jpeg" class="imgList2"/>
-        <a href="/Event" id="p"><p class="p1List">Event4</p><p class="p2List">   XX/XX/XXXX   Location</p></a>
-      </li>
-      <br/>
-
-      <li class="listContainer3">
-        <img src="https://images.squarespace-cdn.com/content/v1/5a726fcd4c0dbfa531ec98cf/1523669284136-BTJA038C00QFP5M3AX0N/image-asset.jpeg" class="imgList2"/>
-        <a href="/Event" id="p"><p class="p1List">Event5</p><p class="p2List">   XX/XX/XXXX   Location</p></a>
-      </li>
-      <br/>
-
-      <li class="listContainer3">
-        <img src="https://images.squarespace-cdn.com/content/v1/5a726fcd4c0dbfa531ec98cf/1523669284136-BTJA038C00QFP5M3AX0N/image-asset.jpeg" class="imgList2"/>
-        <a href="/Event" id="p"><p class="p1List">Event6</p><p class="p2List">   XX/XX/XXXX   Location</p></a>
-      </li>
-
-    </ol>
-    <br/><br/>
   </main>
 
   <footer>
