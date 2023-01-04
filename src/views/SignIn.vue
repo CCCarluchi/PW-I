@@ -1,4 +1,4 @@
-<script >
+<script>
   import logic from '../javascript/logic.js'
 
   export default {
