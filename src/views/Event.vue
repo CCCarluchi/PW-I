@@ -3,7 +3,8 @@ export default {
 
     data() {
         return {
-            event: {}
+            event: {},
+            name:""
         }
     },
 
@@ -15,6 +16,15 @@ export default {
             .then(res => res.json())
             .then(data => {
                 this.event = data[0]
+                fetch("http://puigmal.salle.url.edu/api/v2/users/" + data[0].id, {
+                    headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
+                })
+                .then(res => res.json())
+                .then(user => {
+                    this.name = user[0].name
+                })
+
+                
             })
         }
     },
@@ -41,59 +51,53 @@ export default {
     </header>
 
     <main>
-        <article class="column">
-            <div class="appText">
-                <p class="p1">Name</p>
+        
+        <li class = "eventData">
+            <div>
+                <h3>Owner:   </h3>
+                <p>{{ name }}</p>
             </div>
+            <div>
+                <h3>Date:   </h3>
+                <p>{{ event.date }}</p>
+            </div>
+            <div>
+                <h3>Location:   </h3>
+                <p>{{ event.location }}</p>
+            </div>
+            <div>
+                <h3>Type:   </h3>
+                <p>{{ event.type }}</p>
+            </div>
+            <div>
+                <h3>Description:   </h3>
+                <p>{{ event.description }}</p>
+            </div>
+            <div>
+                <h3>Start date:   </h3>
+                <p>{{ event.eventStart_date }}</p>
+            </div>
+            <div>
+                <h3>End date:   </h3>
+                <p>{{ event.eventEnd_date }}</p>
+            </div>
+            <div>
+                <h3>Nº of participants:   </h3>
+                <p>{{ event.n_participators }}</p>
+            </div>
+        </li>
 
-            <div class="appText2">
-                <p class="p2">EventName</p>
-            </div>
 
-            <div class="appText">
-                <p class="p1">Start date</p>
-            </div>
-
-            <div class="appText2">
-                <p class="p2">XX/XX/XXXX</p>
-            </div>
-
-            <div class="appText">
-                <p class="p1">End date</p>
-            </div>
-
-            <div class="appText2">
-                <p class="p2">XX/XX/XXXX</p>
-            </div>
-
-            <div class="appText">
-                <p class="p1">Location</p>
-            </div>
-
-            <div class="appText2">
-                <p class="p2">EventLocation</p>
-            </div>
-
-            <div class="appText">
-                <p class="p1">Details</p>
-            </div>
-
-            <div class="appText2">
-                <p class="p2">EventDetails</p>
-            </div>
-        </article>
-        <br/><br/>
-
-        <div class="column">
-            <div class="inputContainer">
-                <a href="/ShareEvent" id="button"><button>Share</button></a>
-            </div>
-            <br/>
-
-            <div class="inputContainer">
-                <a href="/ParticipateEvent" id="button"><button>Participate</button></a>
-            </div>
+    
+        <div class="inputContainer">
+            <a href="/ShareEvent" id="button"><button>Share</button></a>
         </div>
+        <br/>
+
+        <div class="inputContainer">
+            <a href="/ParticipateEvent" id="button"><button>Participate</button></a>
+        </div>
+       
 
     </main>
 
@@ -103,6 +107,34 @@ export default {
 </template>
 
 <style>
+
+.eventData {
+  border: 1px solid black;
+  display: grid;
+  margin-left: 5.5%;
+  margin-right: 5.5%;
+}
+
+.eventData > div {
+  background-color:rgba(255, 204, 153);
+  text-align: left;
+  padding: 1%;
+  font-size: 24px;
+  font-family: 'Fredoka', sans-serif;
+  display: inline;
+}
+
+.eventData > div > h3 {
+  font-size: 26px;
+  display: inline;
+  font-family: 'Fredoka', sans-serif;
+}
+
+.eventData > div > p {
+  display: inline;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 22px;
+}
 
 .appText {
   overflow: hidden;

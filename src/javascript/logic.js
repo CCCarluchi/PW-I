@@ -18,31 +18,50 @@ export default {
                 })
                 .then(res => res.json())
                 .then(data => { 
-                    console.log(data)
-                    window.localStorage.setItem("myId", data[0].id)
-                    console.log(window.localStorage)
+                    console.log(data);
+                    window.localStorage.setItem("myId", data[0].id);
+                    console.log(window.localStorage);
                 })
                 .then(data => {
-                    window.location.assign('/Home')
+                    window.location.assign('/Home');
                 })
                 
             }    
         })
         
     },
+
+    checkFriends() {
+        let isFriend = false;
+        
+        this.getData("http://puigmal.salle.url.edu/api/v2/friends")
+        .then(friends => {
+            for (let i = 0; i < friends.length; i++) {
+                if (localStorage.getItem("selectedId") == friends[i].id) {
+                    isFriend = true
+                }
+            }
+        })
+        .then(data => {  
+            if (isFriend) {
+                window.location.assign('/FriendProfile');
+            }
+        });
+
+    },
     
-    getData(url = "") {
+    async getData(url = "") {
         const data = [];
-        fetch(url, {
+        await fetch(url, {
           headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
         })
         .then(res => res.json())
         .then(info => {
-          for (let i = 0; i < info.length; i++) {
-            data.push(info[i])
-          } 
-        });
-        return data; 
+          return info
+        })
+        .then(data => {
+            return data
+        }); 
     }
 
 }

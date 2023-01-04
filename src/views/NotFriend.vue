@@ -1,4 +1,7 @@
 <script>
+
+import logic from '../javascript/logic.js'
+
   export default {
 
     data() {
@@ -22,6 +25,7 @@
     },
 
     beforeMount() {
+      logic.checkFriends()
       this.getUser()
     }
 

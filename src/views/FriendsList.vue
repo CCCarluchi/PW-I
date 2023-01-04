@@ -21,7 +21,6 @@
           for (let i = 0; i < data.length; i++) {
             this.friends.push(data[i])
           } 
-          console.log(this.friends)   
         });
       },
 
@@ -31,7 +30,7 @@
 
       onImgError() {
         this.imgError = true;
-      }
+      },
 
     },
 
@@ -69,6 +68,7 @@
         <img v-bind:src=filename referrerpolicy="no-referrer" @error="onImgError" class='imgList'/>
         <p>{{ friend.name }}</p>
         <a href="/FriendProfile" v-on:click="locateClick(friend.id)"><button>Profile</button></a>
+
       </div>
     </li>
 
