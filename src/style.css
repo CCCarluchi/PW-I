@@ -292,8 +292,8 @@ article{
 
 .grid-container {
   display: grid;
-  padding-left: 3%;
-  padding-right: 3%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .grid-container > div {

@@ -85,10 +85,6 @@ export default {
                 <p>{{ name }}</p>
             </div>
             <div>
-                <h3>Date:   </h3>
-                <p>{{ event.date }}</p>
-            </div>
-            <div>
                 <h3>Location:   </h3>
                 <p>{{ event.location }}</p>
             </div>
@@ -107,6 +103,10 @@ export default {
             <div>
                 <h3>End date:   </h3>
                 <p>{{ event.eventEnd_date }}</p>
+            </div>
+            <div>
+                <h3>Creation date:   </h3>
+                <p>{{ event.date }}</p>
             </div>
             <div>
                 <h3>Max number of participants:   </h3>
@@ -160,4 +160,5 @@ export default {
   font-family: 'Fredoka', sans-serif;
   font-size: 22px;
 }
+
 </style>

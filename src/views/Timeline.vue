@@ -1,3 +1,38 @@
+<script>
+
+  export default {
+
+    data() {
+      return {
+          events: [],
+        }
+      },
+
+    methods: {
+      getEvents() {
+        fetch("http://puigmal.salle.url.edu/api/v2/users/" + window.localStorage.getItem("myId") + "/assistances/finished", {
+          headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
+        })
+        .then(res => res.json())
+        .then(data => {
+          for (let i = 0; i < data.length; i++) {
+            this.events.push(data[i])
+          }    
+        });
+      },
+
+      locateClick(id) {
+        window.localStorage.setItem("selectedId", id);
+      }
+    },
+
+    beforeMount(){
+      this.getEvents()
+    }
+  }
+
+</script>
+
 <template>
     <main>
       <header>
@@ -9,51 +44,13 @@
         </div>
       </header>
   
-      <nav>
-        <br/><br/>
-          <div class="listContainer2">
-            <img src="https://images.squarespace-cdn.com/content/v1/5a726fcd4c0dbfa531ec98cf/1523669284136-BTJA038C00QFP5M3AX0N/image-asset.jpeg" class="imgList2"/>
-            <a href="/Event" id="p"><p1>Event1</p1><p2>  XX/XX/XXXX  Location</p2></a>
-          </div>
-          <br/><br/><br/><br/>
-    
-          <div class="listContainer2">
-            <img src="https://images.squarespace-cdn.com/content/v1/5a726fcd4c0dbfa531ec98cf/1523669284136-BTJA038C00QFP5M3AX0N/image-asset.jpeg" class="imgList2"/>
-            <a href="/Event" id="p"><p1>Event2</p1><p2>  XX/XX/XXXX  Location</p2></a>
-          </div>
-          <br/><br/><br/><br/>
-    
-          <div class="listContainer2">
-            <img src="https://images.squarespace-cdn.com/content/v1/5a726fcd4c0dbfa531ec98cf/1523669284136-BTJA038C00QFP5M3AX0N/image-asset.jpeg" class="imgList2"/>
-            <a href="/Event" id="p"><p1>Event3</p1><p2>  XX/XX/XXXX  Location</p2></a>
-          </div>
-          <br/><br/><br/><br/>
-    
-          <div class="listContainer2">
-            <img src="https://images.squarespace-cdn.com/content/v1/5a726fcd4c0dbfa531ec98cf/1523669284136-BTJA038C00QFP5M3AX0N/image-asset.jpeg" class="imgList2"/>
-            <a href="/Event" id="p"><p1>Event4</p1><p2>  XX/XX/XXXX  Location</p2></a>
-          </div>
-          <br/><br/><br/><br/>
-    
-          <div class="listContainer2">
-            <img src="https://images.squarespace-cdn.com/content/v1/5a726fcd4c0dbfa531ec98cf/1523669284136-BTJA038C00QFP5M3AX0N/image-asset.jpeg" class="imgList2"/>
-            <a href="/Event" id="p"><p1>Event5</p1><p2>  XX/XX/XXXX  Location</p2></a>
-          </div>
-          <br/><br/><br/><br/>
-    
-          <div class="listContainer2">
-            <img src="https://images.squarespace-cdn.com/content/v1/5a726fcd4c0dbfa531ec98cf/1523669284136-BTJA038C00QFP5M3AX0N/image-asset.jpeg" class="imgList2"/>
-            <a href="/Event" ><p1>Event6</p1><p2>  XX/XX/XXXX  Location</p2></a>
-          </div>
-      </nav>
-      <br/><br/>
-  
-      <footer>
-      </footer>
+      <li class="grid-container" v-for="event in events" :key="event.id">
+      <div>
+        <img v-bind:src=event.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
+        <p>{{ event.name }} <!-- -- {{ event.eventStart_date }} -- {{ event.location }} --> </p>
+        <a href="/Event" v-on:click="locateClick(event.id)"><button>Event</button></a>
+      </div>
+    </li>
+
     </main>
   </template>
-
-  <style>
-
-
-  </style>
