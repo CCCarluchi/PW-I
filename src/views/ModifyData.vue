@@ -1,7 +1,32 @@
-<script>
 
-
-
+<script language="javascript" type="text/javascript">
+(function () {
+    ("#fileupload").change(function () {
+        ("#dvPreview").html("");
+        var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
+        if (regex.test((this).val().toLowerCase())) {
+            if ($.browser.msie && parseFloat(jQuery.browser.version) <= 9.0) {
+                ("#dvPreview").show();
+                ("#dvPreview")[0].filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = (this).val();
+            }
+            else {
+                if (typeof (FileReader) != "undefined") {
+                    ("#dvPreview").show();
+                    ("#dvPreview").append("<img />");
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        ("#dvPreview img").attr("src", e.target.result);
+                    }
+                    reader.readAsDataURL((this)[0].files[0]);
+                } else {
+                    alert("This browser does not support FileReader.");
+                }
+            }
+        } else {
+            alert("Please upload a valid image file.");
+        }
+    });
+});
 </script>
 
 
@@ -39,6 +64,14 @@
         <input type="file" id="actual-btn" hidden/>
         <label class = "labeel" for="actual-btn">Change picture</label><br/><br/>
         <span id="file-chosen">No file chosen</span>
+
+        <input id="fileupload" type="file"/>
+        <hr />
+        <b>Live Preview</b>
+        <br />
+        <br />
+        <div id="dvPreview">
+        </div>
         
         <br/><br/>
         <a href="/Data" id="button2"><button class = "button2">Apply Changes</button></a><br/><br/>
@@ -66,5 +99,13 @@
 #file-chosen{
   margin-left: 0.3rem;
   font-family: sans-serif;
+}
+
+#dvPreview
+{
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);
+    min-height: 400px;
+    min-width: 400px;
+    display: none;
 }
 </style>
