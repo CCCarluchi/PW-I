@@ -25,10 +25,8 @@ export default {
                 .then(data => {
                     window.location.assign('/Home');
                 })
-                
             }    
-        })
-        
+        })  
     },
 
     checkFriends() {

@@ -4,7 +4,8 @@ export default {
     data() {
         return {
             event: {},
-            name:""
+            name:"",
+            isParticipating: false
         }
     },
 
@@ -15,22 +16,48 @@ export default {
             })
             .then(res => res.json())
             .then(data => {
-                this.event = data[0]
+                this.event = data[0];
                 fetch("http://puigmal.salle.url.edu/api/v2/users/" + data[0].id, {
                     headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
                 })
                 .then(res => res.json())
                 .then(user => {
-                    this.name = user[0].name
+                    this.name = user[0].name;
+                    this.checkParticipation();
                 })
+            })
+        },
 
-                
+        participateInEvent() {
+            fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedId") + '/assistances', {
+                method: 'POST',
+                headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")},
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                window.location.reload();
+            })
+        },
+
+        checkParticipation() {
+            fetch("http://puigmal.salle.url.edu/api/v2/users/" + window.localStorage.getItem("myId") + "/assistances", {
+                headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")},
+            })
+            .then(res => res.json())
+            .then(data => {
+                for (let i = 0; i < data.length; i++) {
+                    if ( window.localStorage.getItem("selectedId") == data[i].id) {
+                        this.isParticipating = true;
+                    }
+                }
             })
         }
     },
 
-    beforeMount() {
+    created() {
         this.getEvent()
+        
     }
 
 }
@@ -85,23 +112,16 @@ export default {
                 <h3>Nº of participants:   </h3>
                 <p>{{ event.n_participators }}</p>
             </div>
-        </li>
-
-
-    
-        <div class="inputContainer">
-            <a href="/ShareEvent" id="button"><button>Share</button></a>
-        </div>
-        <br/>
-
-        <div class="inputContainer">
-            <a href="/ParticipateEvent" id="button"><button>Participate</button></a>
-        </div>
-       
+        </li>      
 
     </main>
 
     <footer>
+        <div class="inputContainer">
+            <a href="/ShareEvent"><button class="eventButton">Share</button></a>
+            <a v-if="isParticipating" href="/ParticipateEvent"><button class="eventButton">Rate</button></a>
+            <button v-else class="eventButton" v-on:click="participateInEvent()">Participate</button>     
+        </div>
     </footer>
 
 </template>
@@ -129,40 +149,15 @@ export default {
   display: inline;
   font-family: 'Fredoka', sans-serif;
 }
+.eventButton {
+    margin-left: 2%;
+    margin-right: 2%;
+    color:black
+}
 
 .eventData > div > p {
   display: inline;
   font-family: 'Fredoka', sans-serif;
   font-size: 22px;
-}
-
-.appText {
-  overflow: hidden;
-  margin-left: 55px;
-  text-align: left;
-  text-decoration: none;
-}
-
-.appText2 {
-  overflow: hidden;
-  margin-left: 90px;
-  text-align: left;
-  text-decoration: none;
-}
-
-@media only screen and (min-width: 640px) {
-.appText {
-    overflow: hidden;
-    margin-left: 465px;
-    text-align: left;
-    text-decoration: none;
-  }
-
-  .appText2 {
-    overflow: hidden;
-    margin-left: 500px;
-    text-align: left;
-    text-decoration: none;
-  }
 }
 </style>
