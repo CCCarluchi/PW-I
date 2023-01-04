@@ -10,7 +10,7 @@ export default {
 
   methods: {
     getEvents() {
-      fetch("http://puigmal.salle.url.edu/api/v2/events", {
+      fetch("http://puigmal.salle.url.edu/api/v2/events/best", {
         headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
       })
       .then(res => res.json())
@@ -52,8 +52,8 @@ export default {
 
     <li class="grid-container" v-for="event in events" :key="event.id">
       <div>
-        <img v-bind:src=event.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/> -->
-        <p>{{ event.name }}</p>
+        <img v-bind:src=event.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
+        <p>{{ event.name }} <!-- -- {{ event.eventStart_date }} -- {{ event.location }} --> </p>
         <a href="/Event" v-on:click="locateClick(event.id)"><button>Event</button></a>
       </div>
     </li>
@@ -66,15 +66,7 @@ export default {
 </template>
 
 <style>
-.listContainer3{
-  margin-left: 0px;
-  display: flex;
-}
-
-@media only screen and (min-width: 640px) {
-.listContainer3{
-    margin-left: 0px;
-    display: flex;
+  .grid-container > div > p {
+    font-size: 20px;
   }
-}
 </style>

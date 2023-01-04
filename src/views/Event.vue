@@ -17,7 +17,7 @@ export default {
             .then(res => res.json())
             .then(data => {
                 this.event = data[0];
-                fetch("http://puigmal.salle.url.edu/api/v2/users/" + data[0].id, {
+                fetch("http://puigmal.salle.url.edu/api/v2/users/" + data[0].owner_id, {
                     headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
                 })
                 .then(res => res.json())
@@ -109,7 +109,7 @@ export default {
                 <p>{{ event.eventEnd_date }}</p>
             </div>
             <div>
-                <h3>Nº of participants:   </h3>
+                <h3>Max number of participants:   </h3>
                 <p>{{ event.n_participators }}</p>
             </div>
         </li>      

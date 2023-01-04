@@ -18,11 +18,11 @@ import logic from '../javascript/logic.js'
       },
       methods: {
         signUp(info = {}) {
-          console.log(info);
           fetch("http://puigmal.salle.url.edu/api/v2/users", {
             method: 'POST', 
             headers: {'Content-Type': 'application/json'}, 
-            body: JSON.stringify(info)})
+            body: JSON.stringify(info)
+          })
           .then((response) => response.json())
           .then((data) => {
             const email = info.email;
@@ -79,7 +79,7 @@ import logic from '../javascript/logic.js'
       <br/><br/>
 
       <div class="inputContainer">
-        <input id="vmodel-example" v-model="username" placeholder="*Username"><br/>
+        <input v-model="username" placeholder="*Username"><br/>
       </div>
       <br/><br/>
 
@@ -104,7 +104,7 @@ import logic from '../javascript/logic.js'
       <br/><br/>
 
       <div class="inputContainer">
-        <input type="file" accept="image/*" class="custom" @change="onFileSelected" placeholder="+ Add your profile picture"><br/>
+        <input type="file" accept="image/*" class="custom" @change="onFileSelected"><br/>
       </div>
       <br/><br/>
 
