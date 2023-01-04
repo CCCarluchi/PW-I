@@ -4,7 +4,6 @@
     data() {
       return {
         event: {
-          id:"",
           name:"",
           image:"",
           location:"",
@@ -33,7 +32,7 @@
         },
 
         editEvent() {
-          fetch("http://puigmal.salle.url.edu/api/v2/events" + window.localStorage.getItem("selectedId"), {
+          fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedId"), {
             method: 'PUT', 
             headers: {
               'Content-Type': 'application/json',
@@ -41,10 +40,14 @@
             }, 
             body: JSON.stringify(this.event)
           })
-          .then((response) => response.json())
+          .then(response => response.text())
           .then(data => {
-            console.log(data)
-          })
+            if (data.length > 20) {
+              alert("Some information has wrong format")
+            } else {
+              window.location.assign('/Data');
+            }
+          });
         },
 
         getEvent() {
@@ -53,21 +56,22 @@
             })
             .then(res => res.json())
             .then(data => {
-                this.event = data[0];
-                fetch("http://puigmal.salle.url.edu/api/v2/users/" + data[0].owner_id, {
-                    headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
-                })
-                .then(res => res.json())
-                .then(user => {
-                    this.name = user[0].name;
-                })
+                this.event.name = data[0].name;
+                this.event.image = data[0].image;
+                this.event.location = data[0].location;
+                this.event.latitude = data[0].latitude;
+                this.event.longitude = data[0].longitude;
+                this.event.eventStart_date = data[0].eventStart_date;
+                this.event.eventEnd_date = data[0].eventEnd_date;
+                this.event.n_participators = data[0].n_participators;
+                this.event.type = data[0].type;
+                this.event.description = data[0].description;
             })
         },
       },
 
       beforeMount() {
         this.getEvent()
-        console.log(this.event)
       }
   }
 
@@ -143,7 +147,7 @@
   <footer>
     <br/><br/>
     <div class="inputContainer">
-        <a href="/Events" v-on:click="createEvent"><button>Edit</button></a>
+        <a v-on:click="editEvent"><button>Edit</button></a>
       </div>
   </footer>
   

@@ -40,9 +40,14 @@
             }, 
             body: JSON.stringify(this.event)
           })
-          .then((response) => response.json())
+          .then(response => response.json())
           .then(data => {
             console.log(data)
+            if (!data.hasOwnProperty("name")) {
+              alert("Some information has wrong format")
+            } else {
+              window.location.assign('/Events');
+            }
           })
         }
       }
@@ -120,7 +125,7 @@
   <footer>
     <br/><br/>
     <div class="inputContainer">
-        <a href="/Events" v-on:click="createEvent"><button>Create</button></a>
+        <a v-on:click="createEvent"><button>Create</button></a>
       </div>
   </footer>
   
