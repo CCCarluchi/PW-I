@@ -1,30 +1,30 @@
 <script >
+  import logic from '../javascript/logic.js'
 
   export default {
+
     data() {
       return {
         email:"",
-        password:""
+        password:"",
       }
     },
 
     methods: {
-      login (info = {}) {
-        fetch('http://puigmal.salle.url.edu/api/v2/users/login', {
-          method: 'POST', 
-          headers: {'Content-Type': 'application/json'}, 
-          body: JSON.stringify(info)})
-        .then(response => response.json())
-        .then (data => { 
-            //window.localStorage.setItem("token", data.accessToken);
-            console.log(data);
-        })
-        .catch(err => {
-          console.log(err);
-        });
+      login(info = {}) {
+        logic.login(info);
       }
+    },
+
+    beforeMount() {
+      window.localStorage.clear();
+      /*
+        window.location.href = "/Home";
+      } */
     }
-  } 
+
+    }
+  
 </script>
 
 <template>
@@ -53,6 +53,7 @@
       <br/><br/>
       <div class="inputContainer">
         <button v-on:click.prevent="login({ email, password })">Sign in</button>
+        <br/>
       </div>
       <br/><br/>
       <div class="inputContainer">

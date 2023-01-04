@@ -4,6 +4,7 @@
     data() {
       return {
         event: {
+          id:"",
           name:"",
           image:"",
           location:"",
@@ -31,9 +32,9 @@
             })
         },
 
-        createEvent() {
-          fetch("http://puigmal.salle.url.edu/api/v2/events", {
-            method: 'POST', 
+        editEvent() {
+          fetch("http://puigmal.salle.url.edu/api/v2/events" + window.localStorage.getItem("selectedId"), {
+            method: 'PUT', 
             headers: {
               'Content-Type': 'application/json',
               'Authorization': 'Bearer ' + window.localStorage.getItem("token")
@@ -44,7 +45,29 @@
           .then(data => {
             console.log(data)
           })
-        }
+        },
+
+        getEvent() {
+            fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedId"), {
+                headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
+            })
+            .then(res => res.json())
+            .then(data => {
+                this.event = data[0];
+                fetch("http://puigmal.salle.url.edu/api/v2/users/" + data[0].owner_id, {
+                    headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
+                })
+                .then(res => res.json())
+                .then(user => {
+                    this.name = user[0].name;
+                })
+            })
+        },
+      },
+
+      beforeMount() {
+        this.getEvent()
+        console.log(this.event)
       }
   }
 
@@ -57,7 +80,7 @@
     <a onclick="window.history.back()"><i class="arrow left"></i></a>
     <br/><br/>
     <div class="topText">
-      <h1>Create event</h1>
+      <h1>Edit event</h1>
     </div>
     <br/><br/><br/>
   </header>
@@ -120,7 +143,7 @@
   <footer>
     <br/><br/>
     <div class="inputContainer">
-        <a href="/Events" v-on:click="createEvent"><button>Create</button></a>
+        <a href="/Events" v-on:click="createEvent"><button>Edit</button></a>
       </div>
   </footer>
   

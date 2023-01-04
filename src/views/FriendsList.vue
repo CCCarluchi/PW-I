@@ -1,101 +1,76 @@
 <script>
-  export default {
-      data() {
-        return {
-          friends: {id: "", name:"", last_name:"", email:"", image:""}
-          }
-        },
 
-      methods: {
-        getFriends() {
-          fetch("http://puigmal.salle.url.edu/api/v2/users/friends", {headers: {'Authentication': 'token'}})
-          .then(res => res.json())
-          .then(data => {
-            for (let i = 0; i < data.lenght; i++) {
-              this.friends[i].id = data.id
-              this.friends[i].name = data.name
-              this.friends[i].last_name = data.last_name
-              this.friends[i].email = data.email
-              this.friends[i].image = data.image
-            }
-            //console.log(data)
-          });
+  export default {
+
+    data() {
+      return {
+          friends: [],
+          name:"",
+          image:"",
+          imgError: false
+        }
+      },
+
+    methods: {
+      getFriends() {
+        fetch("http://puigmal.salle.url.edu/api/v2/friends", {
+          headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
+        })
+        .then(res => res.json())
+        .then(data => {
+          for (let i = 0; i < data.length; i++) {
+            this.friends.push(data[i])
+          } 
+        });
+      },
+
+      locateClick(id) {
+        window.localStorage.setItem("selectedId", id);
+      },
+
+      onImgError() {
+        this.imgError = true;
+      },
+
+    },
+
+    computed: {
+      filename() {
+        return (this.imgError) ? "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541" : 'a';
       }
+    },
+
+    beforeMount(){
+      this.getFriends();
     }
   }
+
 </script>
 
 <template>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
   <header>
     <br/>
-    <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
+    <a onclick="window.history.back()"><i class="arrow left"></i></a>
     <br/><br/>
     <div class="topText">
       <h1>Friends list</h1>
     </div>
     <br/><br/>
     
-    <div class="searchContainer">
-      <input type="text" placeholder="Search friend...">
-      <button type="submit"><i class="fa fa-search"></i ></button><br/><br/>
-    </div>
     <br/>
   </header>
   
   <main>
-    <!--
+    
     <li class="grid-container" v-for="friend in friends" :key="friend.id">
       <div>
-        <img src='friend.image' class='imgList'/>
+        <img v-bind:src=filename referrerpolicy="no-referrer" @error="onImgError" class='imgList'/>
         <p>{{ friend.name }}</p>
-        <a href="/FriendProfile" id="button"><button>Profile</button></a>
+        <a href="/FriendProfile" v-on:click="locateClick(friend.id)"><button>Profile</button></a>
+
       </div>
     </li>
-    -->
 
-    <div class="grid-container">
-      <div>
-        <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/>
-        <p>Friend 1</p>
-        <a href="/FriendProfile" id="button"><button>Profile</button></a>
-      </div>
-      <div>
-        <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
-        <p>Friend 2</p>
-        <a href="/FriendProfile" id="button"><button>Profile</button></a> 
-      </div>
-      <div>
-        <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/>
-        <p>Friend 3</p>
-        <a href="/FriendProfile" id="button"><button>Profile</button></a>  
-      </div>
-      <div>
-        <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/>
-        <p>Friend 4</p>
-        <a href="/FriendProfile" id="button"><button>Profile</button></a>  
-      </div>
-      <div>
-        <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
-        <p>Friend 5</p>
-        <a href="/FriendProfile" id="button"><button>Profile</button></a>
-      </div>
-      <div>
-        <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
-        <p>Friend 6</p>
-        <a href="/FriendProfile" id="button"><button>Profile</button></a> 
-      </div>
-      <div>
-        <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
-        <p>Friend 7</p>
-        <a href="/FriendProfile" id="button"><button>Profile</button></a>  
-      </div>
-      <div>
-        <img src='https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png' class='imgList'/> 
-        <p>Friend 8</p>
-        <a href="/FriendProfile" id="button"><button>Profile</button></a>  
-      </div>
-    </div>
   </main>
 </template>

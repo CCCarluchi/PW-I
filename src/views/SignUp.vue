@@ -1,4 +1,7 @@
 <script>
+
+import logic from '../javascript/logic.js'
+
   export default {
       data() {
         return {
@@ -9,36 +12,45 @@
           email:"",
           password:"",
           confirm:"",
-          image:"hfhf.com",
-          error:""
+          image:"",
         }
 
       },
-
-      
-
       methods: {
-        signUp(data = {}) {
+        signUp(info = {}) {
           fetch("http://puigmal.salle.url.edu/api/v2/users", {
             method: 'POST', 
             headers: {'Content-Type': 'application/json'}, 
-            body: JSON.stringify(data)})
-          .then((response) => response.json()
-            //if (!response.ok) {
-              //throw new Error(response.statusText)
-            //} 
-          )
-          .then((data) => {
-              console.log(data)
-            //  alert(data.stackTrace.details[0].message)
-            //} else {
-            //}
+            body: JSON.stringify(info)
           })
-          .catch((error) => {
-           console.error('Error:', error)
-          //  alert(error)
-          });
-        }      
+          .then((response) => response.json())
+          .then((data) => {
+            const email = info.email;
+            const password = info.password;
+            if (data.hasOwnProperty('Error')) {
+                alert('The information has an incorrect format, or that mail is already registered');
+            } else {
+              window.localStorage.removeItem("token");
+              logic.login({email, password});
+              
+            }
+          }); 
+        },
+        
+        onFileSelected(event) {
+          const formdata = new FormData()
+          formdata.append("image", event.target.files[0])
+            fetch("https://api.imgur.com/3/image/", {
+                method: 'POST',
+                headers: {'Authorization': "Client-ID 3eed77413905d63"},
+                body: formdata
+            }).then(data => data.json()).then(data => {
+                this.image = data.data.link
+            })
+        }
+      },
+      beforeMount() {
+        window.localStorage.clear();
       }
     }
   
@@ -67,7 +79,7 @@
       <br/><br/>
 
       <div class="inputContainer">
-        <input id="vmodel-example" v-model="username" placeholder="*Username"><br/>
+        <input v-model="username" placeholder="*Username"><br/>
       </div>
       <br/><br/>
 
@@ -92,7 +104,7 @@
       <br/><br/>
 
       <div class="inputContainer">
-        <input type="file" accept="image/*" class="custom" placeholder="+ Add your profile picture"><br/>
+        <input type="file" accept="image/*" class="custom" @change="onFileSelected"><br/>
       </div>
       <br/><br/>
 

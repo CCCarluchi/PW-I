@@ -1,3 +1,33 @@
+<script>
+  export default {
+
+    data() {
+      return {
+        name:"",
+        image:""
+      }
+    },
+
+    methods: {
+      getUser() {
+        fetch("http://puigmal.salle.url.edu/api/v2/users/" + window.localStorage.getItem("myId"), {
+          headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
+        })
+        .then(res => res.json())
+        .then(data => {
+          this.name = data[0].name;
+          this.image = data[0].image;
+        })
+      }
+    },
+
+    beforeMount() {
+      this.getUser()
+    }
+
+  }
+</script>
+
 <template>
   <header>
     <br/>
@@ -5,8 +35,8 @@
     <br/><br/>
     <div class="profileGrid">
       <div class="profileMain">
-        <br/><br/><img src='https://i.blogs.es/80e441/big-chungus-multiversus/1366_2000.webp' class='imgRedonda' />
-        <h1>Name</h1>
+        <br/><br/><img v-bind:src="image" referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgRedonda'/>
+        <h1>{{name}}</h1>
       </div>
     </div>
   </header>
@@ -18,6 +48,9 @@
       </div>
       <div class="profileItem">
         <a href="/PendingRequests" id="button"><button class="buttonProfile">Pending requests</button></a><br/><br/>
+      </div>
+      <div class="profileItem">
+        <a href="/MyEvents" id="button"><button class="buttonProfile">MyEvents</button></a><br/><br/>
       </div>
       <div class="profileItem">
         <a href="/ModifyData" id="button"><button class="buttonProfile">Change profile</button></a><br/><br/>

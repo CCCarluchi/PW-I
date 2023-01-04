@@ -10,7 +10,7 @@ export default {
 
   methods: {
     getEvents() {
-      fetch("http://puigmal.salle.url.edu/api/v2/events/best", {
+      fetch("http://puigmal.salle.url.edu/api/v2/users/" + window.localStorage.getItem("myId") + "/events", {
         headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
       })
       .then(res => res.json())
@@ -55,6 +55,7 @@ export default {
         <img v-bind:src=event.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
         <p>{{ event.name }} <!-- -- {{ event.eventStart_date }} -- {{ event.location }} --> </p>
         <a href="/Event" v-on:click="locateClick(event.id)"><button>Event</button></a>
+        <a href="/EditEvent" v-on:click="locateClick(event.id)"><button>Edit</button></a>
       </div>
     </li>
 

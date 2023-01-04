@@ -43,6 +43,7 @@
  font-size: 20px;
  font-family: 'Fredoka', sans-serif;
 }
+
 th {
   padding: 40px;
 }
