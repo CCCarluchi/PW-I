@@ -29,6 +29,8 @@
     <a href="/EventsList">EventsList</a>
     <a href="/SendRequest">SendRequest</a>
     <a href="/Users">Users</a>
+    <a href="/MyEvents">MyEvents</a>
+    <a href="/EditEvent">EditEvent</a>
 
   </nav>
   <router-view></router-view>
