@@ -19,7 +19,9 @@
         .then(res => res.json())
         .then(data => {
           for (let i = 0; i < data.length; i++) {
-            this.friends.push(data[i])
+            if (data[i].id != null) {
+              this.friends.push(data[i])
+            }    
           } 
         });
       },

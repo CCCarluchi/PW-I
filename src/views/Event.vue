@@ -9,7 +9,9 @@ export default {
             startDate:"",
             startTime:"",
             endDate:"",
-            endTime:""
+            endTime:"",
+            creationDate:"",
+            creationTime:""
         }
     },
 
@@ -27,6 +29,9 @@ export default {
                 let end = this.event.eventEnd_date.split("T");
                 this.endDate = end[0];
                 this.endTime = end[1].match((/.{1,5}/g))[0];
+                let creation = this.event.date.split("T");
+                this.creationDate = creation[0];
+                this.creationTime = creation[1].match((/.{1,5}/g))[0];
 
                 fetch("http://puigmal.salle.url.edu/api/v2/users/" + data[0].owner_id, {
                     headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
@@ -116,8 +121,8 @@ export default {
                 <p>{{ endDate }} || {{ endTime }}</p>
             </div>
             <div>
-                <h3>Creation date:   </h3>
-                <p>{{ event.date }}</p>
+                <h3>Creation day and time:   </h3>
+                <p>{{ creationDate }} || {{ creationTime }}</p>
             </div>
             <div>
                 <h3>Max number of participants:   </h3>

@@ -32,7 +32,10 @@ export default {
     checkFriends() {
         let isFriend = false;
         
-        this.getData("http://puigmal.salle.url.edu/api/v2/friends")
+        fetch("http://puigmal.salle.url.edu/api/v2/friends", {
+            headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
+        })
+        .then(res => res.json())
         .then(friends => {
             for (let i = 0; i < friends.length; i++) {
                 if (localStorage.getItem("selectedId") == friends[i].id) {
@@ -45,22 +48,7 @@ export default {
                 window.location.assign('/FriendProfile');
             }
         });
-
-    },
-    
-    async getData(url = "") {
-        const data = [];
-        await fetch(url, {
-          headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
-        })
-        .then(res => res.json())
-        .then(info => {
-          return info
-        })
-        .then(data => {
-            return data
-        }); 
     }
-
+    
 }
   

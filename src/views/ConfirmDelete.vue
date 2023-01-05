@@ -1,20 +1,20 @@
 <script>
 
-export default {
+  export default {
 
-  methods: {
-    deleteEvent() {
-      fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedId"), {
-        method: 'DELETE',
-        headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
-      })
-      .then(res => res.json())
-      .then(data => {
-        console.log(data)  
-      });
+    methods: {
+      deleteEvent() {
+        fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedId"), {
+          method: 'DELETE',
+          headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
+        })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data)  
+        });
+      }
     }
   }
-}
 
 </script>
 
