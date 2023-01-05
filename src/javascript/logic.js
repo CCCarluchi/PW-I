@@ -30,6 +30,19 @@ export default {
         })  
     },
 
+    onFileSelected(event) {
+        const formdata = new FormData()
+        formdata.append("image", event.target.files[0])
+          fetch("https://api.imgur.com/3/image/", {
+            method: 'POST',
+            headers: {'Authorization': "Client-ID 3eed77413905d63"},
+            body: formdata
+          })
+          .then(data => data.json()).then(data => {
+            return data.data.link
+          })
+    },
+
     checkFriends() {
         let isFriend = false;
         

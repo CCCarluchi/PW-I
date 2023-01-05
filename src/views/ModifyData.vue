@@ -1,41 +1,133 @@
+<script>
+
+  export default {
+    data() {
+      return {
+        user: {
+          name:"",
+          last_name:"",
+          email:"",
+          password:"",
+          image:""
+        }
+      }
+    },
+
+    methods: {
+
+      onFileSelected(event) {
+        const formdata = new FormData()
+        formdata.append("image", event.target.files[0])
+          fetch("https://api.imgur.com/3/image/", {
+            method: 'POST',
+            headers: {'Authorization': "Client-ID 3eed77413905d63"},
+            body: formdata
+          })
+          .then(data => data.json()).then(data => {
+            this.user.image = data.data.link
+          })
+      },
+
+      editProfile() {
+        fetch("http://puigmal.salle.url.edu/api/v2/users", {
+          method: 'PUT', 
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + window.localStorage.getItem("token")
+          }, 
+          body: JSON.stringify(this.event)
+        })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data)
+          if (data.length > 20) {
+            alert("Some information has wrong format")
+          } else {
+            //window.location.assign('/Data');
+          }
+        });
+      },
+
+      getData() {
+          fetch("http://puigmal.salle.url.edu/api/v2/users/" + window.localStorage.getItem("myId"), {
+            headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
+          })
+          .then(res => res.json())
+          .then(data => {
+            this.user.name = data[0].name;
+            this.user.last_name = data[0].last_name;
+            this.user.email = data[0].email;
+            this.user.password = data[0].password;
+            this.user.image = data[0].image;
+          }); 
+      }
+    },
+
+    beforeMount() {
+      this.getData()
+    }
+  }
+
+</script>
+
 <template>
 
-    <main>
-        <header>
+  
+    <header>
       <br/>
-      <div class="arrowContainer" align="left"> 
-        <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
+      <a onclick="window.history.back()"><i class="arrow left"></i></a>
+      <br/><br/>
+      <div class="topText">
+        <h1>Edit profile</h1>
       </div>
-      <div class="appTitle">
-        <h2>Change profile</h2>
-      </div>
-     </header> 
-     
-     <article>
-        <div class="inputContainer">
-          <input type="text" placeholder="*Name"><br/>
-        </div>
-     <br/><br/>
-     <div class="inputContainer">
-     <input type="text" placeholder="*Surname"><br/>
-     </div>
-     <br/><br/>
-     <div class="inputContainer">
-     <input type="text" placeholder="*Username"><br/>
-        </div>
-        <br/><br/>
-     <div class="inputContainer">
-      <input placeholder="*Date of birth" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"><br/>
-        </div>
-     <br/><br/>
-        <img src='https://pbs.twimg.com/media/EztG5y0WQAAPS69?format=jpg&name=medium' class='imgRedonda' /><br/><br/>
-        <button class = "button2">Change picture</button><br/><br/>
-        <br/><br/>
-        <a href="/Data" id="button2"><button class = "button2">Apply Changes</button></a><br/><br/>
-      </article>  
+      <br/><br/><br/>
+    </header>
 
-      <footer>
-      </footer>
-      
+    <main>
+     
+      <form>
+        <div class="inputContainer">
+          <input type="text" v-model="user.name" placeholder="*Name"><br/>
+        </div>
+        <br/><br/>
+
+        <div class="inputContainer">
+          <input type="text" v-model="user.last_name" placeholder="*Last name"><br/>
+        </div>
+        <br/><br/>
+
+        <div class="inputContainer">
+          <input type="text" v-model="user.email" placeholder="*Email"><br/>
+        </div>
+        <br/><br/>
+
+        <div class="inputContainer">
+          <input type="text" v-model="user.password" placeholder="*Password"><br/>
+        </div>
+        <br/><br/>
+
+        <div class="inputContainer">
+          <input type="file" accept="image/*" class="custom2" @change="onFileSelected"><br/>
+          <h3 class="previewFont">Preview:</h3>
+          <img v-bind:src="user.image" referrerpolicy="no-referrer" class='imgRedonda'/><br/><br/>
+        </div>
+        <br/><br/>
+        
+      </form>  
+
+     
     </main>
-  </template>
+
+    <footer>
+      <a id="button2"><button class = "button2" v-on:click="editProfile">Apply Changes</button></a><br/><br/>
+    </footer>
+      
+</template>
+
+<style>
+
+  .previewFont {
+    margin-left:28.5%;
+  }
+
+</style>
