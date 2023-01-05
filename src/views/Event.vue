@@ -5,7 +5,11 @@ export default {
         return {
             event: {},
             name:"",
-            isParticipating: false
+            isParticipating: false,
+            startDate:"",
+            startTime:"",
+            endDate:"",
+            endTime:""
         }
     },
 
@@ -17,6 +21,13 @@ export default {
             .then(res => res.json())
             .then(data => {
                 this.event = data[0];
+                let start = this.event.eventStart_date.split("T");
+                this.startDate = start[0];
+                this.startTime = start[1].match((/.{1,5}/g))[0];
+                let end = this.event.eventEnd_date.split("T");
+                this.endDate = end[0];
+                this.endTime = end[1].match((/.{1,5}/g))[0];
+
                 fetch("http://puigmal.salle.url.edu/api/v2/users/" + data[0].owner_id, {
                     headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
                 })
@@ -97,12 +108,12 @@ export default {
                 <p>{{ event.description }}</p>
             </div>
             <div>
-                <h3>Start date:   </h3>
-                <p>{{ event.eventStart_date }}</p>
+                <h3>Start day and time:   </h3>
+                <p>{{ startDate }} || {{ startTime }}</p>
             </div>
             <div>
-                <h3>End date:   </h3>
-                <p>{{ event.eventEnd_date }}</p>
+                <h3>End day and time:   </h3>
+                <p>{{ endDate }} || {{ endTime }}</p>
             </div>
             <div>
                 <h3>Creation date:   </h3>

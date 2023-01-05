@@ -14,7 +14,11 @@
           n_participators:"",
           type:"",
           description:""
-        }
+        },
+        startDate:"",
+        startTime:"",
+        endDate:"",
+        endTime:""
       }
     },
 
@@ -66,9 +70,26 @@
                 this.event.n_participators = data[0].n_participators;
                 this.event.type = data[0].type;
                 this.event.description = data[0].description;
-            })
+                let start = this.event.eventStart_date.split("T");
+                this.startDate = start[0];
+                this.startTime = start[1].match((/.{1,5}/g))[0];
+                let end = this.event.eventEnd_date.split("T");
+                this.endDate = end[0];
+                this.endTime = end[1].match((/.{1,5}/g))[0];
+            });
         },
       },
+
+      computed: {
+        calculateTimes() {
+          if (this.startDate != undefined && this.startTime != undefined) {
+            this.event.eventStart_date = this.startDate.concat('T', this.startTime, ':00.000Z');
+          }
+          if (this.endDate != undefined && this.endTime != undefined) {
+            this.event.eventEnd_date = this.endDate.concat('T', this.endTime, ':00.000Z');
+          }
+        }
+      } ,
 
       beforeMount() {
         this.getEvent()
@@ -112,12 +133,22 @@
       <br/><br/> 
       
       <div class="inputContainer">
-        <input placeholder="*Start date" v-model="event.eventStart_date"  type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"><br/>
+        <input placeholder="*Start date" v-model="startDate" v-bind="calculateTimes" type="text" onfocus="(this.type='date')" onblur="(this.type='text')"><br/>
       </div>
       <br/><br/> 
 
       <div class="inputContainer">
-        <input placeholder="*End date" v-model="event.eventEnd_date" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"><br/>
+        <input placeholder="*Start time" v-model="startTime" v-bind="calculateTimes" type="text" onfocus="(this.type='time')" onblur="(this.type='text')"><br/>
+      </div>
+      <br/><br/> 
+
+      <div class="inputContainer">
+        <input placeholder="*End date" v-model="endDate" v-bind="calculateTimes" type="text" onfocus="(this.type='date')" onblur="(this.type='text')"><br/>
+      </div>
+      <br/><br/>
+
+      <div class="inputContainer">
+        <input placeholder="*End time" v-model="endTime" v-bind="calculateTimes" type="text" onfocus="(this.type='time')" onblur="(this.type='text')"><br/>
       </div>
       <br/><br/>
 

@@ -19,7 +19,6 @@
         startTime:"",
         endDate:"",
         endTime:""
-
       }
     },
 
@@ -58,7 +57,6 @@
     },
 
     computed: {
-
       calculateTimes() {
         if (this.startDate != undefined && this.startTime != undefined) {
           this.event.eventStart_date = this.startDate.concat('T', this.startTime, ':00.000Z');
