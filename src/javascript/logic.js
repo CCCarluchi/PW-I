@@ -23,9 +23,8 @@ export default {
                     window.localStorage.setItem("myId", data[0].id);
                     console.log(window.localStorage);
                 })
-                .then(data => {
-                    window.location.assign('/Home');
-                
+                .then(() => {
+                    window.location.assign('/Home');                
                 })
             }    
         })  

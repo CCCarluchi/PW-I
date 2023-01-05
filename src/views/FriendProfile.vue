@@ -32,7 +32,7 @@
 
   <header>
     <br/>
-    <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
+    <a v-on:click="$router.go(-2)" id="i"><i class="arrow left"></i></a>
     <br/><br/>
     <div class="profileGrid">
       <div class="profileMain">

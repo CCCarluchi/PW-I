@@ -879,6 +879,7 @@ li {
     color: rgba(0, 0, 0, 0.68);
     background-color: white;
     width: 90%;
+    max-width: 600px;
     height: 246px;
     font-size: 32px;
   }
