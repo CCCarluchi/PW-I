@@ -77,7 +77,12 @@ export default {
             })
             .then(res => res.json())
             .then(data => {
-                this.comments = data;
+                for(let i = 0; i < data.length; i++) {
+                    if (data[i].puntuation != null && data[i].comentary != null) {
+                        this.comments.push(data[i]);
+                    }
+                }
+                
             })
         }
          

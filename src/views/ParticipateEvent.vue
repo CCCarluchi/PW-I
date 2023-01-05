@@ -3,7 +3,7 @@
 export default {
   data() {
     return {
-      puntuation: null,
+      puntuation:"",
       comentary:""
       
     }
@@ -27,7 +27,22 @@ export default {
           window.location.assign('/Events');
         }
       }); 
+    },
+
+    checkRated() {
+      fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedId") + "/assistances/" + window.localStorage.getItem("myId"), {
+        headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
+      })
+      .then(res => res.json())
+      .then(data => {
+        this.puntuation = data[0].puntuation;
+        this.comentary = data[0].comentary;
+      })
     }
+  },
+
+  beforeMount() {
+    this.checkRated()
   }
 }
 
