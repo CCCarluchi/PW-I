@@ -26,12 +26,13 @@ import MyEvents from '../views/MyEvents.vue'
 import EditEvent from '../views/EditEvent.vue'
 import ConfirmDelete from '../views/ConfirmDelete.vue'
 import EventParticipants from '../views/EventParticipants.vue'
+import { nextTick } from 'vue'
 
 const routes = [
     {
         path: '/',
         name: 'SignIn',
-        component: SignIn
+        component: SignIn,
     },
     {
         path: '/SignUp',
@@ -170,4 +171,15 @@ const router = createRouter({
     history: createWebHistory(),
     routes
 })
+
+router.beforeEach((to, from, next) => {
+    if (to.name == 'SignIn' && window.localStorage.getItem("loggedIn")) {
+        next({name: 'Home'});
+       
+    } else {
+        next();
+
+    }
+   
+  })
 export default router
