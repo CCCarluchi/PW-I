@@ -8,7 +8,6 @@ import logic from '../javascript/logic.js'
       return {
         email:"",
         password:"",
-        //state:"",
       }
     },
 
