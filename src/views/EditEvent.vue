@@ -188,10 +188,6 @@
 
 <style>
 
-.previewFont {
-  margin-left:28.5%;
-}
-
 .custom2::-webkit-file-upload-button {
   visibility: hidden;
 }

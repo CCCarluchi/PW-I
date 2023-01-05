@@ -123,11 +123,3 @@
     </footer>
       
 </template>
-
-<style>
-
-  .previewFont {
-    margin-left:28.5%;
-  }
-
-</style>
