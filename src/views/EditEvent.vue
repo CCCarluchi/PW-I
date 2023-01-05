@@ -24,76 +24,76 @@
 
     methods: {
       onFileSelected(event) {
-          const formdata = new FormData()
-          formdata.append("image", event.target.files[0])
-            fetch("https://api.imgur.com/3/image/", {
-                method: 'POST',
-                headers: {'Authorization': "Client-ID 3eed77413905d63"},
-                body: formdata
-            }).then(data => data.json()).then(data => {
-                this.event.image = data.data.link
-            })
-        },
-
-        editEvent() {
-          fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedEventId"), {
-            method: 'PUT', 
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': 'Bearer ' + window.localStorage.getItem("token")
-            }, 
-            body: JSON.stringify(this.event)
+        const formdata = new FormData()
+        formdata.append("image", event.target.files[0])
+          fetch("https://api.imgur.com/3/image/", {
+            method: 'POST',
+            headers: {'Authorization': "Client-ID 3eed77413905d63"},
+            body: formdata
+          }).then(data => data.json()).then(data => {
+            this.event.image = data.data.link
           })
-          .then(response => response.text())
-          .then(data => {
-            if (data.length > 20) {
-              alert("Some information has wrong format")
-            } else {
-              window.location.assign('/Data');
-            }
-          });
-        },
-
-        getEvent() {
-            fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedEventId"), {
-                headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
-            })
-            .then(res => res.json())
-            .then(data => {
-                this.event.name = data[0].name;
-                this.event.image = data[0].image;
-                this.event.location = data[0].location;
-                this.event.latitude = data[0].latitude;
-                this.event.longitude = data[0].longitude;
-                this.event.eventStart_date = data[0].eventStart_date;
-                this.event.eventEnd_date = data[0].eventEnd_date;
-                this.event.n_participators = data[0].n_participators;
-                this.event.type = data[0].type;
-                this.event.description = data[0].description;
-                let start = this.event.eventStart_date.split("T");
-                this.startDate = start[0];
-                this.startTime = start[1].match((/.{1,5}/g))[0];
-                let end = this.event.eventEnd_date.split("T");
-                this.endDate = end[0];
-                this.endTime = end[1].match((/.{1,5}/g))[0];
-            });
-        },
       },
 
-      computed: {
-        calculateTimes() {
-          if (this.startDate != undefined && this.startTime != undefined) {
-            this.event.eventStart_date = this.startDate.concat('T', this.startTime, ':00.000Z');
+      editEvent() {
+        fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedEventId"), {
+          method: 'PUT', 
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + window.localStorage.getItem("token")
+          }, 
+          body: JSON.stringify(this.event)
+        })
+        .then(response => response.text())
+        .then(data => {
+          if (data.length > 20) {
+            alert("Some information has wrong format")
+          } else {
+            window.location.assign('/MyEvents');
           }
-          if (this.endDate != undefined && this.endTime != undefined) {
-            this.event.eventEnd_date = this.endDate.concat('T', this.endTime, ':00.000Z');
-          }
-        }
-      } ,
+        });
+      },
 
-      beforeMount() {
-        this.getEvent()
+      getEvent() {
+          fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedEventId"), {
+              headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
+          })
+          .then(res => res.json())
+          .then(data => {
+              this.event.name = data[0].name;
+              this.event.image = data[0].image;
+              this.event.location = data[0].location;
+              this.event.latitude = data[0].latitude;
+              this.event.longitude = data[0].longitude;
+              this.event.eventStart_date = data[0].eventStart_date;
+              this.event.eventEnd_date = data[0].eventEnd_date;
+              this.event.n_participators = data[0].n_participators;
+              this.event.type = data[0].type;
+              this.event.description = data[0].description;
+              let start = this.event.eventStart_date.split("T");
+              this.startDate = start[0];
+              this.startTime = start[1].match((/.{1,5}/g))[0];
+              let end = this.event.eventEnd_date.split("T");
+              this.endDate = end[0];
+              this.endTime = end[1].match((/.{1,5}/g))[0];
+          });
+      },
+    },
+
+    computed: {
+      calculateTimes() {
+        if (this.startDate != undefined && this.startTime != undefined) {
+          this.event.eventStart_date = this.startDate.concat('T', this.startTime, ':00.000Z');
+        }
+        if (this.endDate != undefined && this.endTime != undefined) {
+          this.event.eventEnd_date = this.endDate.concat('T', this.endTime, ':00.000Z');
+        }
       }
+    } ,
+
+    beforeMount() {
+      this.getEvent()
+    }
   }
 
 </script>
@@ -164,6 +164,8 @@
 
       <div class="inputContainer">
         <input type="file" accept="image/*" class="custom2" @change="onFileSelected"><br/>
+        <h3 class="previewFont">Preview:</h3>
+        <img v-bind:src="event.image" referrerpolicy="no-referrer" class='imgRedonda'/><br/><br/>
       </div>
       <br/><br/> 
 

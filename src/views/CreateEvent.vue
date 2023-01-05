@@ -136,6 +136,8 @@
 
       <div class="inputContainer">
         <input type="file" accept="image/*" class="custom2" @change="onFileSelected"><br/>
+        <h3 class="previewFont">Preview:</h3>
+        <img v-bind:src="event.image" referrerpolicy="no-referrer" class='imgRedonda'/><br/><br/>
       </div>
       <br/><br/> 
 

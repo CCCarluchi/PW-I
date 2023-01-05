@@ -47,7 +47,7 @@
                 .then(data => {
                     console.log(data)
                 })
-                .then(data => {
+                .then(() => {
                     window.location.reload()
                 }); 
             },

@@ -23,12 +23,24 @@ export default {
                     window.localStorage.setItem("myId", data[0].id);
                     console.log(window.localStorage);
                 })
-                .then(data => {
-                    window.location.assign('/Home');
-                
+                .then(() => {
+                    window.location.assign('/Home');                
                 })
             }    
         })  
+    },
+
+    onFileSelected(event) {
+        const formdata = new FormData()
+        formdata.append("image", event.target.files[0])
+          fetch("https://api.imgur.com/3/image/", {
+            method: 'POST',
+            headers: {'Authorization': "Client-ID 3eed77413905d63"},
+            body: formdata
+          })
+          .then(data => data.json()).then(data => {
+            return data.data.link
+          })
     },
 
     checkFriends() {

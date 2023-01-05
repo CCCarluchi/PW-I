@@ -110,6 +110,8 @@ import logic from '../javascript/logic.js'
 
       <div class="inputContainer">
         <input type="file" accept="image/*" class="custom" @change="onFileSelected"><br/>
+        <h3 class="previewFont">Preview:</h3>
+        <img v-bind:src="image" referrerpolicy="no-referrer" class='imgRedonda'/><br/><br/>
       </div>
       <br/><br/>
 
