@@ -29,7 +29,7 @@
       },
 
       locateClick(id) {
-        window.localStorage.setItem("selectedId", id);
+        window.localStorage.setItem("selectedUserId", id);
       },
 
       onImgError() {

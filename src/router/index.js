@@ -25,6 +25,7 @@ import Users from '../views/Users.vue'
 import MyEvents from '../views/MyEvents.vue'
 import EditEvent from '../views/EditEvent.vue'
 import ConfirmDelete from '../views/ConfirmDelete.vue'
+import EventParticipants from '../views/EventParticipants.vue'
 
 const routes = [
     {
@@ -156,6 +157,11 @@ const routes = [
         path: '/ConfirmDelete',
         name: 'ConfirmDelete',
         component: ConfirmDelete,
+    },
+    {
+        path: '/EventParticipants',
+        name: 'EventParticipants',
+        component: EventParticipants,
     }
 
 ]

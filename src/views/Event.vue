@@ -18,7 +18,7 @@ export default {
 
     methods: {
         getEvent() {
-            fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedId"), {
+            fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedEventId"), {
                 headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
             })
             .then(res => res.json())
@@ -46,7 +46,7 @@ export default {
         },
 
         participateInEvent() {
-            fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedId") + '/assistances', {
+            fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedEventId") + '/assistances', {
                 method: 'POST',
                 headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")},
             })
@@ -64,7 +64,7 @@ export default {
             .then(res => res.json())
             .then(data => {
                 for (let i = 0; i < data.length; i++) {
-                    if ( window.localStorage.getItem("selectedId") == data[i].id) {
+                    if ( window.localStorage.getItem("selectedEventId") == data[i].id) {
                         this.isParticipating = true;
                     }
                 }
@@ -72,7 +72,7 @@ export default {
         },
         
         getComments() {
-            fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedId") + "/assistances", {
+            fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedEventId") + "/assistances", {
                 headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
             })
             .then(res => res.json())
@@ -151,6 +151,7 @@ export default {
             <br/><br/>
             <div class="inputContainer">
                 <a href="/ShareEvent"><button class="eventButton">Share</button></a>
+                <a href="/EventParticipants"><button class="eventButton">Participants</button></a>
                 <a v-if="isParticipating" href="/ParticipateEvent"><button class="eventButton">Rate</button></a>
                 <button v-else class="eventButton" v-on:click="participateInEvent()">Participate</button>     
             </div>

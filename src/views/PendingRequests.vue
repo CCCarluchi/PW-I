@@ -24,7 +24,7 @@
 
             acceptRequest(id) {
                 this.locateClick(id)
-                fetch("http://puigmal.salle.url.edu/api/v2/friends/" + window.localStorage.getItem("selectedId"), {
+                fetch("http://puigmal.salle.url.edu/api/v2/friends/" + window.localStorage.getItem("selectedUserId"), {
                     method: 'PUT', 
                     headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
                 })
@@ -39,7 +39,7 @@
 
             deleteRequest(id) {
                 this.locateClick(id)
-                fetch("http://puigmal.salle.url.edu/api/v2/friends/" + window.localStorage.getItem("selectedId"), {
+                fetch("http://puigmal.salle.url.edu/api/v2/friends/" + window.localStorage.getItem("selectedUserId"), {
                     method: 'DELETE', 
                     headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
                 })
@@ -53,7 +53,7 @@
             },
 
             locateClick(id) {
-                window.localStorage.setItem("selectedId", id);
+                window.localStorage.setItem("selectedUserId", id);
             } 
         },
 

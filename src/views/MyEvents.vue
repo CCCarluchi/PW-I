@@ -55,7 +55,7 @@ export default {
     },
 
     locateClick(id) {
-      window.localStorage.setItem("selectedId", id);
+      window.localStorage.setItem("selectedEventId", id);
     }
 
   },

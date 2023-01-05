@@ -38,12 +38,13 @@ export default {
         .then(res => res.json())
         .then(friends => {
             for (let i = 0; i < friends.length; i++) {
-                if (localStorage.getItem("selectedId") == friends[i].id) {
+                if (localStorage.getItem("selectedUserId") == friends[i].id) {
                     isFriend = true
                 }
             }
         })
-        .then(data => {  
+        .then(() => {  
+            console.log(localStorage.getItem("selectedUserId"))
             if (isFriend) {
                 window.location.assign('/FriendProfile');
             }

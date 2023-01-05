@@ -36,7 +36,7 @@
         },
 
         editEvent() {
-          fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedId"), {
+          fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedEventId"), {
             method: 'PUT', 
             headers: {
               'Content-Type': 'application/json',
@@ -55,7 +55,7 @@
         },
 
         getEvent() {
-            fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedId"), {
+            fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedEventId"), {
                 headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
             })
             .then(res => res.json())

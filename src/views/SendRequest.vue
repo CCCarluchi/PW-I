@@ -11,7 +11,7 @@
       methods: {
         sendRequest() {
           if (!this.alreadySent) {
-            fetch("http://puigmal.salle.url.edu/api/v2/friends/" + window.localStorage.getItem("selectedId"), {
+            fetch("http://puigmal.salle.url.edu/api/v2/friends/" + window.localStorage.getItem("selectedUserId"), {
               method: 'POST',
               headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
             })

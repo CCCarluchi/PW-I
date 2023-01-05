@@ -11,7 +11,7 @@ export default {
 
   methods: {
     postRating(info) {
-      fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedId") + "/assistances", {
+      fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedEventId") + "/assistances", {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ export default {
     },
 
     checkRated() {
-      fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedId") + "/assistances/" + window.localStorage.getItem("myId"), {
+      fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedEventId") + "/assistances/" + window.localStorage.getItem("myId"), {
         headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
       })
       .then(res => res.json())
