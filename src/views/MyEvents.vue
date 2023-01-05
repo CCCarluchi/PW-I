@@ -6,7 +6,11 @@ export default {
     return {
         finishedEvents: [],
         currentEvents: [],
-        futureEvents: []
+        futureEvents: [],
+        empty:"",
+        empty1:"",
+        empty2:"",
+        empty3:""
       }
     },
 
@@ -17,6 +21,7 @@ export default {
       })
       .then(res => res.json())
       .then(data => {
+        this.empty1 = (data.length == 0);
         for (let i = 0; i < data.length; i++) {
           this.finishedEvents.push(data[i])
         }    
@@ -29,6 +34,7 @@ export default {
       })
       .then(res => res.json())
       .then(data => {
+        this.empty2 = (data.length == 0);
         for (let i = 0; i < data.length; i++) {
           this.currentEvents.push(data[i])
         }    
@@ -41,6 +47,7 @@ export default {
       })
       .then(res => res.json())
       .then(data => {
+        this.empty3 = (data.length == 0);
         for (let i = 0; i < data.length; i++) {
           this.futureEvents.push(data[i])
         }    
@@ -51,6 +58,12 @@ export default {
       window.localStorage.setItem("selectedId", id);
     }
 
+  },
+
+  computed: {
+    isEmpty() {
+      return(this.empty1 && this.empty2 && this.empty3);
+    }
   },
 
   beforeMount(){
@@ -74,6 +87,12 @@ export default {
   </header>
 
   <main>
+
+    <div v-if="isEmpty">
+      <h2 class="emptyList">No events created yet</h2>
+    </div>
+
+    <div v-else>
     <h3 class="persHeader">Future events</h3>
     <li class="grid-container" v-for="event in futureEvents" :key="event.id">
       <div>
@@ -105,11 +124,9 @@ export default {
         <a href="/Event" v-on:click="locateClick(event.id)"><button>Event</button></a>
       </div>
     </li>
+  </div>
 
   </main>
-
-  <footer>
-  </footer>
   
 </template>
 

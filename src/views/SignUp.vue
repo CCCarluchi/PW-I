@@ -25,6 +25,7 @@ import logic from '../javascript/logic.js'
           })
           .then((response) => response.json())
           .then((data) => {
+            console.log(data)
             const email = info.email;
             const password = info.password;
             if (data.hasOwnProperty('Error')) {
@@ -37,6 +38,7 @@ import logic from '../javascript/logic.js'
           }); 
         },
         
+        //A vegades no pilla la imatge nose perque
         onFileSelected(event) {
           const formdata = new FormData()
           formdata.append("image", event.target.files[0])
@@ -44,9 +46,12 @@ import logic from '../javascript/logic.js'
                 method: 'POST',
                 headers: {'Authorization': "Client-ID 3eed77413905d63"},
                 body: formdata
-            }).then(data => data.json()).then(data => {
-                this.image = data.data.link
             })
+            .then(data => data.json())
+            .then(data => {
+                this.image = data.data.link
+                console.log(this.image)
+            });
         }
       },
       beforeMount() {

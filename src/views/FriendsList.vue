@@ -7,7 +7,8 @@
           friends: [],
           name:"",
           image:"",
-          imgError: false
+          imgError: false,
+          empty:""
         }
       },
 
@@ -18,6 +19,7 @@
         })
         .then(res => res.json())
         .then(data => {
+          this.empty = (data.length == 0);
           for (let i = 0; i < data.length; i++) {
             if (data[i].id != null) {
               this.friends.push(data[i])
@@ -70,9 +72,13 @@
         <img v-bind:src=filename referrerpolicy="no-referrer" @error="onImgError" class='imgList'/>
         <p>{{ friend.name }}</p>
         <a href="/FriendProfile" v-on:click="locateClick(friend.id)"><button>Profile</button></a>
-
       </div>
     </li>
+
+    <div v-if="empty">
+      <h2 class="emptyList">No friends yet :(</h2>
+    </div>
+
 
   </main>
 </template>

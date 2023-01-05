@@ -633,6 +633,15 @@ li {
   cursor: pointer;
 }
 
+.emptyList {
+  background-color: rgba(255, 204, 153);
+  margin-left: 30%;
+  margin-right: 30%;
+  padding: 20px;
+  border: solid 1px black;
+  font-size: 36px;
+}
+
 /* Chat */
 
 .conteiner{

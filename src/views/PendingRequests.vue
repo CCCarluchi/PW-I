@@ -3,7 +3,8 @@
   export default {
         data() {
             return {
-                users: []
+                users: [],
+                empty:""
             }
         },
 
@@ -14,7 +15,7 @@
                 })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data)
+                    this.empty = (data.length == 0)
                     for (let i = 0; i < data.length; i++) {
                         this.users.push(data[i])
                     }
@@ -87,10 +88,15 @@
             </div>
         </li>
 
+        <div v-if="empty">
+            <h2 class="emptyList">No requests pending</h2>
+        </div>
+
     </main>
 </template>
 
 <style>
+
     .grid-container > div > button {
     float: right;
     background-color: white;
