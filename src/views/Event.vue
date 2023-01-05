@@ -4,6 +4,7 @@ export default {
     data() {
         return {
             event: {},
+            comments: [],
             name:"",
             isParticipating: false,
             startDate:"",
@@ -68,12 +69,23 @@ export default {
                     }
                 }
             })
+        },
+        
+        getComments() {
+            fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedId") + "/assistances", {
+                headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
+            })
+            .then(res => res.json())
+            .then(data => {
+                this.comments = data;
+            })
         }
+         
     },
 
     created() {
-        this.getEvent()
-        
+        this.getEvent();
+        this.getComments();
     }
 
 }
@@ -95,7 +107,7 @@ export default {
 
     <main>
         
-        <li class = "eventData">
+        <article class = "eventData">
             <div>
                 <h3>Owner:   </h3>
                 <p>{{ name }}</p>
@@ -128,27 +140,48 @@ export default {
                 <h3>Max number of participants:   </h3>
                 <p>{{ event.n_participators }}</p>
             </div>
-        </li>      
+        </article>  
+
+        <nav>   
+            <br/><br/>
+            <div class="inputContainer">
+                <a href="/ShareEvent"><button class="eventButton">Share</button></a>
+                <a v-if="isParticipating" href="/ParticipateEvent"><button class="eventButton">Rate</button></a>
+                <button v-else class="eventButton" v-on:click="participateInEvent()">Participate</button>     
+            </div>
+        </nav>
+        
+        <article>
+            <h3 class="persHeader">Comments:</h3>
+            <li class="grid-container" v-for="comment in comments" :key="comment.id">
+                <div>
+                    <h3 class="commentName"> {{ comment.name }}</h3>
+                    <p>-------------</p><br/>
+                    <p>Given rating:  {{ comment.puntuation }}&#11088;</p><br/>
+                    <p>Comment:  {{ comment.comentary }}</p>
+                </div>
+            </li>
+        </article>
 
     </main>
 
     <footer>
-        <div class="inputContainer">
-            <a href="/ShareEvent"><button class="eventButton">Share</button></a>
-            <a v-if="isParticipating" href="/ParticipateEvent"><button class="eventButton">Rate</button></a>
-            <button v-else class="eventButton" v-on:click="participateInEvent()">Participate</button>     
-        </div>
     </footer>
 
 </template>
 
 <style>
 
+.commentName {
+    font-size: 26px;
+    margin-bottom: 1%;
+}
+
 .eventData {
   border: 1px solid black;
   display: grid;
-  margin-left: 5.5%;
-  margin-right: 5.5%;
+  margin-left: 5.7%;
+  margin-right: 5.7%;
 }
 
 .eventData > div {
@@ -176,5 +209,15 @@ export default {
   font-family: 'Fredoka', sans-serif;
   font-size: 22px;
 }
+
+.persHeader {
+    color: white;
+    border: 1px solid black;
+    background-color: rgb(0, 153, 255);
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 10px;
+  }
 
 </style>

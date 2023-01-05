@@ -3,18 +3,33 @@
 export default {
   data() {
     return {
-      puntuation:"",
-      comment:""
+      puntuation: null,
+      comentary:""
+      
     }
   },
 
   methods: {
-    postRating() {
-      console.log(this.puntuation, this.comment)
+    postRating(info) {
+      fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedId") + "/assistances", {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + window.localStorage.getItem("token")
+        },
+        body: JSON.stringify(info)
+      })
+      .then(res => res.text())
+      .then(data => {
+        if (data.length > 20) {
+          alert("Some information has wrong format")
+        } else {
+          window.location.assign('/Events');
+        }
+      }); 
     }
   }
 }
-
 
 </script>
 
@@ -39,31 +54,31 @@ export default {
       <h3>Event Name</h3><br/><br/>
       <p>Your puntuation:</p>
 
-      <select name="lenguajes" v-model="puntuation">
-        <option value="javascript">0</option>
-        <option value="php">1</option>
-        <option value="java">2</option>
-        <option value="golang">3</option>
-        <option value="python">4</option>
-        <option value="c#">5</option>
-        <option value="C++">6</option>
-        <option value="erlang">7</option>
-        <option value="c#">8</option>
-        <option value="C++">9</option>
-        <option value="erlang">10</option>
+      <select name="puntuation" v-model="puntuation">
+        <option value=0>0</option>
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+        <option value=5>5</option>
+        <option value=6>6</option>
+        <option value=7>7</option>
+        <option value=8>8</option>
+        <option value=9>9</option>
+        <option value=10>10</option>
       </select>
       <br/><br/>
 
       <p>Comments on the event:</p>
       <div class="inputContainer">
-        <textarea type="text" v-model="comment" placeholder="*Comments"></textarea>
+        <textarea type="text" v-model="comentary" placeholder="*Comments"></textarea>
       </div>
 
     </form>
   </main>
 
   <footer>
-    <a v-on:click="postRating"><button class = "button2">Done</button></a>
+    <a v-on:click="postRating({puntuation, comentary})"><button class = "button2">Done</button></a>
   </footer>
 
 </template>
