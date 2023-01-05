@@ -324,8 +324,6 @@ article{
   margin-top: 0.6%;
 }
 
-
-
 .stats-container > .p1 {
   text-align: left;
   font-size: 24px;
@@ -881,7 +879,7 @@ li {
     padding: 6px;
     color: rgba(0, 0, 0, 0.68);
     background-color: white;
-    width: 580px;
+    width: 90%;
     height: 246px;
     font-size: 32px;
   }
