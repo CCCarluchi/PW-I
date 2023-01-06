@@ -23,19 +23,22 @@ import logic from '../javascript/logic.js'
             headers: {'Content-Type': 'application/json'}, 
             body: JSON.stringify(info)
           })
-          .then((response) => response.json())
+          .then(response => {
+            if (!response.ok) {
+              throw Error(response.statusText);
+            }
+            return response.json();
+          })
           .then((data) => {
             console.log(data)
             const email = info.email;
             const password = info.password;
-            if (data.hasOwnProperty('Error')) {
-                alert('The information has an incorrect format, or that mail is already registered');
-            } else {
-              window.localStorage.removeItem("token");
-              logic.login({email, password});
-              
-            }
-          }); 
+            window.localStorage.removeItem("token");
+            logic.login({email, password});
+          })
+          .catch(() => {
+            alert('The information has an incorrect format, or that mail is already registered');
+          })
         },
         
         //A vegades no pilla la imatge nose perque

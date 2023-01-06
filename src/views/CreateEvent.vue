@@ -44,14 +44,17 @@
           }, 
           body: JSON.stringify(this.event)
         })
-        .then(response => response.json())
-        .then(data => {
-          console.log(data)
-          if (!data.hasOwnProperty("name")) {
-            alert("Some information has wrong format")
-          } else {
-            window.location.assign('/Events');
+        .then(response => {
+          if (!response.ok) {
+            throw Error(response.statusText);
           }
+          return response.json()
+        })
+        .then(() => {
+          window.location.assign('/Events');
+        })
+        .catch(() => {
+          alert("Some information has wrong format")
         }) 
       }
     },

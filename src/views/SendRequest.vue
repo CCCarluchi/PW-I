@@ -27,32 +27,28 @@
 </script>
 
 <template>
-    <main>
-      <header>
-        <br/>
-        <div class="arrowContainer" align="left"> 
-          <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
+
+    <header>
+    <br/>
+    <div class="arrowContainer"> 
+      <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
+    </div>
+  </header>
+  <br/>
+
+  <main>
+    <div class="card">
+      <div>
+        <h2 class="center">Send request</h2>
+      </div>
+      <div>
+        <p class="p2">Do you wish to send a friend request to this player?</p>
+      </div>
+      <br/><br/>
+        <div class="inputContainer">
+          <a href="/" v-on:click="logOut"><button>Send</button></a>
         </div>
-      </header>
-      <br/>
-  
-      <article>
-        <div class="card">
-            <div align = left>
-                <h2>Send request</h2>
-            </div>
-            <div align = left>
-                <p2>Do you wish to send a friend request to this user?</p2>
-            </div>
-            <br/><br/>
-            <div class="inputContainer">
-              <a href="/NotFriendProfile" v-on:click="sendRequest()" id="button"><button>Send</button></a>
-            </div>
-        </div>
-      </article>
-  
-      <footer>
-      </footer>
-  
-    </main>
+    </div>
+  </main>
+
   </template>

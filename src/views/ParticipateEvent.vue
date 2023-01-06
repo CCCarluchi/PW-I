@@ -24,7 +24,7 @@ export default {
         if (data.length > 20) {
           alert("Some information has wrong format")
         } else {
-          window.location.assign('/Events');
+          window.location.assign('/Event');
         }
       }); 
     },
