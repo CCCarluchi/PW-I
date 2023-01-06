@@ -47,6 +47,9 @@
       <div class="profileItem">
         <a href="/Statistics"><button class="buttonProfile">Public stats</button></a>
       </div>
+      <div class="profileItem">
+        <a href="/FriendEvents"><button class="buttonProfile">{{name}} events</button></a>
+      </div>
     </div>
   </main>
     
