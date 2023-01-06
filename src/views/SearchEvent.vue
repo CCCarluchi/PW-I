@@ -8,6 +8,7 @@ import { createVNode } from 'vue';
           keyword:"",
           date:"",
           events: [],
+          empty:"",
         }
 
       },
@@ -65,9 +66,14 @@ import { createVNode } from 'vue';
           .then((response) => response.json())
           .then((data) => {
             this.events = [];
-            for (let i = 0; i < data.length; i++) {
-              this.events.push(data[i])
-            }  
+            if(data.length > 0) {
+              this.empty = false;
+              for (let i = 0; i < data.length; i++) {
+                this.events.push(data[i])
+              }  
+            } else {
+              this.empty = true;
+            }
           }); 
         },
 
@@ -112,13 +118,19 @@ import { createVNode } from 'vue';
         <br/><br/><br/>
       </nav>
 
-      <li class="grid-container" v-for="event in events" :key="event.id">
-        <div>
-          <img v-bind:src=event.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
-          <p>{{ event.name }} <!-- -- {{ event.eventStart_date }} -- {{ event.location }} --> </p>
-          <a href="/Event" v-on:click="locateClick(event.id)"><button>Event</button></a>
-        </div>
-      </li>
+      <div v-if="empty">
+        <h2 class="emptyList">No events match the search</h2>
+      </div>
+
+      <div v-else>
+        <li class="grid-container" v-for="event in events" :key="event.id">
+          <div>
+            <img v-bind:src=event.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
+            <p>{{ event.name }} <!-- -- {{ event.eventStart_date }} -- {{ event.location }} --> </p>
+            <a href="/Event" v-on:click="locateClick(event.id)"><button>Event</button></a>
+          </div>
+        </li>
+      </div>
 
     </main>
 
