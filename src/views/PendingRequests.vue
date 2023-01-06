@@ -16,6 +16,7 @@
                 .then(res => res.json())
                 .then(data => {
                     this.empty = (data.length == 0)
+                    console.log(data)
                     for (let i = 0; i < data.length; i++) {
                         this.users.push(data[i])
                     }

@@ -15,10 +15,7 @@
               method: 'POST',
               headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
             })
-            .then(res => res.json())
-            .then(data => {
-              console.log(data)
-            });
+            .then(res => res.json);
           }
       }
     }
@@ -46,7 +43,7 @@
       </div>
       <br/><br/>
         <div class="inputContainer">
-          <a href="/" v-on:click="logOut"><button>Send</button></a>
+          <a href="/NotFriendProfile" v-on:click="sendRequest"><button>Send request</button></a>
         </div>
     </div>
   </main>
