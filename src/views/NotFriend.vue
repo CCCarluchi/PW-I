@@ -13,7 +13,7 @@ import logic from '../javascript/logic.js'
 
     methods: {
       getUser() {
-        fetch("http://puigmal.salle.url.edu/api/v2/users/" + window.localStorage.getItem("selectedId"), {
+        fetch("http://puigmal.salle.url.edu/api/v2/users/" + window.localStorage.getItem("selectedUserId"), {
           headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
         })
         .then(res => res.json())

@@ -16,7 +16,7 @@ export default {
 
   methods: {
     getFinishedEvents() {
-      fetch("http://puigmal.salle.url.edu/api/v2/users/" + window.localStorage.getItem("myId") + "/events/finished", {
+      fetch("http://puigmal.salle.url.edu/api/v2/users/" + window.localStorage.getItem("selectedUserId") + "/events/finished", {
         headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
       })
       .then(res => res.json())
@@ -29,7 +29,7 @@ export default {
     },
 
     getCurrentEvents() {
-      fetch("http://puigmal.salle.url.edu/api/v2/users/" + window.localStorage.getItem("myId") + "/events/current", {
+      fetch("http://puigmal.salle.url.edu/api/v2/users/" + window.localStorage.getItem("selectedUserId") + "/events/current", {
         headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
       })
       .then(res => res.json())
@@ -42,7 +42,7 @@ export default {
     },
 
     getFutureEvents() {
-      fetch("http://puigmal.salle.url.edu/api/v2/users/" + window.localStorage.getItem("myId") + "/events/future", {
+      fetch("http://puigmal.salle.url.edu/api/v2/users/" + window.localStorage.getItem("selectedUserId") + "/events/future", {
         headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
       })
       .then(res => res.json())
@@ -98,8 +98,6 @@ export default {
       <div>
         <img v-bind:src=event.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
         <p>{{ event.name }} <!-- -- {{ event.eventStart_date }} -- {{ event.location }} --> </p>
-        <a href="/ConfirmDelete" v-on:click="locateClick(event.id)"><button>Delete</button></a>
-        <a href="/EditEvent" v-on:click="locateClick(event.id)"><button>Edit</button></a>
         <a href="/Event" v-on:click="locateClick(event.id)"><button>Event</button></a>
         
       </div>
@@ -110,8 +108,6 @@ export default {
       <div>
         <img v-bind:src=event.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
         <p>{{ event.name }} <!-- -- {{ event.eventStart_date }} -- {{ event.location }} --> </p>
-        <a href="/ConfirmDelete" v-on:click="locateClick(event.id)"><button>Delete</button></a>
-        <a href="/EditEvent" v-on:click="locateClick(event.id)"><button>Edit</button></a>
         <a href="/Event" v-on:click="locateClick(event.id)"><button>Event</button></a>
       </div>
     </li>

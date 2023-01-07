@@ -14,38 +14,61 @@
           n_participators:"",
           type:"",
           description:""
-        }
+        },
+        startDate:"",
+        startTime:"",
+        endDate:"",
+        endTime:""
       }
     },
 
     methods: {
       onFileSelected(event) {
-          const formdata = new FormData()
-          formdata.append("image", event.target.files[0])
-            fetch("https://api.imgur.com/3/image/", {
-                method: 'POST',
-                headers: {'Authorization': "Client-ID 3eed77413905d63"},
-                body: formdata
-            }).then(data => data.json()).then(data => {
-                this.event.image = data.data.link
-            })
-        },
+        const formdata = new FormData()
+        formdata.append("image", event.target.files[0])
+          fetch("https://api.imgur.com/3/image/", {
+              method: 'POST',
+              headers: {'Authorization': "Client-ID 3eed77413905d63"},
+              body: formdata
+          }).then(data => data.json()).then(data => {
+              this.event.image = data.data.link
+          })
+      },
 
-        createEvent() {
-          fetch("http://puigmal.salle.url.edu/api/v2/events", {
-            method: 'POST', 
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': 'Bearer ' + window.localStorage.getItem("token")
-            }, 
-            body: JSON.stringify(this.event)
-          })
-          .then((response) => response.json())
-          .then(data => {
-            console.log(data)
-          })
+      createEvent() {
+        fetch("http://puigmal.salle.url.edu/api/v2/events", {
+          method: 'POST', 
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + window.localStorage.getItem("token")
+          }, 
+          body: JSON.stringify(this.event)
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw Error(response.statusText);
+          }
+          return response.json()
+        })
+        .then(() => {
+          window.location.assign('/Events');
+        })
+        .catch(() => {
+          alert("Some information has wrong format")
+        }) 
+      }
+    },
+
+    computed: {
+      calculateTimes() {
+        if (this.startDate != undefined && this.startTime != undefined) {
+          this.event.eventStart_date = this.startDate.concat('T', this.startTime, ':00.000Z');
+        }
+        if (this.endDate != undefined && this.endTime != undefined) {
+          this.event.eventEnd_date = this.endDate.concat('T', this.endTime, ':00.000Z');
         }
       }
+    } 
   }
 
 </script>
@@ -85,12 +108,22 @@
       <br/><br/> 
       
       <div class="inputContainer">
-        <input placeholder="*Start date" v-model="event.eventStart_date"  type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"><br/>
+        <input placeholder="*Start date" v-model="startDate" v-bind="calculateTimes" type="text" onfocus="(this.type='date')" onblur="(this.type='text')"><br/>
       </div>
       <br/><br/> 
 
       <div class="inputContainer">
-        <input placeholder="*End date" v-model="event.eventEnd_date" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"><br/>
+        <input placeholder="*Start time" v-model="startTime" v-bind="calculateTimes" type="text" onfocus="(this.type='time')" onblur="(this.type='text')"><br/>
+      </div>
+      <br/><br/> 
+
+      <div class="inputContainer">
+        <input placeholder="*End date" v-model="endDate" v-bind="calculateTimes" type="text" onfocus="(this.type='date')" onblur="(this.type='text')"><br/>
+      </div>
+      <br/><br/>
+
+      <div class="inputContainer">
+        <input placeholder="*End time" v-model="endTime" v-bind="calculateTimes" type="text" onfocus="(this.type='time')" onblur="(this.type='text')"><br/>
       </div>
       <br/><br/>
 
@@ -106,6 +139,8 @@
 
       <div class="inputContainer">
         <input type="file" accept="image/*" class="custom2" @change="onFileSelected"><br/>
+        <h3 class="previewFont">Preview:</h3>
+        <img v-bind:src="event.image" referrerpolicy="no-referrer" class='imgRedonda'/><br/><br/>
       </div>
       <br/><br/> 
 
@@ -120,7 +155,7 @@
   <footer>
     <br/><br/>
     <div class="inputContainer">
-        <a href="/Events" v-on:click="createEvent"><button>Create</button></a>
+        <a v-on:click="createEvent"><button>Create</button></a>
       </div>
   </footer>
   

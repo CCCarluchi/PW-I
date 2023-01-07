@@ -24,12 +24,16 @@ import SendRequest from '../views/SendRequest.vue'
 import Users from '../views/Users.vue'
 import MyEvents from '../views/MyEvents.vue'
 import EditEvent from '../views/EditEvent.vue'
+import ConfirmDelete from '../views/ConfirmDelete.vue'
+import EventParticipants from '../views/EventParticipants.vue'
+import FriendEvents from '../views/FriendEvents.vue'
+import { nextTick } from 'vue'
 
 const routes = [
     {
         path: '/',
         name: 'SignIn',
-        component: SignIn
+        component: SignIn,
     },
     {
         path: '/SignUp',
@@ -150,6 +154,21 @@ const routes = [
         path: '/EditEvent',
         name: 'EditEvent',
         component: EditEvent,
+    },
+    {
+        path: '/ConfirmDelete',
+        name: 'ConfirmDelete',
+        component: ConfirmDelete,
+    },
+    {
+        path: '/EventParticipants',
+        name: 'EventParticipants',
+        component: EventParticipants,
+    },
+    {
+        path: '/FriendEvents',
+        name: 'FriendEvents',
+        component: FriendEvents
     }
 
 ]
@@ -158,4 +177,15 @@ const router = createRouter({
     history: createWebHistory(),
     routes
 })
+
+router.beforeEach((to, from, next) => {
+    if (to.name == 'SignIn' && window.localStorage.getItem("loggedIn")) {
+        next({name: 'Home'});
+       
+    } else {
+        next();
+
+    }
+   
+  })
 export default router

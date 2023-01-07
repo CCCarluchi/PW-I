@@ -50,7 +50,7 @@
         <a href="/PendingRequests" id="button"><button class="buttonProfile">Pending requests</button></a><br/><br/>
       </div>
       <div class="profileItem">
-        <a href="/MyEvents" id="button"><button class="buttonProfile">MyEvents</button></a><br/><br/>
+        <a href="/MyEvents" id="button"><button class="buttonProfile">My events</button></a><br/><br/>
       </div>
       <div class="profileItem">
         <a href="/ModifyData" id="button"><button class="buttonProfile">Change profile</button></a><br/><br/>

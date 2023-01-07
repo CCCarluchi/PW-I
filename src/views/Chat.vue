@@ -1,11 +1,17 @@
+<script>
+import logic from '../javascript/logic.js'
+
+</script>
+
+
 <template>
 
-<header>
+    <header>
       <br/>
-      <div class="arrowContainer" align="left"> 
+      <div class="arrowContainer"> 
         <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
       </div>
-</header>
+    </header>
     <main>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
        
@@ -70,3 +76,6 @@
        
     </main> 
   </template>
+
+<style>
+</style>

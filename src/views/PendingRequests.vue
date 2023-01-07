@@ -3,7 +3,8 @@
   export default {
         data() {
             return {
-                users: []
+                users: [],
+                empty:""
             }
         },
 
@@ -14,6 +15,7 @@
                 })
                 .then(res => res.json())
                 .then(data => {
+                    this.empty = (data.length == 0)
                     console.log(data)
                     for (let i = 0; i < data.length; i++) {
                         this.users.push(data[i])
@@ -23,7 +25,7 @@
 
             acceptRequest(id) {
                 this.locateClick(id)
-                fetch("http://puigmal.salle.url.edu/api/v2/friends/" + window.localStorage.getItem("selectedId"), {
+                fetch("http://puigmal.salle.url.edu/api/v2/friends/" + window.localStorage.getItem("selectedUserId"), {
                     method: 'PUT', 
                     headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
                 })
@@ -38,7 +40,7 @@
 
             deleteRequest(id) {
                 this.locateClick(id)
-                fetch("http://puigmal.salle.url.edu/api/v2/friends/" + window.localStorage.getItem("selectedId"), {
+                fetch("http://puigmal.salle.url.edu/api/v2/friends/" + window.localStorage.getItem("selectedUserId"), {
                     method: 'DELETE', 
                     headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
                 })
@@ -46,13 +48,13 @@
                 .then(data => {
                     console.log(data)
                 })
-                .then(data => {
+                .then(() => {
                     window.location.reload()
                 }); 
             },
 
             locateClick(id) {
-                window.localStorage.setItem("selectedId", id);
+                window.localStorage.setItem("selectedUserId", id);
             } 
         },
 
@@ -87,10 +89,15 @@
             </div>
         </li>
 
+        <div v-if="empty">
+            <h2 class="emptyList">No requests pending</h2>
+        </div>
+
     </main>
 </template>
 
 <style>
+
     .grid-container > div > button {
     float: right;
     background-color: white;

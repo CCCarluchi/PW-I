@@ -283,6 +283,10 @@ article{
   vertical-align: middle;
 }
 
+.previewFont {
+  margin-left:28.5%;
+}
+
 /*.imgLogo {
   max-width:200px;
   max-height:200px;
@@ -292,8 +296,8 @@ article{
 
 .grid-container {
   display: grid;
-  padding-left: 3%;
-  padding-right: 3%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .grid-container > div {
@@ -303,7 +307,6 @@ article{
   padding: 20px;
   font-size: 24px;
   font-family: 'Fredoka', sans-serif;
-  line-height: 0px;
 }
 
 .grid-container > div > p {
@@ -323,8 +326,6 @@ article{
   color: black;
   margin-top: 0.6%;
 }
-
-
 
 .stats-container > .p1 {
   text-align: left;
@@ -633,6 +634,15 @@ li {
   cursor: pointer;
 }
 
+.emptyList {
+  background-color: rgba(255, 204, 153);
+  margin-left: 30%;
+  margin-right: 30%;
+  padding: 20px;
+  border: solid 1px black;
+  font-size: 36px;
+}
+
 /* Chat */
 
 .conteiner{
@@ -872,7 +882,8 @@ li {
     padding: 6px;
     color: rgba(0, 0, 0, 0.68);
     background-color: white;
-    width: 580px;
+    width: 90%;
+    max-width: 600px;
     height: 246px;
     font-size: 32px;
   }
