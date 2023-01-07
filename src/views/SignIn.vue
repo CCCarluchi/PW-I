@@ -1,5 +1,6 @@
-<script >
-  import logic from '../javascript/logic.js'
+<script>
+  import { onMounted, useTransitionState } from 'vue';
+import logic from '../javascript/logic.js'
 
   export default {
 
@@ -16,14 +17,13 @@
       }
     },
 
-    beforeMount() {
+    /*beforeMount() {
       window.localStorage.clear();
       /*
         window.location.href = "/Home";
       } */
     }
 
-    }
   
 </script>
 

@@ -1,3 +1,8 @@
+<script>
+
+
+</script>
+
 <template>
     <main>
       <header>
@@ -12,8 +17,8 @@
     <article>
       <table class = "stats-container">
         <tr>
-          <th>Your events puntuation:</th>
-          <th>Your number of comments:</th>
+          <th>Events puntuation:</th>
+          <th>Number of comments:</th>
           <th>Percentage of users with lower comments:</th>
         </tr>
         <tr>

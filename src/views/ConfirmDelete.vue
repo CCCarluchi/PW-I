@@ -3,11 +3,15 @@
   export default {
 
     methods: {
-      deleteUser() {
-        fetch("http://puigmal.salle.url.edu/api/v2/users", {
+      deleteEvent() {
+        fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedEventId"), {
           method: 'DELETE',
           headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
         })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data)  
+        });
       }
     }
   }
@@ -25,16 +29,15 @@
 
   <main>
     <div class="card">
-      <div>
-        <h2 class="center">Delete account</h2>
+      <div class="cardText">
+        <h2>Delete event</h2>
       </div>
-      <div>
-        <p class="p2">Are you sure you want to delete your account?</p>
-        <p class="red">(This action can not be undone)</p>
+      <div class="cardText">
+        <p class="p2">Do you really want to delete the event?</p>
       </div>
       <br/><br/>
         <div class="inputContainer">
-          <a href="/" v-on:click="deleteUser"><button>Delete account</button></a>
+          <a href="/MyEvents" id="button" v-on:click="deleteEvent"><button>Delete</button></a>
         </div>
     </div>
   </main>
@@ -42,12 +45,8 @@
 </template>
 
 <style>
-
-.red {
-  color: red;
-  float: center;
-  font-size: 26px;
-  font-family:'Roboto', sans-serif;
+.cardText {
+  text-align: left;
 }
 
 </style>

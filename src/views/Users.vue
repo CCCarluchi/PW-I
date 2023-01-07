@@ -37,8 +37,12 @@
       },
 
       locateClick(id) {
-        window.localStorage.setItem("selectedId", id);
+        window.localStorage.setItem("selectedUserId", id);
       },
+
+      isMe(id) {
+        return (id == window.localStorage.getItem("myId"))
+      }
     },
 
     beforeMount(){
@@ -71,9 +75,10 @@
     
     <li class="grid-container" v-for="user in users" :key="user.id">
       <div>
-        <!-- <img v-bind:src=user.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>  -->
+        <img v-bind:src=user.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
         <p>{{ user.name }}</p>
-        <a href="/NotFriendProfile" v-on:click="locateClick(user.id)"><button>Profile</button></a>
+        <a v-if="isMe(user.id)" href="/Data" v-on:click="locateClick(user.id)"><button>My profile</button></a>
+        <a v-else href="/NotFriendProfile" v-on:click="locateClick(user.id)"><button>Profile</button></a>
       </div>
     </li>
 

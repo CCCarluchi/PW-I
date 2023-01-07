@@ -1,146 +1,125 @@
 <script>
 
-import logic from '../javascript/logic.js'
-
   export default {
-      data() {
-        return {
-          name: "",
-          last_name: "",
-          username:"",
-          birth:"",
-          confirm:"",
-          image:"",
+    data() {
+      return {
+        user: {
+          name:"",
+          last_name:"",
+          email:"",
+          password:"",
+          image:""
         }
-
-      },
-      methods: {
-        applychange(info = {}) {
-          fetch("http://puigmal.salle.url.edu/api/v2/users", {
-            method: 'PUT', 
-            headers: {'Content-Type': 'application/json'}, 
-            body: JSON.stringify(info)
-          })
-          .then((response) => response.json())
-          .then((data) => {
-            const email = info.email;
-            const password = info.password;
-            if (data.hasOwnProperty('Error')) {
-                alert('The information has an incorrect format, or that mail is already registered');
-            } else {
-              window.localStorage.removeItem("token");
-              logic.login({email, password});
-              
-            }
-          }); 
-        },
-        
-        onFileSelected(event) {
-          const formdata = new FormData()
-          formdata.append("image", event.target.files[0])
-            fetch("https://api.imgur.com/3/image/", {
-                method: 'POST',
-                headers: {'Authorization': "Client-ID 3eed77413905d63"},
-                body: formdata
-            }).then(data => data.json()).then(data => {
-                this.image = data.data.link
-            })
-        }
-      },
-      beforeMount() {
-        window.localStorage.clear();
       }
+    },
+
+    methods: {
+
+      onFileSelected(event) {
+        const formdata = new FormData()
+        formdata.append("image", event.target.files[0])
+          fetch("https://api.imgur.com/3/image/", {
+            method: 'POST',
+            headers: {'Authorization': "Client-ID 3eed77413905d63"},
+            body: formdata
+          })
+          .then(data => data.json()).then(data => {
+            this.user.image = data.data.link
+          })
+      },
+
+      editProfile() {
+        fetch("http://puigmal.salle.url.edu/api/v2/users", {
+          method: 'PUT', 
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + window.localStorage.getItem("token")
+          }, 
+          body: JSON.stringify(this.event)
+        })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data)
+          if (data.length > 20) {
+            alert("Some information has wrong format")
+          } else {
+            //window.location.assign('/Data');
+          }
+        });
+      },
+
+      getData() {
+          fetch("http://puigmal.salle.url.edu/api/v2/users/" + window.localStorage.getItem("myId"), {
+            headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
+          })
+          .then(res => res.json())
+          .then(data => {
+            this.user.name = data[0].name;
+            this.user.last_name = data[0].last_name;
+            this.user.email = data[0].email;
+            this.user.password = data[0].password;
+            this.user.image = data[0].image;
+          }); 
+      }
+    },
+
+    beforeMount() {
+      this.getData()
     }
-  
+  }
+
 </script>
-
-
 
 <template>
 
-    <main>
-        <header>
+  
+    <header>
       <br/>
-      <div class="arrowContainer"> 
-      <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
-    </div>
-      <div class="appTitle">
-        <h2>Change profile</h2>
-      </div>
-     </header> 
-
-     <form>
-      <div class="inputContainer">
-        <input type="text" v-model="name" placeholder="*Name"><br/>
-      </div>
+      <a onclick="window.history.back()"><i class="arrow left"></i></a>
       <br/><br/>
-
-      <div class="inputContainer">
-        <input type="text" v-model="last_name" placeholder="*Last_name"><br/>
+      <div class="topText">
+        <h1>Edit profile</h1>
       </div>
-      <br/><br/>
+      <br/><br/><br/>
+    </header>
 
-      <div class="inputContainer">
-        <input v-model="username" placeholder="*Username"><br/>
-      </div>
-      <br/><br/>
+    <main>
+     
+      <form>
+        <div class="inputContainer">
+          <input type="text" v-model="user.name" placeholder="*Name"><br/>
+        </div>
+        <br/><br/>
 
-      <div class="inputContainer">
-        <input placeholder="*Date of birth" v-model="birth" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"><br/>
-      </div>
-      <br/><br/>
+        <div class="inputContainer">
+          <input type="text" v-model="user.last_name" placeholder="*Last name"><br/>
+        </div>
+        <br/><br/>
 
-      <div class="inputContainer">
-        <input type="text" v-model="email" placeholder="*Email"><br/>
-      </div>
-      <br/><br/>
+        <div class="inputContainer">
+          <input type="text" v-model="user.email" placeholder="*Email"><br/>
+        </div>
+        <br/><br/>
 
-      <div class="inputContainer">
-        <input type="password" v-model="password" placeholder="*Password"><br/>
-      </div>
-      <br/><br/>
+        <div class="inputContainer">
+          <input type="text" v-model="user.password" placeholder="*Password"><br/>
+        </div>
+        <br/><br/>
 
-      <div class="inputContainer">
-        <input type="password" v-model="confirm" placeholder="*Confirm Password"><br/>
-      </div>
-      <br/><br/>
-
-      <div class="inputContainer">
-        <input type="file" accept="image/*" class="imgRedonda" @change="onFileSelected"><br/>
-        <img src= files[0].name class='imgRedonda' /><br/><br/>
-      </div>
-      <br/><br/>
-
-
-      <div class="inputContainer">
-        <button v-on:click.prevent="applychange({ name, last_name, image });"> Apply Changes </button>
-        <router-link to="/Home"><button>Register</button></router-link>
-        </div> 
-    </form>
-        <img src='https://pbs.twimg.com/media/EztG5y0WQAAPS69?format=jpg&name=medium' class='imgRedonda' /><br/><br/>
-        <input type="file" id="actual-btn" hidden/>
-        <label class = "labeel" for="actual-btn">Change picture</label><br/><br/>
-        <span id="file-chosen">No file chosen</span>
+        <div class="inputContainer">
+          <input type="file" accept="image/*" class="custom2" @change="onFileSelected"><br/>
+          <h3 class="previewFont">Preview:</h3>
+          <img v-bind:src="user.image" referrerpolicy="no-referrer" class='imgRedonda'/><br/><br/>
+        </div>
+        <br/><br/>
         
-        
-      
-      
+      </form>  
 
-      <footer>
-      </footer>
-      
+     
     </main>
-  </template>
 
-<style>
-.labeel {
-  background-color: indigo;
-  color: white;
-  padding: 0.5rem;
-  font-family: sans-serif;
-  border-radius: 0.3rem;
-  cursor: pointer;
-  margin-top: 1rem;
-}
-
-</style>
+    <footer>
+      <a id="button2"><button class = "button2" v-on:click="editProfile">Apply Changes</button></a><br/><br/>
+    </footer>
+      
+</template>

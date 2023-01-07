@@ -23,20 +23,25 @@ import logic from '../javascript/logic.js'
             headers: {'Content-Type': 'application/json'}, 
             body: JSON.stringify(info)
           })
-          .then((response) => response.json())
+          .then(response => {
+            if (!response.ok) {
+              throw Error(response.statusText);
+            }
+            return response.json();
+          })
           .then((data) => {
+            console.log(data)
             const email = info.email;
             const password = info.password;
-            if (data.hasOwnProperty('Error')) {
-                alert('The information has an incorrect format, or that mail is already registered');
-            } else {
-              window.localStorage.removeItem("token");
-              logic.login({email, password});
-              
-            }
-          }); 
+            window.localStorage.removeItem("token");
+            logic.login({email, password});
+          })
+          .catch(() => {
+            alert('The information has an incorrect format, or that mail is already registered');
+          })
         },
         
+        //A vegades no pilla la imatge nose perque
         onFileSelected(event) {
           const formdata = new FormData()
           formdata.append("image", event.target.files[0])
@@ -44,9 +49,12 @@ import logic from '../javascript/logic.js'
                 method: 'POST',
                 headers: {'Authorization': "Client-ID 3eed77413905d63"},
                 body: formdata
-            }).then(data => data.json()).then(data => {
-                this.image = data.data.link
             })
+            .then(data => data.json())
+            .then(data => {
+                this.image = data.data.link
+                console.log(this.image)
+            });
         }
       },
       beforeMount() {
@@ -105,6 +113,8 @@ import logic from '../javascript/logic.js'
 
       <div class="inputContainer">
         <input type="file" accept="image/*" class="custom" @change="onFileSelected"><br/>
+        <h3 class="previewFont">Preview:</h3>
+        <img v-bind:src="image" referrerpolicy="no-referrer" class='imgRedonda'/><br/><br/>
       </div>
       <br/><br/>
 

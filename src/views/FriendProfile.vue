@@ -10,7 +10,7 @@
 
     methods: {
       getFriend() {
-        fetch("http://puigmal.salle.url.edu/api/v2/users/" + window.localStorage.getItem("selectedId"), {
+        fetch("http://puigmal.salle.url.edu/api/v2/users/" + window.localStorage.getItem("selectedUserId"), {
           headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
         })
         .then(res => res.json())
@@ -32,7 +32,7 @@
 
   <header>
     <br/>
-    <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
+    <a v-on:click="$router.go(-2)" id="i"><i class="arrow left"></i></a>
     <br/><br/>
     <div class="profileGrid">
       <div class="profileMain">
@@ -46,6 +46,9 @@
     <div class="elementsGrid">
       <div class="profileItem">
         <a href="/Statistics"><button class="buttonProfile">Public stats</button></a>
+      </div>
+      <div class="profileItem">
+        <a href="/FriendEvents"><button class="buttonProfile">{{name}} events</button></a>
       </div>
     </div>
   </main>
