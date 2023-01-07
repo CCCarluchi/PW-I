@@ -1,10 +1,3 @@
-<script>
-
-
-
-
-</script>
-
 <template>
     <main>
       <header>
