@@ -30,11 +30,17 @@ import logic from '../javascript/logic.js'
             return response.json();
           })
           .then((data) => {
-            console.log(data)
-            const email = info.email;
-            const password = info.password;
-            window.localStorage.removeItem("token");
-            logic.login({email, password});
+            if(this.checkPassword() == 0) {
+              console.log(data)
+              const email = info.email;
+              const password = info.password;
+              window.localStorage.removeItem("token");
+              logic.login({email, password});
+            } else {
+              console.log(this.password)
+              console.log(this.confirm)
+              alert('Passwords do not match');
+            }
           })
           .catch(() => {
             alert('The information has an incorrect format, or that mail is already registered');
@@ -55,6 +61,10 @@ import logic from '../javascript/logic.js'
                 this.image = data.data.link
                 console.log(this.image)
             });
+        },
+
+        checkPassword() {
+          return this.password.localeCompare(this.confirm);
         }
       },
       beforeMount() {
@@ -120,7 +130,6 @@ import logic from '../javascript/logic.js'
 
       <div class="inputContainer">
         <button v-on:click.prevent="signUp({ name, last_name, email, password, image });"> Register </button>
-        <router-link to="/Home"><button>Register</button></router-link>
       </div>
     </form>
     <br/><br/>

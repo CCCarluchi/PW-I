@@ -8,6 +8,7 @@
           method: 'DELETE',
           headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
         })
+        window.localStorage.clear();
       }
     }
   }
