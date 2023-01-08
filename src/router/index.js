@@ -27,6 +27,8 @@ import EditEvent from '../views/EditEvent.vue'
 import ConfirmDelete from '../views/ConfirmDelete.vue'
 import EventParticipants from '../views/EventParticipants.vue'
 import FriendEvents from '../views/FriendEvents.vue'
+import MessagesSelect from '../views/MessagesSelect.vue'
+import ReceivedMessages from '../views/ReceivedMessages.vue'
 import { nextTick } from 'vue'
 
 const routes = [
@@ -169,7 +171,18 @@ const routes = [
         path: '/FriendEvents',
         name: 'FriendEvents',
         component: FriendEvents
+    },
+    {
+        path: '/MessagesSelect',
+        name: 'MessagesSelect',
+        component: MessagesSelect
+    },
+    {
+        path: '/ReceivedMessages',
+        name: 'ReceivedMessages',
+        component: ReceivedMessages
     }
+    
 
 ]
 
