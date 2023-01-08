@@ -1,5 +1,33 @@
 <script>
+  export default {
+    data() {
+      return {
+        user: {
+          puntuation:"",
+          comments:"",
+          percentage:"",
+        }
+      }
+    },
 
+    methods: {
+      getData() {
+          fetch("http://puigmal.salle.url.edu/api/v2/users/" + window.localStorage.getItem("myId"), {
+            headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
+          })
+          .then(res => res.json())
+          .then(data => {
+            this.user.puntuation= data[0].puntuation;
+            this.user.comments= data[0].comments;
+            this.user.percentage = data[0].percentage;
+          }); 
+      }
+
+
+
+
+    }
+  }
 
 </script>
 
