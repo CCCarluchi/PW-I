@@ -206,3 +206,8 @@ router.beforeEach((to, from, next) => {
    
   })
 export default router
+
+const actualBtn = document.getElementById('actual-btn');
+
+const fileChosen = document.getElementById('file-chosen');
+

@@ -1,3 +1,37 @@
+<script>
+  export default {
+    data() {
+      return {
+        user: {
+          avg_score: "",
+          num_comments:"",
+          percentage_commenters_below:"",
+
+        }
+      }
+    },
+
+    methods: {
+      getData() {
+          fetch("http://puigmal.salle.url.edu/api/v2/users/"+ window.localStorage.getItem("myId")+ "/statistics", {
+            headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
+          })
+          .then(res => res.json())
+          .then(data => {
+            this.user.avg_score= data[0].avg_score;
+            this.user.num_comments= data[0].num_comments;
+            this.user.percentage_commenters_below = data[0].percentage_commenters_below;
+          }); 
+      }
+    },
+
+    beforeMount() {
+      this.getData();
+    }
+  }
+
+</script>
+
 <template>
     <main>
       <header>
@@ -17,9 +51,9 @@
           <th>Percentage of users with lower comments:</th>
         </tr>
         <tr>
-          <td>50</td>
-          <td>200</td>
-          <td>40%</td>
+          <td>{{ user.avg_score }}</td>
+          <td>{{ user.num_comments }}</td>
+          <td>{{ user.percentage_commenters_below }}</td>
         </tr>
 
       </table>
