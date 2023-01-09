@@ -5,8 +5,6 @@
     data() {
       return {
           friends: [],
-          name:"",
-          image:"",
           empty:""
         }
       },
@@ -35,6 +33,7 @@
 
     beforeMount(){
       this.getFriends();
+      console.log(this.friends)
     }
   }
 
