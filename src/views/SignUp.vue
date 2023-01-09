@@ -30,11 +30,15 @@ import logic from '../javascript/logic.js'
             return response.json();
           })
           .then((data) => {
-            console.log(data)
-            const email = info.email;
-            const password = info.password;
-            window.localStorage.removeItem("token");
-            logic.login({email, password});
+            if (this.password == this.confirm) {
+              console.log(data);
+              const email = info.email;
+              const password = info.password;
+              window.localStorage.removeItem("token");
+              logic.login({email, password});
+            } else {
+              alert('The passwords are not the same');
+            }
           })
           .catch(() => {
             alert('The information has an incorrect format, or that mail is already registered');
