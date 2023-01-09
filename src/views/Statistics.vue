@@ -26,7 +26,7 @@
     },
 
     beforeMount() {
-
+      this.getData();
     }
   }
 
