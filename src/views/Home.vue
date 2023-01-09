@@ -16,7 +16,7 @@
             <a href="/Events" id="button"><button class="buttonH">Events</button></a>
         </div>
         <div class="homeItemRight">
-            <a href="/Chat" id="button"><button class="buttonH">Chat</button></a>
+            <a href="/MessagesSelect" id="button"><button class="buttonH">Messages</button></a>
         </div>
     </div>
     

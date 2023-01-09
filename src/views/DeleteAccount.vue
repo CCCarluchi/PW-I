@@ -8,6 +8,10 @@
           method: 'DELETE',
           headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
         })
+        .then(() => {
+          window.localStorage.removeItem("loggedIn")
+          window.location.assign('/');
+        })
       }
     }
   }
@@ -34,7 +38,7 @@
       </div>
       <br/><br/>
         <div class="inputContainer">
-          <a href="/" v-on:click="deleteUser"><button>Delete account</button></a>
+          <a v-on:click="deleteUser"><button>Delete account</button></a>
         </div>
     </div>
   </main>
