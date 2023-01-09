@@ -58,6 +58,9 @@ import logic from '../javascript/logic.js'
         },
 
         checkDataForSignUp(info = {}) {
+          if (this.name.length == 0 || this.last_name.length == 0 || this.username.length == 0 || this.birth.length == 0 || this.email.length == 0 || this.password.length == 0 || this.confirm.length == 0 || this.image == 0) {
+            alert('All fields are required');
+          } else {
           if(this.password.localeCompare(this.confirm) == 0) {
             this.signUp(info);
           } else {
@@ -65,6 +68,7 @@ import logic from '../javascript/logic.js'
               console.log(this.confirm)
               alert('Passwords do not match');
             }
+          }
         }
       },
       beforeMount() {
