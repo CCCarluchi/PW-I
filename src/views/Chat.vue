@@ -15,7 +15,9 @@ import logic from '../javascript/logic.js'
     <main>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
        
-       
+       <form>
+        <button> + </button>
+       </form>
      <div class="conteiner">
                 <div class="chatbox">
                     <div class = "col-1">
