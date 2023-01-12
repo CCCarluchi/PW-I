@@ -29,6 +29,7 @@ import EventParticipants from '../views/EventParticipants.vue'
 import FriendEvents from '../views/FriendEvents.vue'
 import MessagesSelect from '../views/MessagesSelect.vue'
 import ReceivedMessages from '../views/ReceivedMessages.vue'
+import Chat2 from '../views/Chat2.vue'
 import { nextTick } from 'vue'
 
 const routes = [
@@ -181,9 +182,12 @@ const routes = [
         path: '/ReceivedMessages',
         name: 'ReceivedMessages',
         component: ReceivedMessages
+    },
+    {
+        path: '/Chat2',
+        name: 'Chat2',
+        component: Chat2
     }
-    
-
 ]
 
 const router = createRouter({
@@ -202,3 +206,8 @@ router.beforeEach((to, from, next) => {
    
   })
 export default router
+
+const actualBtn = document.getElementById('actual-btn');
+
+const fileChosen = document.getElementById('file-chosen');
+
