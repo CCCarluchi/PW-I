@@ -30,15 +30,11 @@ import logic from '../javascript/logic.js'
             return response.json();
           })
           .then((data) => {
-            if (this.password == this.confirm) {
-              console.log(data);
+              console.log(data)
               const email = info.email;
               const password = info.password;
               window.localStorage.removeItem("token");
               logic.login({email, password});
-            } else {
-              alert('The passwords are not the same');
-            }
           })
           .catch(() => {
             alert('The information has an incorrect format, or that mail is already registered');
@@ -59,6 +55,20 @@ import logic from '../javascript/logic.js'
                 this.image = data.data.link
                 console.log(this.image)
             });
+        },
+
+        checkDataForSignUp(info = {}) {
+          if (this.name.length == 0 || this.last_name.length == 0 || this.username.length == 0 || this.birth.length == 0 || this.email.length == 0 || this.password.length == 0 || this.confirm.length == 0 || this.image == 0) {
+            alert('All fields are required');
+          } else {
+          if(this.password.localeCompare(this.confirm) == 0) {
+            this.signUp(info);
+          } else {
+              console.log(this.password)
+              console.log(this.confirm)
+              alert('Passwords do not match');
+            }
+          }
         }
       },
       beforeMount() {
@@ -123,8 +133,7 @@ import logic from '../javascript/logic.js'
       <br/><br/>
 
       <div class="inputContainer">
-        <button v-on:click.prevent="signUp({ name, last_name, email, password, image });"> Register </button>
-        <router-link to="/Home"><button>Register</button></router-link>
+        <button v-on:click.prevent="checkDataForSignUp({ name, last_name, email, password, image });"> Register </button>
       </div>
     </form>
     <br/><br/>
