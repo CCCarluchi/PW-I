@@ -18,7 +18,8 @@
         startDate:"",
         startTime:"",
         endDate:"",
-        endTime:""
+        endTime:"",
+        minDate: new Date((new Date().getFullYear()), new Date().getMonth, new Date().getDate)
       }
     },
 
@@ -108,7 +109,7 @@
       <br/><br/> 
       
       <div class="inputContainer">
-        <input placeholder="*Start date" v-model="startDate" v-bind="calculateTimes" type="text" onfocus="(this.type='date')" onblur="(this.type='text')"><br/>
+        <input placeholder="*Start date" v-model="startDate" min ="2023-01-22" v-bind="calculateTimes" type="text" onfocus="(this.type='date')" onblur="(this.type='text')"><br/>
       </div>
       <br/><br/> 
 
@@ -118,7 +119,7 @@
       <br/><br/> 
 
       <div class="inputContainer">
-        <input placeholder="*End date" v-model="endDate" v-bind="calculateTimes" type="text" onfocus="(this.type='date')" onblur="(this.type='text')"><br/>
+        <input placeholder="*End date" v-model="endDate" min ="2023-01-22" v-bind="calculateTimes" type="text" onfocus="(this.type='date')" onblur="(this.type='text')"><br/>
       </div>
       <br/><br/>
 
