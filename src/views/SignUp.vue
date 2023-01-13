@@ -13,6 +13,8 @@ import logic from '../javascript/logic.js'
           password:"",
           confirm:"",
           image:"",
+          minDate: new Date(((new Date().getFullYear()) - 100), 12, 31),
+          maxDate: new Date((new Date().getFullYear()), new Date().getMonth, new Date().getDate)
         }
 
       },
@@ -69,7 +71,19 @@ import logic from '../javascript/logic.js'
               alert('Passwords do not match');
             }
           }
-        }
+        }/*,
+
+        setMaxDate() {
+          let min = new Date((new Date().getFullYear()), new Date().getMonth, new Date().getDate).toString.Split('T')[0];
+          console.log(min);
+          return min;
+        },
+
+        setMinDate() {
+          let max = new Date(((new Date().getFullYear()) - 100), 0o1, 0o1).toString.Split('T')[0];
+          console.log(max);
+          return max;
+        }*/
       },
       beforeMount() {
         window.localStorage.clear();
@@ -106,7 +120,7 @@ import logic from '../javascript/logic.js'
       <br/><br/>
 
       <div class="inputContainer">
-        <input placeholder="*Date of birth" v-model="birth" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"><br/>
+        <input placeholder="*Date of birth" v-model="birth" min="1900-12-31" max="2023-12-31" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"><br/>
       </div>
       <br/><br/>
 
