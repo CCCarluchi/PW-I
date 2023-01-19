@@ -102,40 +102,40 @@ export default {
        
        
         <div class="conteiner2">
-                <div class="chatbox2">
-                    <div class = "col-3" v-for="message in fullMsg">
+            <div class="userBox">
+                <img v-bind:src=otherUser.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
+                <h3>{{ otherUser.name }}</h3>
+            </div>
+            <div class="chatbox2">
+                <div v-for="message in fullMsg">
 
-                        <div v-if="isMyMessage(message.senderId)" class = "msg-row">
-                            <div class = "msg-text">
-                                <p v-if="isLink(message.body)">{{ message.body }}</p>
-                                <a v-else h-ref="/Event" v-on:click="getSelectedEvent(message.body)">{{ message.body }}</a>
-                            </div>
-                            <img v-bind:src=message.img referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
+                    <div v-if="isMyMessage(message.senderId)" class = "msg-row">
+                        <div class = "msg-text">
+                            <p v-if="isLink(message.body)">{{ message.body }}</p>
+                            <a v-else h-ref="/Event" v-on:click="getSelectedEvent(message.body)">{{ message.body }}</a>
                         </div>
+                        <img v-bind:src=message.img referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
+                    </div>
 
-                        <div v-else class = "msg-row msg-row2">
-                            <img v-bind:src=message.img referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
-                            <div class = "msg-text">
-                                <p v-if="isLink(message.body)">{{ message.body }}</p>
-                                <a v-else h-ref="/Event" v-on:click="getSelectedEvent(message.body)">{{ message.body }}</a>
-                            </div>
+                    <div v-else class = "msg-row msg-row2">
+                        <img v-bind:src=message.img referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
+                        <div class = "msg-text">
+                            <p v-if="isLink(message.body)">{{ message.body }}</p>
+                            <a v-else h-ref="/Event" v-on:click="getSelectedEvent(message.body)">{{ message.body }}</a>
                         </div>
-                        
-                    </div>              
-                </div>
-            </div>   
-            
+                    </div>
+                    
+                </div>              
+            </div>
             <div class="msgContainer">
                 <input type="text" v-model="text" placeholder="Search user...">
                 <button type="submit" v-on:click="sendMessage()"><i class="fa fa-search"></i ></button><br/><br/>
             </div>
+        </div>   
+            
+            
 
     </main> 
-
-
-    <footer>
-        
-    </footer>
 
     <!-- <article class="chatContainer">
         <li class="grid-container" v-for="message in fullMsg">
@@ -163,11 +163,23 @@ export default {
 
 <style>
 
+.userBox {
+    background: #ffcc99cc;
+    height: 10%;
+    width: 88%;
+    display: flex;
+    align-items: center;
+    padding: 1%;
+}
+
+.userBox > img {
+    margin-right: 2%;
+}
+
 .msgContainer {
-  margin-right: 3%;
-  margin-left: 3%;
-  padding: 8px;
-  
+  background: #ffcc99cc;
+  width: 88%;
+  padding: 1%;
 }
 
 .msgContainer > input[type=text] {
@@ -195,7 +207,6 @@ export default {
   box-sizing:border-box;
   width: 80%;
   height: 800px;
-  display: flex;
   grid-template-rows: 90% 10%;
   align-items: center;
   justify-content: center;
@@ -204,20 +215,15 @@ export default {
 
 .chatbox2{
   background: #306ec5;
-  width: 90%;
-  height: 100%;
-  display: grid;
-  flex: 1;
+  width: 88%;
+  padding: 1%;
+  height: 85%;
   overflow-y: scroll;
 }
 
 .chatbox h2{
   font-family: 'Fredoka', sans-serif;
   font-size: 28px;
-}
-
-.col-3{
-  display: block;
 }
 
 .chatbox p {
@@ -228,7 +234,7 @@ export default {
 
 .msg-row{
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   margin: 10px;
   flex-basis: 70%;
   justify-content: flex-end;
@@ -272,7 +278,7 @@ export default {
 }
 
 .chatContainer {
-    overflow-y:scroll;
+    overflow-y: scroll;
     max-height: 800px;
 }
 
