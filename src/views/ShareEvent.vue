@@ -1,6 +1,8 @@
 <script>
-
+  import BackArrow from "../components/BackArrow.vue";
+  import Logic from "../javascript/logic.js";
   export default {
+    components: { BackArrow },
 
     data() {
       return {
@@ -63,6 +65,10 @@
         }
       },
 
+      goBack() {
+        Logic.back();
+      },
+
       /* a(message) {
         fetch("http://puigmal.salle.url.edu/api/v2/messages/2204", {
                 headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
@@ -94,7 +100,7 @@
       
   <header>
     <br/>
-    <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
+    <BackArrow v-on:back="goBack"></BackArrow>
     <br/><br/>
     <div class="topText">
       <h1>Share event</h1>

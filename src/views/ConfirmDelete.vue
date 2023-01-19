@@ -1,7 +1,8 @@
 <script>
-
+  import BackArrow from "../components/BackArrow.vue";
+  import Logic from "../javascript/logic.js";
   export default {
-
+    components: { BackArrow },
     methods: {
       deleteEvent() {
         fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedEventId"), {
@@ -12,7 +13,11 @@
         .then(data => {
           console.log(data)  
         });
-      }
+      },
+
+      goBack() {
+          Logic.back();
+        }
     }
   }
 
@@ -21,9 +26,7 @@
 <template>
   <header>
     <br/>
-    <div class="arrowContainer"> 
-      <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
-    </div>
+    <BackArrow v-on:back="goBack"></BackArrow>
   </header>
   <br/>
 

@@ -1,8 +1,9 @@
 <script>
-
-import logic from '../javascript/logic.js'
-
+  import BackArrow from "../components/BackArrow.vue";
+  import Logic from "../javascript/logic.js";
   export default {
+    components: { BackArrow },
+
       data() {
         return {
           name: "",
@@ -71,7 +72,12 @@ import logic from '../javascript/logic.js'
               alert('Passwords do not match');
             }
           }
-        }/*,
+        },
+        
+        goBack() {
+          Logic.back();
+        }
+        /*,
 
         setMaxDate() {
           let min = new Date((new Date().getFullYear()), new Date().getMonth, new Date().getDate).toString.Split('T')[0];
@@ -95,7 +101,7 @@ import logic from '../javascript/logic.js'
   <header>
     <br/>
     <div class="arrowContainer"> 
-      <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
+      <BackArrow v-on:back="goBack"></BackArrow>
     </div>
     <div class="appTitle">
       <h2>Sign up</h2>

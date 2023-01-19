@@ -1,9 +1,8 @@
 <script>
-
-import logic from '../javascript/logic.js'
-
+  import BackArrow from "../components/BackArrow.vue";
+  import Logic from "../javascript/logic.js";
   export default {
-
+    components: { BackArrow },
     data() {
       return {
         name:"",
@@ -21,11 +20,15 @@ import logic from '../javascript/logic.js'
           this.name = data[0].name;
           this.image = data[0].image;
         })
-      }
+      },
+
+      goBack() {
+          Logic.back();
+        }
     },
 
     beforeMount() {
-      logic.checkFriends()
+      Logic.checkFriends()
       this.getUser()
     }
 
@@ -36,7 +39,7 @@ import logic from '../javascript/logic.js'
 
   <header>
     <br/>
-    <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
+    <BackArrow v-on:back="goBack"></BackArrow>
     <br/><br/>
 
     <div class="profileGrid">

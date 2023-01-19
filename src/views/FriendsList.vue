@@ -1,41 +1,44 @@
 <script>
-
+  import BackArrow from "../components/BackArrow.vue";
+  import Logic from "../javascript/logic.js";
   export default {
-
+    components: { BackArrow },
     data() {
-      return {
-          friends: [],
-          empty:""
-        }
-      },
-
+        return {
+            friends: [],
+            empty: ""
+        };
+    },
     methods: {
-      getFriends() {
-        fetch("http://puigmal.salle.url.edu/api/v2/friends", {
-          headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
-        })
-        .then(res => res.json())
-        .then(data => {
-          this.empty = (data.length == 0);
-          for (let i = 0; i < data.length; i++) {
-            if (data[i].id != null) {
-              this.friends.push(data[i])
-            }    
-          } 
-        });
-      },
+        getFriends() {
+            fetch("http://puigmal.salle.url.edu/api/v2/friends", {
+                headers: { "Authorization": "Bearer " + window.localStorage.getItem("token") }
+            })
+                .then(res => res.json())
+                .then(data => {
+                this.empty = (data.length == 0);
+                for (let i = 0; i < data.length; i++) {
+                    if (data[i].id != null) {
+                        this.friends.push(data[i]);
+                    }
+                }
+            });
+        },
 
-      locateClick(id) {
-        window.localStorage.setItem("selectedUserId", id);
-      },
+        locateClick(id) {
+            window.localStorage.setItem("selectedUserId", id);
+        },
+
+        goBack() {
+          Logic.back();
+        }
 
     },
-
-    beforeMount(){
-      this.getFriends();
-      console.log(this.friends)
-    }
-  }
+    beforeMount() {
+        this.getFriends();
+        console.log(this.friends);
+    },
+}
 
 </script>
 
@@ -43,7 +46,7 @@
     
   <header>
     <br/>
-    <a onclick="window.history.back()"><i class="arrow left"></i></a>
+    <BackArrow v-on:back="goBack"></BackArrow>
     <br/><br/>
     <div class="topText">
       <h1>Friends list</h1>

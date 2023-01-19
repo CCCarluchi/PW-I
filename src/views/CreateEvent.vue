@@ -1,6 +1,8 @@
 <script>
-
+  import BackArrow from "../components/BackArrow.vue";
+  import Logic from "../javascript/logic.js";
   export default {
+    components: { BackArrow },
     data() {
       return {
         event: {
@@ -57,7 +59,11 @@
         .catch(() => {
           alert("Some information has wrong format")
         }) 
-      }
+      },
+
+      goBack() {
+          Logic.back();
+        }
     },
 
     computed: {
@@ -78,7 +84,7 @@
   
   <header>
     <br/>
-    <a onclick="window.history.back()"><i class="arrow left"></i></a>
+    <BackArrow v-on:back="goBack"></BackArrow>
     <br/><br/>
     <div class="topText">
       <h1>Create event</h1>

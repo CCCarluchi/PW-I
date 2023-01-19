@@ -1,7 +1,9 @@
 <script>
-import { createVNode } from 'vue';
-
- export default {
+  import { createVNode } from 'vue';
+  import BackArrow from "../components/BackArrow.vue";
+  import Logic from "../javascript/logic.js";
+  export default {
+    components: { BackArrow },
       data() {
         return {
           location:"",
@@ -79,6 +81,10 @@ import { createVNode } from 'vue';
 
         locateClick(id) {
           window.localStorage.setItem("selectedEventId", id);
+        },
+
+        goBack() {
+          Logic.back();
         }
 
       }
@@ -92,7 +98,7 @@ import { createVNode } from 'vue';
     <header>
         <br/>
         <div class="arrowContainer"> 
-            <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
+            <BackArrow v-on:back="goBack"></BackArrow>
         </div>
         <div class="searchTitle">
           <h2>Search Events</h2>

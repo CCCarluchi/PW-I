@@ -34,7 +34,11 @@ export default {
         })  
     },
 
-    onFileSelected(event) {
+    back() {
+        history.back();
+    },
+
+    /* onFileSelected(event) {
         const formdata = new FormData()
         formdata.append("image", event.target.files[0])
           fetch("https://api.imgur.com/3/image/", {
@@ -46,6 +50,7 @@ export default {
             return data.data.link
           })
     },
+    */
 
     checkFriends() {
         let isFriend = false;
@@ -67,7 +72,7 @@ export default {
                 window.location.assign('/FriendProfile');
             }
         });
-    }
+    } 
     
 }
   

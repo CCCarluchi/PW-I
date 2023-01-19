@@ -1,5 +1,8 @@
 <script>
+  import BackArrow from "../components/BackArrow.vue";
+  import Logic from "../javascript/logic.js";
   export default {
+    components: { BackArrow },
     data() {
       return {
         user: {
@@ -22,7 +25,11 @@
             this.user.num_comments= data[0].num_comments;
             this.user.percentage_commenters_below = data[0].percentage_commenters_below;
           }); 
-      }
+      },
+
+      goBack() {
+          Logic.back();
+        }
     },
 
     beforeMount() {
@@ -36,7 +43,7 @@
     <main>
       <header>
         <br/>
-        <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
+        <BackArrow v-on:back="goBack"></BackArrow>
         <br/><br/>
         <div class="topText">
           <h1>Statistics</h1>

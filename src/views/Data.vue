@@ -1,5 +1,8 @@
 <script>
+  import BackArrow from "../components/BackArrow.vue";
+  import Logic from "../javascript/logic.js";
   export default {
+    components: { BackArrow },
 
     data() {
       return {
@@ -18,7 +21,11 @@
           this.name = data[0].name;
           this.image = data[0].image;
         })
-      }
+      },
+
+      goBack() {
+          Logic.back();
+        }
     },
 
     beforeMount() {
@@ -31,7 +38,7 @@
 <template>
   <header>
     <br/>
-    <a onclick="window.history.back()" id="i"><i class="arrow left"></i></a>
+    <BackArrow v-on:back="goBack"></BackArrow>
     <br/><br/>
     <div class="profileGrid">
       <div class="profileMain">
