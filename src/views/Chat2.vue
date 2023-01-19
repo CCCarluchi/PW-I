@@ -128,8 +128,8 @@ export default {
                 </div>              
             </div>
             <div class="msgContainer">
-                <input type="text" v-model="text" placeholder="Search user...">
-                <button type="submit" v-on:click="sendMessage()"><i class="fa fa-search"></i ></button><br/><br/>
+                <input type="text" v-model="text" placeholder="Message...">
+                <button type="submit" v-on:click="sendMessage()">Send</button><br/><br/>
             </div>
         </div>   
             
