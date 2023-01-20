@@ -42,9 +42,9 @@
         <p class="p2">Are you sure you want to delete your account?</p>
         <p class="red">(This action can not be undone)</p>
       </div>
-      <br/><br/>
+      
         <div class="inputContainer">
-          <a v-on:click="deleteUser"><button>Delete account</button></a>
+          <a v-on:click="deleteUser"><button class="button2">Delete account</button></a>
         </div>
     </div>
   </main>
@@ -56,8 +56,17 @@
 .red {
   color: red;
   float: center;
+  font-size: 16px;
+  font-family:'Roboto', sans-serif;
+}
+
+@media only screen and (min-width: 640px) {
+  .red {
+  color: red;
+  float: center;
   font-size: 26px;
   font-family:'Roboto', sans-serif;
+  }
 }
 
 </style>

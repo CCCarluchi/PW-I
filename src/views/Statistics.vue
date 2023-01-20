@@ -74,19 +74,36 @@
 
 <style>
 .stats-container {
- 
- margin-left: auto;
- margin-right: auto;
- margin-top: 25px;
- padding: 2% 2%;
+ margin-left: 5%;
+ margin-right: 5%;
+ margin-top: 5%;
+ padding: 1% 1%;
  background-color: rgba(255, 204, 153);
  border: 1px solid black;
- font-size: 20px;
+ font-size: 16px;
  font-family: 'Fredoka', sans-serif;
 }
 
 th {
-  padding: 40px;
+  padding: 5px;
+}
+
+@media only screen and (min-width: 640px) {
+  .stats-container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    padding: 2% 2%;
+    background-color: rgba(255, 204, 153);
+    border: 1px solid black;
+    font-size: 20px;
+    font-family: 'Fredoka', sans-serif;
+  }
+
+  th {
+    padding: 40px;
+  }
+
 }
 
 </style>
