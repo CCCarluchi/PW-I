@@ -1,9 +1,9 @@
 <script>
 
-  import BackArrow from "../components/BackArrow.vue";
+  import Bar from "../components/Bar.vue";
   import Logic from "../javascript/logic.js";
   export default {
-    components: { BackArrow },
+    components: { Bar },
   data() {
     return {
       puntuation:"",
@@ -68,7 +68,7 @@
     <br/>
 
     <!-- Cuando el usuario le da a la flecha se ejecuta el método goBack. -->
-    <BackArrow v-on:back="goBack"></BackArrow>
+    <Bar></Bar>
     <br/><br/>
     <div class="rateEventTop">
       <h1>Rate the event</h1>

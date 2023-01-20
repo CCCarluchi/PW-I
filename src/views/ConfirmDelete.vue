@@ -1,8 +1,8 @@
 <script>
-  import BackArrow from "../components/BackArrow.vue";
+  import Bar from "../components/Bar.vue";
   import Logic from "../javascript/logic.js";
   export default {
-    components: { BackArrow },
+    components: { Bar },
     methods: {
       deleteEvent() {
         fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedEventId"), {
@@ -26,7 +26,7 @@
 <template>
   <header>
     <br/>
-    <BackArrow v-on:back="goBack"></BackArrow>
+    <Bar></Bar>
   </header>
   <br/>
 

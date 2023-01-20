@@ -1,9 +1,9 @@
 <script>
   import { createVNode } from 'vue';
-  import BackArrow from "../components/BackArrow.vue";
+  import Bar from "../components/Bar.vue";
   import Logic from "../javascript/logic.js";
   export default {
-    components: { BackArrow },
+    components: { Bar },
       data() {
         return {
           location:"",
@@ -121,7 +121,7 @@
         <div class="arrowContainer"> 
 
             <!-- Cuando el usuario le da a la flecha se ejecuta el método goBack. -->
-            <BackArrow v-on:back="goBack"></BackArrow>
+            <Bar></Bar>
         </div>
         <div class="searchTitle">
           <h2>Search Events</h2>

@@ -1,8 +1,8 @@
 <script>
-  import BackArrow from "../components/BackArrow.vue";
+  import Bar from "../components/Bar.vue";
   import Logic from "../javascript/logic.js";
   export default {
-    components: { BackArrow },
+    components: { Bar },
 
     methods: {
       logOut() {
@@ -21,7 +21,7 @@
   <header>
     <br/>
     <div class="arrowContainer"> 
-      <BackArrow v-on:back="goBack"></BackArrow>
+      <Bar></Bar>
     </div>
   </header>
   <br/>

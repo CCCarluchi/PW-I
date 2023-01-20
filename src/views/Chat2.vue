@@ -1,8 +1,8 @@
 <script>
-    import BackArrow from "../components/BackArrow.vue";
+    import Bar from "../components/Bar.vue";
     import Logic from "../javascript/logic.js";
     export default {
-    components: { BackArrow },
+    components: { Bar },
     data() {
         return {
             messages: [],
@@ -126,7 +126,7 @@
     <header>
         <!-- Aparece el nombre y imagen de perfil del usuario con el que se está chateando -->
         <div class="userBox">
-            <BackArrow v-on:back="goBack"></BackArrow>
+            <Bar></Bar>
             <img v-bind:src=otherUser.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
             <h3>{{ otherUser.name }}</h3>
         </div>
