@@ -11,6 +11,8 @@
     },
 
     methods: {
+
+      //Método que pide la información del usuario seleccionado a la api y la guarda
       getUser() {
         fetch("http://puigmal.salle.url.edu/api/v2/users/" + window.localStorage.getItem("selectedUserId"), {
           headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
@@ -22,11 +24,13 @@
         })
       },
 
+      //Método que retrocede a la página anterior
       goBack() {
         Logic.back();
       }
     },
 
+    //Antes de montar la página se comprueba si el usuario es amigo nuestro y se pide su información
     beforeMount() {
       Logic.checkFriends()
       this.getUser()
@@ -44,6 +48,7 @@
 
     <div class="profileGrid">
       <div class="profileMain">
+        <!-- Se usa la imagen y nombre recibido de la api. En caso de que la imagen no sea valida se utiliza un placeholder -->
         <br/><br/><img v-bind:src="image" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgRedonda'/>
         <h1>{{name}}</h1>
       </div>

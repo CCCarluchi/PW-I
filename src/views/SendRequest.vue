@@ -11,6 +11,8 @@
       },
 
       methods: {
+
+        //Método que envia una petición de amistad al usuario seleccionado
         sendRequest() {
           if (!this.alreadySent) {
             fetch("http://puigmal.salle.url.edu/api/v2/friends/" + window.localStorage.getItem("selectedUserId"), {
@@ -21,6 +23,7 @@
           }
       },
 
+      //Método que retrocede a la página anterior
       goBack() {
         Logic.back();
       }

@@ -78,16 +78,6 @@
         Logic.back();
       },
 
-      /* a(message) {
-        fetch("http://puigmal.salle.url.edu/api/v2/messages/2204", {
-                headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
-            })
-            .then(res => res.json())
-            .then(data => {
-              console.log(data)
-            });
-      }, */
-
       // Método que guarda en un item el id del usuario seleccionado por el usuario.
       locateClick(id) {
         window.localStorage.setItem("selectedUserId", id);

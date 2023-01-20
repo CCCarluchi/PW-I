@@ -12,6 +12,7 @@
       },
 
     methods: {
+      //Método que pide a la api la información de todos los usuarios y los guarda
       getUsers() {
         fetch("http://puigmal.salle.url.edu/api/v2/users", {
           headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
@@ -24,6 +25,7 @@
         });
       },
       
+      //Método que filtra a los usuarios por el nombre, apellido o mail
       searchUsers(name) {
         fetch('http://puigmal.salle.url.edu/api/v2/users/search?s=' + name, {
           headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
@@ -38,19 +40,23 @@
         })
       },
 
+      //Método que guarda la id del usuario al que se ha seleciconado
       locateClick(id) {
         window.localStorage.setItem("selectedUserId", id);
       },
 
-      isMe(id) {
-        return (id == window.localStorage.getItem("myId"))
+      //Método que comprueba si el usuario loggeado es uno de los usuario que aparecen
+      isNotMe(id) {
+        return (id != window.localStorage.getItem("myId"))
       },
 
+      //Método que retrocede a la página anterior
       goBack() {
         Logic.back();
       }
     },
 
+    //Antes de montarse se recoge la información de todos los usuarios
     beforeMount(){
       this.getUsers();
     }
@@ -70,6 +76,7 @@
     </div>
     <br/><br/>
     
+    <!-- Barra con la que se puede buscar a los usuarios -->
     <div class="searchContainer">
       <input type="text" v-model="name" placeholder="Search user...">
       <button type="submit" v-on:click="searchUsers(name)"><i class="fa fa-search"></i ></button><br/><br/>
@@ -79,13 +86,13 @@
   
   <main>
     
+    <!-- V-for que muestra a todos los usuarios de la api, con su información. En caso de que uno de esos usuarios seamos nosotros, no aparecerá -->
     <li class="grid-container" v-for="user in users" :key="user.id">
-      <div>
+      <div v-if="isNotMe(user.id)">
         <img v-bind:src=user.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
         <p>{{ user.name }}</p>
         <a href="/Chat" v-on:click="locateClick(user.id)"><button>Chat</button></a>
-        <a v-if="isMe(user.id)" href="/Data" v-on:click="locateClick(user.id)"><button>My profile</button></a>
-        <a v-else href="/NotFriendProfile" v-on:click="locateClick(user.id)"><button>Profile</button></a>
+        <a href="/NotFriendProfile" v-on:click="locateClick(user.id)"><button>Profile</button></a>
       </div>
     </li>
 

@@ -13,31 +13,36 @@
       },
 
     methods: {
-        getUsers() {
-            fetch("http://puigmal.salle.url.edu/api/v2/messages/users", {
-            headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
-            })
-            .then(res => res.json())
-            .then(data => {
-            this.empty = (data.length == 0);
-            for (let i = 0; i < data.length; i++) {
-                if (data[i].id != null) {
-                this.users.push(data[i])
-                }    
-            } 
-            });
-        },
 
+      //Método que pide a la api todos los usuarios con los que el usuario loggeado haya compartido mensajes
+      getUsers() {
+          fetch("http://puigmal.salle.url.edu/api/v2/messages/users", {
+          headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
+          })
+          .then(res => res.json())
+          .then(data => {
+          this.empty = (data.length == 0);
+          for (let i = 0; i < data.length; i++) {
+              if (data[i].id != null) {
+              this.users.push(data[i])
+              }    
+          } 
+          });
+      },
+
+      //Método que guarda la id del usuario al que se ha seleciconado
       locateClick(id) {
             window.localStorage.setItem("selectedUserId", id);
       },
 
+      //Método que retrocede a la página anterior
       goBack() {
         Logic.back();
       }
 
     },
 
+    //Antes de montar la página se guardan los usuarios
     beforeMount(){
       this.getUsers();
     }
@@ -61,6 +66,7 @@
   
   <main>
     
+    <!-- Se muestran todos los usuarios que se hayan recibido de la api -->
     <li class="grid-container" v-for="user in users" :key="user.id">
       <div>
         <img v-bind:src=user.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
@@ -71,10 +77,10 @@
       </div>
     </li>
 
+    <!-- En caso de que no haya usuarios, se muestra un mensaje -->
     <div v-if="empty">
       <h2 class="emptyList">No messages received</h2>
     </div>
-
 
   </main>
 </template>

@@ -20,6 +20,8 @@
 
       },
       methods: {
+
+        //Método que crea un usuario y lo sube a la api
         signUp(info = {}) {
           fetch("http://puigmal.salle.url.edu/api/v2/users", {
             method: 'POST', 
@@ -27,24 +29,26 @@
             body: JSON.stringify(info)
           })
           .then(response => {
+            //Si se produce algun error en el proces, se lanza un error
             if (!response.ok) {
               throw Error(response.statusText);
             }
             return response.json();
           })
           .then((data) => {
-              console.log(data)
-              const email = info.email;
-              const password = info.password;
-              window.localStorage.removeItem("token");
-              Logic.login({email, password});
+            //Si todo ha salido bien se hace login con el usuario que se acaba de crear, para ir directamente a la página principal
+            const email = info.email;
+            const password = info.password;
+            window.localStorage.clear();
+            Logic.login({email, password});
           })
           .catch(() => {
+            //En caso de que se haya producido algun error, se muestra una alerta al usuario
             alert('The information has an incorrect format, or that mail is already registered');
           })
         },
         
-        //A vegades no pilla la imatge nose perque
+        //Método que sube la imagen seleccionada de los ficheros a la api de imgur para poder mostrarla correctamente en la web y que otros la puedan ver también
         onFileSelected(event) {
           const formdata = new FormData()
           formdata.append("image", event.target.files[0])
@@ -60,6 +64,7 @@
             });
         },
 
+        //Método que comprueba que todos los campos contengan información y que las contraseñas coincidan
         checkDataForSignUp(info = {}) {
           if (this.name.length == 0 || this.last_name.length == 0 || this.username.length == 0 || this.birth.length == 0 || this.email.length == 0 || this.password.length == 0 || this.confirm.length == 0 || this.image == 0) {
             alert('All fields are required');
@@ -67,17 +72,17 @@
           if(this.password.localeCompare(this.confirm) == 0) {
             this.signUp(info);
           } else {
-              console.log(this.password)
-              console.log(this.confirm)
               alert('Passwords do not match');
             }
           }
         },
         
+        //Método que retrocede a la página anterior
         goBack() {
           Logic.back();
         },
 
+        //Método que limita la fecha que se puede escoger al crearse el usuario
         setLimitsDate() {
           var dateMax = new Date();
           var yearMax = dateMax.getFullYear();
@@ -94,10 +99,6 @@
           this.minDate = fullDateMin;
         }
       },
-      
-      beforeMount() {
-        window.localStorage.clear();
-      }
     }
   
 </script>
@@ -113,6 +114,7 @@
   </header>
     
   <main>
+    <!-- Todos los campos se guardan en distintas variables locales, para luego enviarselo a la api -->
     <form>
       <div class="inputContainer">
         <input type="text" v-model="name" placeholder="*Name"><br/>
@@ -162,8 +164,5 @@
     </form>
     <br/><br/>
   </main>
-
-  <footer>
-  </footer>
 
 </template>
