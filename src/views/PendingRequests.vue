@@ -13,6 +13,7 @@
 
             //Método que pide a la api todas las peticiones de amistad que haya recibido el usuario, y las guarda
             getRequests() {
+                this.users = [];
                 fetch("http://puigmal.salle.url.edu/api/v2/friends/requests", {
                     headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
                 })

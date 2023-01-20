@@ -16,7 +16,7 @@
   <header>
     <br/>
     <div class="arrowContainer"> 
-      <BackArrow v-on:back="goBack"></BackArrow>
+      <Bar></Bar>
     </div>
   </header>
   <br/>
