@@ -33,11 +33,8 @@
                     headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
                 })
                 .then(res => res.json())
-                .then(data => {
-                    console.log(data)
-                })
-                .then(data => {
-                    window.location.reload()
+                .then(() => {
+                    this.getRequests();
                 }); 
             },
 
@@ -49,12 +46,9 @@
                     headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
                 })
                 .then(res => res.json())
-                .then(data => {
-                    console.log(data)
-                })
                 .then(() => {
-                    window.location.reload()
-                }); 
+                    this.getRequests();
+                });
             },
 
             //Método que guarda la id del usuario al que se ha seleciconado

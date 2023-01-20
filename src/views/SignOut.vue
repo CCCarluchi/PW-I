@@ -2,6 +2,12 @@
   import Bar from "../components/Bar.vue";
   export default {
     components: { Bar },
+
+    methods: {
+      logOut() {
+        window.localStorage.clear()
+      }
+    }
   }
 
 </script>
@@ -10,7 +16,7 @@
   <header>
     <br/>
     <div class="arrowContainer"> 
-      <Bar></Bar>
+      <BackArrow v-on:back="goBack"></BackArrow>
     </div>
   </header>
   <br/>
