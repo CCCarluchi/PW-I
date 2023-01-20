@@ -11,6 +11,7 @@
           date:"",
           events: [],
           empty:"",
+          minDate: new Date(((new Date().getFullYear()) - 100), 12, 31)
         }
 
       },
@@ -112,7 +113,7 @@
             <input type="text" v-model = "keyword" placeholder="Search event by keyword">
           </div>
           <div class="inputContainer">
-            <input v-model = "date" placeholder="Search event by start date" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"><br/>
+            <input v-model = "date" min="1900-12-31" placeholder="Search event by start date" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"><br/>
           </div>
           <div class="inputContainer">
             <input type="text" v-model = "location" placeholder="Search event by location">
