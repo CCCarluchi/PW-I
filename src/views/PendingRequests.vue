@@ -89,6 +89,7 @@
             <div>
                 <img v-bind:src=user.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/> 
                 <p>{{ user.name }}</p>
+                <span class="break"></span>
                 <button v-on:click="deleteRequest(user.id)">Deny</button>   
                 <button v-on:click="acceptRequest(user.id)">Accept</button>
                 <a href="/NotFriendProfile" v-on:click="locateClick(user.id)"><button>Profile</button></a>
@@ -104,33 +105,42 @@
 
 <style>
 
-    .grid-container > div > button {
-    float: right;
-    background-color: white;
-    border: 1px solid black;
-    height: 50px;
-    width: 80px;
-    margin-right: 2px;
-    margin-left: 2px;
-    font-size: 15px;
-    font-family: 'Fredoka', sans-serif;
-    color: black;
-    margin-top: 0.6%;
+    .break {
+        display: block;
+        height: 10px;
     }
 
-    @media only screen and (min-width: 640px) {
-
-        .grid-container > div > button {
-        float: right;
+    .grid-container > div > button {
         background-color: white;
         border: 1px solid black;
         height: 50px;
-        width: 150px;
-        padding: 20px;
-        font-size: 20px;
-        line-height: 0px;
+        width: 80px;
+        margin-right: 2px;
+        margin-left: 2px;
+        font-size: 15px;
         font-family: 'Fredoka', sans-serif;
         color: black;
+        margin-top: 0.6%;
+    }
+
+
+    @media only screen and (min-width: 640px) {
+
+        .break {
+            display: inline;
+        }
+
+        .grid-container > div > button {
+            float: right;
+            background-color: white;
+            border: 1px solid black;
+            height: 50px;
+            width: 150px;
+            padding: 20px;
+            font-size: 20px;
+            line-height: 0px;
+            font-family: 'Fredoka', sans-serif;
+            color: black;
         }
     }
 

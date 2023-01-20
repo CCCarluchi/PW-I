@@ -98,6 +98,7 @@ export default {
       <div>
         <img v-bind:src=event.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
         <p>{{ event.name }} <!-- -- {{ event.eventStart_date }} -- {{ event.location }} --> </p>
+        <span class="break"></span>
         <a href="/ConfirmDelete" v-on:click="locateClick(event.id)"><button>Delete</button></a>
         <a href="/EditEvent" v-on:click="locateClick(event.id)"><button>Edit</button></a>
         <a href="/Event" v-on:click="locateClick(event.id)"><button>Event</button></a>
@@ -110,6 +111,7 @@ export default {
       <div>
         <img v-bind:src=event.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
         <p>{{ event.name }} <!-- -- {{ event.eventStart_date }} -- {{ event.location }} --> </p>
+        <span class="break"></span>
         <a href="/ConfirmDelete" v-on:click="locateClick(event.id)"><button>Delete</button></a>
         <a href="/EditEvent" v-on:click="locateClick(event.id)"><button>Edit</button></a>
         <a href="/Event" v-on:click="locateClick(event.id)"><button>Event</button></a>
@@ -131,6 +133,7 @@ export default {
 </template>
 
 <style>
+
   .grid-container > div > p {
     font-size: 20px;
   }
@@ -143,6 +146,19 @@ export default {
     margin-left: 5%;
     margin-right: 5%;
     padding: 10px;
+  }
+
+  .break {
+    display: block;
+    height: 10px;
+  }
+
+  @media only screen and (min-width: 640px) {
+
+    .break {
+      display: inline;
+    }
+
   }
 
 </style>

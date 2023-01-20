@@ -231,7 +231,16 @@ article{
   margin: 0;
 }
 
-
+.card {
+  margin: 0 auto;
+  float: none; 
+  border-radius: 12px;
+  border: 1px solid black;
+  padding: 38px 26px;
+  width: 226px;
+  height: 195px;
+  background-color: rgb(0, 153, 255);
+}
 
 .arrow {
   border: solid black;
@@ -627,11 +636,11 @@ li {
 
 .emptyList {
   background-color: rgba(255, 204, 153);
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
   padding: 20px;
   border: solid 1px black;
-  font-size: 26px;
+  font-size: 24px;
 }
 
 /* Chat */
@@ -963,7 +972,16 @@ li {
     padding-left: 250px;
   }
 
-
+  .card {
+    margin: 0 auto;
+    float: none; 
+    border-radius: 12px;
+    border: 1px solid black;
+    padding: 58px 46px;
+    width: 669px;
+    height: 472px;
+    background-color: rgb(0, 153, 255);
+  }
   
   /*.listContainer{
     margin-left: 0px;
@@ -1225,6 +1243,15 @@ li {
     flex-basis: 60%;
     font-weight: 300;
   }
+
+  .emptyList {
+    background-color: rgba(255, 204, 153);
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 20px;
+    border: solid 1px black;
+    font-size: 36px;
+  }
   
   .msg-text h2{
     font-weight: 400;
@@ -1301,15 +1328,6 @@ li {
     margin: 2%;
     padding: 0;
     text-align: left;
-  }
-
-  .emptyList {
-    background-color: rgba(255, 204, 153);
-    margin-left: 30%;
-    margin-right: 30%;
-    padding: 20px;
-    border: solid 1px black;
-    font-size: 36px;
   }
   
 }
