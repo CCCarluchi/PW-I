@@ -13,6 +13,9 @@
         }
     },
     methods: {
+
+        //Método para pedir a la api todos los mensajes que ha recibido el usuario y guardarlos, así como los usuarios
+        //participantes en la conversación
         getMessages() {
             fetch("http://puigmal.salle.url.edu/api/v2/messages/" + window.localStorage.getItem("selectedUserId"), {
                 headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
@@ -25,12 +28,14 @@
                 }
             })
             .then(() => {
+                //Una vez guardados los mensajes, se guarda la información del usuario loggeado
                 fetch("http://puigmal.salle.url.edu/api/v2/users/" + window.localStorage.getItem("myId"), {
                     headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
                 })
                 .then(res => res.json())
                 .then(data => {
                     this.user = data[0];
+                    //Luego pide también la información del usuario con el que se está chateando
                     fetch("http://puigmal.salle.url.edu/api/v2/users/" + window.localStorage.getItem("selectedUserId"), {
                         headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
                     })
@@ -45,6 +50,7 @@
                         let senderId;
                         this.fullMsg.length = 0;
 
+                        //Se junta toda la información recibida para poder mostrar correctamente luego con el v-for los mensajes y las imágenes de cada usuario
                         for (let i = 0; i < this.messages.length; i++) {
                             if (this.messages[i].user_id_send == window.localStorage.getItem("myId")) {
                                 username = this.user.name;
@@ -63,8 +69,10 @@
             });
         },
 
+        //Método que enviar un mensaje
         sendMessage() {
 
+            //Si el mensaje es más largo de 45 carácters la api daba un error, así que se ha limitado
             if (this.text.length > 45) {
                 alert("Yor message must be 45 characters or less!")
             } else {
@@ -75,33 +83,38 @@
                 })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data)
+                    //Una vez enviado se actualizan los mensajes apra que aparezca en tiempo real, y se limpia el input de texto
                     this.getMessages();
                     this.text = "";
                 })
             }
         },
 
+        //Método que comprueba si el mensaje es nuestro o del otro usuario
         isMyMessage(senderId) {
             return senderId == this.user.id;
         },
 
+        //Método que comprueba si se ha enviado un link a otro evento
         isLink(body) {
             return !body.includes("Check out this event: ");
             
         },
 
+        //Método que se encarga de rediirigirte a la página del evento seleccionado al clicar un enlace
         getSelectedEvent(body) {
             const words = body.split(' ')
             window.localStorage.setItem("selectedEventId", words[words.length - 1]);
             window.location.assign("/Event");
         },
 
+        //Método que retrocede una página
         goBack() {
             Logic.back();
         }
     },
 
+    //Antes de montarse se piden todos los mensajes a la api
     beforeMount() {
         this.getMessages();
     }
@@ -111,6 +124,7 @@
 <template>
 
     <header>
+        <!-- Aparece el nombre y imagen de perfil del usuario con el que se está chateando -->
         <div class="userBox">
             <BackArrow v-on:back="goBack"></BackArrow>
             <img v-bind:src=otherUser.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
@@ -123,6 +137,8 @@
         <div class="conteiner2">
             
             <div class="chatbox2">
+
+                <!-- Aparecen todos los mensajes entre los dos usuarios, y dependiendo de quién sea el que lo ha enviado estarán a la derecha o la izquierda-->
                 <div v-for="message in fullMsg">
 
                     <div v-if="isMyMessage(message.senderId)" class = "msg-row">
@@ -143,34 +159,12 @@
                     
                 </div>              
             </div>
-            <div class="msgContainer">
+            <form class="msgContainer">
                 <input type="text" v-model="text" placeholder="Message..." id="message">
                 <button type="submit" v-on:click="sendMessage()">Send</button>
-            </div>
+            </form>
         </div>   
     </main> 
-
-    <!-- <article class="chatContainer">
-        <li class="grid-container" v-for="message in fullMsg">
-
-        <div v-if="isMyMessage(message.senderId)" class="myMessage">
-            <img v-bind:src=message.img referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
-            <h3>{{ message.username }}</h3>
-            <p v-if="isLink(message.body)">{{ message.body }}</p>
-            <a v-else h-ref="/Event" v-on:click="getSelectedEvent(message.body)">{{ message.body }}</a>
-        </div>
-
-        <div v-else class="otherMessage">
-            <img v-bind:src=message.img referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
-            <h3>{{ message.username }}</h3>
-            <p v-if="isLink(message.body)">{{ message.body }}</p>
-            <a v-else h-ref="/Event" v-on:click="getSelectedEvent(message.body)">{{ message.body }}</a>
-        </div>
-        
-        </li>
-    </article>
-    <input type="text" v-model="text">
-    <button v-on:click="sendMessage()">Send</button> -->
 
 </template>
 
