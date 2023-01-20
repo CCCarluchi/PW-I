@@ -1,5 +1,8 @@
 <script>
-export default {
+    import BackArrow from "../components/BackArrow.vue";
+    import Logic from "../javascript/logic.js";
+    export default {
+    components: { BackArrow },
     data() {
         return {
             messages: [],
@@ -87,6 +90,10 @@ export default {
             const words = body.split(' ')
             window.localStorage.setItem("selectedEventId", words[words.length - 1]);
             window.location.assign("/Event");
+        },
+
+        goBack() {
+            Logic.back();
         }
     },
 
@@ -97,6 +104,12 @@ export default {
 </script>
 
 <template>
+
+    <header>
+        <br/>
+        <BackArrow v-on:back="goBack"></BackArrow>
+        <br/>
+    </header>
 
     <main>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
