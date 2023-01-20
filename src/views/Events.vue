@@ -61,10 +61,10 @@
 
 
 .listParent {
-  margin-left: 35%;
-  margin-right: 35%;
+  margin-left: 5%;
+  margin-right: 5%;
   background-color: rgb(0, 153, 255);
-  padding: 40px;
+  padding: 5px;
   border: 1px solid black;
 
 }
@@ -72,8 +72,9 @@
 .listContainer{
   background-color: rgba(255, 204, 153);
   border: 1px solid black;
-  padding: 10px;
-  width: 96.2%;
+  padding: 5px;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .listContainer > img {
@@ -86,11 +87,8 @@
 }
 
 
-
-
-
 @media only screen and (min-width: 640px) {
-  .listContainer{
+  /*.listContainer{
     margin-left: 0px;
   }
   .listContainer > img{
@@ -100,6 +98,32 @@
   .listContainer > .a2{
     padding: 0px;
     font-size: 32px;
+  }*/
+
+  .listParent {
+    margin-left: 35%;
+    margin-right: 35%;
+    background-color: rgb(0, 153, 255);
+    padding: 40px;
+    border: 1px solid black;
+
+  }
+
+  .listContainer{
+    background-color: rgba(255, 204, 153);
+    border: 1px solid black;
+    padding: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .listContainer > img {
+    color:black;
+  }
+
+  .listContainer > a {
+    color:black;
+    text-decoration: none;
   }
 }
 </style>
