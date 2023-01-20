@@ -14,8 +14,8 @@
           password:"",
           confirm:"",
           image:"",
-          minDate: new Date(((new Date().getFullYear()) - 100), 12, 31),
-          maxDate: new Date((new Date().getFullYear()), new Date().getMonth, new Date().getDate)
+          minDate: "",
+          maxDate: ""
         }
 
       },
@@ -76,20 +76,23 @@
         
         goBack() {
           Logic.back();
-        }
-        /*,
-
-        setMaxDate() {
-          let min = new Date((new Date().getFullYear()), new Date().getMonth, new Date().getDate).toString.Split('T')[0];
-          console.log(min);
-          return min;
         },
 
-        setMinDate() {
-          let max = new Date(((new Date().getFullYear()) - 100), 0o1, 0o1).toString.Split('T')[0];
-          console.log(max);
-          return max;
-        }*/
+        setLimitsDate() {
+          var dateMax = new Date();
+          var yearMax = dateMax.getFullYear();
+          var monthMax = ('0' + dateMax.getMonth() + 1).slice(-2);
+          var dayMax = ('0' + dateMax.getDate()).slice(-2);
+          var fullDateMax = yearMax + '-' + monthMax + '-' + dayMax;
+          this.maxDate = fullDateMax;
+          
+          var dateMin = new Date();
+          var yearMin = dateMin.getFullYear() - 100;
+          var monthMin = '01';
+          var dayMin = '01'
+          var fullDateMin = yearMin + '-' + monthMin + '-' + dayMin;
+          this.minDate = fullDateMin;
+        }
       },
       beforeMount() {
         window.localStorage.clear();
@@ -126,7 +129,7 @@
       <br/><br/>
 
       <div class="inputContainer">
-        <input placeholder="*Date of birth" v-model="birth" min="1900-12-31" max="2023-12-31" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"><br/>
+        <input placeholder="*Date of birth" v-model="birth" v-on:click="setLimitsDate" :max="maxDate" :min="minDate" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"><br/>
       </div>
       <br/><br/>
 

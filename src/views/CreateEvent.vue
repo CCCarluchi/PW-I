@@ -21,7 +21,7 @@
         startTime:"",
         endDate:"",
         endTime:"",
-        minDate: new Date((new Date().getFullYear()), new Date().getMonth, new Date().getDate)
+        minDate:""
       }
     },
 
@@ -62,8 +62,17 @@
       },
 
       goBack() {
-          Logic.back();
-        }
+        Logic.back();
+      },
+
+      setMinDate() {
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = ('0' + date.getMonth() + 1).slice(-2);
+        var day = ('0' + date.getDate()).slice(-2);
+        var fullDate = year + '-' + month + '-' + day;
+        this.minDate = fullDate;
+      }
     },
 
     computed: {
@@ -113,9 +122,9 @@
         <input placeholder="*Longitude" v-model="event.longitude" type="text"><br/>
       </div>
       <br/><br/> 
-      
+
       <div class="inputContainer">
-        <input placeholder="*Start date" v-model="startDate" min ="2023-01-22" v-bind="calculateTimes" type="text" onfocus="(this.type='date')" onblur="(this.type='text')"><br/>
+        <input placeholder="*Start date" v-model="startDate" v-on:click="setMinDate" :min ="minDate" v-bind="calculateTimes" type="text" onfocus="(this.type='date')" onblur="(this.type='text')"><br/>
       </div>
       <br/><br/> 
 
@@ -125,7 +134,7 @@
       <br/><br/> 
 
       <div class="inputContainer">
-        <input placeholder="*End date" v-model="endDate" min ="2023-01-22" v-bind="calculateTimes" type="text" onfocus="(this.type='date')" onblur="(this.type='text')"><br/>
+        <input placeholder="*End date" v-model="endDate" v-on:click="setMinDate" :min ="minDate" v-bind="calculateTimes" type="text" onfocus="(this.type='date')" onblur="(this.type='text')"><br/>
       </div>
       <br/><br/>
 

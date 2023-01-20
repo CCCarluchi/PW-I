@@ -11,11 +11,12 @@
           date:"",
           events: [],
           empty:"",
-          minDate: new Date(((new Date().getFullYear()) - 100), 12, 31)
+          minDate: ""
         }
 
       },
       methods: {
+        // Método que comprueba en que campos el usuario ha introducido información y devuelve un array con los tipos.
         createName() {
           var name = [];
           if(this.location.length != 0) {
@@ -33,6 +34,7 @@
           return name;
         },
 
+        // Método que comprueba en que campos el usuario ha introducido información y devuelve un array con esta.
         createValue() {
           var value = [];
           if(this.location.length != 0) {
@@ -50,6 +52,7 @@
           return value;
         },
 
+        // Método que genera una url con la información que ha seleccionado el usuario en el buscador.
         createURL() {
           var name = this.createName();
           var value = this.createValue();
@@ -61,6 +64,7 @@
           return url;
         },
 
+        // Método que realiza el fetch de los eventos filtrados.
         search() {
           fetch(this.createURL(), {
             method: 'GET', 
@@ -68,6 +72,9 @@
           })
           .then((response) => response.json())
           .then((data) => {
+            // Una vez realizado el fetch, comprobamos si nos ha devuelto eventos. 
+            // En caso afirmativo, guardamos los eventos en un array e indicamos que hay eventos que coinciden con la búsqueda.
+            // En caso negativo, indicamos que no hay eventos que coincidan con la búsqueda.
             this.events = [];
             if(data.length > 0) {
               this.empty = false;
@@ -80,12 +87,23 @@
           }); 
         },
 
+        // Método que guarda en un item el id del evento seleccionado por el usuario.
         locateClick(id) {
           window.localStorage.setItem("selectedEventId", id);
         },
 
+        // Método que llama la función de logic.js para volver a la página anterior.
         goBack() {
           Logic.back();
+        },
+
+        setMinDate() {
+          var date = new Date();
+          var year = date.getFullYear() - 100;
+          var month = '01';
+          var day = '01'
+          var fullDate = year + '-' + month + '-' + day;
+          this.minDate = fullDate;
         }
 
       }
@@ -113,7 +131,7 @@
             <input type="text" v-model = "keyword" placeholder="Search event by keyword">
           </div>
           <div class="inputContainer">
-            <input v-model = "date" min="1900-12-31" placeholder="Search event by start date" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"><br/>
+            <input v-model = "date" v-on:click="setMinDate" :min="minDate" placeholder="Search event by start date" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"><br/>
           </div>
           <div class="inputContainer">
             <input type="text" v-model = "location" placeholder="Search event by location">
