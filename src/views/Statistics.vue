@@ -15,6 +15,7 @@
     },
 
     methods: {
+      // Método que coje los datos (puntuacion, numero de comentarios, porcentaje de comentarios) del usuario indicado  
       getData() {
           fetch("http://puigmal.salle.url.edu/api/v2/users/"+ window.localStorage.getItem("myId")+ "/statistics", {
             headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
@@ -26,12 +27,12 @@
             this.user.percentage_commenters_below = data[0].percentage_commenters_below;
           }); 
       },
-
+      // Método para volver a la página anterior.
       goBack() {
           Logic.back();
         }
     },
-
+    // Pedimos los datos del usuario.
     beforeMount() {
       this.getData();
     }
@@ -43,6 +44,7 @@
     <main>
       <header>
         <br/>
+        <!-- Cuando el usuario le da a la flecha se ejecuta el método goBack. -->
         <BackArrow v-on:back="goBack"></BackArrow>
         <br/><br/>
         <div class="topText">
@@ -51,6 +53,7 @@
     </header>
 
     <article>
+      <!-- Creamos una tabla donde mostramos los datos conseguidos -->
       <table class = "stats-container">
         <tr>
           <th>Events puntuation:</th>
