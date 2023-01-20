@@ -29,7 +29,7 @@
             this.user.image = data.data.link
           })
       },
-
+      // Método domde cambiamos todos los datos actualizados
       editProfile() {
         fetch("http://puigmal.salle.url.edu/api/v2/users", {
           method: 'PUT', 
@@ -50,6 +50,7 @@
         });
       },
 
+      // Método en el que cojemos los datos que van a ser modificados para mostrarlos posteriormente por pantalla
       getData() {
           fetch("http://puigmal.salle.url.edu/api/v2/users/" + window.localStorage.getItem("myId"), {
             headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
@@ -63,12 +64,12 @@
             this.user.image = data[0].image;
           }); 
       },
-
+      // Método para volver a la página anterior.
       goBack() {
         Logic.back();
       }
     },
-
+    // Pedimos los datos del usuario.
     beforeMount() {
       this.getData()
     }
