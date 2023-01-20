@@ -97,6 +97,7 @@
           Logic.back();
         },
 
+        // Método que establece la fecha mínima que el usuario puede seleccionar en el input.
         setMinDate() {
           var date = new Date();
           var year = date.getFullYear() - 100;
@@ -117,6 +118,7 @@
     <header>
         <br/>
         <div class="arrowContainer"> 
+            <!-- Cuando el usuario le da a la flecha se ejecuta el método goBack. -->
             <BackArrow v-on:back="goBack"></BackArrow>
         </div>
         <div class="searchTitle">
@@ -131,27 +133,33 @@
             <input type="text" v-model = "keyword" placeholder="Search event by keyword">
           </div>
           <div class="inputContainer">
+            <!-- Cuando el usuario va a seleccionar la fecha se calcula los límites con setMinDate. -->
             <input v-model = "date" v-on:click="setMinDate" :min="minDate" placeholder="Search event by start date" onfocus="(this.type='date')" onblur="(this.type='text')" id="date"><br/>
           </div>
           <div class="inputContainer">
             <input type="text" v-model = "location" placeholder="Search event by location">
           </div>
           <div class="inputContainer">
+            <!-- Cuando el usuario clica el botón se ejecuta search para realizar el fetch. -->
             <button type="submit" v-on:click="search()"><i class="fa fa-search"></i></button><br/><br/>
           </div>
         </div>
         <br/><br/><br/>
       </nav>
 
+      <!-- En el caso de que no haya eventos que coincidan con la búsqueda se le indica al usuario. -->
       <div v-if="empty">
         <h2 class="emptyList">No events match the search</h2>
       </div>
 
+      <!-- Si hay elementos, con un v-for se muestran los eventos guardados en el array. -->
       <div v-else>
         <li class="grid-container" v-for="event in events" :key="event.id">
           <div>
+            <!-- Con el v-bind vinculamos la imagen a mostrar. En caso de error mostramos una distinta por defecto. -->
             <img v-bind:src=event.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
-            <p>{{ event.name }} <!-- -- {{ event.eventStart_date }} -- {{ event.location }} --> </p>
+            <p>{{ event.name }}</p>
+            <!-- Cuando el usuario selecciona un evento guardamos el id en un item en el localStorage para mostrarlo en la página de evento. -->
             <a href="/Event" v-on:click="locateClick(event.id)"><button>Event</button></a>
           </div>
         </li>
