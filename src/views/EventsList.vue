@@ -12,6 +12,8 @@
     },
 
   methods: {
+
+    // Método que obtiene todos los próximos eventos de forma descendiente en base a la puntuación de los eventos anteriores del creador.
     getEvents() {
       let best = "";
       if (this.selected) best = "best";
@@ -20,16 +22,20 @@
         })
         .then(res => res.json())
         .then(data => {
+
+          // Guardamos los eventos en una variable.
           for (let i = 0; i < data.length; i++) {
             this.events.push(data[i])
           }    
         });
     },
 
+    // Método que guarda en un item el id del evento seleccionado por el usuario.
     locateClick(id) {
       window.localStorage.setItem("selectedEventId", id);
     },
 
+    // Método para volver a la página anterior.
     goBack() {
       Logic.back();
     }
@@ -38,6 +44,7 @@
 
   },
 
+  // Pedimos la lista de eventos.
   beforeMount(){
     this.getEvents()
   }
@@ -49,6 +56,7 @@
 
   <header>
     <br/>
+    <!-- Cuando el usuario le da a la flecha se ejecuta el método goBack. -->
     <BackArrow v-on:back="goBack"></BackArrow>
     <br/><br/>
     <div class="topText">
@@ -63,14 +71,21 @@
 
     <div class="sort">
       <p class="sortFont">Sort by creator rating</p>
+
+      <!-- Cuando el usuario selecciona la casilla, se marca como selecionada y se ejecuta getEvents. -->
       <input class="sortInput" v-model="selected" type="checkbox" v-on:change="getEvents" id="sort">
     </div>
     <br/><br/><br/><br/><br/><br/>
 
+    <!-- Con un v-for se muestran los eventos guardados en el array. -->
     <li class="grid-container" v-for="event in events" :key="event.id">
       <div>
+
+        <!-- Con el v-bind vinculamos la imagen a mostrar. En caso de error mostramos una distinta por defecto. -->
         <img v-bind:src=event.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
-        <p>{{ event.name }} <!-- -- {{ event.eventStart_date }} -- {{ event.location }} --> </p>
+        <p>{{ event.name }}</p>
+
+        <!-- Cuando el usuario selecciona un evento guardamos el id en un item en el localStorage para mostrarlo en la página de evento. -->
         <a href="/Event" v-on:click="locateClick(event.id)"><button>Event</button></a>
       </div>
     </li>

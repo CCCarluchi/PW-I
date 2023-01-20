@@ -3,6 +3,7 @@
   import Logic from "../javascript/logic.js";
   export default {
     components: { BackArrow },
+    
     data() {
       return {
         event: {
@@ -26,6 +27,8 @@
     },
 
     methods: {
+
+      // Método que cuelga imagen en imgur y la guarda en una variable.
       onFileSelected(event) {
         const formdata = new FormData()
         formdata.append("image", event.target.files[0])
@@ -38,6 +41,7 @@
           })
       },
 
+      // Método que modifica un evento.
       editEvent() {
         fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedEventId"), {
           method: 'PUT', 
@@ -49,6 +53,8 @@
         })
         .then(response => response.text())
         .then(data => {
+
+          // Si todos los datos son correctos, redirigimos al usuario a la página donde se muestran todos sus eventos.
           if (data.length > 20) {
             alert("Some information has wrong format")
           } else {
@@ -57,12 +63,15 @@
         });
       },
 
+      // Método que obtiene y guarda la información sobre un evento.
       getEvent() {
           fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedEventId"), {
               headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
           })
           .then(res => res.json())
           .then(data => {
+
+              // Guardamos la información del evento.
               this.event.name = data[0].name;
               this.event.image = data[0].image;
               this.event.location = data[0].location;
@@ -82,6 +91,7 @@
           });
       },
 
+      // Método que establece la fecha mínima que se puede seleccionar en el input.
       setMinDate() {
         var date = new Date();
         var year = date.getFullYear();
@@ -91,12 +101,15 @@
         this.minDate = fullDate;
       },
 
+      // Método para volver a la página anterior.
       goBack() {
         Logic.back();
       }
     },
 
     computed: {
+
+      // Método que junta los valores relacionados con la fecha y la hora, según pide la API.
       calculateTimes() {
         if (this.startDate != undefined && this.startTime != undefined) {
           this.event.eventStart_date = this.startDate.concat('T', this.startTime, ':00.000Z');
@@ -107,6 +120,7 @@
       }
     } ,
 
+    // Pedimos el evento sin modificar.
     beforeMount() {
       this.getEvent()
     }
@@ -118,6 +132,7 @@
   
   <header>
     <br/>
+    <!-- Cuando el usuario le da a la flecha se ejecuta el método goBack. -->
     <BackArrow v-on:back="goBack"></BackArrow>
     <br/><br/>
     <div class="topText">
@@ -127,6 +142,8 @@
   </header>
 
   <main>
+
+    <!-- Formulario donde se pide la nueva información del evento. -->
     <form>
       <div class="inputContainer">
         <input type="text" v-model="event.name" placeholder="*Name"><br/>
@@ -149,6 +166,8 @@
       <br/><br/> 
       
       <div class="inputContainer">
+
+        <!-- Cuando el usuario va a elegir la fecha, se establece el limite de selección. -->
         <input placeholder="*Start date" v-model="startDate" v-on:click="setMinDate" :min ="minDate" v-bind="calculateTimes" type="text" onfocus="(this.type='date')" onblur="(this.type='text')"><br/>
       </div>
       <br/><br/> 
@@ -159,6 +178,8 @@
       <br/><br/> 
 
       <div class="inputContainer">
+
+        <!-- Cuando el usuario va a elegir la fecha, se establece el limite de selección. -->
         <input placeholder="*End date" v-model="endDate" v-on:click="setMinDate" :min ="minDate" v-bind="calculateTimes" type="text" onfocus="(this.type='date')" onblur="(this.type='text')"><br/>
       </div>
       <br/><br/>
@@ -179,6 +200,8 @@
       <br/><br/>
 
       <div class="inputContainer">
+
+        <!-- Cuando el usuario selecciona la imagen que desea, se ejecuta onFileSelected y mostramos una preview con v-bind. -->
         <input type="file" accept="image/*" class="custom2" @change="onFileSelected"><br/>
         <h3 class="previewFont">Preview:</h3>
         <img v-bind:src="event.image" referrerpolicy="no-referrer" class='imgRedonda'/><br/><br/>
@@ -196,6 +219,8 @@
   <footer>
     <br/><br/>
     <div class="inputContainer">
+
+      <!-- Al clicar el botón ejecutamos editEvent. -->
         <a v-on:click="editEvent"><button>Edit</button></a>
       </div>
   </footer>

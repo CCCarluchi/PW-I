@@ -13,6 +13,8 @@
   },
 
   methods: {
+
+    // Método que permite añadir puntuación y comentario a un evento.
     postRating(info) {
       fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedEventId") + "/assistances", {
         method: 'PUT',
@@ -24,6 +26,8 @@
       })
       .then(res => res.text())
       .then(data => {
+
+        // Si se realiza correctamente, se redirige al usuario a la página del evento seleccionado.
         if (data.length > 20) {
           alert("Some information has wrong format")
         } else {
@@ -32,6 +36,7 @@
       }); 
     },
 
+    // Método que obtiene el comentario y puntuación previa del usuario en el evento seleccionado, en el caso de existir.
     checkRated() {
       fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedEventId") + "/assistances/" + window.localStorage.getItem("myId"), {
         headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
@@ -43,11 +48,13 @@
       })
     },
 
+    // Método para volver a la página anterior.
     goBack() {
       Logic.back();
     }
   },
 
+  // Pedimos el comentario y puntuación previa de usuario.
   beforeMount() {
     this.checkRated()
   }
@@ -59,6 +66,8 @@
     
   <header>
     <br/>
+
+    <!-- Cuando el usuario le da a la flecha se ejecuta el método goBack. -->
     <BackArrow v-on:back="goBack"></BackArrow>
     <br/><br/>
     <div class="rateEventTop">
@@ -74,6 +83,8 @@
     <form class="rateEventMain">
 
       <h3>Event Name</h3><br/><br/>
+      
+      <!-- Casilla para seleccionar la puntuación. -->
       <p>Your puntuation:</p>
 
       <select name="puntuation" v-model="puntuation">
@@ -92,6 +103,8 @@
       <br/><br/>
 
       <p>Comments on the event:</p>
+
+      <!-- Cuadro de texto para introducir el comentario.-->
       <div class="inputContainer">
         <textarea type="text" v-model="comentary" placeholder="*Comments"></textarea>
       </div>
@@ -100,6 +113,8 @@
   </main>
 
   <footer>
+
+    <!-- Cuando se clica el botón se ejecuta postRating. -->
     <a v-on:click="postRating({puntuation, comentary})"><button class = "button2">Done</button></a>
   </footer>
 

@@ -17,12 +17,16 @@
     },
 
   methods: {
+
+    // Método que, en el caso de existir, guarda los eventos creados por el usuario que han terminado.
     getFinishedEvents() {
       fetch("http://puigmal.salle.url.edu/api/v2/users/" + window.localStorage.getItem("myId") + "/events/finished", {
         headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
       })
       .then(res => res.json())
       .then(data => {
+
+        // Guarda si hay eventos y en el caso de existir los guarda en una variable.
         this.empty1 = (data.length == 0);
         for (let i = 0; i < data.length; i++) {
           this.finishedEvents.push(data[i])
@@ -30,12 +34,15 @@
       });
     },
 
+    // Método que, en el caso de existir, guarda los eventos creados por el usuario que se estan llevando a cabo.
     getCurrentEvents() {
       fetch("http://puigmal.salle.url.edu/api/v2/users/" + window.localStorage.getItem("myId") + "/events/current", {
         headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
       })
       .then(res => res.json())
       .then(data => {
+
+        // Guarda si hay eventos y en el caso de existir los guarda en una variable.
         this.empty2 = (data.length == 0);
         for (let i = 0; i < data.length; i++) {
           this.currentEvents.push(data[i])
@@ -43,12 +50,15 @@
       });
     },
 
+    // Método que, en el caso de existir, guarda los eventos creados por el usuario que se llevarán a cabo.
     getFutureEvents() {
       fetch("http://puigmal.salle.url.edu/api/v2/users/" + window.localStorage.getItem("myId") + "/events/future", {
         headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
       })
       .then(res => res.json())
       .then(data => {
+
+        // Guarda si hay eventos y en el caso de existir los guarda en una variable.
         this.empty3 = (data.length == 0);
         for (let i = 0; i < data.length; i++) {
           this.futureEvents.push(data[i])
@@ -56,10 +66,12 @@
       });
     },
 
+    // Método que guarda en un item el id del evento seleccionado por el usuario.
     locateClick(id) {
       window.localStorage.setItem("selectedEventId", id);
     },
 
+    // Método para volver a la página anterior.
     goBack() {
       Logic.back();
     }
@@ -67,11 +79,14 @@
   },
 
   computed: {
+
+    // Comprobamos si no hay eventos creados por el usuario.
     isEmpty() {
       return(this.empty1 && this.empty2 && this.empty3);
     }
   },
 
+  // Pedimos los eventos del usuario.
   beforeMount(){
     this.getFinishedEvents();
     this.getCurrentEvents();
@@ -85,6 +100,7 @@
 
   <header>
     <br/>
+    <!-- Cuando el usuario le da a la flecha se ejecuta el método goBack. -->
     <BackArrow v-on:back="goBack"></BackArrow>
     <br/><br/>
     <div class="topText">
@@ -94,19 +110,29 @@
 
   <main>
 
+    <!-- Si el usuario no ha creado eventos, lo indicamos al usuario. -->
     <div v-if="isEmpty">
       <h2 class="emptyList">No events created yet</h2>
     </div>
 
+    <!-- En el caso contrario, mostramos las listas de los eventos pasados, futuros y presentes del usuario con 3 v-for. -->
     <div v-else>
     <h3 class="persHeader">Future events</h3>
     <li class="grid-container" v-for="event in futureEvents" :key="event.id">
       <div>
+
+        <!-- Con el v-bind vinculamos la imagen a mostrar. En caso de error mostramos una distinta por defecto. -->
         <img v-bind:src=event.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
-        <p>{{ event.name }} <!-- -- {{ event.eventStart_date }} -- {{ event.location }} --> </p>
+        <p>{{ event.name }}</p>
         <span class="break"></span>
+
+        <!-- Al clicar se guarda el id del evento que se quiere eliminar. -->
         <a href="/ConfirmDelete" v-on:click="locateClick(event.id)"><button>Delete</button></a>
+
+        <!-- Al clicar se guarda el id del evento que se quiere editar. -->
         <a href="/EditEvent" v-on:click="locateClick(event.id)"><button>Edit</button></a>
+
+        <!-- Cuando el usuario selecciona un evento guardamos el id en un item en el localStorage para mostrarlo en la página de evento. -->
         <a href="/Event" v-on:click="locateClick(event.id)"><button>Event</button></a>
         
       </div>
@@ -115,11 +141,19 @@
     <h3 class="persHeader">Current events</h3>
     <li class="grid-container" v-for="event in currentEvents" :key="event.id">
       <div>
+
+        <!-- Con el v-bind vinculamos la imagen a mostrar. En caso de error mostramos una distinta por defecto. -->
         <img v-bind:src=event.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
-        <p>{{ event.name }} <!-- -- {{ event.eventStart_date }} -- {{ event.location }} --> </p>
+        <p>{{ event.name }}</p>
         <span class="break"></span>
+
+        <!-- Al clicar se guarda el id del evento que se quiere eliminar. -->
         <a href="/ConfirmDelete" v-on:click="locateClick(event.id)"><button>Delete</button></a>
+
+        <!-- Al clicar se guarda el id del evento que se quiere editar. -->
         <a href="/EditEvent" v-on:click="locateClick(event.id)"><button>Edit</button></a>
+
+        <!-- Cuando el usuario selecciona un evento guardamos el id en un item en el localStorage para mostrarlo en la página de evento. -->
         <a href="/Event" v-on:click="locateClick(event.id)"><button>Event</button></a>
       </div>
     </li>
@@ -127,8 +161,11 @@
     <h3 class="persHeader">Past events</h3>
     <li class="grid-container" v-for="event in finishedEvents" :key="event.id">
       <div>
+        <!-- Con el v-bind vinculamos la imagen a mostrar. En caso de error mostramos una distinta por defecto. -->
         <img v-bind:src=event.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
-        <p>{{ event.name }} <!-- -- {{ event.eventStart_date }} -- {{ event.location }} --> </p>
+        <p>{{ event.name }}</p>
+
+        <!-- Cuando el usuario selecciona un evento guardamos el id en un item en el localStorage para mostrarlo en la página de evento. -->
         <a href="/Event" v-on:click="locateClick(event.id)"><button>Event</button></a>
       </div>
     </li>
