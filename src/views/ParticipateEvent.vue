@@ -88,7 +88,7 @@ export default {
       <div class="inputContainer">
         <textarea type="text" v-model="comentary" placeholder="*Comments"></textarea>
       </div>
-
+      <br/><br/>
     </form>
   </main>
 
@@ -107,34 +107,73 @@ label {
 
 .rateEventTop {
   background-color: rgb(0, 153, 255);
-  margin-left: 37.5%;
-  margin-right: 37.5%;
+  margin-left: 5%;
+  margin-right: 5%;
   padding: 5px;
   border: 2px solid black;
 }
 
 .rateEventTop > h1 {
   color: white;
-  font-size: 56px;
+  font-size: 50px;
   
 }
 
 .rateEventMain {
   background-color: rgba(255, 204, 153);
-  margin-left: 32.5%;
-  margin-right: 32.5%;
+  margin-left: 5%;
+  margin-right: 5%;
   margin-bottom: 25px;
   padding: 1%;
   border: 1px solid black;
 }
 
 .rateEventMain > p {
-  font-size: 22px;
+  font-size: 20px;
   font-family: 'Fredoka', sans-serif;
 }
 
 .rateEventMain > h3 {
   text-align: center;
+}
+
+@media only screen and (min-width: 640px) {
+  label {
+    padding: 0px;
+    margin-left: 0px;
+  }
+
+  .rateEventTop {
+    background-color: rgb(0, 153, 255);
+    margin-left: 37.5%;
+    margin-right: 37.5%;
+    padding: 5px;
+    border: 2px solid black;
+  }
+
+  .rateEventTop > h1 {
+    color: white;
+    font-size: 56px;
+    
+  }
+
+  .rateEventMain {
+    background-color: rgba(255, 204, 153);
+    margin-left: 32.5%;
+    margin-right: 32.5%;
+    margin-bottom: 25px;
+    padding: 1%;
+    border: 1px solid black;
+  }
+
+  .rateEventMain > p {
+    font-size: 22px;
+    font-family: 'Fredoka', sans-serif;
+  }
+
+  .rateEventMain > h3 {
+    text-align: center;
+  }
 }
 
 </style>

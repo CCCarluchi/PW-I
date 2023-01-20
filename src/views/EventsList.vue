@@ -61,7 +61,7 @@ export default {
       <p class="sortFont">Sort by creator rating</p>
       <input class="sortInput" v-model="selected" type="checkbox" v-on:change="getEvents" id="sort">
     </div>
-    <br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/>
 
     <li class="grid-container" v-for="event in events" :key="event.id">
       <div>
@@ -80,22 +80,45 @@ export default {
 
 <style>
   .grid-container > div > p {
-    font-size: 20px;
+    font-size: 15px;
   }
 
   .sortFont {
-    font-size: 26px;
+    font-size: 20px;
     font-family: 'Fredoka', sans-serif;
-    display:inline;
+    display: inline;
   }
 
   .sortInput {
     float: left;
+
   }
 
   .sort {
     float:left;
     margin-left:0%;
+  }
+
+  @media only screen and (min-width: 640px) {
+    .grid-container > div > p {
+      font-size: 20px;
+    }
+
+    .sortFont {
+      font-size: 26px;
+      font-family: 'Fredoka', sans-serif;
+      display:inline;
+    }
+
+    .sortInput {
+      float: left;
+      
+    }
+
+    .sort {
+      float:left;
+      margin-left:0%;
+    }
   }
 
 

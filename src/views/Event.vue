@@ -118,7 +118,7 @@
     </header>
 
     <main>
-        
+        <br/>
         <article class = "eventData">
             <div>
                 <h3>Owner:   </h3>
@@ -156,7 +156,7 @@
 
         <nav>   
             <br/><br/>
-            <div class="inputContainer">
+            <div class="buttonContainer">
                 <a href="/ShareEvent"><button class="eventButton">Share</button></a>
                 <a href="/EventParticipants"><button class="eventButton">Participants</button></a>
                 <a v-if="isParticipating" href="/ParticipateEvent"><button class="eventButton">Rate</button></a>
@@ -164,6 +164,7 @@
             </div>
         </nav>
         
+        <br/>
         <article>
             <h3 class="persHeader">Comments:</h3>
             <li class="grid-container" v-for="comment in comments" :key="comment.id">
@@ -184,53 +185,132 @@
 </template>
 
 <style>
+    /*.profileMainE {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        background-color: #0099ff;
+        border: 1px solid black;
+    }
 
-.commentName {
-    font-size: 26px;
-    margin-bottom: 1%;
-}
+    .profileMainE > h1 {
+        color: white;
+        text-decoration: none;
+        font-size: 40px;
+    }*/
 
-.eventData {
-  border: 1px solid black;
-  display: grid;
-  margin-left: 5.7%;
-  margin-right: 5.7%;
-}
+    .buttonContainer {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
 
-.eventData > div {
-  background-color:rgba(255, 204, 153);
-  text-align: left;
-  padding: 1%;
-  font-size: 24px;
-  font-family: 'Fredoka', sans-serif;
-  display: inline;
-}
+    .commentName {
+        font-size: 26px;
+        margin-bottom: 1%;
+    }
 
-.eventData > div > h3 {
-  font-size: 26px;
-  display: inline;
-  font-family: 'Fredoka', sans-serif;
-}
-.eventButton {
-    margin-left: 2%;
-    margin-right: 2%;
-    color:black
-}
+    .eventData {
+        border: 1px solid black;
+        display: grid;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
 
-.eventData > div > p {
-  display: inline;
-  font-family: 'Fredoka', sans-serif;
-  font-size: 22px;
-}
+    .eventData > div {
+        background-color:rgba(255, 204, 153);
+        text-align: left;
+        padding: 1%;
+        font-size: 16px;
+        font-family: 'Fredoka', sans-serif;
+        display: inline;
+    }
 
-.persHeader {
-    color: white;
-    border: 1px solid black;
-    background-color: rgb(0, 153, 255);
-    margin-top: 5%;
-    margin-left: 5%;
-    margin-right: 5%;
-    padding: 10px;
-  }
+    .eventData > div > h3 {
+        font-size: 20px;
+        display: inline;
+        font-family: 'Fredoka', sans-serif;
+    }
+
+    .eventButton {
+        margin-left: 1%;
+        margin-right: 1%;
+        width: 100px;
+        height: 30px;
+        color:black;
+        font-size: 16px;
+    }
+
+    .eventData > div > p {
+        display: inline;
+        font-family: 'Fredoka', sans-serif;
+        font-size: 16px;
+    }
+
+    .persHeader {
+        color: white;
+        border: 1px solid black;
+        background-color: rgb(0, 153, 255);
+        margin-top: 5%;
+        margin-left: 5%;
+        margin-right: 5%;
+        padding: 10px;
+    }
+
+    @media only screen and (min-width: 640px) {
+        .buttonContainer {
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+
+        .commentName {
+            font-size: 26px;
+            margin-bottom: 1%;
+        }
+
+        .eventData {
+            border: 1px solid black;
+            display: grid;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+
+        .eventData > div {
+            background-color:rgba(255, 204, 153);
+            text-align: left;
+            padding: 1%;
+            font-size: 24px;
+            font-family: 'Fredoka', sans-serif;
+            display: inline;
+        }
+
+        .eventData > div > h3 {
+            font-size: 26px;
+            display: inline;
+            font-family: 'Fredoka', sans-serif;
+        }
+        .eventButton {
+            margin-left: 2%;
+            margin-right: 2%;
+            color:black;
+            font-size: 32px;
+            width: 259px;
+            height: 43px;
+        }
+
+        .eventData > div > p {
+            display: inline;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 22px;
+        }
+
+        .persHeader {
+            color: white;
+            border: 1px solid black;
+            background-color: rgb(0, 153, 255);
+            margin-top: 5%;
+            margin-left: 5%;
+            margin-right: 5%;
+            padding: 10px;
+        }
+    }
 
 </style>
