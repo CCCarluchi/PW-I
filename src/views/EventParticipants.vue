@@ -1,6 +1,8 @@
 <script>
-
+  import BackArrow from "../components/BackArrow.vue";
+  import Logic from "../javascript/logic.js";
   export default {
+    components: { BackArrow },
 
     data() {
         return {
@@ -27,6 +29,10 @@
 
       isMe(id) {
         return (id == window.localStorage.getItem("myId"))
+      },
+      
+      goBack() {
+        Logic.back();
       }
     },
 
@@ -42,7 +48,7 @@
     
   <header>
     <br/>
-    <a onclick="window.history.back()"><i class="arrow left"></i></a>
+    <BackArrow v-on:back="goBack"></BackArrow>
     <br/><br/>
     <div class="topText">
       <h1>Event participants</h1>

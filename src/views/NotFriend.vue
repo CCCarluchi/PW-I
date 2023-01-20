@@ -23,8 +23,8 @@
       },
 
       goBack() {
-          Logic.back();
-        }
+        Logic.back();
+      }
     },
 
     beforeMount() {

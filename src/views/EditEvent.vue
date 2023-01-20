@@ -1,6 +1,8 @@
 <script>
-
+  import BackArrow from "../components/BackArrow.vue";
+  import Logic from "../javascript/logic.js";
   export default {
+    components: { BackArrow },
     data() {
       return {
         event: {
@@ -87,6 +89,10 @@
         var day = ('0' + date.getDate()).slice(-2);
         var fullDate = year + '-' + month + '-' + day;
         this.minDate = fullDate;
+      },
+
+      goBack() {
+        Logic.back();
       }
     },
 
@@ -112,7 +118,7 @@
   
   <header>
     <br/>
-    <a onclick="window.history.back()"><i class="arrow left"></i></a>
+    <BackArrow v-on:back="goBack"></BackArrow>
     <br/><br/>
     <div class="topText">
       <h1>Edit event</h1>

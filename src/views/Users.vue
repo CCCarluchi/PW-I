@@ -1,6 +1,8 @@
 <script>
-
+  import BackArrow from "../components/BackArrow.vue";
+  import Logic from "../javascript/logic.js";
   export default {
+    components: { BackArrow },
 
     data() {
       return {
@@ -42,6 +44,10 @@
 
       isMe(id) {
         return (id == window.localStorage.getItem("myId"))
+      },
+
+      goBack() {
+        Logic.back();
       }
     },
 
@@ -57,7 +63,7 @@
     
   <header>
     <br/>
-    <a onclick="window.history.back()"><i class="arrow left"></i></a>
+    <BackArrow v-on:back="goBack"></BackArrow>
     <br/><br/>
     <div class="topText">
       <h1>Users list</h1>
@@ -77,6 +83,7 @@
       <div>
         <img v-bind:src=user.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
         <p>{{ user.name }}</p>
+        <a href="/Chat" v-on:click="locateClick(user.id)"><button>Chat</button></a>
         <a v-if="isMe(user.id)" href="/Data" v-on:click="locateClick(user.id)"><button>My profile</button></a>
         <a v-else href="/NotFriendProfile" v-on:click="locateClick(user.id)"><button>Profile</button></a>
       </div>
