@@ -12,6 +12,8 @@
     },
 
     methods: {
+
+      //Método para pedir información del usuario loggeado a la api
       getUser() {
         fetch("http://puigmal.salle.url.edu/api/v2/users/" + window.localStorage.getItem("myId"), {
           headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
@@ -23,11 +25,13 @@
         })
       },
 
+      //Método para ir una página atrás
       goBack() {
           Logic.back();
         }
     },
 
+    //Antes de montar la página se pide la información del usuario a la api
     beforeMount() {
       this.getUser()
     }

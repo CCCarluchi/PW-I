@@ -5,17 +5,20 @@
     components: { BackArrow },
 
     methods: {
+
+      //Método para borrar al usuario loggeado de la api
       deleteUser() {
         fetch("http://puigmal.salle.url.edu/api/v2/users", {
           method: 'DELETE',
           headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
         })
         .then(() => {
-          window.localStorage.removeItem("loggedIn")
+          window.localStorage.clear();
           window.location.assign('/');
         })
       },
 
+      //Método para ir a la página anterior
       goBack() {
           Logic.back();
         }

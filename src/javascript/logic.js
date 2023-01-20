@@ -14,7 +14,6 @@ export default {
         })
         .then (data => { 
             window.localStorage.setItem("token", data.accessToken);
-            window.localStorage.setItem("loggedIn", true);
 
             fetch('http://puigmal.salle.url.edu/api/v2/users/search?s=' + info.email, {
                 headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
