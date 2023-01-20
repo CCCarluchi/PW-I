@@ -9,6 +9,8 @@ import BackArrow from "../components/BackArrow.vue";
       }
     },
     methods: {
+
+      //Método que retrocede a la página anterior
       goBack() {
         Logic.back();
       }
