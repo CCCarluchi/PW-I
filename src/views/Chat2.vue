@@ -70,6 +70,7 @@ export default {
             .then(data => {
                 console.log(data)
                 this.getMessages();
+                this.text = "";
             })
         },
 
@@ -78,7 +79,7 @@ export default {
         },
 
         isLink(body) {
-            return !body.includes("Check out this event: ") ;
+            return !body.includes("Check out this event: ");
             
         },
 
@@ -128,7 +129,7 @@ export default {
                 </div>              
             </div>
             <div class="msgContainer">
-                <input type="text" v-model="text" placeholder="Message...">
+                <input type="text" v-model="text" placeholder="Message..." id="message">
                 <button type="submit" v-on:click="sendMessage()">Send</button><br/><br/>
             </div>
         </div>   
@@ -166,7 +167,7 @@ export default {
 .userBox {
     background: #ffcc99cc;
     height: 10%;
-    width: 88%;
+    width: 100%;
     display: flex;
     align-items: center;
     padding: 1%;
@@ -178,7 +179,7 @@ export default {
 
 .msgContainer {
   background: #ffcc99cc;
-  width: 88%;
+  width: 100%;
   padding: 1%;
 }
 
@@ -203,9 +204,10 @@ export default {
 .conteiner2{
   margin-top: 1.5%;
   margin-left: 10%;
+  margin-right: 10%;
   padding: 0;
   box-sizing:border-box;
-  width: 80%;
+  max-width: 100%;
   height: 800px;
   grid-template-rows: 90% 10%;
   align-items: center;
@@ -215,7 +217,7 @@ export default {
 
 .chatbox2{
   background: #306ec5;
-  width: 88%;
+  width: 100%;
   padding: 1%;
   height: 85%;
   overflow-y: scroll;

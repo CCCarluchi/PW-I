@@ -1,6 +1,10 @@
 <template>
-    <header class="appTitle">
+    <header>
+      <br/>
+      <div class="topText">
         <h1>Home</h1>
+      </div>
+      <br/><br/>
     </header>
 
     <main> 
@@ -24,54 +28,12 @@
 
   </template>
 
-  <style>
-.buttonHome {
-  display: grid;
-  grid-template-columns: 10% auto 7.5% auto 10%;
-  grid-template-rows: auto;
-  grid-gap: 15px;
-}
-
-.buttonHome > div > a > button {
-  background-color: rgba(255, 204, 153);
-  border: 2px solid black;
-  height: 100%;
-  width: 100%;
-  font-size: 25px;
-  font-family: 'Fredoka', sans-serif;
-  color: black;
-}
-
-.homeItemLeft {
-  grid-column: 2/3;
-  grid-row: auto;
-  height: 150px;
-}
-
-.homeItemRight {
-  grid-column: 4/5;
-  grid-row: auto;
-  height: 150px;
-}
-
-.buttonH {
-  border-radius: 4px;
-  border: 1px solid rgb(62, 41, 41);
-  background-color: rgba(255, 204, 153);
-  width: 137px;
-  height: 137px;
-  cursor: pointer;
-}
-.buttonH:hover {
-  border-color: #4e0101;
-}
-
-@media only screen and (min-width: 640px) {
-.buttonHome {
+<style>
+  .buttonHome {
     display: grid;
-    grid-template-columns: 10% auto 10% auto 10%;
+    grid-template-columns: auto;
     grid-template-rows: auto;
-    grid-gap: 50px;
+    grid-gap: 15px;
   }
 
   .buttonHome > div > a > button {
@@ -79,33 +41,81 @@
     border: 2px solid black;
     height: 100%;
     width: 100%;
-    font-size: 35px;
+    font-size: 25px;
     font-family: 'Fredoka', sans-serif;
     color: black;
   }
-  
+
   .homeItemLeft {
-    grid-column: 2/3;
+    grid-column: auto;
     grid-row: auto;
-    height: 300px;
+    max-width: 100%;
+    height: 75px;
+    margin-left: 5%;
+    margin-right: 5%;
   }
-  
+
   .homeItemRight {
-    grid-column: 4/5;
+    grid-column: auto;
     grid-row: auto;
-    height: 300px;
+    max-width: 100%;
+    height: 75px;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 
   .buttonH {
     border-radius: 4px;
     border: 1px solid rgb(62, 41, 41);
     background-color: rgba(255, 204, 153);
-    width: 230px;
-    height: 230px;
+    width: 137px;
+    height: 137px;
     cursor: pointer;
   }
   .buttonH:hover {
     border-color: #4e0101;
   }
- }
+
+  @media only screen and (min-width: 640px) {
+  .buttonHome {
+      display: grid;
+      grid-template-columns: 10% auto 10% auto 10%;
+      grid-template-rows: auto;
+      grid-gap: 50px;
+    }
+
+    .buttonHome > div > a > button {
+      background-color: rgba(255, 204, 153);
+      border: 2px solid black;
+      height: 100%;
+      width: 100%;
+      font-size: 35px;
+      font-family: 'Fredoka', sans-serif;
+      color: black;
+    }
+    
+    .homeItemLeft {
+      grid-column: 2/3;
+      grid-row: auto;
+      height: 300px;
+    }
+    
+    .homeItemRight {
+      grid-column: 4/5;
+      grid-row: auto;
+      height: 300px;
+    }
+
+    .buttonH {
+      border-radius: 4px;
+      border: 1px solid rgb(62, 41, 41);
+      background-color: rgba(255, 204, 153);
+      width: 230px;
+      height: 230px;
+      cursor: pointer;
+    }
+    .buttonH:hover {
+      border-color: #4e0101;
+    }
+  }
   </style>
