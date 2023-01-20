@@ -1,8 +1,24 @@
+<script>
+import BackArrow from "../components/BackArrow.vue";
+import Logic from "../javascript/logic.js";
+export default {
+  components: { BackArrow },
+  methods: {
+    // Método para volver a la página anterior.
+    goBack() {
+      Logic.back();
+    }
+  }
+}
+
+</script>
+
 <template>
   
   <header>
     <br/>
-    <a onclick="window.history.back()"><i class="arrow left"></i></a>
+    <!-- Cuando el usuario le da a la flecha se ejecuta el método goBack. -->
+    <BackArrow v-on:back="goBack"></BackArrow>
     <br/><br/>
     <div class="topText">
       <h1>Events</h1>
@@ -35,12 +51,6 @@
       <li class="listContainer">
         <img src="src/assets/4.png" class="imgList"/>
         <a href="/ShareEvent" class="a2">Share</a>
-      </li>
-      <br/>
-
-      <li class="listContainer">
-        <img src="src/assets/5.png" class="imgList"/>
-        <a href="/ParticipateEvent" class="a2">Participate</a>
       </li>
       <br/>
 
@@ -88,18 +98,6 @@
 
 
 @media only screen and (min-width: 640px) {
-  /*.listContainer{
-    margin-left: 0px;
-  }
-  .listContainer > img{
-    padding: 0px;
-  }
-  
-  .listContainer > .a2{
-    padding: 0px;
-    font-size: 32px;
-  }*/
-
   .listParent {
     margin-left: 35%;
     margin-right: 35%;

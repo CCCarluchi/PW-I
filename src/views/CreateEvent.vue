@@ -26,6 +26,8 @@
     },
 
     methods: {
+
+      // Método que cuelga imagen en imgur y la guarda en una variable.
       onFileSelected(event) {
         const formdata = new FormData()
         formdata.append("image", event.target.files[0])
@@ -38,6 +40,7 @@
           })
       },
 
+      // Método que crea un nuevo evento.
       createEvent() {
         fetch("http://puigmal.salle.url.edu/api/v2/events", {
           method: 'POST', 
@@ -54,17 +57,23 @@
           return response.json()
         })
         .then(() => {
+
+          // Si se ha creado bien el evento, redirigimos al usuario al nuevo evento.
           window.location.assign('/Events');
         })
         .catch(() => {
+
+          // En el caso de haber un error de formato de información, avisamos al usuario.
           alert("Some information has wrong format")
         }) 
       },
 
+      // Método para volver a la página anterior.
       goBack() {
         Logic.back();
       },
 
+      // Método que establece la fecha mínima que se puede seleccionar en el input.
       setMinDate() {
         var date = new Date();
         var year = date.getFullYear();
@@ -76,6 +85,8 @@
     },
 
     computed: {
+
+      // Método que junta los valores relacionados con la fecha y la hora, según pide la API.
       calculateTimes() {
         if (this.startDate != undefined && this.startTime != undefined) {
           this.event.eventStart_date = this.startDate.concat('T', this.startTime, ':00.000Z');
@@ -93,6 +104,8 @@
   
   <header>
     <br/>
+
+    <!-- Cuando el usuario le da a la flecha se ejecuta el método goBack. -->
     <BackArrow v-on:back="goBack"></BackArrow>
     <br/><br/>
     <div class="topText">
@@ -102,6 +115,8 @@
   </header>
 
   <main>
+
+    <!-- Formulario donde se pide la información del nuevo evento. -->
     <form>
       <div class="inputContainer">
         <input type="text" v-model="event.name" placeholder="*Name"><br/>
@@ -124,6 +139,8 @@
       <br/><br/> 
 
       <div class="inputContainer">
+
+        <!-- Cuando el usuario va a elegir la fecha, se establece el limite de selección. -->
         <input placeholder="*Start date" v-model="startDate" v-on:click="setMinDate" :min ="minDate" v-bind="calculateTimes" type="text" onfocus="(this.type='date')" onblur="(this.type='text')"><br/>
       </div>
       <br/><br/> 
@@ -134,6 +151,8 @@
       <br/><br/> 
 
       <div class="inputContainer">
+
+        <!-- Cuando el usuario va a elegir la fecha, se establece el limite de selección. -->
         <input placeholder="*End date" v-model="endDate" v-on:click="setMinDate" :min ="minDate" v-bind="calculateTimes" type="text" onfocus="(this.type='date')" onblur="(this.type='text')"><br/>
       </div>
       <br/><br/>
@@ -154,6 +173,8 @@
       <br/><br/>
 
       <div class="inputContainer">
+
+        <!-- Cuando el usuario selecciona la imagen que desea, se ejecuta onFileSelected y mostramos una preview con v-bind. -->
         <input type="file" accept="image/*" class="custom2" @change="onFileSelected"><br/>
         <h3 class="previewFont">Preview:</h3>
         <img v-bind:src="event.image" referrerpolicy="no-referrer" class='imgRedonda'/><br/><br/>
@@ -171,6 +192,8 @@
   <footer>
     <br/><br/>
     <div class="inputContainer">
+
+        <!-- Al clicar el botón ejecutamos createEvent. -->
         <a v-on:click="createEvent"><button>Create</button></a>
       </div>
   </footer>

@@ -1,6 +1,9 @@
 <script>
-
+import BackArrow from "../components/BackArrow.vue";
+import Logic from "../javascript/logic.js";
 export default {
+  components: { BackArrow },
+
   data() {
     return {
       puntuation:"",
@@ -10,6 +13,8 @@ export default {
   },
 
   methods: {
+
+    // Método que permite añadir puntuación y comentario a un evento.
     postRating(info) {
       fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedEventId") + "/assistances", {
         method: 'PUT',
@@ -21,6 +26,8 @@ export default {
       })
       .then(res => res.text())
       .then(data => {
+
+        // Si se realiza correctamente, se redirige al usuario a la página del evento seleccionado.
         if (data.length > 20) {
           alert("Some information has wrong format")
         } else {
@@ -29,6 +36,7 @@ export default {
       }); 
     },
 
+    // Método que obtiene el comentario y puntuación previa del usuario en el evento seleccionado, en el caso de existir.
     checkRated() {
       fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedEventId") + "/assistances/" + window.localStorage.getItem("myId"), {
         headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
@@ -38,9 +46,15 @@ export default {
         this.puntuation = data[0].puntuation;
         this.comentary = data[0].comentary;
       })
+    },
+
+    // Método para volver a la página anterior.
+    goBack() {
+      Logic.back();
     }
   },
 
+  // Pedimos el comentario y puntuación previa de usuario.
   beforeMount() {
     this.checkRated()
   }
@@ -52,7 +66,9 @@ export default {
     
   <header>
     <br/>
-    <a onclick="window.history.back()"><i class="arrow left"></i></a>
+
+    <!-- Cuando el usuario le da a la flecha se ejecuta el método goBack. -->
+    <BackArrow v-on:back="goBack"></BackArrow>
     <br/><br/>
     <div class="rateEventTop">
       <h1>Rate the event</h1>
@@ -67,6 +83,8 @@ export default {
     <form class="rateEventMain">
 
       <h3>Event Name</h3><br/><br/>
+      
+      <!-- Casilla para seleccionar la puntuación. -->
       <p>Your puntuation:</p>
 
       <select name="puntuation" v-model="puntuation">
@@ -85,6 +103,8 @@ export default {
       <br/><br/>
 
       <p>Comments on the event:</p>
+
+      <!-- Cuadro de texto para introducir el comentario.-->
       <div class="inputContainer">
         <textarea type="text" v-model="comentary" placeholder="*Comments"></textarea>
       </div>
@@ -93,6 +113,8 @@ export default {
   </main>
 
   <footer>
+
+    <!-- Cuando se clica el botón se ejecuta postRating. -->
     <a v-on:click="postRating({puntuation, comentary})"><button class = "button2">Done</button></a>
   </footer>
 
