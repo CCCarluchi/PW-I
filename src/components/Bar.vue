@@ -21,3 +21,4 @@ export default {
   <BackArrow v-on:back="back"></BackArrow>
   <HomeButton v-on:home="home"></HomeButton>
 </template>
+
