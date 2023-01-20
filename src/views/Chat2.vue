@@ -130,7 +130,7 @@ export default {
             </div>
             <div class="msgContainer">
                 <input type="text" v-model="text" placeholder="Message..." id="message">
-                <button type="submit" v-on:click="sendMessage()">Send</button><br/><br/>
+                <button type="submit" v-on:click="sendMessage()">Send</button>
             </div>
         </div>   
             
@@ -164,132 +164,196 @@ export default {
 
 <style>
 
-.userBox {
-    background: #ffcc99cc;
-    height: 10%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 1%;
-}
+    .userBox {
+        background: rgb(255, 204, 153);
+        height: 10%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 1%;
+        color: black;
+    }
 
-.userBox > img {
-    margin-right: 2%;
-}
+    .userBox > img {
+        margin-left: 4%;
+    }
 
-.msgContainer {
-  background: #ffcc99cc;
-  width: 100%;
-  padding: 1%;
-}
+    .msgContainer {
+        background: rgb(255, 204, 153);
+        width: 100%;
+        padding: 1%;
+    }
 
-.msgContainer > input[type=text] {
-  float: center;
-  padding: 6px;
-  font-size: 17px;
-  width: 30%;
-  background-color: white;
-}
+    .msgContainer > input[type=text] {
+        float: center;
+        padding: 6px;
+        font-size: 17px;
+        width: 30%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        background-color: white;
+    }
 
-.msgContainer > button {
-  width: 5%;
-  float: center;
-  background: rgb(0, 153, 255);
-  color: white;
-  font-size: 17px;
-  cursor: pointer;
-  min-height: 40px;
-}
+    .msgContainer > button {
+        width: 5%;
+        float: center;
+        background: rgb(0, 153, 255);
+        color: white;
+        font-size: 17px;
+        cursor: pointer;
+        min-height: 40px;
+    }
 
-.conteiner2{
-  margin-top: 1.5%;
-  margin-left: 10%;
-  margin-right: 10%;
-  padding: 0;
-  box-sizing:border-box;
-  max-width: 100%;
-  height: 800px;
-  grid-template-rows: 90% 10%;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-}
+    .conteiner2{
+        margin-top: 1.5%;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding: 0;
+        box-sizing:border-box;
+        max-width: 100%;
+        height: 800px;
+        grid-template-rows: 90% 10%;
+        align-items: center;
+        justify-content: center;
+    }
 
-.chatbox2{
-  background: #306ec5;
-  width: 100%;
-  padding: 1%;
-  height: 85%;
-  overflow-y: scroll;
-}
+    .chatbox2{
+        background: #306ec5;
+        width: 100%;
+        padding: 1%;
+        height: 85%;
+        overflow-y: scroll;
+    }
 
-.chatbox h2{
-  font-family: 'Fredoka', sans-serif;
-  font-size: 28px;
-}
+    .msg-row{
+        display: flex;
+        align-items: flex-end;
+        margin: 10px;
+        flex-basis: 70%;
+        justify-content: flex-end;
+    }
 
-.chatbox p {
-  font-family:'Roboto', sans-serif;
-  font-size: 20px ;
-  color:#000000
-}
+    .msg-row2{
+        justify-content: flex-start;
+    }
 
-.msg-row{
-  display: flex;
-  align-items: flex-end;
-  margin: 10px;
-  flex-basis: 70%;
-  justify-content: flex-end;
-}
+    .msg-text {
+        min-width: 600px;
+        background: #ffcc99cc;
+        padding: 20px 20px;
+        border-radius: 8px;
+        font-weight: 300;
+        overflow-y: auto;
+    }
 
-.msg-row2{
-  justify-content: flex-start;
-}
+    .msg-text p {
+        color: black;
+        font-family:'Roboto', sans-serif;
+        font-size: 15px;
+    }
 
-.msg-text {
-  min-width: 600px;
-  background: #ffcc99cc;
-  padding: 20px 20px;
-  border-radius: 8px;
-  font-weight: 300;
-  overflow-y: auto;
-}
+    .msg-text a {
+        color: black;
+        align-self: left;
+        font-size: 15px;
+    }
 
-.msg-text h2{
-  font-weight: 400;
-  font-size: 15px;
-  margin-bottom: 10px;
-  text-align:left;
-}
-.msg-text p {
-  color: #fff;
-  text-align: left;
-  font-size: 15px;
-}
+    @media only screen and (min-width: 640px) {
 
-.msg-text a {
-  color: #fff;
-  align-self: left;
-  font-size: 15px;
-}
+        .userBox {
+            background: rgb(255, 204, 153);
+            height: 10%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 1%;
+            color: black;
+        }
 
-.msg-img{
-  width: 10px;
-  border-radius: 10%;
-  margin: 0 20xp;
-}
+        .userBox > img {
+            margin-right: 2%;
+            margin-left: 0;
+        }
 
-.chatContainer {
-    overflow-y: scroll;
-    max-height: 800px;
-}
+        .msgContainer {
+            background: rgb(255, 204, 153);
+            width: 100%;
+            padding: 1%;
+        }
 
-.myMessage {
-    float:right;
-}
+        .msgContainer > input[type=text] {
+            float: center;
+            padding: 6px;
+            font-size: 17px;
+            width: 30%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            background-color: white;
+        }
 
-.otherMessage {
-    float:left;
-}
+        .msgContainer > button {
+            width: 5%;
+            float: center;
+            background: rgb(0, 153, 255);
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+            min-height: 40px;
+        }
+
+        .conteiner2{
+            margin-top: 1.5%;
+            margin-left: 10%;
+            margin-right: 10%;
+            padding: 0;
+            box-sizing:border-box;
+            max-width: 100%;
+            height: 800px;
+            grid-template-rows: 90% 10%;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chatbox2{
+            background: #306ec5;
+            width: 100%;
+            padding: 1%;
+            height: 85%;
+            overflow-y: scroll;
+        }
+
+        .msg-row{
+            display: flex;
+            align-items: flex-end;
+            margin: 10px;
+            flex-basis: 70%;
+            justify-content: flex-end;
+        }
+
+        .msg-row2{
+        justify-content: flex-start;
+        }
+
+        .msg-text {
+            min-width: 600px;
+            background: #ffcc99cc;
+            padding: 20px 20px;
+            border-radius: 8px;
+            font-weight: 300;
+            overflow-y: auto;
+        }
+
+        .msg-text p {
+            color: black;
+            font-family:'Roboto', sans-serif;
+            font-size: 15px;
+        }
+
+        .msg-text a {
+            color: black;
+            align-self: left;
+            font-size: 15px;
+        }
+    }
 
 </style>

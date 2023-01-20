@@ -145,7 +145,7 @@ button:focus-visible {
   font-size: 20px;
   font-family: 'Roboto', sans-serif;
   color: #4e0101;
-  background-color: rgba(255, 204, 153);
+  background-color: rgb(255, 204, 153);
   cursor: pointer;
   transition: border-color 0.25s;
 }

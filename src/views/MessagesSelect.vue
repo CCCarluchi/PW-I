@@ -6,22 +6,18 @@
     <br/><br/>
     <div class="topText">
       <h1>Messages</h1>
-    </div>
-    <br/><br/>
-    
+    </div>    
     <br/>
   </header>
   
   <main>
     
-    <article class="grid-container">
-      <div>
-        <h3>Text new user</h3>
-        <a href="/Users"><button>Go</button></a>
+    <article class="elementsGrid">
+      <div class="profileItem">
+        <a href="/Users" id="button"><button class="buttonProfile">Text new user</button></a>
       </div>
-      <div>
-        <h3>Received messages</h3>
-        <a href="/ReceivedMessages"><button>Go</button></a>
+      <div class="profileItem">
+        <a href="/ReceivedMessages" id="button"><button class="buttonProfile">Received messages</button></a>
       </div>
     </article>
 

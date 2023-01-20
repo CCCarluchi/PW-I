@@ -51,22 +51,22 @@
   <main>
     <div class="elementsGrid">
       <div class="profileItem">
-        <a href="/Statistics" id="button"><button class="buttonProfile">Public Stats</button></a><br/><br/>
+        <a href="/Statistics" id="button"><button class="buttonProfile">Public Stats</button></a>
       </div>
       <div class="profileItem">
-        <a href="/PendingRequests" id="button"><button class="buttonProfile">Pending requests</button></a><br/><br/>
+        <a href="/PendingRequests" id="button"><button class="buttonProfile">Pending requests</button></a>
       </div>
       <div class="profileItem">
-        <a href="/MyEvents" id="button"><button class="buttonProfile">My events</button></a><br/><br/>
+        <a href="/MyEvents" id="button"><button class="buttonProfile">My events</button></a>
       </div>
       <div class="profileItem">
-        <a href="/ModifyData" id="button"><button class="buttonProfile">Change profile</button></a><br/><br/>
+        <a href="/ModifyData" id="button"><button class="buttonProfile">Change profile</button></a>
       </div>
       <div class="profileItem">
-        <a href="/SignOut" id="button"><button class="buttonProfile">Sign Out</button></a><br/><br/>
+        <a href="/SignOut" id="button"><button class="buttonProfile">Sign Out</button></a>
       </div>
       <div class="profileItem">
-        <a href="/DeleteAccount" id="button"><button class="buttonProfile">Delete Account</button></a><br/><br/>
+        <a href="/DeleteAccount" id="button"><button class="buttonProfile">Delete Account</button></a>
       </div>
     </div>
   </main>

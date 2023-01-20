@@ -58,6 +58,7 @@
       <div>
         <img v-bind:src=user.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
         <p>{{ user.name }}</p>
+        <span class="break"></span>
         <a href="/Chat" v-on:click="locateClick(user.id)"><button>Chat</button></a>
         <a href="/NotFriendProfile" v-on:click="locateClick(user.id)"><button>Profile</button></a>
       </div>
@@ -70,3 +71,21 @@
 
   </main>
 </template>
+
+<style>
+  .break {
+    display: block;
+    height: 10px;
+  }
+
+  @media only screen and (min-width: 640px) {
+
+    .break {
+        display: inline;
+    }
+  }
+
+
+
+
+</style>
