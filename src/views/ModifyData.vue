@@ -102,12 +102,12 @@
         <br/><br/>
 
         <div class="inputContainer">
-          <input type="text" v-model="user.password" placeholder="*Password"><br/>
+          <input type="password" v-model="user.password" placeholder="*Password"><br/>
         </div>
         <br/><br/>
 
         <div class="inputContainer">
-          <input type="file" accept="image/*" class="custom2" @change="onFileSelected"><br/>
+          <input type="file" accept="image/*" class="custom" @change="onFileSelected"><br/>
           <h3 class="previewFont">Preview:</h3>
           <img v-bind:src="user.image" referrerpolicy="no-referrer" class='imgRedonda'/><br/><br/>
         </div>

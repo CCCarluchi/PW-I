@@ -92,14 +92,12 @@
       font-size: 26px;
     }
 
-    .red {
-      color: red;
-      float: center;
-      font-size: 26px;
-      font-family:'Roboto', sans-serif;
-    }
+  .red {
+    color: red;
+    float: center;
+    font-size: 26px;
+    font-family:'Roboto', sans-serif;
   }
-
-
+}
 
 </style>
