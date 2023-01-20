@@ -64,17 +64,22 @@
         },
 
         sendMessage() {
-            fetch("http://puigmal.salle.url.edu/api/v2/messages", {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json' , 'Authorization': 'Bearer ' + window.localStorage.getItem("token")},
-                body: JSON.stringify({content: this.text, user_id_send: this.user.id, user_id_recived: this.otherUser.id})
-            })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                this.getMessages();
-                this.text = "";
-            })
+
+            if (this.text.length > 45) {
+                alert("Yor message must be 45 characters or less!")
+            } else {
+                fetch("http://puigmal.salle.url.edu/api/v2/messages", {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json' , 'Authorization': 'Bearer ' + window.localStorage.getItem("token")},
+                    body: JSON.stringify({content: this.text, user_id_send: this.user.id, user_id_recived: this.otherUser.id})
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    this.getMessages();
+                    this.text = "";
+                })
+            }
         },
 
         isMyMessage(senderId) {
@@ -106,25 +111,22 @@
 <template>
 
     <header>
-        <br/>
-        <BackArrow v-on:back="goBack"></BackArrow>
-        <br/>
+        <div class="userBox">
+            <BackArrow v-on:back="goBack"></BackArrow>
+            <img v-bind:src=otherUser.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
+            <h3>{{ otherUser.name }}</h3>
+        </div>
     </header>
 
-    <main>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
-       
+    <main>      
        
         <div class="conteiner2">
-            <div class="userBox">
-                <img v-bind:src=otherUser.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
-                <h3>{{ otherUser.name }}</h3>
-            </div>
+            
             <div class="chatbox2">
                 <div v-for="message in fullMsg">
 
                     <div v-if="isMyMessage(message.senderId)" class = "msg-row">
-                        <div class = "msg-text">
+                        <div class = "msgBody">
                             <p v-if="isLink(message.body)">{{ message.body }}</p>
                             <a v-else h-ref="/Event" v-on:click="getSelectedEvent(message.body)">{{ message.body }}</a>
                         </div>
@@ -133,7 +135,7 @@
 
                     <div v-else class = "msg-row msg-row2">
                         <img v-bind:src=message.img referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
-                        <div class = "msg-text">
+                        <div class = "msgBody">
                             <p v-if="isLink(message.body)">{{ message.body }}</p>
                             <a v-else h-ref="/Event" v-on:click="getSelectedEvent(message.body)">{{ message.body }}</a>
                         </div>
@@ -146,9 +148,6 @@
                 <button type="submit" v-on:click="sendMessage()">Send</button>
             </div>
         </div>   
-            
-            
-
     </main> 
 
     <!-- <article class="chatContainer">
@@ -188,7 +187,8 @@
     }
 
     .userBox > img {
-        margin-left: 4%;
+        margin-right: 10%;
+        margin-left: 10%;
     }
 
     .msgContainer {
@@ -198,17 +198,18 @@
     }
 
     .msgContainer > input[type=text] {
-        float: center;
         padding: 6px;
         font-size: 17px;
-        width: 30%;
+        align-self: center;
+        width: 55%;
         margin-top: 10px;
         margin-bottom: 10px;
         background-color: white;
     }
 
     .msgContainer > button {
-        width: 5%;
+        width: 20%;
+        align-self: center;
         float: center;
         background: rgb(0, 153, 255);
         color: white;
@@ -217,15 +218,11 @@
         min-height: 40px;
     }
 
-    .conteiner2{
-        margin-top: 1.5%;
-        margin-left: 10%;
-        margin-right: 10%;
+    .conteiner2 {
         padding: 0;
         box-sizing:border-box;
         max-width: 100%;
-        height: 800px;
-        grid-template-rows: 90% 10%;
+        height: 545px;
         align-items: center;
         justify-content: center;
     }
@@ -234,7 +231,7 @@
         background: #306ec5;
         width: 100%;
         padding: 1%;
-        height: 85%;
+        height: 455px;
         overflow-y: scroll;
     }
 
@@ -246,29 +243,37 @@
         justify-content: flex-end;
     }
 
+    .msg-row img {
+        margin-left: 10px;
+        align-self: center;
+    }
+
     .msg-row2{
         justify-content: flex-start;
     }
 
-    .msg-text {
-        min-width: 600px;
+    .msgBody {
+        width: 225px;
+        height: 30px;
         background: #ffcc99cc;
-        padding: 20px 20px;
+        padding: 15px 15px;
         border-radius: 8px;
         font-weight: 300;
-        overflow-y: auto;
+        text-align: left;
+        line-height: 0px;
+        overflow-x: auto;
+        overflow-y: hidden;
     }
 
-    .msg-text p {
+    .msgBody p {
         color: black;
         font-family:'Roboto', sans-serif;
-        font-size: 15px;
+        font-size: 16px;
     }
 
-    .msg-text a {
+    .msgBody a {
         color: black;
-        align-self: left;
-        font-size: 15px;
+        font-size: 16px;
     }
 
     @media only screen and (min-width: 640px) {
@@ -285,7 +290,7 @@
 
         .userBox > img {
             margin-right: 2%;
-            margin-left: 0;
+            margin-left: 2%;
         }
 
         .msgContainer {
@@ -321,7 +326,7 @@
             padding: 0;
             box-sizing:border-box;
             max-width: 100%;
-            height: 800px;
+            height: 725px;
             grid-template-rows: 90% 10%;
             align-items: center;
             justify-content: center;
@@ -343,29 +348,35 @@
             justify-content: flex-end;
         }
 
-        .msg-row2{
-        justify-content: flex-start;
+        .msg-row img {
+            margin-left: 10px;
         }
 
-        .msg-text {
-            min-width: 600px;
+        .msg-row2{
+            justify-content: flex-start;
+        }
+
+        .msgBody {
+            width: 500px;
+            height: 40px;
             background: #ffcc99cc;
-            padding: 20px 20px;
+            padding: 15px 15px;
             border-radius: 8px;
             font-weight: 300;
-            overflow-y: auto;
+            text-align: left;
+            line-height: 10px;
         }
 
-        .msg-text p {
+        .msgBody p {
             color: black;
             font-family:'Roboto', sans-serif;
-            font-size: 15px;
+            font-size: 16px;
         }
 
-        .msg-text a {
+        .msgBody a {
             color: black;
             align-self: left;
-            font-size: 15px;
+            font-size: 16px;
         }
     }
 
