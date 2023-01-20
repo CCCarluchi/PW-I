@@ -1,9 +1,7 @@
 <script>
   import Bar from "../components/Bar.vue";
-  import Logic from "../javascript/logic.js";
   export default {
     components: { Bar },
-
 
     data() {
       return {
@@ -29,12 +27,7 @@
       //Método que guarda la id del usuario al que se ha seleciconado
       locateClick(id) {
         window.localStorage.setItem("selectedEventId", id);
-      },
-
-      //Método que retrocede a la página anterior
-      goBack() {
-          Logic.back();
-        }
+      }
     },
 
     //Antes de montar la página se guardan los eventos

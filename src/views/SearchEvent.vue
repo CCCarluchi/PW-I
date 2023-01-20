@@ -1,7 +1,6 @@
 <script>
   import { createVNode } from 'vue';
   import Bar from "../components/Bar.vue";
-  import Logic from "../javascript/logic.js";
   export default {
     components: { Bar },
       data() {
@@ -92,11 +91,6 @@
         // Método que guarda en un item el id del evento seleccionado por el usuario.
         locateClick(id) {
           window.localStorage.setItem("selectedEventId", id);
-        },
-
-        // Método para volver a la página anterior.
-        goBack() {
-          Logic.back();
         },
 
         // Método que establece la fecha mínima que el usuario puede seleccionar en el input.

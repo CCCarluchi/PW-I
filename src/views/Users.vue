@@ -1,6 +1,5 @@
 <script>
   import Bar from "../components/Bar.vue";
-  import Logic from "../javascript/logic.js";
   export default {
     components: { Bar },
 
@@ -48,11 +47,6 @@
       //Método que comprueba si el usuario loggeado es uno de los usuario que aparecen
       isNotMe(id) {
         return (id != window.localStorage.getItem("myId"))
-      },
-
-      //Método que retrocede a la página anterior
-      goBack() {
-        Logic.back();
       }
     },
 

@@ -68,11 +68,6 @@
         }) 
       },
 
-      // Método para volver a la página anterior.
-      goBack() {
-        Logic.back();
-      },
-
       // Método que establece la fecha mínima que se puede seleccionar en el input.
       setMinDate() {
         var date = new Date();

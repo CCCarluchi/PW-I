@@ -1,6 +1,5 @@
 <script>
     import Bar from "../components/Bar.vue";
-    import Logic from "../javascript/logic.js";
     export default {
         components: { Bar },
 
@@ -103,13 +102,7 @@
                 }
                 
             })
-        },
-        
-        // Método para volver a la página anterior.
-        goBack() {
-          Logic.back();
-        }
-         
+        }         
     },
 
     // Una vez se ha montado la página, pedimos la información del evento y sus comentarios.

@@ -1,6 +1,5 @@
 <script>
   import Bar from "../components/Bar.vue";
-  import Logic from "../javascript/logic.js";
   export default {
     components: { Bar },
     data() {
@@ -31,13 +30,7 @@
         //que se guarda su id para luego saber de qué usuario pedir la información a la api
         locateClick(id) {
             window.localStorage.setItem("selectedUserId", id);
-        },
-
-        //Método para ir una página atrás
-        goBack() {
-          Logic.back();
         }
-
     },
 
     //Antes de montarse la página se pide la información de los amigos

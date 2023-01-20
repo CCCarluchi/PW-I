@@ -1,6 +1,5 @@
 <script>
   import Bar from "../components/Bar.vue";
-  import Logic from "../javascript/logic.js";
   export default {
     components: { Bar },
 
@@ -71,11 +70,6 @@
             .then(res => res.json())
           }
         }
-      },
-
-      // Método para volver a la página anterior.
-      goBack() {
-        Logic.back();
       },
 
       // Método que guarda en un item el id del usuario seleccionado por el usuario.

@@ -1,6 +1,5 @@
 <script>
   import Bar from "../components/Bar.vue";
-  import Logic from "../javascript/logic.js";
   export default {
     components: { Bar },
 
@@ -21,11 +20,6 @@
             })
             .then(res => res.json);
           }
-      },
-
-      //Método que retrocede a la página anterior
-      goBack() {
-        Logic.back();
       }
     }
   }

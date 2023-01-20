@@ -1,6 +1,5 @@
 <script>
   import Bar from "../components/Bar.vue";
-  import Logic from "../javascript/logic.js";
   export default {
     components: { Bar },
     data() {
@@ -25,11 +24,7 @@
             this.user.num_comments= data[0].num_comments;
             this.user.percentage_commenters_below = data[0].percentage_commenters_below;
           }); 
-      },
-
-      goBack() {
-          Logic.back();
-        }
+      }
     },
 
     beforeMount() {

@@ -1,7 +1,5 @@
 <script>
-
   import Bar from "../components/Bar.vue";
-  import Logic from "../javascript/logic.js";
   export default {
     components: { Bar },
   data() {
@@ -46,11 +44,6 @@
         this.puntuation = data[0].puntuation;
         this.comentary = data[0].comentary;
       })
-    },
-
-    // Método para volver a la página anterior.
-    goBack() {
-      Logic.back();
     }
   },
 

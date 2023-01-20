@@ -1,9 +1,10 @@
 <script>
   import Bar from "../components/Bar.vue";
-  import Logic from "../javascript/logic.js";
   export default {
     components: { Bar },
     methods: {
+
+      //Método que borra el evento seleccionado de la api
       deleteEvent() {
         fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedEventId"), {
           method: 'DELETE',
@@ -15,9 +16,6 @@
         });
       },
 
-      goBack() {
-          Logic.back();
-        }
     }
   }
 

@@ -1,6 +1,5 @@
 <script>
   import Bar from "../components/Bar.vue";
-  import Logic from "../javascript/logic.js";
   export default {
     components: { Bar },
     
@@ -99,11 +98,6 @@
         var day = ('0' + date.getDate()).slice(-2);
         var fullDate = year + '-' + month + '-' + day;
         this.minDate = fullDate;
-      },
-
-      // Método para volver a la página anterior.
-      goBack() {
-        Logic.back();
       }
     },
 

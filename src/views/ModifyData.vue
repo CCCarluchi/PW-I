@@ -1,6 +1,5 @@
 <script>
   import Bar from "../components/Bar.vue";
-  import Logic from "../javascript/logic.js";
   export default {
     components: { Bar },
     data() {
@@ -62,10 +61,6 @@
             this.user.password = data[0].password;
             this.user.image = data[0].image;
           }); 
-      },
-
-      goBack() {
-        Logic.back();
       }
     },
 

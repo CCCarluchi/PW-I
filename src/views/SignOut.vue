@@ -1,18 +1,7 @@
 <script>
   import Bar from "../components/Bar.vue";
-  import Logic from "../javascript/logic.js";
   export default {
     components: { Bar },
-
-    methods: {
-      logOut() {
-        window.localStorage.clear()
-      },
-
-      goBack() {
-          Logic.back();
-        }
-    }
   }
 
 </script>

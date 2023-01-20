@@ -22,11 +22,6 @@
           this.name = data[0].name;
           this.image = data[0].image;
         })
-      },
-
-      //Método que retrocede a la página anterior
-      goBack() {
-        Logic.back();
       }
     },
 

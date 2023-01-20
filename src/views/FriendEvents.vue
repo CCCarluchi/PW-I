@@ -1,6 +1,5 @@
 <script>
   import Bar from "../components/Bar.vue";
-  import Logic from "../javascript/logic.js";
   export default {
     components: { Bar },
 
@@ -69,13 +68,7 @@
     // Método que guarda en un item el id del evento seleccionado por el usuario.
     locateClick(id) {
       window.localStorage.setItem("selectedEventId", id);
-    },
-
-    // Método para volver a la página anterior.
-    goBack() {
-      Logic.back();
     }
-
   },
 
   computed: {

@@ -76,11 +76,6 @@
             }
           }
         },
-        
-        //Método que retrocede a la página anterior
-        goBack() {
-          Logic.back();
-        },
 
         //Método que limita la fecha que se puede escoger al crearse el usuario
         setLimitsDate() {

@@ -1,6 +1,5 @@
 <script>
     import Bar from "../components/Bar.vue";
-    import Logic from "../javascript/logic.js";
     export default {
     components: { Bar },
     data() {
@@ -106,11 +105,6 @@
             const words = body.split(' ')
             window.localStorage.setItem("selectedEventId", words[words.length - 1]);
             window.location.assign("/Event");
-        },
-
-        //Método que retrocede una página
-        goBack() {
-            Logic.back();
         }
     },
 

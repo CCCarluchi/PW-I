@@ -22,12 +22,7 @@
           this.name = data[0].name;
           this.image = data[0].image;
         })
-      },
-
-      //Método para ir una página atrás
-      goBack() {
-          Logic.back();
-        }
+      }
     },
 
     //Antes de montar la página se pide la información del usuario a la api
