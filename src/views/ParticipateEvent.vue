@@ -5,7 +5,8 @@
   data() {
     return {
       puntuation:"",
-      comentary:""
+      comentary:"",
+      eventName:""
       
     }
   },
@@ -34,6 +35,17 @@
       }); 
     },
 
+    // Método que obtiene el nombre del evento seleccionado a partir de su id.
+    getEvent() {
+          fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedEventId"), {
+              headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
+          })
+          .then(res => res.json())
+          .then(data => {
+                this.eventName = data[0].name;
+            })
+    },
+
     // Método que obtiene el comentario y puntuación previa del usuario en el evento seleccionado, en el caso de existir.
     checkRated() {
       fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedEventId") + "/assistances/" + window.localStorage.getItem("myId"), {
@@ -49,7 +61,8 @@
 
   // Pedimos el comentario y puntuación previa de usuario.
   beforeMount() {
-    this.checkRated()
+    this.checkRated();
+    this.getEvent();
   }
 }
 
@@ -66,7 +79,7 @@
     <div class="rateEventTop">
       <h1>Rate the event</h1>
     </div>
-    <br/><br/>
+    <br/>
     
     <br/>
   </header>
@@ -75,7 +88,8 @@
     
     <form class="rateEventMain">
 
-      <h3>Event Name</h3><br/><br/>
+      <h3>Event Name</h3>
+      <p>{{ eventName }}</p><br/><br/>
       
       <!-- Casilla para seleccionar la puntuación. -->
       <p>Your puntuation:</p>
