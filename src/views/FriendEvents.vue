@@ -1,8 +1,9 @@
 <script>
-import BackArrow from "../components/BackArrow.vue";
-import Logic from "../javascript/logic.js";
-export default {
-  components: { BackArrow },
+  import BackArrow from "../components/BackArrow.vue";
+  import Logic from "../javascript/logic.js";
+  export default {
+    components: { BackArrow },
+
   data() {
     return {
         finishedEvents: [],

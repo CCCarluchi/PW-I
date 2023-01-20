@@ -3,6 +3,7 @@
   import Logic from "../javascript/logic.js";
   export default {
     components: { BackArrow },
+    
     data() {
       return {
         event: {

@@ -1,15 +1,22 @@
 <script>
-import BackArrow from "../components/BackArrow.vue";
-import Logic from "../javascript/logic.js";
-export default {
-  components: { BackArrow },
-  methods: {
-    // Método para volver a la página anterior.
-    goBack() {
-      Logic.back();
+  import BackArrow from "../components/BackArrow.vue";
+  import Logic from "../javascript/logic.js";
+  export default {
+    components: { BackArrow },
+    data() {
+      return {
+
+      }
+    },
+    methods: {
+
+      // Método para volver a la página anterior.
+      goBack() {
+        Logic.back();
+      }
     }
+
   }
-}
 
 </script>
 

@@ -1,6 +1,8 @@
 <script>
-
+  import BackArrow from "../components/BackArrow.vue";
+  import Logic from "../javascript/logic.js";
   export default {
+    components: { BackArrow },
     data() {
       return {
         user: {
@@ -60,6 +62,10 @@
             this.user.password = data[0].password;
             this.user.image = data[0].image;
           }); 
+      },
+
+      goBack() {
+        Logic.back();
       }
     },
 
@@ -75,7 +81,7 @@
   
     <header>
       <br/>
-      <a onclick="window.history.back()"><i class="arrow left"></i></a>
+      <BackArrow v-on:back="goBack"></BackArrow>
       <br/><br/>
       <div class="topText">
         <h1>Edit profile</h1>
