@@ -70,10 +70,10 @@
   <main>
 
     <div class="sort">
-      <p class="sortFont">Sort by creator rating</p>
-
+      
       <!-- Cuando el usuario selecciona la casilla, se marca como selecionada y se ejecuta getEvents. -->
       <input class="sortInput" v-model="selected" type="checkbox" v-on:change="getEvents" id="sort">
+      <p class="sortFont">Sort by creator rating</p>
     </div>
     <br/><br/><br/><br/><br/><br/>
 
@@ -105,17 +105,26 @@
   .sortFont {
     font-size: 20px;
     font-family: 'Fredoka', sans-serif;
-    display: inline;
+    margin-right: 30%;
+    width: -moz-max-content;
+    width: max-content;
+    flex: none;
+    
   }
 
   .sortInput {
     float: left;
-
+    
   }
 
   .sort {
     float:left;
     margin-left:0%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
   }
 
   @media only screen and (min-width: 640px) {
@@ -126,7 +135,10 @@
     .sortFont {
       font-size: 26px;
       font-family: 'Fredoka', sans-serif;
-      display:inline;
+      margin-right: 10%;
+      width: -moz-max-content;
+      width: max-content;
+      flex: none;
     }
 
     .sortInput {
@@ -137,6 +149,8 @@
     .sort {
       float:left;
       margin-left:0%;
+      display: flex;
+      flex-direction: row;
     }
   }
 
