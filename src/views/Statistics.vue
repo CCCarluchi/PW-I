@@ -53,40 +53,54 @@
     <article>
       <table class = "stats-container">
         <tr>
-          <th>Events puntuation:</th>
-          <th>Number of comments:</th>
-          <th>Percentage of users with lower comments:</th>
+          <th class ="thp">Events puntuation:</th>
+          <th class ="thp">Number of comments:</th>
+          <th class ="thp">Percentage of users with lower comments:</th>
         </tr>
         <tr>
-          <td>{{ user.avg_score }}</td>
-          <td>{{ user.num_comments }}</td>
-          <td>{{ user.percentage_commenters_below }}</td>
+          <td class ="thp">{{ user.avg_score }}</td>
+          <td class ="thp">{{ user.num_comments }}</td>
+          <td class ="thp">{{ user.percentage_commenters_below }}</td>
         </tr>
 
       </table>
     </article>
-
-    <footer>
-    </footer>
     
     </main>
   </template>
 
 <style>
 .stats-container {
- 
- margin-left: auto;
- margin-right: auto;
+ margin-left: 5%;
+ margin-right: 5%;
+ max-width: 90%;
  margin-top: 25px;
  padding: 2% 2%;
  background-color: rgba(255, 204, 153);
  border: 1px solid black;
- font-size: 20px;
+ font-size: 14px;
  font-family: 'Fredoka', sans-serif;
 }
 
-th {
+.thp {
+  padding: 10px;
+}
+
+@media only screen and (min-width: 640px) {
+.stats-container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  padding: 2% 2%;
+  background-color: rgba(255, 204, 153);
+  border: 1px solid black;
+  font-size: 20px;
+  font-family: 'Fredoka', sans-serif;
+}
+
+.thp {
   padding: 40px;
+}
 }
 
 </style>

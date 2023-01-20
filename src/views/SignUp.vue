@@ -37,7 +37,7 @@
               const email = info.email;
               const password = info.password;
               window.localStorage.removeItem("token");
-              logic.login({email, password});
+              Logic.login({email, password});
           })
           .catch(() => {
             alert('The information has an incorrect format, or that mail is already registered');
@@ -94,6 +94,7 @@
           this.minDate = fullDateMin;
         }
       },
+      
       beforeMount() {
         window.localStorage.clear();
       }
