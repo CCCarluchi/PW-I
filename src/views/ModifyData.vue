@@ -16,7 +16,7 @@
     },
 
     methods: {
-
+      //Método que sirve para guardar la imagen en una api i poder luego utilizar su link
       onFileSelected(event) {
         const formdata = new FormData()
         formdata.append("image", event.target.files[0])
@@ -82,6 +82,7 @@
   
     <header>
       <br/>
+      <!-- Cuando el usuario le da a la flecha se ejecuta el método goBack. -->
       <BackArrow v-on:back="goBack"></BackArrow>
       <br/><br/>
       <div class="topText">
@@ -91,7 +92,7 @@
     </header>
 
     <main>
-     
+     <!-- Guardamos en cada variable usando v-model los datos introducidos en cada apartado -->
       <form>
         <div class="inputContainer">
           <input type="text" v-model="user.name" placeholder="*Name"><br/>
@@ -112,7 +113,8 @@
           <input type="password" v-model="user.password" placeholder="*Password"><br/>
         </div>
         <br/><br/>
-
+        
+        <!-- Conseguimos el fichero de la imagen y llamamos a la funcion para guardarla -->
         <div class="inputContainer">
           <input type="file" accept="image/*" class="custom" @change="onFileSelected"><br/>
           <h3 class="previewFont">Preview:</h3>
