@@ -28,7 +28,7 @@
             this.user.image = data.data.link
           })
       },
-      // Método domde cambiamos todos los datos actualizados
+      // Método donde cambiamos todos los datos actualizados
       editProfile() {
         fetch("http://puigmal.salle.url.edu/api/v2/users", {
           method: 'PUT', 
