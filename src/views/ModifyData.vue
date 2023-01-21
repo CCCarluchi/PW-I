@@ -126,7 +126,7 @@
 
      
     </main>
-
+     <!-- Llamado al metodo de login al pulsar el boton-->
     <footer>
       <a id="button2"><button class = "button2" v-on:click="editProfile">Apply Changes</button></a><br/><br/>
     </footer>

@@ -12,6 +12,7 @@ import logic from '../javascript/logic.js'
     },
 
     methods: {
+      //Metodo que utiliza el metodo excrito el logic.js
       login(info = {}) {
         logic.login(info);
       }
@@ -41,7 +42,7 @@ import logic from '../javascript/logic.js'
       <img src="src/assets/withHat.png" alt="logo" class="imgLogo">
     </figure>
     <br/><br/>
-
+    <!-- Guardamos en cada variable usando v-model los datos introducidos en cada apartado -->
     <form>
       <div class="inputContainer">
         <input type="text" v-model="email" placeholder="Mail"><br/>
@@ -51,6 +52,8 @@ import logic from '../javascript/logic.js'
         <input type="password" v-model="password" placeholder="Password"><br/>
       </div>
       <br/><br/>
+
+      <!-- Llamado al metodo de login al pulsar el boton-->
       <div class="inputContainer">
         <button v-on:click.prevent="login({ email, password })">Sign in</button>
         <br/>
