@@ -1,8 +1,7 @@
 <script>
-  import BackArrow from "../components/BackArrow.vue";
-  import Logic from "../javascript/logic.js";
+  import Bar from "../components/Bar.vue";
   export default {
-    components: { BackArrow },
+    components: { Bar },
 
     data() {
       return {
@@ -12,6 +11,8 @@
     },
 
     methods: {
+
+      //Método para pedir información del usuario loggeado a la api
       getUser() {
         fetch("http://puigmal.salle.url.edu/api/v2/users/" + window.localStorage.getItem("myId"), {
           headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
@@ -21,13 +22,10 @@
           this.name = data[0].name;
           this.image = data[0].image;
         })
-      },
-
-      goBack() {
-          Logic.back();
-        }
+      }
     },
 
+    //Antes de montar la página se pide la información del usuario a la api
     beforeMount() {
       this.getUser()
     }
@@ -38,7 +36,7 @@
 <template>
   <header>
     <br/>
-    <BackArrow v-on:back="goBack"></BackArrow>
+    <Bar></Bar>
     <br/><br/>
     <div class="profileGrid">
       <div class="profileMain">

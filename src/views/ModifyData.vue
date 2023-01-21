@@ -1,8 +1,7 @@
 <script>
-  import BackArrow from "../components/BackArrow.vue";
-  import Logic from "../javascript/logic.js";
+  import Bar from "../components/Bar.vue";
   export default {
-    components: { BackArrow },
+    components: { Bar },
     data() {
       return {
         user: {
@@ -63,10 +62,6 @@
             this.user.password = data[0].password;
             this.user.image = data[0].image;
           }); 
-      },
-      // Método para volver a la página anterior.
-      goBack() {
-        Logic.back();
       }
     },
     // Pedimos los datos del usuario.
@@ -82,8 +77,7 @@
   
     <header>
       <br/>
-      <!-- Cuando el usuario le da a la flecha se ejecuta el método goBack. -->
-      <BackArrow v-on:back="goBack"></BackArrow>
+      <Bar></Bar>
       <br/><br/>
       <div class="topText">
         <h1>Edit profile</h1>

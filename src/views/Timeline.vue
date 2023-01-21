@@ -1,9 +1,7 @@
 <script>
-  import BackArrow from "../components/BackArrow.vue";
-  import Logic from "../javascript/logic.js";
+  import Bar from "../components/Bar.vue";
   export default {
-    components: { BackArrow },
-
+    components: { Bar },
 
     data() {
       return {
@@ -12,6 +10,8 @@
       },
 
     methods: {
+
+      //Método que pide a la api los eventos en los que el usuario ha participado en el pasado
       getEvents() {
         fetch("http://puigmal.salle.url.edu/api/v2/users/" + window.localStorage.getItem("myId") + "/assistances/finished", {
           headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
@@ -24,15 +24,13 @@
         });
       },
 
+      //Método que guarda la id del usuario al que se ha seleciconado
       locateClick(id) {
         window.localStorage.setItem("selectedEventId", id);
-      },
-
-      goBack() {
-          Logic.back();
-        }
+      }
     },
 
+    //Antes de montar la página se guardan los eventos
     beforeMount(){
       this.getEvents()
     }
@@ -44,13 +42,14 @@
     <main>
       <header>
         <br/>
-        <BackArrow v-on:back="goBack"></BackArrow>
+        <Bar></Bar>
         <br/><br/>
         <div class="topText">
           <h1>Timeline</h1>
         </div>
       </header>
   
+      <!-- Se muestran todos los eventos pasados -->
       <li class="grid-container" v-for="event in events" :key="event.id">
       <div>
         <img v-bind:src=event.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>

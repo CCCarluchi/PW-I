@@ -1,24 +1,21 @@
 <script>
-  import BackArrow from "../components/BackArrow.vue";
-  import Logic from "../javascript/logic.js";
+  import Bar from "../components/Bar.vue";
   export default {
-    components: { BackArrow },
+    components: { Bar },
 
     methods: {
+
+      //Método para borrar al usuario loggeado de la api
       deleteUser() {
         fetch("http://puigmal.salle.url.edu/api/v2/users", {
           method: 'DELETE',
           headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
         })
         .then(() => {
-          window.localStorage.removeItem("loggedIn")
+          window.localStorage.clear();
           window.location.assign('/');
         })
-      },
-
-      goBack() {
-          Logic.back();
-        }
+      }
     }
   }
 
@@ -28,7 +25,7 @@
   <header>
     <br/>
     <div class="arrowContainer"> 
-      <BackArrow v-on:back="goBack"></BackArrow>
+      <Bar></Bar>
     </div>
   </header>
   <br/>

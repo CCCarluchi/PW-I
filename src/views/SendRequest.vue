@@ -1,8 +1,7 @@
 <script>
-  import BackArrow from "../components/BackArrow.vue";
-  import Logic from "../javascript/logic.js";
+  import Bar from "../components/Bar.vue";
   export default {
-    components: { BackArrow },
+    components: { Bar },
 
       data() {
         return {
@@ -11,6 +10,8 @@
       },
 
       methods: {
+
+        //Método que envia una petición de amistad al usuario seleccionado
         sendRequest() {
           if (!this.alreadySent) {
             fetch("http://puigmal.salle.url.edu/api/v2/friends/" + window.localStorage.getItem("selectedUserId"), {
@@ -19,10 +20,6 @@
             })
             .then(res => res.json);
           }
-      },
-
-      goBack() {
-        Logic.back();
       }
     }
   }
@@ -34,7 +31,7 @@
     <header>
     <br/>
     <div class="arrowContainer"> 
-      <BackArrow v-on:back="goBack"></BackArrow>
+      <Bar></Bar>
     </div>
   </header>
   <br/>

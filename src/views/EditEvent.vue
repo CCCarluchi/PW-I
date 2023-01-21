@@ -1,8 +1,7 @@
 <script>
-  import BackArrow from "../components/BackArrow.vue";
-  import Logic from "../javascript/logic.js";
+  import Bar from "../components/Bar.vue";
   export default {
-    components: { BackArrow },
+    components: { Bar },
     
     data() {
       return {
@@ -99,11 +98,6 @@
         var day = ('0' + date.getDate()).slice(-2);
         var fullDate = year + '-' + month + '-' + day;
         this.minDate = fullDate;
-      },
-
-      // Método para volver a la página anterior.
-      goBack() {
-        Logic.back();
       }
     },
 
@@ -133,7 +127,7 @@
   <header>
     <br/>
     <!-- Cuando el usuario le da a la flecha se ejecuta el método goBack. -->
-    <BackArrow v-on:back="goBack"></BackArrow>
+    <Bar></Bar>
     <br/><br/>
     <div class="topText">
       <h1>Edit event</h1>

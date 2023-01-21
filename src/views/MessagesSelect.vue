@@ -1,18 +1,7 @@
 <script>
-import BackArrow from "../components/BackArrow.vue";
-  import Logic from "../javascript/logic.js";
+import Bar from "../components/Bar.vue";
   export default {
-    components: { BackArrow },
-    data() {
-      return {
-
-      }
-    },
-    methods: {
-      goBack() {
-        Logic.back();
-      }
-    }
+    components: { Bar }
   }
 </script>
 
@@ -20,7 +9,7 @@ import BackArrow from "../components/BackArrow.vue";
     
   <header>
     <br/>
-    <BackArrow v-on:back="goBack"></BackArrow>
+    <Bar></Bar>
     <br/><br/>
     <div class="topText">
       <h1>Messages</h1>

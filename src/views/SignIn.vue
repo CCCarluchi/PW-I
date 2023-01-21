@@ -18,12 +18,7 @@ import logic from '../javascript/logic.js'
       }
     },
 
-    /*beforeMount() {
-      window.localStorage.clear();
-      /*
-        window.location.href = "/Home";
-      } */
-    }
+  }
 
   
 </script>

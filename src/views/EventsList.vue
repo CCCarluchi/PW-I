@@ -1,8 +1,7 @@
 <script>
-  import BackArrow from "../components/BackArrow.vue";
-  import Logic from "../javascript/logic.js";
+  import Bar from "../components/Bar.vue";
   export default {
-    components: { BackArrow },
+    components: { Bar },
 
   data() {
     return {
@@ -33,15 +32,7 @@
     // Método que guarda en un item el id del evento seleccionado por el usuario.
     locateClick(id) {
       window.localStorage.setItem("selectedEventId", id);
-    },
-
-    // Método para volver a la página anterior.
-    goBack() {
-      Logic.back();
     }
-
-
-
   },
 
   // Pedimos la lista de eventos.
@@ -57,7 +48,7 @@
   <header>
     <br/>
     <!-- Cuando el usuario le da a la flecha se ejecuta el método goBack. -->
-    <BackArrow v-on:back="goBack"></BackArrow>
+    <Bar></Bar>
     <br/><br/>
     <div class="topText">
       <h1>Events</h1>
@@ -70,10 +61,10 @@
   <main>
 
     <div class="sort">
-      <p class="sortFont">Sort by creator rating</p>
-
+      
       <!-- Cuando el usuario selecciona la casilla, se marca como selecionada y se ejecuta getEvents. -->
       <input class="sortInput" v-model="selected" type="checkbox" v-on:change="getEvents" id="sort">
+      <p class="sortFont">Sort by creator rating</p>
     </div>
     <br/><br/><br/><br/><br/><br/>
 
@@ -105,17 +96,26 @@
   .sortFont {
     font-size: 20px;
     font-family: 'Fredoka', sans-serif;
-    display: inline;
+    margin-right: 30%;
+    width: -moz-max-content;
+    width: max-content;
+    flex: none;
+    
   }
 
   .sortInput {
     float: left;
-
+    
   }
 
   .sort {
     float:left;
     margin-left:0%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
   }
 
   @media only screen and (min-width: 640px) {
@@ -126,7 +126,10 @@
     .sortFont {
       font-size: 26px;
       font-family: 'Fredoka', sans-serif;
-      display:inline;
+      margin-right: 10%;
+      width: -moz-max-content;
+      width: max-content;
+      flex: none;
     }
 
     .sortInput {
@@ -137,6 +140,8 @@
     .sort {
       float:left;
       margin-left:0%;
+      display: flex;
+      flex-direction: row;
     }
   }
 

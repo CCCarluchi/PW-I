@@ -196,7 +196,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-    if (to.name == 'SignIn' && window.localStorage.getItem("loggedIn")) {
+    if (to.name == 'SignIn' && window.localStorage.getItem("token") != null) {
         next({name: 'Home'});
        
     } else {

@@ -1,8 +1,7 @@
 <script>
-    import BackArrow from "../components/BackArrow.vue";
-    import Logic from "../javascript/logic.js";
+    import Bar from "../components/Bar.vue";
     export default {
-        components: { BackArrow },
+        components: { Bar },
         data() {
             return {
                 users: [],
@@ -11,20 +10,23 @@
         },
 
         methods: {
+
+            //Método que pide a la api todas las peticiones de amistad que haya recibido el usuario, y las guarda
             getRequests() {
+                this.users = [];
                 fetch("http://puigmal.salle.url.edu/api/v2/friends/requests", {
                     headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
                 })
                 .then(res => res.json())
                 .then(data => {
                     this.empty = (data.length == 0)
-                    console.log(data)
                     for (let i = 0; i < data.length; i++) {
                         this.users.push(data[i])
                     }
                 });
             },
 
+            //Método que acepta la petición de amistad de un usuario
             acceptRequest(id) {
                 this.locateClick(id)
                 fetch("http://puigmal.salle.url.edu/api/v2/friends/" + window.localStorage.getItem("selectedUserId"), {
@@ -32,14 +34,12 @@
                     headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
                 })
                 .then(res => res.json())
-                .then(data => {
-                    console.log(data)
-                })
-                .then(data => {
-                    window.location.reload()
+                .then(() => {
+                    this.getRequests();
                 }); 
             },
 
+            //Metodo que rechaza la petición de amistad de un usuario
             deleteRequest(id) {
                 this.locateClick(id)
                 fetch("http://puigmal.salle.url.edu/api/v2/friends/" + window.localStorage.getItem("selectedUserId"), {
@@ -47,23 +47,18 @@
                     headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
                 })
                 .then(res => res.json())
-                .then(data => {
-                    console.log(data)
-                })
                 .then(() => {
-                    window.location.reload()
-                }); 
+                    this.getRequests();
+                });
             },
 
+            //Método que guarda la id del usuario al que se ha seleciconado
             locateClick(id) {
                 window.localStorage.setItem("selectedUserId", id);
-            },
-            
-            goBack() {
-                Logic.back();
             }
         },
 
+        //Antes de montar la página de piden todas las peticiones
         beforeMount() {
             this.getRequests()
         }
@@ -75,7 +70,7 @@
     
      <header>
         <br/>
-        <BackArrow v-on:back="goBack"></BackArrow>
+        <Bar></Bar>
         <br/><br/>
         <div class="topText">
             <h1>Pending Requests</h1>
@@ -85,6 +80,7 @@
     </header>
 
     <main>
+        <!-- Con el v-for se muestran todas las peticiones que ha recibido el usuario -->
         <li class="grid-container" v-for="user in users" :key="user.id">
             <div>
                 <img v-bind:src=user.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/> 
@@ -96,6 +92,7 @@
             </div>
         </li>
 
+        <!-- En caso de que no haya recibido ninguna, se muestra un mensaje -->
         <div v-if="empty">
             <h2 class="emptyList">No requests pending</h2>
         </div>

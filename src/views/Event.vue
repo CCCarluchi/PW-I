@@ -1,8 +1,7 @@
 <script>
-    import BackArrow from "../components/BackArrow.vue";
-    import Logic from "../javascript/logic.js";
+    import Bar from "../components/Bar.vue";
     export default {
-        components: { BackArrow },
+        components: { Bar },
 
     data() {
         return {
@@ -103,13 +102,7 @@
                 }
                 
             })
-        },
-        
-        // Método para volver a la página anterior.
-        goBack() {
-          Logic.back();
-        }
-         
+        }         
     },
 
     // Una vez se ha montado la página, pedimos la información del evento y sus comentarios.
@@ -127,10 +120,10 @@
         <br/>
 
         <!-- Cuando el usuario le da a la flecha se ejecuta el método goBack. -->
-        <BackArrow v-on:back="goBack"></BackArrow>
+        <Bar></Bar>
         <br/><br/>
         <div class="profileGrid">
-            <div class="profileMain">
+            <div class="profileMainE">
 
                 <!-- Con el v-bind vinculamos la imagen a mostrar. En caso de error mostramos una distinta por defecto. -->
                 <br/><br/><img v-bind:src="event.image" referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgRedonda'/>
@@ -219,7 +212,7 @@
 </template>
 
 <style>
-    /*.profileMainE {
+    .profileMainE {
         grid-column: 2/3;
         grid-row: 1/2;
         background-color: #0099ff;
@@ -229,8 +222,8 @@
     .profileMainE > h1 {
         color: white;
         text-decoration: none;
-        font-size: 40px;
-    }*/
+        font-size: 36px;
+    }
 
     .buttonContainer {
         margin-left: 5%;
@@ -290,6 +283,19 @@
     }
 
     @media only screen and (min-width: 640px) {
+        .profileMainE {
+            grid-column: 2/3;
+            grid-row: 1/2;
+            background-color: #0099ff;
+            border: 1px solid black;
+        }
+
+        .profileMainE > h1 {
+            color: white;
+            text-decoration: none;
+            font-size: 50px;
+        }
+
         .buttonContainer {
             margin-left: 5%;
             margin-right: 5%;

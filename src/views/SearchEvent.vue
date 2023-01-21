@@ -1,9 +1,8 @@
 <script>
   import { createVNode } from 'vue';
-  import BackArrow from "../components/BackArrow.vue";
-  import Logic from "../javascript/logic.js";
+  import Bar from "../components/Bar.vue";
   export default {
-    components: { BackArrow },
+    components: { Bar },
       data() {
         return {
           location:"",
@@ -94,11 +93,6 @@
           window.localStorage.setItem("selectedEventId", id);
         },
 
-        // Método para volver a la página anterior.
-        goBack() {
-          Logic.back();
-        },
-
         // Método que establece la fecha mínima que el usuario puede seleccionar en el input.
         setMinDate() {
           var date = new Date();
@@ -121,7 +115,7 @@
         <div class="arrowContainer"> 
 
             <!-- Cuando el usuario le da a la flecha se ejecuta el método goBack. -->
-            <BackArrow v-on:back="goBack"></BackArrow>
+            <Bar></Bar>
         </div>
         <div class="searchTitle">
           <h2>Search Events</h2>
@@ -147,7 +141,7 @@
         <div class="inputContainer">
 
           <!-- Cuando el usuario clica el botón se ejecuta search para realizar el fetch. -->
-          <button type="submit" v-on:click="search()"><i class="fa fa-search"></i></button><br/><br/>
+          <button type="submit" v-on:click.prevent="search()"><i class="fa fa-search"></i></button><br/><br/>
         </div>
       </form>
       <br/><br/><br/>

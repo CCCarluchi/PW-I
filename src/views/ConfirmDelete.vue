@@ -1,9 +1,10 @@
 <script>
-  import BackArrow from "../components/BackArrow.vue";
-  import Logic from "../javascript/logic.js";
+  import Bar from "../components/Bar.vue";
   export default {
-    components: { BackArrow },
+    components: { Bar },
     methods: {
+
+      //Método que borra el evento seleccionado de la api
       deleteEvent() {
         fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedEventId"), {
           method: 'DELETE',
@@ -15,9 +16,6 @@
         });
       },
 
-      goBack() {
-          Logic.back();
-        }
     }
   }
 
@@ -26,7 +24,7 @@
 <template>
   <header>
     <br/>
-    <BackArrow v-on:back="goBack"></BackArrow>
+    <Bar></Bar>
   </header>
   <br/>
 

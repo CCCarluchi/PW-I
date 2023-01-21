@@ -1,8 +1,7 @@
 <script>
-  import BackArrow from "../components/BackArrow.vue";
-  import Logic from "../javascript/logic.js";
+  import Bar from "../components/Bar.vue";
   export default {
-    components: { BackArrow },
+    components: { Bar },
     data() {
       return {
         user: {
@@ -26,11 +25,7 @@
             this.user.num_comments= data[0].num_comments;
             this.user.percentage_commenters_below = data[0].percentage_commenters_below;
           }); 
-      },
-      // Método para volver a la página anterior.
-      goBack() {
-          Logic.back();
-        }
+      }
     },
     // Pedimos los datos del usuario.
     beforeMount() {
@@ -44,8 +39,7 @@
     <main>
       <header>
         <br/>
-        <!-- Cuando el usuario le da a la flecha se ejecuta el método goBack. -->
-        <BackArrow v-on:back="goBack"></BackArrow>
+        <Bar></Bar>
         <br/><br/>
         <div class="topText">
           <h1>Statistics</h1>

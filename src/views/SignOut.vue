@@ -1,17 +1,12 @@
 <script>
-  import BackArrow from "../components/BackArrow.vue";
-  import Logic from "../javascript/logic.js";
+  import Bar from "../components/Bar.vue";
   export default {
-    components: { BackArrow },
+    components: { Bar },
 
     methods: {
       logOut() {
         window.localStorage.clear()
-      },
-
-      goBack() {
-          Logic.back();
-        }
+      }
     }
   }
 
@@ -21,7 +16,7 @@
   <header>
     <br/>
     <div class="arrowContainer"> 
-      <BackArrow v-on:back="goBack"></BackArrow>
+      <Bar></Bar>
     </div>
   </header>
   <br/>

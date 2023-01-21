@@ -1,8 +1,8 @@
 <script>
-  import BackArrow from "../components/BackArrow.vue";
+  import Bar from "../components/Bar.vue";
   import Logic from "../javascript/logic.js";
   export default {
-    components: { BackArrow },
+    components: { Bar },
     data() {
       return {
         name:"",
@@ -11,6 +11,8 @@
     },
 
     methods: {
+
+      //Método que pide la información del usuario seleccionado a la api y la guarda
       getUser() {
         fetch("http://puigmal.salle.url.edu/api/v2/users/" + window.localStorage.getItem("selectedUserId"), {
           headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
@@ -20,13 +22,10 @@
           this.name = data[0].name;
           this.image = data[0].image;
         })
-      },
-
-      goBack() {
-        Logic.back();
       }
     },
 
+    //Antes de montar la página se comprueba si el usuario es amigo nuestro y se pide su información
     beforeMount() {
       Logic.checkFriends()
       this.getUser()
@@ -39,11 +38,12 @@
 
   <header>
     <br/>
-    <BackArrow v-on:back="goBack"></BackArrow>
+    <Bar></Bar>
     <br/><br/>
 
     <div class="profileGrid">
       <div class="profileMain">
+        <!-- Se usa la imagen y nombre recibido de la api. En caso de que la imagen no sea valida se utiliza un placeholder -->
         <br/><br/><img v-bind:src="image" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgRedonda'/>
         <h1>{{name}}</h1>
       </div>
