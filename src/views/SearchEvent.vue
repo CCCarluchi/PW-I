@@ -113,8 +113,6 @@
     <header>
         <br/>
         <div class="arrowContainer"> 
-
-            <!-- Cuando el usuario le da a la flecha se ejecuta el método goBack. -->
             <Bar></Bar>
         </div>
         <div class="searchTitle">

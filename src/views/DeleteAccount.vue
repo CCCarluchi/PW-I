@@ -24,7 +24,6 @@
 <template>
   <header>
     <br/>
-    <!-- Cuando el usuario le da a la flecha se ejecuta el método goBack. -->
     <div class="arrowContainer"> 
       <Bar></Bar>
     </div>
