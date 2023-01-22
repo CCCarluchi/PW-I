@@ -155,7 +155,7 @@
             </div>
             <form class="msgContainer">
                 <input type="text" v-model="text" placeholder="Message..." id="message">
-                <button type="submit" v-on:click="sendMessage()">Send</button>
+                <button type="button" v-on:click="sendMessage()">Send</button>
             </form>
         </div>   
     </main> 

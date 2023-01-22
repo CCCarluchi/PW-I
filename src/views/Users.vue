@@ -1,7 +1,9 @@
 <script>
   import Bar from "../components/Bar.vue";
+  import UserItem from "../components/UserItem.vue";
+
   export default {
-    components: { Bar },
+    components: { Bar, UserItem },
 
     data() {
       return {
@@ -73,7 +75,7 @@
     <!-- Barra con la que se puede buscar a los usuarios -->
     <div class="searchContainer">
       <input type="text" v-model="name" placeholder="Search user...">
-      <button type="submit" v-on:click="searchUsers(name)"><i class="fa fa-search"></i ></button><br/><br/>
+      <button type="button" v-on:click="searchUsers(name)"><i class="fa fa-search"></i ></button><br/><br/>
     </div>
     <br/>
   </header>
@@ -82,12 +84,7 @@
     
     <!-- V-for que muestra a todos los usuarios de la api, con su información. En caso de que uno de esos usuarios seamos nosotros, no aparecerá -->
     <li class="grid-container" v-for="user in users" :key="user.id">
-      <div v-if="isNotMe(user.id)">
-        <img v-bind:src=user.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
-        <p>{{ user.name }}</p>
-        <a href="/Chat" v-on:click="locateClick(user.id)"><button>Chat</button></a>
-        <a href="/NotFriendProfile" v-on:click="locateClick(user.id)"><button>Profile</button></a>
-      </div>
+      <UserItem v-bind:image="user.image" v-bind:name="user.name" v-bind:id="user.id" v-bind:friend="false"></UserItem>
     </li>
 
   </main>

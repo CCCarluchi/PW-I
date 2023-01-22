@@ -1,7 +1,8 @@
 <script>
   import Bar from "../components/Bar.vue";
+  import UserItem from "../components/UserItem.vue";
   export default {
-    components: { Bar },
+    components: { Bar, UserItem },
     data() {
         return {
             friends: [],
@@ -24,12 +25,6 @@
                     }
                 }
             });
-        },
-
-        //Método para saber a qué usuario se le ha hecho click para ir a su perfil, de manera 
-        //que se guarda su id para luego saber de qué usuario pedir la información a la api
-        locateClick(id) {
-            window.localStorage.setItem("selectedUserId", id);
         }
     },
 
@@ -59,12 +54,7 @@
     
     <!-- Con el v-for se muestran todos los amigos recibios de la api, con sus datos cada uno -->
     <li class="grid-container" v-for="friend in friends" :key="friend.id">
-      <div>
-        <img v-bind:src=friend.image referrerpolicy="no-referrer" @error="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541'" class='imgList'/>
-        <p>{{ friend.name }}</p>
-        <!-- En caso de seleccionar a uno de los usuarios, se llama a la función locateClick para guardar su id -->
-        <a href="/FriendProfile" v-on:click="locateClick(friend.id)"><button>Profile</button></a>
-      </div>
+      <UserItem v-bind:image="friend.image" v-bind:name="friend.name" v-bind:id="friend.id" v-bind:friend="true"></UserItem>
     </li>
 
     <!-- Si no se ha recibido información de la api, el usuario no tiene amigos y un mensaje se lo muestra -->
