@@ -24,6 +24,7 @@
 <template>
   <header>
     <br/>
+    <!-- Cuando el usuario le da a la flecha se ejecuta el método goBack. -->
     <div class="arrowContainer"> 
       <Bar></Bar>
     </div>
@@ -40,6 +41,7 @@
         <p class="red">(This action can not be undone)</p>
       </div>
       <br/>
+      <!-- Llamamos al metodo deleteUser cuando el usuario pulsa el boton. -->
         <a v-on:click="deleteUser"><button>Delete account</button></a>
     </div>
   </main>
