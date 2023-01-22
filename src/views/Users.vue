@@ -75,7 +75,7 @@
     <!-- Barra con la que se puede buscar a los usuarios -->
     <div class="searchContainer">
       <input type="text" v-model="name" placeholder="Search user...">
-      <button type="submit" v-on:click="searchUsers(name)"><i class="fa fa-search"></i ></button><br/><br/>
+      <button type="button" v-on:click="searchUsers(name)"><i class="fa fa-search"></i ></button><br/><br/>
     </div>
     <br/>
   </header>

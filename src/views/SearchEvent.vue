@@ -141,7 +141,7 @@
         <div class="inputContainer">
 
           <!-- Cuando el usuario clica el botón se ejecuta search para realizar el fetch. -->
-          <button type="submit" v-on:click.prevent="search()"><i class="fa fa-search"></i></button><br/><br/>
+          <button type="button" v-on:click.prevent="search()"><i class="fa fa-search"></i></button><br/><br/>
         </div>
       </form>
       <br/><br/><br/>
