@@ -39,6 +39,7 @@
     <main>
       <header>
         <br/>
+        <!-- Cuando el usuario le da a la flecha se ejecuta el método goBack. -->
         <Bar></Bar>
         <br/><br/>
         <div class="topText">
