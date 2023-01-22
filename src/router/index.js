@@ -13,7 +13,6 @@ import Statistics from '../views/Statistics.vue'
 import SignOut from '../views/SignOut.vue'
 import Events from '../views/Events.vue'
 import CreateEvent from '../views/CreateEvent.vue'
-import Chat from '../views/Chat.vue'
 import ParticipateEvent from '../views/ParticipateEvent.vue'
 import Event from '../views/Event.vue'
 import ShareEvent from '../views/ShareEvent.vue'
@@ -102,11 +101,6 @@ const routes = [
         path: '/CreateEvent',
         name: 'CreateEvent',
         component: CreateEvent,
-    },
-    {
-        path: '/Chat',
-        name: 'Chat',
-        component: Chat,
     },
     {
         path: '/ParticipateEvent',
