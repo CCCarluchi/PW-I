@@ -40,7 +40,6 @@
         })
         .then(res => res.json())
         .then(data => {
-          console.log(data)
           if (data.length > 20) {
             alert("Some information has wrong format")
           } else {

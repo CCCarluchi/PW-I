@@ -9,10 +9,6 @@
         fetch("http://puigmal.salle.url.edu/api/v2/events/" + window.localStorage.getItem("selectedEventId"), {
           method: 'DELETE',
           headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
-        })
-        .then(res => res.json())
-        .then(data => {
-          console.log(data)  
         });
       },
 

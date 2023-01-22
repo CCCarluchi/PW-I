@@ -59,8 +59,7 @@
             })
             .then(data => data.json())
             .then(data => {
-                this.image = data.data.link
-                console.log(this.image)
+                this.image = data.data.link;
             });
         },
 
