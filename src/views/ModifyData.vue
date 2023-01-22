@@ -15,7 +15,7 @@
     },
 
     methods: {
-
+      //Método que sirve para guardar la imagen en una api i poder luego utilizar su link
       onFileSelected(event) {
         const formdata = new FormData()
         formdata.append("image", event.target.files[0])
@@ -28,7 +28,7 @@
             this.user.image = data.data.link
           })
       },
-
+      // Método donde cambiamos todos los datos actualizados
       editProfile() {
         fetch("http://puigmal.salle.url.edu/api/v2/users", {
           method: 'PUT', 
@@ -48,6 +48,7 @@
         });
       },
 
+      // Método en el que cojemos los datos que van a ser modificados para mostrarlos posteriormente por pantalla
       getData() {
           fetch("http://puigmal.salle.url.edu/api/v2/users/" + window.localStorage.getItem("myId"), {
             headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
@@ -62,7 +63,7 @@
           }); 
       }
     },
-
+    // Pedimos los datos del usuario.
     beforeMount() {
       this.getData()
     }
@@ -84,7 +85,7 @@
     </header>
 
     <main>
-     
+     <!-- Guardamos en cada variable usando v-model los datos introducidos en cada apartado -->
       <form>
         <div class="inputContainer">
           <input type="text" v-model="user.name" placeholder="*Name"><br/>
@@ -105,7 +106,8 @@
           <input type="password" v-model="user.password" placeholder="*Password"><br/>
         </div>
         <br/><br/>
-
+        
+        <!-- Conseguimos el fichero de la imagen y llamamos a la funcion para guardarla -->
         <div class="inputContainer">
           <input type="file" accept="image/*" class="custom" @change="onFileSelected"><br/>
           <h3 class="previewFont">Preview:</h3>
@@ -117,7 +119,7 @@
 
      
     </main>
-
+     <!-- Llamado al metodo de login al pulsar el boton-->
     <footer>
       <a id="button2"><button class = "button2" v-on:click="editProfile">Apply Changes</button></a><br/><br/>
     </footer>

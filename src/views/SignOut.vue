@@ -4,6 +4,7 @@
     components: { Bar },
 
     methods: {
+      //Método en el que se se elimina toda la informacion almacenada eb el local storage
       logOut() {
         window.localStorage.clear()
       }
@@ -30,6 +31,7 @@
         <p class="p2">Do you wish to log out?</p>
       </div>
       <br/><br/>
+      <!-- Llamado al metodo de logout al pulsar el boton-->
         <div class="inputContainer">
           <a href="/" v-on:click="logOut"><button>Log out</button></a>
         </div>

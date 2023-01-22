@@ -14,6 +14,7 @@
     },
 
     methods: {
+      // Método que coje los datos (puntuacion, numero de comentarios, porcentaje de comentarios) del usuario indicado  
       getData() {
           fetch("http://puigmal.salle.url.edu/api/v2/users/"+ window.localStorage.getItem("myId")+ "/statistics", {
             headers: {'Authorization': 'Bearer ' + window.localStorage.getItem("token")}
@@ -26,7 +27,7 @@
           }); 
       }
     },
-
+    // Pedimos los datos del usuario.
     beforeMount() {
       this.getData();
     }
@@ -46,6 +47,7 @@
     </header>
 
     <article>
+      <!-- Creamos una tabla donde mostramos los datos conseguidos -->
       <table class = "stats-container">
         <tr>
           <th>Events puntuation:</th>
